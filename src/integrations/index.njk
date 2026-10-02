@@ -75,7 +75,7 @@ schema: |
   }
 ---
 
-<section class="hero" id="main-content" tabindex="-1">
+<section class="hero n-hero-split-page" id="main-content" tabindex="-1">
   <div class="hero-inner">
     <div class="reveal">
       <div class="eyebrow"><span class="dot"></span> Integrations</div>
@@ -83,11 +83,12 @@ schema: |
       <p>An integration that syncs is not the same as an integration you can trust. We design data flows with clear ownership, error logging, and a rollback plan, so when something fails you find out from an alert rather than from a customer.</p>
       <a href="javascript:void(0)" class="js-open-hs-form btn btn-primary">Book a free consultation</a>
     </div>
+    {% include 'partials/hero-visual.njk' %}
     
   </div>
 </section>
 
-<section class="section" id="integration-library">
+<section class="section n-library" id="integration-library">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 28px"><div class="section-label" style="margin:0 auto 14px">What we connect</div><h2>Tools we work with regularly</h2><p class="lead" style="margin:0 auto">Native where a good native connector exists, custom where it does not. If a system has an API, it can be connected.</p></div>
     <div class="tabs reveal delay-1" id="categoryTabs">
@@ -123,7 +124,7 @@ schema: |
   </div>
 </section>
 
-<section class="section" id="integration-approach">
+<section class="section n-why" id="integration-approach">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">Our approach</div><h2>Most integration problems are governance problems</h2><p class="lead" style="margin:0 auto">Two systems holding the same record will eventually disagree. The question is what happens next. Without a defined source of truth, conflicting updates overwrite each other silently and nobody notices until reporting is wrong. We decide which system owns which field before we build anything, then add the logging and alerting that makes failures visible.</p></div>
     <div class="grid-3" style="margin-top:28px">
@@ -134,7 +135,7 @@ schema: |
   </div>
 </section>
 
-<section class="section process" id="integration-process">
+<section class="section process n-rail" id="integration-process">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">How it works</div><h2>From stack audit to live sync</h2></div>
     <div class="steps">

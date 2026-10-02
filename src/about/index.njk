@@ -59,7 +59,7 @@ schema: |
   }
 ---
 
-<section class="hero" id="main-content" tabindex="-1">
+<section class="hero n-hero-split-page" id="main-content" tabindex="-1">
   <div class="hero-inner">
     <div class="reveal">
       <div class="eyebrow"><span class="dot"></span> About us</div>
@@ -67,10 +67,11 @@ schema: |
       <p>PipelineSync is a HubSpot Solutions Partner. We are a team of eight working from our office in the Philippines, on US hours, for clients across the United States, Australia, Canada, and the United Kingdom.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="javascript:void(0)" class="js-open-hs-form btn btn-primary">Book a free consultation</a><a href="#story" class="btn btn-outline">Read our story</a></div>
     </div>
+    {% include 'partials/hero-visual.njk' %}
   </div>
 </section>
 
-<section class="section story" id="story">
+<section class="section story n-story" id="story">
   <div class="container">
     <div class="story-grid">
       <div class="reveal"><div class="section-label">Our story</div><h2>Fixing the CRM trust gap</h2></div>
@@ -85,14 +86,14 @@ schema: |
   </div>
 </section>
 
-<section class="section">
+<section class="section n-team">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">Our team</div><h2>Eight people, one platform</h2><p class="lead" style="margin:0 auto">PipelineSync is a team of eight: our founder, five HubSpot implementation specialists, and two supporting social media and administrative staff. Everyone who touches client work is on our team. We do not subcontract builds.</p></div>
     <div class="reveal" style="max-width:760px;margin:22px auto 0;display:flex;flex-direction:column;gap:16px"><p style="font-size:16px;line-height:1.7;color:var(--grey)">We are based in the Philippines and work US business hours. That structure is deliberate. It gives clients senior HubSpot capability at a rate that a US or UK agency with the same depth cannot match, and it means work moves on your calendar, not ours.</p><p style="font-size:16px;line-height:1.7;color:var(--grey)">There is a second reason we built the team this way. The Philippines has a large pool of skilled remote professionals whose work is undervalued because the roles available to them are undervalued. We train ours into genuine HubSpot specialists, with certifications, real project experience, and career progression. Our clients get people who are invested in the platform rather than passing through it.</p></div>
   </div>
 </section>
 
-<section class="section">
+<section class="section n-why">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">How we work</div><h2>Three things we do differently</h2></div>
     <div class="values" style="margin-top:24px">
@@ -103,7 +104,7 @@ schema: |
   </div>
 </section>
 
-<section class="section">
+<section class="section n-industries n-creds">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">Credentials</div><h2>Verified, not claimed</h2></div>
     <div class="grid-4" style="margin-top:24px">
@@ -115,7 +116,7 @@ schema: |
   </div>
 </section>
 
-<section class="section">
+<section class="section n-quotes">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">Client feedback</div><h2>What clients say</h2></div>
     <div class="grid-2" style="margin-top:24px">
@@ -125,7 +126,7 @@ schema: |
   </div>
 </section>
 
-<section class="section">
+<section class="section n-global">
   <div class="container">
     <div class="global-grid">
       <div class="reveal"><div class="section-label">Where we work</div><h2>Coverage and hours</h2><p class="lead" style="margin-top:12px">We work US business hours from our office in the Philippines, with live sessions scheduled in your timezone and recorded walkthroughs for everything else.</p><div style="margin-top:24px"><h4 style="font-size:14px;margin-bottom:8px">Primary markets</h4><div class="languages"><span class="lang-tag">United States</span><span class="lang-tag">Australia</span><span class="lang-tag">Canada</span><span class="lang-tag">United Kingdom</span></div></div><div style="margin-top:20px"><h4 style="font-size:14px;margin-bottom:8px">Working hours</h4><p style="font-size:14px;color:var(--grey)">US business hours</p><h4 style="font-size:14px;margin:18px 0 8px">Response time</h4><p style="font-size:14px;color:var(--grey)">Within 24 hours on business days</p></div></div>
@@ -134,4 +135,4 @@ schema: |
   </div>
 </section>
 
-<section class="section contact" id="contact"><div class="container"><div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">Get started</div><h2>Want to work with us?</h2><p class="lead" style="margin:12px auto 22px">Start with a free 30-minute call. Tell us what is broken and we will tell you what fixing it looks like.</p><a href="javascript:void(0)" class="js-open-hs-form btn btn-primary">Book a free consultation</a></div></div></section>
+<section class="section contact n-cta" id="contact"><div class="container"><div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">Get started</div><h2>Want to work with us?</h2><p class="lead" style="margin:12px auto 22px">Start with a free 30-minute call. Tell us what is broken and we will tell you what fixing it looks like.</p><a href="javascript:void(0)" class="js-open-hs-form btn btn-primary">Book a free consultation</a></div></div></section>

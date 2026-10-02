@@ -61,8 +61,8 @@ schema: |
 
 <section class="hero" id="home" tabindex="-1">
   <div class="container">
-    <div class="hero-inner copy-home-hero-inner">
-      <div class="reveal">
+    <div class="hero-inner copy-home-hero-inner n-hero-split">
+      <div class="reveal n-hero-copy">
         <div class="eyebrow"><span class="dot"></span> HubSpot Solutions Partner</div>
         <h1>Make the CRM<br>work like the <span class="accent">business.</span></h1>
         <p class="lead">You bought HubSpot. You still do not trust what it tells you. We rebuild it around how your business actually runs, so the data is clean, the work is automated, and the reporting holds up without a manual check.</p>
@@ -74,11 +74,12 @@ schema: |
           <span>HubSpot Solutions Partner</span><span aria-hidden="true">•</span><span>12 HubSpot certifications</span><span aria-hidden="true">•</span><span>10 five-star client reviews</span>
         </div>
       </div>
+      {% include 'partials/hero-visual.njk' %}
     </div>
   </div>
 </section>
 
-<section class="trusted-section" aria-labelledby="trusted-heading">
+<section class="trusted-section n-trusted" aria-labelledby="trusted-heading">
   <div class="container">
     <div class="trusted-heading-row">
       <div class="trusted-heading">
@@ -108,14 +109,14 @@ schema: |
   </div>
 </section>
 
-<section class="section alt">
+<section class="section alt n-pain">
   <div class="container">
-    <div class="reveal">
+    <div class="reveal n-head-split">
       <div class="section-label"><span style="width:6px;height:6px;background:var(--orange);border-radius:2px;display:inline-block"></span> Common pain</div>
       <h2>Sound familiar?</h2>
       <p class="lead">Most teams do not have a HubSpot problem. They have an architecture problem that shows up in HubSpot. The data was never structured, the pipeline was never designed around how deals actually close, and nobody documented how any of it works.</p>
     </div>
-    <div class="grid-4">
+    <div class="grid-4 n-bento-4">
       <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-database"></i></div><h4>Your data lives in four places and agrees in none of them</h4><p>Duplicate contacts, half-filled fields, and exports into spreadsheets before anyone will believe a number.</p></div>
       <div class="card reveal delay-1"><div class="card-icon blue"><i class="fa-solid fa-diagram-project"></i></div><h4>The pipeline does not match how deals actually close</h4><p>Stages your reps skip, close dates nobody updates, and a forecast leadership quietly discounts.</p></div>
       <div class="card reveal delay-2"><div class="card-icon orange"><i class="fa-solid fa-hourglass-half"></i></div><h4>Your team spends hours on work the CRM should do</h4><p>Copy-pasting between tools, chasing status updates, and building lists by hand.</p></div>
@@ -124,7 +125,7 @@ schema: |
   </div>
 </section>
 
-<section class="section" id="what-we-do">
+<section class="section n-sticky" id="what-we-do">
   <div class="container">
     <div class="what-grid">
       <div class="reveal">
@@ -144,7 +145,7 @@ schema: |
   </div>
 </section>
 
-<section class="stats" aria-label="PipelineSync verified figures">
+<section class="stats n-stats" aria-label="PipelineSync verified figures">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:820px;margin:0 auto 28px">
       <div class="section-label" style="margin:0 auto 14px">Credentials</div>
@@ -160,7 +161,7 @@ schema: |
   </div>
 </section>
 
-<section class="section">
+<section class="section n-why">
   <div class="container">
     <div class="reveal">
       <div class="section-label">Why us</div>
@@ -174,7 +175,7 @@ schema: |
   </div>
 </section>
 
-<section class="section">
+<section class="section n-industries">
   <div class="container">
     <div class="reveal"><div class="section-label">Industries</div><h2>Where we work best</h2><p class="lead">Our work fits B2B companies with a real sales process, several systems that need to agree with each other, and reporting that someone has to defend in a leadership meeting.</p></div>
     <div class="grid-3" style="margin-top:24px">
@@ -188,7 +189,7 @@ schema: |
   </div>
 </section>
 
-<section class="section process" id="process">
+<section class="section process n-rail" id="process">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">How we work</div><h2>Audit, architect, build, hand over</h2><p class="lead" style="margin:0 auto">Every engagement runs the same four stages. You know what happens next, what you are approving, and when you get it.</p></div>
     <div class="timeline">
@@ -200,7 +201,7 @@ schema: |
   </div>
 </section>
 
-<section class="section" id="faq">
+<section class="section n-faq" id="faq">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 24px"><div class="section-label" style="margin:0 auto 12px">Questions</div><h2>Before you book a call</h2></div>
     <div class="accordion">
@@ -213,7 +214,7 @@ schema: |
   </div>
 </section>
 
-<section class="section contact" id="contact">
+<section class="section contact n-cta" id="contact">
   <div class="container">
     <div class="contact-grid">
       <div class="reveal">
