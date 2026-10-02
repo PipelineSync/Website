@@ -1,0 +1,14 @@
+node_modules/
+_site/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Local audit/build artifacts
+legacy-reference/
+coverage/
+playwright-report/

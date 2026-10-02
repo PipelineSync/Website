@@ -1,0 +1,15 @@
+{
+  "name": "pipelinesync-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PipelineSync marketing website built with Eleventy.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "check": "npm run build && node tools/check-site.mjs",
+    "prepare-images": "python3 tools/prepare_images.py"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

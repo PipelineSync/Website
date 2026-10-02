@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="{{ robots or 'index, follow' }}">
+  <meta name="author" content="PipelineSync">
+  <meta name="theme-color" content="#06245B">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:site_name" content="PipelineSync">
+  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">
+  <meta property="og:image:alt" content="PipelineSync logo">
+  <meta property="og:image:type" content="image/png">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  {% if ogImage %}<meta name="twitter:image" content="{{ ogImage }}">{% endif %}
+  {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
+  <link rel="icon" href="/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/{{ cssGroup }}.css">
+  <link rel="stylesheet" href="/assets/css/{{ pageCss }}">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+{% if loadingType == 'resources' %}{% include 'partials/loading-resources.njk' %}{% elif loadingType == 'pipeline' %}{% include 'partials/loading-pipeline.njk' %}{% endif %}
+
+{% if layoutType == 'modern' %}{% include 'partials/header-modern.njk' %}{% elif layoutType == 'guide' %}{% include 'partials/header-guide.njk' %}{% else %}{% include 'partials/header-privacy.njk' %}{% endif %}
+
+{{ content | safe }}
+
+{% if layoutType == 'modern' %}{% include 'partials/footer-modern.njk' %}{% elif layoutType == 'guide' %}{% include 'partials/footer-guide.njk' %}{% else %}{% include 'partials/footer-privacy.njk' %}{% endif %}
+
+{% if layoutType == 'modern' %}{% include 'partials/modal-modern.njk' %}
+<script src="/assets/js/site-header.js"></script>
+<script src="/assets/js/site-footer.js"></script>
+<script src="/assets/js/modern-cursor.js"></script>
+<script src="/assets/js/reveal.js"></script>
+<script src="/assets/js/hubspot-form-modern.js"></script>
+<script src="/assets/js/glassmorphism.js"></script>
+<script src="/assets/js/contact-email.js"></script>
+{% elif layoutType == 'guide' %}{% include 'partials/modal-guide.njk' %}
+<script src="/assets/js/guide-header.js"></script>
+<script src="/assets/js/hubspot-form-guide.js"></script>
+<script src="/assets/js/guide-cursor.js"></script>
+{% else %}
+<script src="/assets/js/privacy-header.js"></script>
+<script src="/assets/js/guide-cursor.js"></script>
+{% endif %}
+{% if layoutType != 'privacy' %}<script src="https://js-na2.hsforms.net/forms/embed/247123252.js"></script>{% endif %}
+{% if pageJs %}<script src="/assets/js/{{ pageJs }}"></script>{% endif %}
+{% if loadingType == 'pipeline' %}<script src="/assets/js/loading-screen.js"></script>{% endif %}
+<script src="/assets/js/roi-calculator.js"></script>
+</body>
+</html>

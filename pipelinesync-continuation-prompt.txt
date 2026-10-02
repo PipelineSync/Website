@@ -1,0 +1,97 @@
+You are continuing work on my PipelineSync standalone website. I have attached a PDF named PipelineSync-Website-Copy.pdf. Use that PDF as the source of truth for the website copy and update the existing website pages accordingly.
+
+The PDF-driven copy update is complete. Inspect the current files if making follow-up changes. Do not start from scratch and do not remove existing functionality unless the PDF specifically requires a change.
+
+CURRENT WEBSITE BUNDLE
+The current complete bundle is /home/user/pipelinesync-site.zip. It contains 18 HTML pages:
+
+Main pages:
+- index.html
+- solutions.html
+- integrations.html
+- resources.html
+- about.html
+- privacy-policy.html
+
+Integration guides:
+- integration - HubSpot CRM Architecture Blueprint.html
+- integration - CRM Cleanup & Deduplication System.html
+- integration - Lead Routing & Lifecycle Automation.html
+- integration - Integration Governance & Monitoring.html
+- integration - Full-Funnel Attribution That CEOs Trust.html
+
+Blog/articles:
+- why-your-hubspot-pipeline-doesnt-reflect-reality.html
+- the-cost-of-duplicate-data-in-hubspot.html
+- automation-that-saves-10-hours-per-week.html
+- why-teams-dont-adopt-hubspot-and-how-we-fix-it.html
+
+SOPs/templates:
+- hubspot-governance-checklist.html
+- data-migration-mapping-sheet.html
+- lead-routing-decision-tree.html
+
+There are synchronized copies of the main pages and content pages in /home/user/uploads/.
+
+COMPLETED COPY UPDATE
+All applicable page copy has been updated from PipelineSync-Website-Copy.pdf, including titles, headings, hero copy, descriptions, CTA wording, resource copy, service copy, page sections, and footer text. The current visual design and responsive layouts are preserved.
+
+DO NOT BREAK THESE EXISTING FEATURES
+- Visitor-friendly loading screen on every page.
+- Loading screen logo source: https://pipelinesync.net/wp-content/uploads/2026/08/cropped-logo-only.png
+- Custom two-layer cursor effect on desktop/fine-pointer devices, disabled on touch and reduced-motion devices.
+- Lower-right Calculate ROI button beside the Back to top arrow on every page.
+- Working ROI calculator with inputs for monthly leads, average deal value, current close rate, improved close rate, hours saved, value per saved hour, and monthly CRM investment.
+- Working HubSpot consultation popup on commercial/content pages using portal ID 247123252 and form ID 925b2a78-2998-4846-a6e8-a7514007fb93.
+- Responsive header, mobile menu, smooth scrolling, page animations, accordions, and tab behavior.
+- Integrations page behavior, including 24 remote PNG integration logos and compact mobile filter navigation.
+- Resources page tabs: Guides, Articles, SOPs and Templates, and FAQs.
+- Guides, blog/article, and SOP/template cards must open their assigned links directly when the card box is clicked. The generic resource details popup must remain disabled for those three resource groups.
+- Preserve keyboard accessibility for clickable resource cards.
+- Preserve no underline and no unwanted active/visited/pressed color changes on clickable links, except for the header menu active state.
+
+CURRENT LIVE RESOURCE LINKS
+The Resources page uses these live URLs:
+
+Guides:
+- https://pipelinesync.net/resources/hubspot-crm-architecture-blueprint/
+- https://pipelinesync.net/resources/crm-cleanup-deduplication-system-pipelinesync/
+- https://pipelinesync.net/resources/lead-routing-lifecycle-automation-pipelinesync/
+- https://pipelinesync.net/resources/integration-governance-monitoring-pipelinesync/
+- https://pipelinesync.net/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/
+
+Blog/articles:
+- https://pipelinesync.net/resources/why-your-hubspot-pipeline-doesnt-reflect-reality-pipelinesync/
+- https://pipelinesync.net/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/
+- https://pipelinesync.net/resources/automation-that-saves-10-hours-week-pipelinesync/
+- https://pipelinesync.net/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/
+
+SOPs/templates:
+- https://pipelinesync.net/resources/hubspot-governance-checklist-pipelinesync/
+- https://pipelinesync.net/resources/data-migration-mapping-sheet-pipelinesync/
+- https://pipelinesync.net/resources/lead-routing-decision-tree-pipelinesync/
+
+BRANDING AND FOOTER REQUIREMENTS
+- Use the current supplied header/footer branding and preserve the existing layout.
+- The HubSpot Gold badge on all pages must use this exact remote source:
+  https://pipelinesync.net/wp-content/uploads/2026/09/HubSpot-Gold-Badge.png
+- Footer badge text is now:
+  HubSpot Solutions Partner
+  Serving the United States, Australia, Canada, and the United Kingdom
+  Working US business hours
+- Keep: © 2026 PipelineSync. All rights reserved.
+- Footer Privacy Policy links must use:
+  https://pipelinesync.net/about/privacy-policy/
+- Keep contact email, phone, WhatsApp, CTA behavior, and new-domain routes working. Integrations is live but intentionally removed from primary navigation and linked from Solutions and the footer.
+
+DELIVERABLES
+COMPLETED DELIVERABLES
+1. Updated all 18 real root HTML pages and 17 synchronized HTML copies in /home/user/uploads/.
+2. Updated metadata and sitemap entries, while leaving the Privacy Policy legal body copy unchanged.
+3. Validated HTML parsing, JavaScript syntax, JSON-LD, navigation, card links, badge source, and synchronization.
+4. Rebuilt /home/user/pipelinesync-site.zip with 18 HTML pages plus icon.png, robots.txt, and sitemap.xml.
+5. The updated bundle is ready at /home/user/pipelinesync-site.zip.
+6. Added a shared UI/UX refinement layer across all pages: skip links, visible focus states, improved card and button sizing, responsive grid behavior, tablet/mobile navigation, tab scrolling, long-form resource layout, and footer/hero spacing.
+
+IMPORTANT
+Do not replace the website with a simplified template. Keep the current PipelineSync visual system and all existing functions. If the PDF copy conflicts with an existing feature requirement above, preserve the feature and adapt the copy around it.

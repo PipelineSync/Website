@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: "CRM Cleanup and Deduplication System | PipelineSync"
+description: "A step-by-step process to audit, merge, and enrich records, then add validation rules that stop duplicates coming back."
+robots: "index, follow"
+canonical: "https://pipelinesync.net/resources/crm-cleanup-deduplication-system-pipelinesync/"
+ogType: "article"
+ogImage: ""
+layoutType: "guide"
+loadingType: "pipeline"
+cssGroup: "guides"
+pageCss: "pages/integration--crm-cleanup-and-deduplication-system.css"
+pageJs: "pages/integration--crm-cleanup-and-deduplication-system.js"
+headerEmailAttr: ' style="color:inherit;text-decoration:none"'
+lastmod: "2026-10-03"
+changefreq: "monthly"
+priority: "0.7"
+---
+
+<section class="guide-hero" style="--accent:#A84B00;--accent-soft:#FFF7ED;--accent-border:#FED7AA;">
+    <div class="container guide-hero-inner">
+      <a class="back-link" href="/resources/">← Back to resources</a>
+      <div class="guide-eyebrow"><span class="guide-eyebrow-dot"></span>PLAYBOOK • 18 MIN</div>
+      <h1>CRM Cleanup and Deduplication System</h1>
+      <p class="guide-dek">A step-by-step process to audit, merge, and enrich records, then add validation rules that stop duplicates coming back.</p>
+    </div>
+  </section>
+
+  <main id="main-content" class="guide-main" style="--accent:#A84B00;--accent-soft:#FFF7ED;--accent-border:#FED7AA;">
+    <div class="container guide-layout">
+      <article class="guide-card">
+        <div class="guide-label">PipelineSync field guide</div>
+        <h2>The practical framework</h2>
+        <p class="intro">Data cleanup should not be a one-time spring cleaning exercise. A reliable system combines a clear definition of a duplicate, a safe merge process, enrichment priorities, and prevention rules that stop the same problems from coming back.</p>
+        <section><h3>1. Audit before you merge</h3><p>Start with a snapshot. Measure duplicate volume by object, source, owner, lifecycle stage, and last activity. Look for patterns: imports that create near-matches, integrations that write to the wrong key, forms that accept inconsistent values, or manual processes that bypass validation.</p><ul><li>Export a sample for analysis and preserve the original IDs.</li><li>Group likely matches by email, domain, phone, company name, and external ID.</li><li>Classify records as duplicate, incomplete, conflicting, or intentionally separate.</li></ul></section><section><h3>2. Merge with a decision hierarchy</h3><p>A merge is a business decision, not just a technical action. Decide which record is the primary record before the merge begins. Prefer the record with the strongest ownership, the most complete history, and the correct association structure. Record exceptions so your team can explain them later.</p><ul><li>Set a system-of-record priority by object and field.</li><li>Protect lifecycle, consent, and ownership values from accidental overwrite.</li><li>Test a small batch in a sandbox or controlled segment before scaling.</li></ul></section><section><h3>3. Prevent the next wave</h3><p>Prevention is where the ROI lives. Add validation, source-of-truth rules, integration keys, and regular monitoring. Give users a simple path to report a suspected duplicate, and make the correction process visible.</p><ul><li>Normalize phone numbers, countries, domains, and key picklists.</li><li>Require integrations to upsert on a stable external ID where possible.</li><li>Create a weekly exception report for new duplicates and failed syncs.</li></ul></section>
+        <section>
+          <h3>Implementation checklist</h3>
+          <p>Use this checklist to turn the framework into a working next step.</p>
+          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Duplicate definition agreed</div></div><div class="guide-check"><span>✓</span><div>Source-of-truth rules set</div></div><div class="guide-check"><span>✓</span><div>Merge test batch approved</div></div><div class="guide-check"><span>✓</span><div>Consent fields protected</div></div><div class="guide-check"><span>✓</span><div>Integration keys documented</div></div><div class="guide-check"><span>✓</span><div>Weekly exception report live</div></div></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> Do not measure cleanup only by records merged. Measure the downstream result: fewer routing errors, cleaner attribution, faster search, and more reliable reporting.</p></div>
+        <div class="guide-footer-cta"><h2>Want this built in HubSpot?</h2><p>PipelineSync architects the CRM, integrations, automation, and documentation your team needs to operate with confidence.</p><a href="javascript:void(0)" class="btn js-open-hs-form">Book a free consultation</a></div>
+      </article>
+      <aside class="guide-aside">
+        <div class="aside-card"><h3>In this guide</h3><div class="aside-list"><div><span>01</span><div>Framework and principles</div></div><div><span>02</span><div>Practical implementation steps</div></div><div><span>03</span><div>Governance checklist</div></div></div></div>
+        <div class="aside-card aside-cta"><h3>Make your CRM work harder.</h3><p>Get direct access to senior HubSpot specialists, no layers, no black box.</p><a class="btn" href="/solutions/">Explore solutions</a></div>
+      </aside>
+    </div>
+  </main>
