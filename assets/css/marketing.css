@@ -59,6 +59,15 @@ body::after{width:390px;height:390px;right:-150px;top:52%;background:radial-grad
 .card:hover img,.hero-visual:hover img,.badge-card:hover img{--img-scale:1.045;filter:saturate(1.08) drop-shadow(0 12px 18px rgba(21,37,58,.16))}
 .site-dialog-card,.hs-modal-content{background:rgba(255,255,255,.84);border-color:rgba(255,255,255,.76);backdrop-filter:blur(22px) saturate(135%);-webkit-backdrop-filter:blur(22px) saturate(135%)}
 .site-dialog-backdrop,.hs-modal-overlay{background:rgba(6,36,91,.5)}
+/* HubSpot form modal: base positioning for marketing pages.
+   guides.css carries these for guide pages; without them the modal renders
+   in-flow and the body scroll-lock freezes the page. z-index sits above the
+   HubSpot chat widget so the form stays interactive. */
+.hs-modal{position:fixed;inset:0;z-index:2147483647;display:none;align-items:center;justify-content:center;padding:16px}
+.hs-modal.active{display:flex}
+.hs-modal-overlay{position:absolute;inset:0}
+.hs-modal-content{position:relative;z-index:1;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;border-radius:16px;padding:24px 24px 16px}
+.hs-modal-close{position:absolute;top:10px;right:10px;z-index:2}
 @media(max-width:768px),(hover:none),(pointer:coarse){body::before,body::after{opacity:.45}}
 @media(prefers-reduced-motion:reduce){body::before,body::after{filter:none}.card img,.hero-visual img,.badge-card img{transition:none}}
 
