@@ -71,6 +71,9 @@ html body .n-hero-split .home-credential-bar span[aria-hidden]{display:none!impo
 @keyframes nSpin{to{transform:rotate(360deg)}}
 .n-visual-core{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-50%);animation:nFloat 7s ease-in-out infinite}
 @keyframes nFloat{50%{transform:translate(-50%,calc(-50% - 10px))}}
+/* Per-page hero artwork (hero_art front matter) */
+.n-visual-art{position:absolute;left:50%;top:50%;width:58%;transform:translate(-50%,-50%);animation:nFloat 7s ease-in-out infinite}
+.n-visual-art img{display:block;width:100%;height:auto;border-radius:26px;box-shadow:0 30px 90px -18px rgba(34,228,255,.35),0 0 0 1px rgba(255,255,255,.09)}
 .n-dash{
   border-radius:18px;padding:14px;border:1px solid rgba(255,255,255,.14);
   background:linear-gradient(160deg,rgba(30,32,64,.85),rgba(10,12,27,.9));
