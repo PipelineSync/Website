@@ -1,0 +1,2298 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Type /Pages /Kids [39 0 R 40 0 R 41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 52 0 R 53 0 R 54 0 R 55 0 R] /Count 17 >>
+endobj
+5 0 obj
+<< /Length 2385 >>
+stream
+0.012 0.106 0.247 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.024 0.145 0.333 rg
+1 w 0.00 500.00 612.00 292.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 0.00 612.00 500.00 re f
+0.965 0.471 0.090 rg
+1 w 55.00 664.00 m 205.00 664.00 l 212.18 664.00 218.00 669.82 218.00 677.00 c 218.00 678.00 l 218.00 685.18 212.18 691.00 205.00 691.00 c 55.00 691.00 l 47.82 691.00 42.00 685.18 42.00 678.00 c 42.00 677.00 l 42.00 669.82 47.82 664.00 55.00 664.00 c f
+1.000 1.000 1.000 rg
+BT /F2 8.00 Tf 1 0 0 1 89.72 674.00 Tm (PIPELINESYNC | 2026) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 34.00 Tf 1 0 0 1 42.00 577.00 Tm (Website) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 34.00 Tf 1 0 0 1 42.00 535.00 Tm (Documentation) Tj ET
+0.800 0.880 0.980 rg
+BT /F1 12.00 Tf 1 0 0 1 42.00 482.00 Tm (Complete reference for pages, routes, content, CTAs,) Tj ET
+0.800 0.880 0.980 rg
+BT /F1 12.00 Tf 1 0 0 1 42.00 463.00 Tm (interactive functions, resources, and deployment.) Tj ET
+0.080 0.160 0.290 rg
+0.180 0.310 0.500 RG
+0.8 w 54.00 320.00 m 558.00 320.00 l 564.63 320.00 570.00 325.37 570.00 332.00 c 570.00 400.00 l 570.00 406.63 564.63 412.00 558.00 412.00 c 54.00 412.00 l 47.37 412.00 42.00 406.63 42.00 400.00 c 42.00 332.00 l 42.00 325.37 47.37 320.00 54.00 320.00 c B
+0.610 0.760 0.930 rg
+BT /F2 8.00 Tf 1 0 0 1 60.00 382.00 Tm (DOCUMENT SCOPE) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 11.00 Tf 1 0 0 1 60.00 359.00 Tm (18 HTML pages  |  24 integration logos  |  3 resource collections) Tj ET
+0.800 0.880 0.980 rg
+BT /F1 9.00 Tf 1 0 0 1 60.00 338.00 Tm (Loading screen  |  cursor effect  |  ROI calculator  |  HubSpot popup) Tj ET
+0.690 0.790 0.910 rg
+BT /F1 10.00 Tf 1 0 0 1 42.00 247.00 Tm (Prepared from the current standalone PipelineSync site bundle) Tj ET
+0.690 0.790 0.910 rg
+BT /F1 10.00 Tf 1 0 0 1 42.00 222.00 Tm (Document date: September 1, 2026) Tj ET
+0.180 0.310 0.500 RG
+0.8 w 42.00 154.00 m 570.00 154.00 l S
+0.610 0.760 0.930 rg
+BT /F2 8.00 Tf 1 0 0 1 42.00 125.00 Tm (Primary bundle:) Tj ET
+1.000 1.000 1.000 rg
+BT /F3 9.00 Tf 1 0 0 1 126.00 125.00 Tm (/home/user/pipelinesync-site.zip) Tj ET
+0.640 0.740 0.870 rg
+BT /F1 8.40 Tf 1 0 0 1 42.00 95.00 Tm (This document describes the files and behavior in the workspace. Live publication still requires deployment.) Tj ET
+0.580 0.720 0.910 rg
+BT /F2 8.00 Tf 1 0 0 1 42.00 28.00 Tm (PIPELINESYNC) Tj ET
+0.580 0.720 0.910 rg
+BT /F2 8.00 Tf 1 0 0 1 542.00 28.00 Tm (01) Tj ET
+endstream
+endobj
+6 0 obj
+
+endobj
+7 0 obj
+<< /Length 6440 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (1. Executive summary) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (A concise map of what exists, how it works, and what must be deployed together.) Tj ET
+0.937 0.965 1.000 rg
+0.898 0.906 0.922 RG
+0.7 w 50.00 595.00 m 156.00 595.00 l 160.42 595.00 164.00 598.58 164.00 603.00 c 164.00 659.00 l 164.00 663.42 160.42 667.00 156.00 667.00 c 50.00 667.00 l 45.58 667.00 42.00 663.42 42.00 659.00 c 42.00 603.00 l 42.00 598.58 45.58 595.00 50.00 595.00 c B
+0.094 0.431 0.804 rg
+BT /F2 22.00 Tf 1 0 0 1 54.00 642.00 Tm (18) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.20 Tf 1 0 0 1 54.00 627.00 Tm (HTML pages in bundle) Tj ET
+0.863 0.988 0.906 rg
+0.898 0.906 0.922 RG
+0.7 w 182.00 595.00 m 288.00 595.00 l 292.42 595.00 296.00 598.58 296.00 603.00 c 296.00 659.00 l 296.00 663.42 292.42 667.00 288.00 667.00 c 182.00 667.00 l 177.58 667.00 174.00 663.42 174.00 659.00 c 174.00 603.00 l 174.00 598.58 177.58 595.00 182.00 595.00 c B
+0.082 0.502 0.239 rg
+BT /F2 22.00 Tf 1 0 0 1 186.00 642.00 Tm (24) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.20 Tf 1 0 0 1 186.00 627.00 Tm (Remote integration) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.20 Tf 1 0 0 1 186.00 617.00 Tm (logos) Tj ET
+1.000 0.969 0.929 rg
+0.898 0.906 0.922 RG
+0.7 w 314.00 595.00 m 420.00 595.00 l 424.42 595.00 428.00 598.58 428.00 603.00 c 428.00 659.00 l 428.00 663.42 424.42 667.00 420.00 667.00 c 314.00 667.00 l 309.58 667.00 306.00 663.42 306.00 659.00 c 306.00 603.00 l 306.00 598.58 309.58 595.00 314.00 595.00 c B
+0.965 0.471 0.090 rg
+BT /F2 22.00 Tf 1 0 0 1 318.00 642.00 Tm (3) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.20 Tf 1 0 0 1 318.00 627.00 Tm (Resource collections) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.7 w 446.00 595.00 m 562.00 595.00 l 566.42 595.00 570.00 598.58 570.00 603.00 c 570.00 659.00 l 570.00 663.42 566.42 667.00 562.00 667.00 c 446.00 667.00 l 441.58 667.00 438.00 663.42 438.00 659.00 c 438.00 603.00 l 438.00 598.58 441.58 595.00 446.00 595.00 c B
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 450.00 642.00 Tm (5) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.20 Tf 1 0 0 1 450.00 627.00 Tm (Shared experience) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.20 Tf 1 0 0 1 450.00 617.00 Tm (functions) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 559.00 Tm (What this website is) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 536.00 Tm (PipelineSync is a standalone, responsive website for HubSpot CRM architecture, RevOps systems, integrations,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 522.80 Tm (data quality, automation, and enablement. The site combines five primary marketing pages with a Resources hub,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 509.60 Tm (a Privacy Policy, and twelve content pages for guides, blog articles, and SOPs/templates.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 488.40 Tm (Current implementation principles) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 468.40 m 47.00 469.50 46.10 470.40 45.00 470.40 c 43.90 470.40 43.00 469.50 43.00 468.40 c 43.00 467.30 43.90 466.40 45.00 466.40 c 46.10 466.40 47.00 467.30 47.00 468.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 465.40 Tm (Remote-first branding and integration assets: external PipelineSync logo, footer logo, HubSpot Solutions) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 452.90 Tm (Partner badge, and 24 integration PNGs are referenced from pipelinesync.net.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 441.40 m 47.00 442.50 46.10 443.40 45.00 443.40 c 43.90 443.40 43.00 442.50 43.00 441.40 c 43.00 440.30 43.90 439.40 45.00 439.40 c 46.10 439.40 47.00 440.30 47.00 441.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 438.40 Tm (Direct resource destinations: guide, blog/article, and SOP/template cards on Resources open the user-supplied) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 425.90 Tm (live WordPress resource URLs when the card surface is clicked.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 414.40 m 47.00 415.50 46.10 416.40 45.00 416.40 c 43.90 416.40 43.00 415.50 43.00 414.40 c 43.00 413.30 43.90 412.40 45.00 412.40 c 46.10 412.40 47.00 413.30 47.00 414.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 411.40 Tm (Consistent visitor experience: all pages use a visitor-friendly loading layer, mouse cursor effect on fine) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 398.90 Tm (pointers, responsive navigation, and the lower-right ROI calculator.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 387.40 m 47.00 388.50 46.10 389.40 45.00 389.40 c 43.90 389.40 43.00 388.50 43.00 387.40 c 43.00 386.30 43.90 385.40 45.00 385.40 c 46.10 385.40 47.00 386.30 47.00 387.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 384.40 Tm (Conversion path: header and page CTAs open the HubSpot popup form on commercial and content pages; the form) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 371.90 Tm (uses portal 247123252 and form 925b2a78-2998-4846-a6e8-a7514007fb93.) Tj ET
+1.000 0.969 0.929 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 291.40 m 563.00 291.40 l 566.87 291.40 570.00 294.53 570.00 298.40 c 570.00 350.40 l 570.00 354.27 566.87 357.40 563.00 357.40 c 49.00 357.40 l 45.13 357.40 42.00 354.27 42.00 350.40 c 42.00 298.40 l 42.00 294.53 45.13 291.40 49.00 291.40 c B
+0.965 0.471 0.090 rg
+1 w 42.00 291.40 4.00 66.00 re f
+0.965 0.471 0.090 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 340.40 Tm (Deployment note) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 326.40 Tm (The workspace contains the completed standalone bundle. The live domain has previously been observed serving a) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 314.40 Tm (WordPress/Astra wrapper; deployment must make the standalone bundle the true site root or disable the duplicate) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 302.40 Tm (theme header.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (02) Tj ET
+endstream
+endobj
+8 0 obj
+
+endobj
+9 0 obj
+<< /Length 10336 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (Sitemap canvas visualization) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (How the 18-page standalone bundle connects to the live resource destinations and shared interaction layer.) Tj ET
+0.937 0.965 1.000 rg
+0.750 0.850 0.960 RG
+0.8 w 49.00 595.00 m 563.00 595.00 l 567.97 595.00 572.00 599.03 572.00 604.00 c 572.00 628.00 l 572.00 632.97 567.97 637.00 563.00 637.00 c 49.00 637.00 l 44.03 637.00 40.00 632.97 40.00 628.00 c 40.00 604.00 l 40.00 599.03 44.03 595.00 49.00 595.00 c B
+0.094 0.431 0.804 rg
+BT /F2 8.00 Tf 1 0 0 1 284.80 620.00 Tm (SITE ENTRY) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 14.00 Tf 1 0 0 1 242.93 603.00 Tm (Home / index.html) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.8 w 73.00 500.00 m 164.00 500.00 l 168.42 500.00 172.00 503.58 172.00 508.00 c 172.00 544.00 l 172.00 548.42 168.42 552.00 164.00 552.00 c 73.00 552.00 l 68.58 552.00 65.00 548.42 65.00 544.00 c 65.00 508.00 l 65.00 503.58 68.58 500.00 73.00 500.00 c B
+0.024 0.145 0.333 rg
+BT /F2 10.00 Tf 1 0 0 1 94.65 535.00 Tm (Solutions) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 78.99 518.00 Tm (CRM + RevOps services) Tj ET
+0.094 0.431 0.804 RG
+1.2 w 306.00 595.00 m 118.50 553.00 l S
+0.094 0.431 0.804 RG
+1.2 w 118.50 553.00 m 122.50 556.00 l S
+0.094 0.431 0.804 RG
+1.2 w 118.50 553.00 m 122.50 550.00 l S
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.8 w 198.00 500.00 m 289.00 500.00 l 293.42 500.00 297.00 503.58 297.00 508.00 c 297.00 544.00 l 297.00 548.42 293.42 552.00 289.00 552.00 c 198.00 552.00 l 193.58 552.00 190.00 548.42 190.00 544.00 c 190.00 508.00 l 190.00 503.58 193.58 500.00 198.00 500.00 c B
+0.024 0.145 0.333 rg
+BT /F2 10.00 Tf 1 0 0 1 211.70 535.00 Tm (Integrations) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 205.87 518.00 Tm (24 integration cards) Tj ET
+0.094 0.431 0.804 RG
+1.2 w 306.00 595.00 m 243.50 553.00 l S
+0.094 0.431 0.804 RG
+1.2 w 243.50 553.00 m 247.50 556.00 l S
+0.094 0.431 0.804 RG
+1.2 w 243.50 553.00 m 247.50 550.00 l S
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.8 w 323.00 500.00 m 414.00 500.00 l 418.42 500.00 422.00 503.58 422.00 508.00 c 422.00 544.00 l 422.00 548.42 418.42 552.00 414.00 552.00 c 323.00 552.00 l 318.58 552.00 315.00 548.42 315.00 544.00 c 315.00 508.00 l 315.00 503.58 318.58 500.00 323.00 500.00 c B
+0.024 0.145 0.333 rg
+BT /F2 10.00 Tf 1 0 0 1 344.65 535.00 Tm (Resources) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 327.11 518.00 Tm (Guides, articles, SOPs) Tj ET
+0.094 0.431 0.804 RG
+1.2 w 306.00 595.00 m 368.50 553.00 l S
+0.094 0.431 0.804 RG
+1.2 w 368.50 553.00 m 364.50 556.00 l S
+0.094 0.431 0.804 RG
+1.2 w 368.50 553.00 m 364.50 550.00 l S
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.8 w 448.00 500.00 m 539.00 500.00 l 543.42 500.00 547.00 503.58 547.00 508.00 c 547.00 544.00 l 547.00 548.42 543.42 552.00 539.00 552.00 c 448.00 552.00 l 443.58 552.00 440.00 548.42 440.00 544.00 c 440.00 508.00 l 440.00 503.58 443.58 500.00 448.00 500.00 c B
+0.024 0.145 0.333 rg
+BT /F2 10.00 Tf 1 0 0 1 480.25 535.00 Tm (About) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 457.75 518.00 Tm (Story + trust + CTA) Tj ET
+0.094 0.431 0.804 RG
+1.2 w 306.00 595.00 m 493.50 553.00 l S
+0.094 0.431 0.804 RG
+1.2 w 493.50 553.00 m 489.50 556.00 l S
+0.094 0.431 0.804 RG
+1.2 w 493.50 553.00 m 489.50 550.00 l S
+1.000 0.969 0.929 rg
+1.000 0.830 0.640 RG
+0.8 w 73.00 408.00 m 237.00 408.00 l 241.42 408.00 245.00 411.58 245.00 416.00 c 245.00 446.00 l 245.00 450.42 241.42 454.00 237.00 454.00 c 73.00 454.00 l 68.58 454.00 65.00 450.42 65.00 446.00 c 65.00 416.00 l 65.00 411.58 68.58 408.00 73.00 408.00 c B
+0.965 0.471 0.090 rg
+BT /F2 10.00 Tf 1 0 0 1 117.90 435.00 Tm (Privacy Policy) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.00 Tf 1 0 0 1 69.67 419.00 Tm (https://pipelinesync.net/about/privacy-policy/) Tj ET
+0.965 0.471 0.090 RG
+1.2 w 155.00 500.00 m 155.00 454.00 l S
+0.965 0.471 0.090 RG
+1.2 w 155.00 454.00 m 152.00 458.00 l S
+0.965 0.471 0.090 RG
+1.2 w 155.00 454.00 m 158.00 458.00 l S
+0.863 0.988 0.906 rg
+0.650 0.920 0.750 RG
+0.8 w 318.00 408.00 m 544.00 408.00 l 548.42 408.00 552.00 411.58 552.00 416.00 c 552.00 446.00 l 552.00 450.42 548.42 454.00 544.00 454.00 c 318.00 454.00 l 313.58 454.00 310.00 450.42 310.00 446.00 c 310.00 416.00 l 310.00 411.58 313.58 408.00 318.00 408.00 c B
+0.082 0.502 0.239 rg
+BT /F2 10.00 Tf 1 0 0 1 378.00 435.00 Tm (Resources tab system) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 358.50 419.00 Tm (Guides | Blog / Articles | SOPs | FAQs) Tj ET
+0.082 0.502 0.239 RG
+1.2 w 368.50 500.00 m 431.00 454.00 l S
+0.082 0.502 0.239 RG
+1.2 w 431.00 454.00 m 427.00 457.00 l S
+0.082 0.502 0.239 RG
+1.2 w 431.00 454.00 m 427.00 451.00 l S
+0.937 0.965 1.000 rg
+0.898 0.906 0.922 RG
+0.7 w 73.00 292.00 m 199.00 292.00 l 203.42 292.00 207.00 295.58 207.00 300.00 c 207.00 367.00 l 207.00 371.42 203.42 375.00 199.00 375.00 c 73.00 375.00 l 68.58 375.00 65.00 371.42 65.00 367.00 c 65.00 300.00 l 65.00 295.58 68.58 292.00 73.00 292.00 c B
+0.094 0.431 0.804 rg
+BT /F2 9.00 Tf 1 0 0 1 116.92 356.00 Tm (5 Guides) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 75.00 340.00 Tm (- Architecture) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 75.00 329.00 Tm (- Cleanup) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 75.00 318.00 Tm (- Routing) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 75.00 307.00 Tm (- Governance) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 75.00 296.00 Tm (- Attribution) Tj ET
+0.094 0.431 0.804 RG
+1.2 w 431.00 408.00 m 136.00 375.00 l S
+0.094 0.431 0.804 RG
+1.2 w 136.00 375.00 m 140.00 378.00 l S
+0.094 0.431 0.804 RG
+1.2 w 136.00 375.00 m 140.00 372.00 l S
+1.000 0.969 0.929 rg
+0.898 0.906 0.922 RG
+0.7 w 235.00 292.00 m 361.00 292.00 l 365.42 292.00 369.00 295.58 369.00 300.00 c 369.00 367.00 l 369.00 371.42 365.42 375.00 361.00 375.00 c 235.00 375.00 l 230.58 375.00 227.00 371.42 227.00 367.00 c 227.00 300.00 l 227.00 295.58 230.58 292.00 235.00 292.00 c B
+0.965 0.471 0.090 rg
+BT /F2 9.00 Tf 1 0 0 1 257.45 356.00 Tm (4 Blog / Articles) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 237.00 340.00 Tm (- Pipeline reality) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 237.00 329.00 Tm (- Duplicate data) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 237.00 318.00 Tm (- 10+ hours) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 237.00 307.00 Tm (- Team adoption) Tj ET
+0.965 0.471 0.090 RG
+1.2 w 431.00 408.00 m 298.00 375.00 l S
+0.965 0.471 0.090 RG
+1.2 w 298.00 375.00 m 302.00 378.00 l S
+0.965 0.471 0.090 RG
+1.2 w 298.00 375.00 m 302.00 372.00 l S
+0.863 0.988 0.906 rg
+0.898 0.906 0.922 RG
+0.7 w 397.00 292.00 m 523.00 292.00 l 527.42 292.00 531.00 295.58 531.00 300.00 c 531.00 367.00 l 531.00 371.42 527.42 375.00 523.00 375.00 c 397.00 375.00 l 392.58 375.00 389.00 371.42 389.00 367.00 c 389.00 300.00 l 389.00 295.58 392.58 292.00 397.00 292.00 c B
+0.082 0.502 0.239 rg
+BT /F2 9.00 Tf 1 0 0 1 417.07 356.00 Tm (3 SOPs / Templates) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 399.00 340.00 Tm (- Governance checklist) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 399.00 329.00 Tm (- Migration mapping) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 399.00 318.00 Tm (- Routing decision tree) Tj ET
+0.082 0.502 0.239 RG
+1.2 w 431.00 408.00 m 460.00 375.00 l S
+0.082 0.502 0.239 RG
+1.2 w 460.00 375.00 m 457.00 379.00 l S
+0.082 0.502 0.239 RG
+1.2 w 460.00 375.00 m 463.00 379.00 l S
+0.012 0.106 0.247 rg
+0.012 0.106 0.247 RG
+0.8 w 75.00 184.00 m 537.00 184.00 l 541.97 184.00 546.00 188.03 546.00 193.00 c 546.00 232.00 l 546.00 236.97 541.97 241.00 537.00 241.00 c 75.00 241.00 l 70.03 241.00 66.00 236.97 66.00 232.00 c 66.00 193.00 l 66.00 188.03 70.03 184.00 75.00 184.00 c B
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 251.14 221.00 Tm (SHARED EXPERIENCE LAYER) Tj ET
+0.840 0.900 0.980 rg
+BT /F1 7.70 Tf 1 0 0 1 112.15 204.00 Tm (Loading screen  |  Cursor effect  |  ROI calculator  |  HubSpot popup  |  Responsive navigation) Tj ET
+0.094 0.431 0.804 RG
+1.2 w 136.00 292.00 m 136.00 241.00 l S
+0.094 0.431 0.804 RG
+1.2 w 136.00 241.00 m 133.00 245.00 l S
+0.094 0.431 0.804 RG
+1.2 w 136.00 241.00 m 139.00 245.00 l S
+0.094 0.431 0.804 RG
+1.2 w 306.00 292.00 m 306.00 241.00 l S
+0.094 0.431 0.804 RG
+1.2 w 306.00 241.00 m 303.00 245.00 l S
+0.094 0.431 0.804 RG
+1.2 w 306.00 241.00 m 309.00 245.00 l S
+0.094 0.431 0.804 RG
+1.2 w 476.00 292.00 m 476.00 241.00 l S
+0.094 0.431 0.804 RG
+1.2 w 476.00 241.00 m 473.00 245.00 l S
+0.094 0.431 0.804 RG
+1.2 w 476.00 241.00 m 479.00 245.00 l S
+0.024 0.145 0.333 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 146.00 Tm (Legend) Tj ET
+0.937 0.965 1.000 rg
+0.094 0.431 0.804 RG
+0.5 w 45.00 119.00 m 51.00 119.00 l 52.66 119.00 54.00 120.34 54.00 122.00 c 54.00 128.00 l 54.00 129.66 52.66 131.00 51.00 131.00 c 45.00 131.00 l 43.34 131.00 42.00 129.66 42.00 128.00 c 42.00 122.00 l 42.00 120.34 43.34 119.00 45.00 119.00 c B
+0.294 0.333 0.388 rg
+BT /F1 8.00 Tf 1 0 0 1 60.00 122.00 Tm (Primary pages) Tj ET
+1.000 0.969 0.929 rg
+0.965 0.471 0.090 RG
+0.5 w 180.00 119.00 m 186.00 119.00 l 187.66 119.00 189.00 120.34 189.00 122.00 c 189.00 128.00 l 189.00 129.66 187.66 131.00 186.00 131.00 c 180.00 131.00 l 178.34 131.00 177.00 129.66 177.00 128.00 c 177.00 122.00 l 177.00 120.34 178.34 119.00 180.00 119.00 c B
+0.294 0.333 0.388 rg
+BT /F1 8.00 Tf 1 0 0 1 195.00 122.00 Tm (Policy / article accents) Tj ET
+0.863 0.988 0.906 rg
+0.082 0.502 0.239 RG
+0.5 w 325.00 119.00 m 331.00 119.00 l 332.66 119.00 334.00 120.34 334.00 122.00 c 334.00 128.00 l 334.00 129.66 332.66 131.00 331.00 131.00 c 325.00 131.00 l 323.34 131.00 322.00 129.66 322.00 128.00 c 322.00 122.00 l 322.00 120.34 323.34 119.00 325.00 119.00 c B
+0.294 0.333 0.388 rg
+BT /F1 8.00 Tf 1 0 0 1 340.00 122.00 Tm (Resource collections) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (03) Tj ET
+endstream
+endobj
+10 0 obj
+
+endobj
+11 0 obj
+<< /Length 1393 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (Sitemap canvas visualization \(continued\)) Tj ET
+0.937 0.965 1.000 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 634.00 m 563.00 634.00 l 566.87 634.00 570.00 637.13 570.00 641.00 c 570.00 681.00 l 570.00 684.87 566.87 688.00 563.00 688.00 c 49.00 688.00 l 45.13 688.00 42.00 684.87 42.00 681.00 c 42.00 641.00 l 42.00 637.13 45.13 634.00 49.00 634.00 c B
+0.094 0.431 0.804 rg
+1 w 42.00 634.00 4.00 54.00 re f
+0.094 0.431 0.804 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 671.00 Tm (Link behavior) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 657.00 Tm (Resources guide, article, and SOP cards use direct live resource URLs. The local standalone article/template) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 645.00 Tm (pages remain in the bundle as page assets and documentation references.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (04) Tj ET
+endstream
+endobj
+12 0 obj
+
+endobj
+13 0 obj
+<< /Length 6763 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (3. Main page inventory) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (The six core page files and their role in the visitor journey.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 47.00 654.00 Tm (Page) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 129.00 654.00 Tm (File) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 241.00 654.00 Tm (Purpose) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 431.00 654.00 Tm (Primary actions) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 621.60 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 635.00 Tm (Home) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 129.00 635.00 Tm (index.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 635.00 Tm (Entry page; positioning, services, proof,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 625.80 Tm (process, FAQs, consultation CTA.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 635.00 Tm (Book a free consultation; hero and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 625.80 Tm (footer CTAs.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 596.20 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 609.60 Tm (Solutions) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 129.00 609.60 Tm (solutions.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 609.60 Tm (CRM implementation, migration, integration,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 600.40 Tm (automation, enablement, and process.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 609.60 Tm (Let's scope your project; service) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 600.40 Tm (detail actions.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 570.80 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 584.20 Tm (Integrations) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 129.00 584.20 Tm (integrations.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 584.20 Tm (24 integration cards with remote PNG logos,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 575.00 Tm (filters, details, and stack CTA.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 584.20 Tm (Book a consultation; integration) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 575.00 Tm (card details.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 545.40 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 558.80 Tm (Resources) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 129.00 558.80 Tm (resources.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 558.80 Tm (Guides, Blog / Articles, SOPs & Templates, FAQs,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 549.60 Tm (and resource card links.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 558.80 Tm (Read guide/playbook; direct resource) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 549.60 Tm (cards; consultation.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 520.00 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 533.40 Tm (About) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 129.00 533.40 Tm (about.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 533.40 Tm (PipelineSync story, approach, regions/languages,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 524.20 Tm (trust, and contact CTA.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 533.40 Tm (Book a free consultation; Our Story.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 494.60 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 508.00 Tm (Privacy Policy) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 129.00 508.00 Tm (privacy-policy.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 241.00 508.00 Tm (Standalone policy content and footer/legal route.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 508.00 Tm (Back to Home; footer Privacy Policy) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 431.00 498.80 Tm (link.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 477.60 Tm (Shared elements on the core pages) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 457.60 m 47.00 458.70 46.10 459.60 45.00 459.60 c 43.90 459.60 43.00 458.70 43.00 457.60 c 43.00 456.50 43.90 455.60 45.00 455.60 c 46.10 455.60 47.00 456.50 47.00 457.60 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 454.60 Tm (Sticky responsive header with logo, desktop nav, mobile menu, Our Story, and consultation CTA.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 443.10 m 47.00 444.20 46.10 445.10 45.00 445.10 c 43.90 445.10 43.00 444.20 43.00 443.10 c 43.00 442.00 43.90 441.10 45.00 441.10 c 46.10 441.10 47.00 442.00 47.00 443.10 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 440.10 Tm (Footer with description, HubSpot Solutions Partner badge, exact region/language text, contact links,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 427.60 Tm (copyright, and Privacy Policy link.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 416.10 m 47.00 417.20 46.10 418.10 45.00 418.10 c 43.90 418.10 43.00 417.20 43.00 416.10 c 43.00 415.00 43.90 414.10 45.00 414.10 c 46.10 414.10 47.00 415.00 47.00 416.10 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 413.10 Tm (Loading screen with visitor-facing copy and cropped-logo-only.png; the Resources page uses its) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 400.60 Tm (resource-specific wording, while other pages use the shared page wording.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 389.10 m 47.00 390.20 46.10 391.10 45.00 391.10 c 43.90 391.10 43.00 390.20 43.00 389.10 c 43.00 388.00 43.90 387.10 45.00 387.10 c 46.10 387.10 47.00 388.00 47.00 389.10 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 386.10 Tm (ROI calculator and Back to top controls in the lower-right corner; the cursor effect is disabled on) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 373.60 Tm (touch/coarse-pointer devices and for reduced-motion users.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (05) Tj ET
+endstream
+endobj
+14 0 obj
+
+endobj
+15 0 obj
+<< /Length 9198 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (4. Content library inventory) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (Twelve content pages support the three Resources collections.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 6.50 Tf 1 0 0 1 47.00 654.00 Tm (Type) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 6.50 Tf 1 0 0 1 89.00 654.00 Tm (Title) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 6.50 Tf 1 0 0 1 261.00 654.00 Tm (Standalone file) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 6.50 Tf 1 0 0 1 434.00 654.00 Tm (Content focus) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 623.80 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 635.00 Tm (Guide) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 635.00 Tm (HubSpot CRM Architecture Blueprint) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 635.00 Tm (integration - HubSpot CRM Architecture) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 626.90 Tm (Blueprint.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 635.00 Tm (Scale-ready objects, pipelines,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 626.90 Tm (lifecycle stages, and permissions.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 600.60 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 611.80 Tm (Guide) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 611.80 Tm (CRM Cleanup & Deduplication System) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 611.80 Tm (integration - CRM Cleanup & Deduplication) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 603.70 Tm (System.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 611.80 Tm (Audit, merge, enrich, and prevent) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 603.70 Tm (duplicate records.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 577.40 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 588.60 Tm (Guide) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 588.60 Tm (Lead Routing & Lifecycle Automation) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 588.60 Tm (integration - Lead Routing & Lifecycle) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 580.50 Tm (Automation.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 588.60 Tm (Scoring, assignment, SLAs, escalation,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 580.50 Tm (and recovery.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 554.20 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 565.40 Tm (Guide) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 565.40 Tm (Integration Governance & Monitoring) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 565.40 Tm (integration - Integration Governance &) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 557.30 Tm (Monitoring.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 565.40 Tm (Data ownership, logging, alerts, and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 557.30 Tm (rollback.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 531.00 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 542.20 Tm (Guide) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 542.20 Tm (Full-Funnel Attribution That CEOs Trust) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 542.20 Tm (integration - Full-Funnel Attribution That CEOs) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 534.10 Tm (Trust.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 542.20 Tm (Transparent first-touch, pipeline, and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 534.10 Tm (closed-won reporting.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 507.80 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 519.00 Tm (Blog) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 519.00 Tm (Why Your HubSpot Pipeline Doesn't Reflect) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 510.90 Tm (Reality) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 519.00 Tm (why-your-hubspot-pipeline-doesnt-reflect-reality.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 519.00 Tm (Stages, forecasting, close dates, and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 510.90 Tm (operating discipline.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 484.60 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 495.80 Tm (Blog) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 495.80 Tm (The Cost of Duplicate Data in HubSpot) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 495.80 Tm (the-cost-of-duplicate-data-in-hubspot.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 495.80 Tm (The reporting, routing, and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 487.70 Tm (productivity cost of duplicates.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 461.40 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 472.60 Tm (Blog) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 472.60 Tm (Automation That Saves 10+ Hours/Week) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 472.60 Tm (automation-that-saves-10-hours-per-week.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 472.60 Tm (Lead routing, data hygiene, and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 464.50 Tm (follow-up automation.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 438.20 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 449.40 Tm (Blog) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 449.40 Tm (Why Teams Don't Adopt HubSpot \(And How We Fix) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 441.30 Tm (It\)) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 449.40 Tm (why-teams-dont-adopt-hubspot-and-how-we-fix-it.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 449.40 Tm (Architecture, SOPs, workflow friction,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 441.30 Tm (and adoption.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 415.00 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 426.20 Tm (SOP) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 426.20 Tm (HubSpot Governance Checklist) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 426.20 Tm (hubspot-governance-checklist.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 426.20 Tm (47-point permissions, validation,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 418.10 Tm (naming, and audit checklist.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 391.80 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 403.00 Tm (SOP) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 403.00 Tm (Data Migration Mapping Sheet) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 403.00 Tm (data-migration-mapping-sheet.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 403.00 Tm (Field mapping, transformations,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 394.90 Tm (associations, QA, and cutover.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 368.60 528.00 23.20 re B
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 47.00 379.80 Tm (SOP) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 89.00 379.80 Tm (Lead Routing Decision Tree) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 261.00 379.80 Tm (lead-routing-decision-tree.html) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 379.80 Tm (Assignment, scoring, SLAs, fallback) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.50 Tf 1 0 0 1 434.00 371.70 Tm (owners, and escalation.) Tj ET
+0.937 0.965 1.000 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 302.60 m 563.00 302.60 l 566.87 302.60 570.00 305.73 570.00 309.60 c 570.00 349.60 l 570.00 353.47 566.87 356.60 563.00 356.60 c 49.00 356.60 l 45.13 356.60 42.00 353.47 42.00 349.60 c 42.00 309.60 l 42.00 305.73 45.13 302.60 49.00 302.60 c B
+0.094 0.431 0.804 rg
+1 w 42.00 302.60 4.00 54.00 re f
+0.094 0.431 0.804 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 339.60 Tm (Resource-link rule) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 325.60 Tm (The Resources cards point to the supplied live /resources/.../ routes. The standalone files remain packaged for) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 313.60 Tm (offline review, deployment, and content maintenance.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (06) Tj ET
+endstream
+endobj
+16 0 obj
+
+endobj
+17 0 obj
+<< /Length 5540 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (5. Route and link map) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (The URLs used by navigation, resource cards, and legal links.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 47.00 654.00 Tm (Route label) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 147.00 654.00 Tm (Live route) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 425.00 654.00 Tm (Local representation) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 629.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 635.00 Tm (Home) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 147.00 635.00 Tm (http://www.pipelinesync.net/) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 635.00 Tm (index.html) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 611.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 617.00 Tm (Solutions) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 147.00 617.00 Tm (http://www.pipelinesync.net/solutions) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 617.00 Tm (solutions.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 593.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 599.00 Tm (Integrations) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 147.00 599.00 Tm (http://www.pipelinesync.net/integrations) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 599.00 Tm (integrations.html) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 575.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 581.00 Tm (Resources) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 147.00 581.00 Tm (http://www.pipelinesync.net/resources) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 581.00 Tm (resources.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 557.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 563.00 Tm (About) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 147.00 563.00 Tm (http://www.pipelinesync.net/about) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 563.00 Tm (about.html) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 531.60 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 545.00 Tm (Privacy footer) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 147.00 545.00 Tm (https://pipelinesync.net/about/privacy-policy/) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 545.00 Tm (privacy-policy.html is the local) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 425.00 535.80 Tm (policy copy) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 514.60 Tm (Resource card destinations) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 471.60 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.40 Tf 1 0 0 1 47.00 478.60 Tm (Collection) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.40 Tf 1 0 0 1 162.00 478.60 Tm (Destination model) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.40 Tf 1 0 0 1 374.00 478.60 Tm (Behavior) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 445.80 528.00 25.80 re B
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 47.00 459.60 Tm (Guides) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 162.00 459.60 Tm (5 live /resources/.../ routes) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 374.00 459.60 Tm (Cards and visible Read links use these) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 374.00 450.20 Tm (destinations.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 420.00 528.00 25.80 re B
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 47.00 433.80 Tm (Blog / Articles) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 162.00 433.80 Tm (4 live /resources/.../ routes) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 374.00 433.80 Tm (Entire card surfaces are clickable; keyboard) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 374.00 424.40 Tm (Enter/Space supported.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 394.20 528.00 25.80 re B
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 47.00 408.00 Tm (SOPs / Templates) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 162.00 408.00 Tm (3 live /resources/.../ routes) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 374.00 408.00 Tm (Entire card surfaces are clickable; generic) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.40 Tf 1 0 0 1 374.00 398.60 Tm (details popup is disabled.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 377.20 Tm (Link-state policy) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 354.20 Tm (Guide, article, SOP, footer, and CTA links suppress browser underlines and unwanted active/visited color) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 341.00 Tm (changes. The header menu is intentionally the exception: its active item keeps the PipelineSync color and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 327.80 Tm (underline.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (07) Tj ET
+endstream
+endobj
+18 0 obj
+
+endobj
+19 0 obj
+<< /Length 6788 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (6. CTA and button catalog) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (Conversion controls, utility buttons, and resource controls currently in the site.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 47.00 654.00 Tm (Control) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 203.00 654.00 Tm (Where) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.20 Tf 1 0 0 1 381.00 654.00 Tm (Function) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 621.60 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 635.00 Tm (Book a consultation) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 635.00 Tm (Header, mobile menu, content-page CTA) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 635.00 Tm (Opens HubSpot popup form on commercial/content) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 625.80 Tm (pages.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 596.20 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 609.60 Tm (Book a free consultation) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 609.60 Tm (Home, Resources, About CTA sections) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 609.60 Tm (Primary conversion CTA; opens form modal where) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 600.40 Tm (enabled.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 578.20 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 584.20 Tm (Let's scope your project) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 584.20 Tm (Solutions page) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 584.20 Tm (Project-scoping CTA; opens HubSpot form modal.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 552.80 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 566.20 Tm (Our Story) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 566.20 Tm (Header) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 566.20 Tm (Routes to About page; no underline on active) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 557.00 Tm (states.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 527.40 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 540.80 Tm (Read guide / Read playbook) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 540.80 Tm (Resources Guides tab) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 540.80 Tm (Direct link to supplied live resource route; card) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 531.60 Tm (is also clickable.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 509.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 515.40 Tm (Calculate ROI) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 515.40 Tm (Lower-right floating control) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 515.40 Tm (Opens ROI panel; sits beside Back to top.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 484.00 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 497.40 Tm (Back to top) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 497.40 Tm (Lower-right floating utility) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 497.40 Tm (Appears after scroll threshold and returns to page) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 488.20 Tm (top.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 458.60 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 472.00 Tm (Guides / Blog / Articles / SOPs &) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 462.80 Tm (Templates / FAQs) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 472.00 Tm (Resources tab buttons) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 472.00 Tm (Switches tab panels and updates the hash for) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 462.80 Tm (resource tabs.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 433.20 528.00 25.40 re B
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 47.00 446.60 Tm (Close / Keep browsing) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 203.00 446.60 Tm (Modal/dialog controls) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 446.60 Tm (Closes HubSpot form or generic detail dialogs) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.20 Tf 1 0 0 1 381.00 437.40 Tm (where enabled.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 416.20 Tm (CTA behavior rules) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 396.20 m 47.00 397.30 46.10 398.20 45.00 398.20 c 43.90 398.20 43.00 397.30 43.00 396.20 c 43.00 395.10 43.90 394.20 45.00 394.20 c 46.10 394.20 47.00 395.10 47.00 396.20 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 393.20 Tm (CTAs that represent a sales conversation use the HubSpot form modal instead of navigating away.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 381.70 m 47.00 382.80 46.10 383.70 45.00 383.70 c 43.90 383.70 43.00 382.80 43.00 381.70 c 43.00 380.60 43.90 379.70 45.00 379.70 c 46.10 379.70 47.00 380.60 47.00 381.70 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 378.70 Tm (Resource cards use direct destinations and no longer open the generic "Request this resource" detail popup.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 367.20 m 47.00 368.30 46.10 369.20 45.00 369.20 c 43.90 369.20 43.00 368.30 43.00 367.20 c 43.00 366.10 43.90 365.20 45.00 365.20 c 46.10 365.20 47.00 366.10 47.00 367.20 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 364.20 Tm (Buttons preserve normal colors in active, pressed, focus, and visited states except for the intentionally) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 351.70 Tm (styled header menu.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 340.20 m 47.00 341.30 46.10 342.20 45.00 342.20 c 43.90 342.20 43.00 341.30 43.00 340.20 c 43.00 339.10 43.90 338.20 45.00 338.20 c 46.10 338.20 47.00 339.10 47.00 340.20 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 337.20 Tm (Mobile navigation collapses into a menu and preserves the same route and CTA intent as desktop.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (08) Tj ET
+endstream
+endobj
+20 0 obj
+
+endobj
+21 0 obj
+<< /Length 6986 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (7. ROI calculator) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (Functional specification for the lower-right calculator widget.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 662.00 Tm (Placement and interaction) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 639.00 Tm (The orange Calculate ROI control is fixed in the lower-right corner, beside the Back to top arrow. Clicking it) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 625.80 Tm (opens a floating panel. The panel can be closed with the close button, the Escape key, or after completing a) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 612.60 Tm (calculation; the button confirms completion with "ROI calculated".) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 591.40 Tm (Inputs) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 548.40 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 47.00 555.40 Tm (Input) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 225.00 555.40 Tm (Validation) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 410.00 555.40 Tm (Sample) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 530.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 536.40 Tm (Monthly leads) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 536.40 Tm (Number >= 0) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 536.40 Tm (250) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 512.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 518.40 Tm (Average deal value) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 518.40 Tm (Currency number >= 0) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 518.40 Tm (3500) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 494.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 500.40 Tm (Current close rate) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 500.40 Tm (Percentage 0-100) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 500.40 Tm (12%) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 476.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 482.40 Tm (Improved close rate) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 482.40 Tm (Percentage 0-100) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 482.40 Tm (16%) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 458.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 464.40 Tm (Hours saved monthly) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 464.40 Tm (Number >= 0) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 464.40 Tm (28) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 440.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 446.40 Tm (Value per saved hour) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 446.40 Tm (Currency number >= 0) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 446.40 Tm (75) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 422.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 428.40 Tm (Monthly CRM investment) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 225.00 428.40 Tm (Currency number >= 0) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 410.00 428.40 Tm (2500) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 405.40 Tm (Calculation model) Tj ET
+0.012 0.106 0.247 rg
+1 w 48.00 335.40 m 564.00 335.40 l 567.31 335.40 570.00 338.09 570.00 341.40 c 570.00 376.40 l 570.00 379.71 567.31 382.40 564.00 382.40 c 48.00 382.40 l 44.69 382.40 42.00 379.71 42.00 376.40 c 42.00 341.40 l 42.00 338.09 44.69 335.40 48.00 335.40 c f
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 367.40 Tm (incrementalRevenue = leads x max\(0, improvedRate - currentRate\) x dealValue timeValue = hoursSaved x) Tj ET
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 356.40 Tm (hourlyCost monthlyReturn = incrementalRevenue + timeValue ROI = \(\(monthlyReturn - investment\) /) Tj ET
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 345.40 Tm (investment\) x 100) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 320.40 Tm (Outputs) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 300.40 m 47.00 301.50 46.10 302.40 45.00 302.40 c 43.90 302.40 43.00 301.50 43.00 300.40 c 43.00 299.30 43.90 298.40 45.00 298.40 c 46.10 298.40 47.00 299.30 47.00 300.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 297.40 Tm (Estimated monthly ROI: percentage, with a plus sign for positive values.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 285.90 m 47.00 287.00 46.10 287.90 45.00 287.90 c 43.90 287.90 43.00 287.00 43.00 285.90 c 43.00 284.80 43.90 283.90 45.00 283.90 c 46.10 283.90 47.00 284.80 47.00 285.90 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 282.90 Tm (Incremental revenue: added monthly revenue attributed to the close-rate improvement.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 271.40 m 47.00 272.50 46.10 273.40 45.00 273.40 c 43.90 273.40 43.00 272.50 43.00 271.40 c 43.00 270.30 43.90 269.40 45.00 269.40 c 46.10 269.40 47.00 270.30 47.00 271.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 268.40 Tm (Time savings value: monthly value of hours saved.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 256.90 m 47.00 258.00 46.10 258.90 45.00 258.90 c 43.90 258.90 43.00 258.00 43.00 256.90 c 43.00 255.80 43.90 254.90 45.00 254.90 c 46.10 254.90 47.00 255.80 47.00 256.90 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 253.90 Tm (Estimated monthly return: incremental revenue plus time savings value.) Tj ET
+1.000 0.969 0.929 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 185.40 m 563.00 185.40 l 566.87 185.40 570.00 188.53 570.00 192.40 c 570.00 232.40 l 570.00 236.27 566.87 239.40 563.00 239.40 c 49.00 239.40 l 45.13 239.40 42.00 236.27 42.00 232.40 c 42.00 192.40 l 42.00 188.53 45.13 185.40 49.00 185.40 c B
+0.965 0.471 0.090 rg
+1 w 42.00 185.40 4.00 54.00 re f
+0.965 0.471 0.090 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 222.40 Tm (Customization point) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 208.40 Tm (The calculator currently formats values in USD and is an estimate-only planning tool. Currency, field labels,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 196.40 Tm (assumptions, and formula logic can be customized before a production rollout.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (09) Tj ET
+endstream
+endobj
+22 0 obj
+
+endobj
+23 0 obj
+<< /Length 6216 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (8. Interaction and motion system) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (The reusable JavaScript layers that make the pages feel like a product.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.10 Tf 1 0 0 1 47.00 654.00 Tm (Function) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.10 Tf 1 0 0 1 162.00 654.00 Tm (Scope) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.10 Tf 1 0 0 1 292.00 654.00 Tm (Behavior) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 622.00 528.00 25.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 635.00 Tm (Loading screen) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 635.00 Tm (Every page) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 635.00 Tm (Full-screen overlay with cropped logo, visitor-facing message, progress) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 626.00 Tm (bar, and load event plus safety fallback.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 597.00 528.00 25.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 610.00 Tm (Cursor effect) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 610.00 Tm (All pages on fine pointer) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 610.00 Tm (Two-layer dot/ring cursor; expands on links, buttons, cards, and) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 601.00 Tm (interactive surfaces; hidden on touch/reduced motion.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 579.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 585.00 Tm (Scroll progress) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 585.00 Tm (Main pages) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 585.00 Tm (Thin progress bar at the top tracks scroll depth.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 561.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 567.00 Tm (Back to top) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 567.00 Tm (All pages) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 567.00 Tm (Lower-right arrow appears after scrolling and returns to top smoothly.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 543.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 549.00 Tm (Mobile menu) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 549.00 Tm (Pages with full header) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 549.00 Tm (Hamburger toggles menu; menu closes when a link is selected.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 525.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 531.00 Tm (Smooth anchors) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 531.00 Tm (Main pages) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 531.00 Tm (Same-page anchor links scroll smoothly and update the URL hash.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 507.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 513.00 Tm (Accordions / details) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 513.00 Tm (Home, Solutions, Resources, About) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 513.00 Tm (Expandable service, FAQ, and content detail interactions.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 489.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 495.00 Tm (Hero motion) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 495.00 Tm (Home) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 495.00 Tm (Hero visual float, number count-up, stage pulse, and fine-pointer parallax.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 471.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 47.00 477.00 Tm (Resource tabs) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 162.00 477.00 Tm (Resources) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.10 Tf 1 0 0 1 292.00 477.00 Tm (Tabs switch Guides, Blog / Articles, SOPs & Templates, and FAQs.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 454.00 Tm (Interaction safety) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 434.00 m 47.00 435.10 46.10 436.00 45.00 436.00 c 43.90 436.00 43.00 435.10 43.00 434.00 c 43.00 432.90 43.90 432.00 45.00 432.00 c 46.10 432.00 47.00 432.90 47.00 434.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 431.00 Tm (External or live resource anchors are not hijacked by card click handlers.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 419.50 m 47.00 420.60 46.10 421.50 45.00 421.50 c 43.90 421.50 43.00 420.60 43.00 419.50 c 43.00 418.40 43.90 417.50 45.00 417.50 c 46.10 417.50 47.00 418.40 47.00 419.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 416.50 Tm (Escape closes modal layers and returns focus where implemented.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 405.00 m 47.00 406.10 46.10 407.00 45.00 407.00 c 43.90 407.00 43.00 406.10 43.00 405.00 c 43.00 403.90 43.90 403.00 45.00 403.00 c 46.10 403.00 47.00 403.90 47.00 405.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 402.00 Tm (Reduced-motion media preferences remove cursor and animation movement.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 390.50 m 47.00 391.60 46.10 392.50 45.00 392.50 c 43.90 392.50 43.00 391.60 43.00 390.50 c 43.00 389.40 43.90 388.50 45.00 388.50 c 46.10 388.50 47.00 389.40 47.00 390.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 387.50 Tm (Touch/coarse-pointer layouts hide the custom cursor so the native mobile interaction remains usable.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (10) Tj ET
+endstream
+endobj
+24 0 obj
+
+endobj
+25 0 obj
+<< /Length 5155 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (9. Resources page behavior) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (Detailed behavior of the page that hosts the three content collections.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 662.00 Tm (Tabs) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 642.00 m 47.00 643.10 46.10 644.00 45.00 644.00 c 43.90 644.00 43.00 643.10 43.00 642.00 c 43.00 640.90 43.90 640.00 45.00 640.00 c 46.10 640.00 47.00 640.90 47.00 642.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 639.00 Tm (Guides: five curated operational guides with direct live resource links.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 627.50 m 47.00 628.60 46.10 629.50 45.00 629.50 c 43.90 629.50 43.00 628.60 43.00 627.50 c 43.00 626.40 43.90 625.50 45.00 625.50 c 46.10 625.50 47.00 626.40 47.00 627.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 624.50 Tm (Blog / Articles: four article cards with direct live resource links.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 613.00 m 47.00 614.10 46.10 615.00 45.00 615.00 c 43.90 615.00 43.00 614.10 43.00 613.00 c 43.00 611.90 43.90 611.00 45.00 611.00 c 46.10 611.00 47.00 611.90 47.00 613.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 610.00 Tm (SOPs & Templates: three free resources that open their direct live resource links; the old generic request) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 597.50 Tm (popup is disabled for these cards.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 586.00 m 47.00 587.10 46.10 588.00 45.00 588.00 c 43.90 588.00 43.00 587.10 43.00 586.00 c 43.00 584.90 43.90 584.00 45.00 584.00 c 46.10 584.00 47.00 584.90 47.00 586.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 583.00 Tm (FAQs: accordion-based questions and answers.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 563.50 Tm (Direct-card click model) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 540.50 Tm (Each card receives a destination data attribute and a small accessibility layer. Pointer clicks on the card) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 527.30 Tm (surface navigate to the destination; clicks on an existing anchor are allowed to follow the anchor normally.) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 514.10 Tm (Enter and Space activate focused cards. Cards expose role=link and a visible focus outline.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 477.90 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 47.00 484.90 Tm (Collection) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 159.00 484.90 Tm (Data attribute) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 284.00 484.90 Tm (Count) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 339.00 484.90 Tm (Outcome) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 459.90 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 465.90 Tm (Guide cards) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 159.00 465.90 Tm (data-guide-url) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 284.00 465.90 Tm (5 cards) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 339.00 465.90 Tm (live /resources/ destinations) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 441.90 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 447.90 Tm (Blog cards) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 159.00 447.90 Tm (data-blog-url) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 284.00 447.90 Tm (4 cards) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 339.00 447.90 Tm (live /resources/ destinations) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 423.90 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 429.90 Tm (SOP cards) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 159.00 429.90 Tm (data-sop-url) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 284.00 429.90 Tm (3 cards) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 339.00 429.90 Tm (live /resources/ destinations) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 406.90 Tm (Resource popup removal) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 383.90 Tm (The generic site detail popup remains available for other page types where it is useful, but its Resources-page) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 370.70 Tm (invocation for Guides, Blog / Articles, and SOPs/Templates is disabled. This prevents the "Request this) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 357.50 Tm (resource / Keep browsing" box from appearing when visitors click those cards.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (11) Tj ET
+endstream
+endobj
+26 0 obj
+
+endobj
+27 0 obj
+<< /Length 5944 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (10. Forms and lead capture) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (HubSpot modal integration and contact behavior.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 662.00 Tm (HubSpot popup form) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 639.00 Tm (Commercial and content pages contain a shared modal shell. The form frame is identified with region na2, portal) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 625.80 Tm (ID 247123252, and form ID 925b2a78-2998-4846-a6e8-a7514007fb93. The HubSpot embed script is loaded from) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 612.60 Tm (js-na2.hsforms.net.) Tj ET
+0.012 0.106 0.247 rg
+1 w 48.00 560.40 m 564.00 560.40 l 567.31 560.40 570.00 563.09 570.00 566.40 c 570.00 590.40 l 570.00 593.71 567.31 596.40 564.00 596.40 c 48.00 596.40 l 44.69 596.40 42.00 593.71 42.00 590.40 c 42.00 566.40 l 42.00 563.09 44.69 560.40 48.00 560.40 c f
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 581.40 Tm (<div class="hs-form-frame" data-region="na2" data-form-id="925b2a78-2998-4846-a6e8-a7514007fb93") Tj ET
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 570.40 Tm (data-portal-id="247123252"></div>) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 530.40 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 47.00 537.40 Tm (State) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 147.00 537.40 Tm (Trigger) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 317.00 537.40 Tm (Result) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 512.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 518.40 Tm (Open) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 147.00 518.40 Tm (CTA click) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 317.00 518.40 Tm (Adds active state, displays flex modal, locks body scroll.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 494.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 500.40 Tm (Close) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 147.00 500.40 Tm (X button / overlay / Escape) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 317.00 500.40 Tm (Hides modal and restores body scroll.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 476.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 482.40 Tm (Form render) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 147.00 482.40 Tm (External HubSpot script) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 317.00 482.40 Tm (Hydrates the form frame inside the modal.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 450.80 528.00 25.60 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 464.40 Tm (Fallback) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 147.00 464.40 Tm (Privacy page) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 317.00 464.40 Tm (Privacy Policy remains content-only and does not contain the) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 317.00 455.10 Tm (sales form modal.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 433.80 Tm (Contact links) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 413.80 m 47.00 414.90 46.10 415.80 45.00 415.80 c 43.90 415.80 43.00 414.90 43.00 413.80 c 43.00 412.70 43.90 411.80 45.00 411.80 c 46.10 411.80 47.00 412.70 47.00 413.80 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 410.80 Tm (Email is rendered normally in page/footer markup or populated from the contact-email script; it is not) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 398.30 Tm (intentionally obfuscated.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 386.80 m 47.00 387.90 46.10 388.80 45.00 388.80 c 43.90 388.80 43.00 387.90 43.00 386.80 c 43.00 385.70 43.90 384.80 45.00 384.80 c 46.10 384.80 47.00 385.70 47.00 386.80 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 383.80 Tm (Phone link: tel:+16467292936.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 372.30 m 47.00 373.40 46.10 374.30 45.00 374.30 c 43.90 374.30 43.00 373.40 43.00 372.30 c 43.00 371.20 43.90 370.30 45.00 370.30 c 46.10 370.30 47.00 371.20 47.00 372.30 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 369.30 Tm (WhatsApp link: https://wa.me/639301228191 with a new tab and safe rel attributes.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 357.80 m 47.00 358.90 46.10 359.80 45.00 359.80 c 43.90 359.80 43.00 358.90 43.00 357.80 c 43.00 356.70 43.90 355.80 45.00 355.80 c 46.10 355.80 47.00 356.70 47.00 357.80 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 354.80 Tm (Footer partner badge and exact partner text appear below the footer description.) Tj ET
+1.000 0.969 0.929 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 286.30 m 563.00 286.30 l 566.87 286.30 570.00 289.43 570.00 293.30 c 570.00 333.30 l 570.00 337.17 566.87 340.30 563.00 340.30 c 49.00 340.30 l 45.13 340.30 42.00 337.17 42.00 333.30 c 42.00 293.30 l 42.00 289.43 45.13 286.30 49.00 286.30 c B
+0.965 0.471 0.090 rg
+1 w 42.00 286.30 4.00 54.00 re f
+0.965 0.471 0.090 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 323.30 Tm (External dependency) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 309.30 Tm (The HubSpot form requires the external embed script and network access. In an offline or sandboxed preview the) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 297.30 Tm (modal shell can open, but the live form may not render.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (12) Tj ET
+endstream
+endobj
+28 0 obj
+
+endobj
+29 0 obj
+<< /Length 4209 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (11. SEO, accessibility, and responsive rules) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (Quality standards built into the current files.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 47.00 654.00 Tm (Area) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 165.00 654.00 Tm (Implementation) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 621.00 528.00 26.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 635.00 Tm (Metadata) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 635.00 Tm (Every page has a title and meta description; guide/article/SOP pages also have canonical and Open Graph) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 625.50 Tm (metadata.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 603.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 609.00 Tm (Sitemap) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 609.00 Tm (sitemap.xml includes main routes plus guide, blog/article, and SOP/template page files.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 585.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 591.00 Tm (Navigation) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 591.00 Tm (Desktop nav, mobile menu, active header state, and footer routes are connected.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 559.00 528.00 26.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 573.00 Tm (Keyboard) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 573.00 Tm (Resource cards support keyboard activation; dialogs support Escape; buttons use type=button where) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 563.50 Tm (applicable.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 541.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 547.00 Tm (Focus) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 547.00 Tm (Clickable guide/blog/SOP cards show a focus outline; form inputs show focus rings.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 523.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 529.00 Tm (Reduced motion) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 529.00 Tm (Cursor and motion effects are disabled for prefers-reduced-motion.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 505.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 511.00 Tm (Mobile) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 511.00 Tm (Responsive grids, mobile menus, compact Integrations filter tabs, and no horizontal overflow safeguards.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 487.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 493.00 Tm (Images) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 165.00 493.00 Tm (Remote logo sources have alt text; loading screen uses the supplied cropped logo source.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 470.00 Tm (Important preview behavior) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 447.00 Tm (The file viewer runs HTML in a sandboxed iframe. External fonts, images, HubSpot forms, and remote resource) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 433.80 Tm (destinations may not render or navigate inside that viewer even though the downloaded files are configured for) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 420.60 Tm (a real browser and deployed site.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (13) Tj ET
+endstream
+endobj
+30 0 obj
+
+endobj
+31 0 obj
+<< /Length 5499 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (12. Assets and external sources) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (What the pages load locally versus from pipelinesync.net.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 528.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 6.70 Tf 1 0 0 1 47.00 654.00 Tm (Asset) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 6.70 Tf 1 0 0 1 152.00 654.00 Tm (Source) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 6.70 Tf 1 0 0 1 412.00 654.00 Tm (Purpose / note) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 629.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 635.00 Tm (Favicon) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 635.00 Tm (icon.png) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 635.00 Tm (Local, retained in bundle.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 611.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 617.00 Tm (Header logo) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 617.00 Tm (https://pipelinesync.net/wp-content/uploads/2026/08/logo-only.png) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 617.00 Tm (Remote source used in page headers.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 593.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 599.00 Tm (Loading logo) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 599.00 Tm (https://pipelinesync.net/wp-content/uploads/2026/08/cropped-logo-only.png) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 599.00 Tm (Remote source used by all loading screens.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 575.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 581.00 Tm (Footer logo) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 581.00 Tm (https://pipelinesync.net/wp-content/uploads/2026/08/logo_footer.png) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 581.00 Tm (Remote source used in footers.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 557.00 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 563.00 Tm (Partner badge) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 563.00 Tm (https://pipelinesync.net/wp-content/uploads/2026/08/hubspot_partner_badge.png) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 563.00 Tm (Remote source used below footer description.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 533.40 528.00 23.60 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 545.00 Tm (Integration logos) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 545.00 Tm (https://pipelinesync.net/wp-content/uploads/2026/08/integration-logo-{name}.png) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 545.00 Tm (24 remote PNG sources; Pipedrive uses) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 536.70 Tm (integration-logo-pipedrive-1.png.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 515.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 521.40 Tm (Fonts) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 521.40 Tm (Google Fonts: Inter, Manrope, IBM Plex Mono) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 521.40 Tm (External; local fallbacks are included.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 497.40 528.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 47.00 503.40 Tm (HubSpot form) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 152.00 503.40 Tm (https://js-na2.hsforms.net/forms/embed/247123252.js) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 6.70 Tf 1 0 0 1 412.00 503.40 Tm (External embed dependency.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 480.40 Tm (Local packages) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 460.40 m 47.00 461.50 46.10 462.40 45.00 462.40 c 43.90 462.40 43.00 461.50 43.00 460.40 c 43.00 459.30 43.90 458.40 45.00 458.40 c 46.10 458.40 47.00 459.30 47.00 460.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 457.40 Tm (pipelinesync-site.zip: deployable bundle containing 18 HTML pages, icon.png, robots.txt, and sitemap.xml.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 445.90 m 47.00 447.00 46.10 447.90 45.00 447.90 c 43.90 447.90 43.00 447.00 43.00 445.90 c 43.00 444.80 43.90 443.90 45.00 443.90 c 46.10 443.90 47.00 444.80 47.00 445.90 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 442.90 Tm (integration-logos-png.zip: retained archive containing 24 PNG integration logo files.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 431.40 m 47.00 432.50 46.10 433.40 45.00 433.40 c 43.90 433.40 43.00 432.50 43.00 431.40 c 43.00 430.30 43.90 429.40 45.00 429.40 c 46.10 429.40 47.00 430.30 47.00 431.40 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 428.40 Tm (No local integration logo files are required by integrations.html because the page uses remote PNG sources.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (14) Tj ET
+endstream
+endobj
+32 0 obj
+
+endobj
+33 0 obj
+<< /Length 5040 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (13. Deployment and package structure) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (What to upload and what to verify after publication.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 662.00 Tm (Deployable package) Tj ET
+0.012 0.106 0.247 rg
+1 w 48.00 592.00 m 564.00 592.00 l 567.31 592.00 570.00 594.69 570.00 598.00 c 570.00 633.00 l 570.00 636.31 567.31 639.00 564.00 639.00 c 48.00 639.00 l 44.69 639.00 42.00 636.31 42.00 633.00 c 42.00 598.00 l 42.00 594.69 44.69 592.00 48.00 592.00 c f
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 624.00 Tm (/home/user/pipelinesync-site.zip index.html solutions.html integrations.html resources.html about.html) Tj ET
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 613.00 Tm (privacy-policy.html 5 integration guide HTML pages 4 blog/article HTML pages 3 SOP/template HTML pages) Tj ET
+0.850 0.910 0.980 rg
+BT /F3 8.00 Tf 1 0 0 1 53.00 602.00 Tm (icon.png | robots.txt | sitemap.xml) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 577.00 Tm (Recommended deployment sequence) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 557.00 m 47.00 558.10 46.10 559.00 45.00 559.00 c 43.90 559.00 43.00 558.10 43.00 557.00 c 43.00 555.90 43.90 555.00 45.00 555.00 c 46.10 555.00 47.00 555.90 47.00 557.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 554.00 Tm (Back up the current WordPress/Astra site and database before replacing the root.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 542.50 m 47.00 543.60 46.10 544.50 45.00 544.50 c 43.90 544.50 43.00 543.60 43.00 542.50 c 43.00 541.40 43.90 540.50 45.00 540.50 c 46.10 540.50 47.00 541.40 47.00 542.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 539.50 Tm (Upload and extract the standalone bundle at the actual web root, or configure the web server to serve the) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 527.00 Tm (static files as the root site.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 515.50 m 47.00 516.60 46.10 517.50 45.00 517.50 c 43.90 517.50 43.00 516.60 43.00 515.50 c 43.00 514.40 43.90 513.50 45.00 513.50 c 46.10 513.50 47.00 514.40 47.00 515.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 512.50 Tm (If WordPress remains in front, disable the Astra header/footer wrapper that can duplicate the standalone) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 500.00 Tm (header.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 488.50 m 47.00 489.60 46.10 490.50 45.00 490.50 c 43.90 490.50 43.00 489.60 43.00 488.50 c 43.00 487.40 43.90 486.50 45.00 486.50 c 46.10 486.50 47.00 487.40 47.00 488.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 485.50 Tm (Verify the main routes, footer Privacy Policy URL, resource card destinations, HubSpot form modal, and remote) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 473.00 Tm (image loading.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 461.50 m 47.00 462.60 46.10 463.50 45.00 463.50 c 43.90 463.50 43.00 462.60 43.00 461.50 c 43.00 460.40 43.90 459.50 45.00 459.50 c 46.10 459.50 47.00 460.40 47.00 461.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 458.50 Tm (Purge CDN/cache layers and test on desktop, mobile, and a private browsing session.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 447.00 m 47.00 448.10 46.10 449.00 45.00 449.00 c 43.90 449.00 43.00 448.10 43.00 447.00 c 43.00 445.90 43.90 445.00 45.00 445.00 c 46.10 445.00 47.00 445.90 47.00 447.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 444.00 Tm (Submit or refresh sitemap.xml after the live URLs are confirmed.) Tj ET
+1.000 0.969 0.929 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 363.50 m 563.00 363.50 l 566.87 363.50 570.00 366.63 570.00 370.50 c 570.00 422.50 l 570.00 426.37 566.87 429.50 563.00 429.50 c 49.00 429.50 l 45.13 429.50 42.00 426.37 42.00 422.50 c 42.00 370.50 l 42.00 366.63 45.13 363.50 49.00 363.50 c B
+0.965 0.471 0.090 rg
+1 w 42.00 363.50 4.00 66.00 re f
+0.965 0.471 0.090 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 412.50 Tm (Known live-site risk) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 398.50 Tm (If the live domain continues to serve the WordPress/Astra wrapper while also rendering the standalone HTML,) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 386.50 Tm (visitors may see duplicate headers or theme CSS overriding the standalone pages. This is a deployment/theme) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 374.50 Tm (configuration issue, not a missing standalone-file feature.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (15) Tj ET
+endstream
+endobj
+34 0 obj
+
+endobj
+35 0 obj
+<< /Length 7087 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (14. QA and maintenance checklist) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (A practical handoff list for ongoing ownership.) Tj ET
+0.012 0.106 0.247 rg
+1 w 42.00 647.00 534.00 20.00 re f
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 47.00 654.00 Tm (Check) Tj ET
+1.000 1.000 1.000 rg
+BT /F2 7.50 Tf 1 0 0 1 157.00 654.00 Tm (Acceptance criteria) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 629.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 635.00 Tm (Routes) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 635.00 Tm (Open all six main routes and confirm status 200.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 611.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 617.00 Tm (Content pages) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 617.00 Tm (Open each guide, article, and SOP page from its direct URL and from its Resources card.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 593.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 599.00 Tm (Card behavior) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 599.00 Tm (Click the card surface and visible links; confirm no generic resource popup appears.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 575.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 581.00 Tm (Forms) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 581.00 Tm (Open Book a consultation on desktop and mobile; confirm HubSpot form renders.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 557.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 563.00 Tm (ROI) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 563.00 Tm (Change each input, calculate, confirm outputs and positive/negative ROI behavior.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 539.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 545.00 Tm (Loading) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 545.00 Tm (Hard-refresh each page and confirm the loading screen fades after load or safety timeout.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 521.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 527.00 Tm (Cursor) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 527.00 Tm (Test fine-pointer hover/press states; confirm it is absent on touch and reduced-motion devices.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 503.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 509.00 Tm (Mobile) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 509.00 Tm (Test 320px, 375px, 768px widths for overflow, tabs, menus, cards, and modal panels.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 485.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 491.00 Tm (Footer) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 491.00 Tm (Confirm badge, exact partner text, copyright, contact links, and new Privacy Policy URL.) Tj ET
+1.000 1.000 1.000 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 467.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 473.00 Tm (SEO) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 473.00 Tm (Check title, description, canonical, sitemap entries, and no unintended placeholder # links.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.35 w 42.00 449.00 534.00 18.00 re B
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 47.00 455.00 Tm (External sources) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 7.50 Tf 1 0 0 1 157.00 455.00 Tm (Verify remote logo URLs, loading logo, and HubSpot script after deployment.) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 432.00 Tm (Maintenance rhythm) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 412.00 m 47.00 413.10 46.10 414.00 45.00 414.00 c 43.90 414.00 43.00 413.10 43.00 412.00 c 43.00 410.90 43.90 410.00 45.00 410.00 c 46.10 410.00 47.00 410.90 47.00 412.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 409.00 Tm (When adding a Resource card, create its page, assign its direct live URL, add it to the sitemap, and verify) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 396.50 Tm (keyboard card activation.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 385.00 m 47.00 386.10 46.10 387.00 45.00 387.00 c 43.90 387.00 43.00 386.10 43.00 385.00 c 43.00 383.90 43.90 383.00 45.00 383.00 c 46.10 383.00 47.00 383.90 47.00 385.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 382.00 Tm (When changing a CTA, update both desktop and mobile header variants plus page CTA sections.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 370.50 m 47.00 371.60 46.10 372.50 45.00 372.50 c 43.90 372.50 43.00 371.60 43.00 370.50 c 43.00 369.40 43.90 368.50 45.00 368.50 c 46.10 368.50 47.00 369.40 47.00 370.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 367.50 Tm (When changing ROI assumptions, update the visible labels, formula documentation, and QA examples together.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 356.00 m 47.00 357.10 46.10 358.00 45.00 358.00 c 43.90 358.00 43.00 357.10 43.00 356.00 c 43.00 354.90 43.90 354.00 45.00 354.00 c 46.10 354.00 47.00 354.90 47.00 356.00 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 353.00 Tm (Keep root and /uploads/ copies synchronized for pages that are distributed through the upload folder.) Tj ET
+0.094 0.431 0.804 rg
+1 w 47.00 341.50 m 47.00 342.60 46.10 343.50 45.00 343.50 c 43.90 343.50 43.00 342.60 43.00 341.50 c 43.00 340.40 43.90 339.50 45.00 339.50 c 46.10 339.50 47.00 340.40 47.00 341.50 c f
+0.294 0.333 0.388 rg
+BT /F1 9.00 Tf 1 0 0 1 55.00 338.50 Tm (Rebuild pipelinesync-site.zip after any page, route, or asset change.) Tj ET
+0.863 0.988 0.906 rg
+0.898 0.906 0.922 RG
+0.8 w 49.00 270.00 m 563.00 270.00 l 566.87 270.00 570.00 273.13 570.00 277.00 c 570.00 317.00 l 570.00 320.87 566.87 324.00 563.00 324.00 c 49.00 324.00 l 45.13 324.00 42.00 320.87 42.00 317.00 c 42.00 277.00 l 42.00 273.13 45.13 270.00 49.00 270.00 c B
+0.082 0.502 0.239 rg
+1 w 42.00 270.00 4.00 54.00 re f
+0.082 0.502 0.239 rg
+BT /F2 9.00 Tf 1 0 0 1 57.00 307.00 Tm (Handoff status) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 293.00 Tm (The current workspace bundle has been generated and syntax-validated. Publishing remains a separate) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 8.70 Tf 1 0 0 1 57.00 281.00 Tm (server/deployment action.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (16) Tj ET
+endstream
+endobj
+36 0 obj
+
+endobj
+37 0 obj
+<< /Length 9759 >>
+stream
+1.000 1.000 1.000 rg
+1 w 0.00 0.00 612.00 792.00 re f
+0.012 0.106 0.247 rg
+1 w 0.00 750.00 612.00 42.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9.00 Tf 1 0 0 1 42.00 765.00 Tm (PIPELINESYNC) Tj ET
+0.760 0.840 0.930 rg
+BT /F1 8.00 Tf 1 0 0 1 440.00 765.00 Tm (WEBSITE DOCUMENTATION) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 22.00 Tf 1 0 0 1 42.00 714.00 Tm (Appendix A. File inventory) Tj ET
+0.420 0.447 0.502 rg
+BT /F1 9.00 Tf 1 0 0 1 42.00 696.00 Tm (Exact page filenames currently included in the bundle.) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 650.00 m 283.00 650.00 l 285.21 650.00 287.00 651.79 287.00 654.00 c 287.00 666.00 l 287.00 668.21 285.21 670.00 283.00 670.00 c 46.00 670.00 l 43.79 670.00 42.00 668.21 42.00 666.00 c 42.00 654.00 l 42.00 651.79 43.79 650.00 46.00 650.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 657.00 Tm (01) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 657.00 Tm (index.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 626.00 m 283.00 626.00 l 285.21 626.00 287.00 627.79 287.00 630.00 c 287.00 642.00 l 287.00 644.21 285.21 646.00 283.00 646.00 c 46.00 646.00 l 43.79 646.00 42.00 644.21 42.00 642.00 c 42.00 630.00 l 42.00 627.79 43.79 626.00 46.00 626.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 633.00 Tm (02) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 633.00 Tm (solutions.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 602.00 m 283.00 602.00 l 285.21 602.00 287.00 603.79 287.00 606.00 c 287.00 618.00 l 287.00 620.21 285.21 622.00 283.00 622.00 c 46.00 622.00 l 43.79 622.00 42.00 620.21 42.00 618.00 c 42.00 606.00 l 42.00 603.79 43.79 602.00 46.00 602.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 609.00 Tm (03) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 609.00 Tm (integrations.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 578.00 m 283.00 578.00 l 285.21 578.00 287.00 579.79 287.00 582.00 c 287.00 594.00 l 287.00 596.21 285.21 598.00 283.00 598.00 c 46.00 598.00 l 43.79 598.00 42.00 596.21 42.00 594.00 c 42.00 582.00 l 42.00 579.79 43.79 578.00 46.00 578.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 585.00 Tm (04) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 585.00 Tm (resources.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 554.00 m 283.00 554.00 l 285.21 554.00 287.00 555.79 287.00 558.00 c 287.00 570.00 l 287.00 572.21 285.21 574.00 283.00 574.00 c 46.00 574.00 l 43.79 574.00 42.00 572.21 42.00 570.00 c 42.00 558.00 l 42.00 555.79 43.79 554.00 46.00 554.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 561.00 Tm (05) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 561.00 Tm (about.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 530.00 m 283.00 530.00 l 285.21 530.00 287.00 531.79 287.00 534.00 c 287.00 546.00 l 287.00 548.21 285.21 550.00 283.00 550.00 c 46.00 550.00 l 43.79 550.00 42.00 548.21 42.00 546.00 c 42.00 534.00 l 42.00 531.79 43.79 530.00 46.00 530.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 537.00 Tm (06) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 537.00 Tm (privacy-policy.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 506.00 m 283.00 506.00 l 285.21 506.00 287.00 507.79 287.00 510.00 c 287.00 522.00 l 287.00 524.21 285.21 526.00 283.00 526.00 c 46.00 526.00 l 43.79 526.00 42.00 524.21 42.00 522.00 c 42.00 510.00 l 42.00 507.79 43.79 506.00 46.00 506.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 513.00 Tm (07) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 513.00 Tm (integration - HubSpot CRM Architecture Blueprint.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 482.00 m 283.00 482.00 l 285.21 482.00 287.00 483.79 287.00 486.00 c 287.00 498.00 l 287.00 500.21 285.21 502.00 283.00 502.00 c 46.00 502.00 l 43.79 502.00 42.00 500.21 42.00 498.00 c 42.00 486.00 l 42.00 483.79 43.79 482.00 46.00 482.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 489.00 Tm (08) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 489.00 Tm (integration - CRM Cleanup & Deduplication System.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 46.00 458.00 m 283.00 458.00 l 285.21 458.00 287.00 459.79 287.00 462.00 c 287.00 474.00 l 287.00 476.21 285.21 478.00 283.00 478.00 c 46.00 478.00 l 43.79 478.00 42.00 476.21 42.00 474.00 c 42.00 462.00 l 42.00 459.79 43.79 458.00 46.00 458.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 50.00 465.00 Tm (09) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 72.00 465.00 Tm (integration - Lead Routing & Lifecycle Automation.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 650.00 m 553.00 650.00 l 555.21 650.00 557.00 651.79 557.00 654.00 c 557.00 666.00 l 557.00 668.21 555.21 670.00 553.00 670.00 c 316.00 670.00 l 313.79 670.00 312.00 668.21 312.00 666.00 c 312.00 654.00 l 312.00 651.79 313.79 650.00 316.00 650.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 657.00 Tm (10) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 657.00 Tm (integration - Integration Governance & Monitoring.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 626.00 m 553.00 626.00 l 555.21 626.00 557.00 627.79 557.00 630.00 c 557.00 642.00 l 557.00 644.21 555.21 646.00 553.00 646.00 c 316.00 646.00 l 313.79 646.00 312.00 644.21 312.00 642.00 c 312.00 630.00 l 312.00 627.79 313.79 626.00 316.00 626.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 633.00 Tm (11) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 633.00 Tm (integration - Full-Funnel Attribution That CEOs Trust.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 602.00 m 553.00 602.00 l 555.21 602.00 557.00 603.79 557.00 606.00 c 557.00 618.00 l 557.00 620.21 555.21 622.00 553.00 622.00 c 316.00 622.00 l 313.79 622.00 312.00 620.21 312.00 618.00 c 312.00 606.00 l 312.00 603.79 313.79 602.00 316.00 602.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 609.00 Tm (12) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 609.00 Tm (why-your-hubspot-pipeline-doesnt-reflect-reality.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 578.00 m 553.00 578.00 l 555.21 578.00 557.00 579.79 557.00 582.00 c 557.00 594.00 l 557.00 596.21 555.21 598.00 553.00 598.00 c 316.00 598.00 l 313.79 598.00 312.00 596.21 312.00 594.00 c 312.00 582.00 l 312.00 579.79 313.79 578.00 316.00 578.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 585.00 Tm (13) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 585.00 Tm (the-cost-of-duplicate-data-in-hubspot.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 554.00 m 553.00 554.00 l 555.21 554.00 557.00 555.79 557.00 558.00 c 557.00 570.00 l 557.00 572.21 555.21 574.00 553.00 574.00 c 316.00 574.00 l 313.79 574.00 312.00 572.21 312.00 570.00 c 312.00 558.00 l 312.00 555.79 313.79 554.00 316.00 554.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 561.00 Tm (14) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 561.00 Tm (automation-that-saves-10-hours-per-week.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 530.00 m 553.00 530.00 l 555.21 530.00 557.00 531.79 557.00 534.00 c 557.00 546.00 l 557.00 548.21 555.21 550.00 553.00 550.00 c 316.00 550.00 l 313.79 550.00 312.00 548.21 312.00 546.00 c 312.00 534.00 l 312.00 531.79 313.79 530.00 316.00 530.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 537.00 Tm (15) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 537.00 Tm (why-teams-dont-adopt-hubspot-and-how-we-fix-it.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 506.00 m 553.00 506.00 l 555.21 506.00 557.00 507.79 557.00 510.00 c 557.00 522.00 l 557.00 524.21 555.21 526.00 553.00 526.00 c 316.00 526.00 l 313.79 526.00 312.00 524.21 312.00 522.00 c 312.00 510.00 l 312.00 507.79 313.79 506.00 316.00 506.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 513.00 Tm (16) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 513.00 Tm (hubspot-governance-checklist.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 482.00 m 553.00 482.00 l 555.21 482.00 557.00 483.79 557.00 486.00 c 557.00 498.00 l 557.00 500.21 555.21 502.00 553.00 502.00 c 316.00 502.00 l 313.79 502.00 312.00 500.21 312.00 498.00 c 312.00 486.00 l 312.00 483.79 313.79 482.00 316.00 482.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 489.00 Tm (17) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 489.00 Tm (data-migration-mapping-sheet.html) Tj ET
+0.973 0.980 0.988 rg
+0.898 0.906 0.922 RG
+0.5 w 316.00 458.00 m 553.00 458.00 l 555.21 458.00 557.00 459.79 557.00 462.00 c 557.00 474.00 l 557.00 476.21 555.21 478.00 553.00 478.00 c 316.00 478.00 l 313.79 478.00 312.00 476.21 312.00 474.00 c 312.00 462.00 l 312.00 459.79 313.79 458.00 316.00 458.00 c B
+0.094 0.431 0.804 rg
+BT /F2 7.00 Tf 1 0 0 1 320.00 465.00 Tm (18) Tj ET
+0.294 0.333 0.388 rg
+BT /F3 7.10 Tf 1 0 0 1 342.00 465.00 Tm (lead-routing-decision-tree.html) Tj ET
+0.024 0.145 0.333 rg
+BT /F2 15.00 Tf 1 0 0 1 42.00 432.00 Tm (Bundle metadata) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 409.00 Tm (The current zip also includes icon.png, robots.txt, and sitemap.xml. The site uses remote logo sources rather) Tj ET
+0.294 0.333 0.388 rg
+BT /F1 9.30 Tf 1 0 0 1 42.00 395.80 Tm (than shipping local integration logo assets in the deployable bundle.) Tj ET
+0.898 0.906 0.922 RG
+0.7 w 42.00 31.00 m 570.00 31.00 l S
+0.420 0.447 0.502 rg
+BT /F1 7.00 Tf 1 0 0 1 42.00 18.00 Tm (PipelineSync website documentation | September 1, 2026) Tj ET
+0.420 0.447 0.502 rg
+BT /F2 7.00 Tf 1 0 0 1 525.00 18.00 Tm (17) Tj ET
+endstream
+endobj
+38 0 obj
+
+endobj
+39 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 5 0 R >>
+endobj
+40 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 7 0 R >>
+endobj
+41 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 9 0 R >>
+endobj
+42 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 11 0 R >>
+endobj
+43 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 13 0 R >>
+endobj
+44 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 15 0 R >>
+endobj
+45 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 17 0 R >>
+endobj
+46 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 19 0 R >>
+endobj
+47 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 21 0 R >>
+endobj
+48 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 23 0 R >>
+endobj
+49 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 25 0 R >>
+endobj
+50 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 27 0 R >>
+endobj
+51 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 29 0 R >>
+endobj
+52 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 31 0 R >>
+endobj
+53 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 33 0 R >>
+endobj
+54 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 35 0 R >>
+endobj
+55 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 37 0 R >>
+endobj
+56 0 obj
+<< /Type /Catalog /Pages 4 0 R >>
+endobj
+xref
+0 57
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000000228 00000 n 
+0000000399 00000 n 
+0000002836 00000 n 
+0000002852 00000 n 
+0000009344 00000 n 
+0000009360 00000 n 
+0000019749 00000 n 
+0000019766 00000 n 
+0000021212 00000 n 
+0000021229 00000 n 
+0000028045 00000 n 
+0000028062 00000 n 
+0000037313 00000 n 
+0000037330 00000 n 
+0000042923 00000 n 
+0000042940 00000 n 
+0000049781 00000 n 
+0000049798 00000 n 
+0000056837 00000 n 
+0000056854 00000 n 
+0000063123 00000 n 
+0000063140 00000 n 
+0000068348 00000 n 
+0000068365 00000 n 
+0000074362 00000 n 
+0000074379 00000 n 
+0000078641 00000 n 
+0000078658 00000 n 
+0000084210 00000 n 
+0000084227 00000 n 
+0000089320 00000 n 
+0000089337 00000 n 
+0000096477 00000 n 
+0000096494 00000 n 
+0000106306 00000 n 
+0000106323 00000 n 
+0000106470 00000 n 
+0000106617 00000 n 
+0000106764 00000 n 
+0000106912 00000 n 
+0000107060 00000 n 
+0000107208 00000 n 
+0000107356 00000 n 
+0000107504 00000 n 
+0000107652 00000 n 
+0000107800 00000 n 
+0000107948 00000 n 
+0000108096 00000 n 
+0000108244 00000 n 
+0000108392 00000 n 
+0000108540 00000 n 
+0000108688 00000 n 
+0000108836 00000 n 
+trailer
+<< /Size 57 /Root 56 0 R >>
+startxref
+108886
+%%EOF

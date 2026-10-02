@@ -1,0 +1,15 @@
+---
+permalink: sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for item in collections.all | sort(attribute='url') %}{% if item.url != '/sitemap.xml' and item.url != '/404.html' and item.data.sitemap != false %}
+  <url>
+    <loc>https://pipelinesync.net{{ item.url }}</loc>
+    <lastmod>{{ item.data.lastmod or '2026-10-03' }}</lastmod>
+    <changefreq>{{ item.data.changefreq or 'monthly' }}</changefreq>
+    <priority>{{ item.data.priority or '0.6' }}</priority>
+  </url>
+{% endif %}{% endfor %}
+</urlset>
