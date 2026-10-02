@@ -1,9 +1,6 @@
+# Static site: no build step. HTML files and assets are served as-is.
 [build]
-  command = "npm run build"
-  publish = "_site"
-
-[build.environment]
-  NODE_VERSION = "20"
+  publish = "."
 
 # HTML should always be revalidated so content and redirects update immediately.
 [[headers]]
@@ -11,8 +8,8 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Fingerprinted or versioned assets can be cached for a long time.
+# Images are referenced by filename; cache them aggressively.
 [[headers]]
-  for = "/assets/*"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
