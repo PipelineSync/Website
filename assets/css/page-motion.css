@@ -1,0 +1,113 @@
+/* Per-page motion signatures.
+   Each page sets `anim: <name>` in front matter; base.njk renders it as
+   <body data-anim="<name>">. These rules give every page its own reveal
+   character instead of the identical fade-up everywhere. Loaded after all
+   other stylesheets so the signatures win on specificity. */
+
+[data-anim] .reveal{will-change:opacity,transform}
+[data-anim] .reveal.delay-1{transition-delay:.1s}
+[data-anim] .reveal.delay-2{transition-delay:.2s}
+[data-anim] .reveal.delay-3{transition-delay:.3s}
+[data-anim] .reveal.delay-4{transition-delay:.4s}
+
+/* 1 — rise: soft editorial lift (default) */
+[data-anim="rise"] .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+[data-anim="rise"] .reveal.active{opacity:1;transform:translateY(0)}
+
+/* 2 — drift: horizontal slide, alternating directions */
+[data-anim="drift"] .reveal{opacity:0;transform:translateX(36px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+[data-anim="drift"] .reveal.delay-1{transform:translateX(-36px)}
+[data-anim="drift"] .reveal.active{opacity:1;transform:translateX(0)}
+
+/* 3 — scale: gentle pop with overshoot */
+[data-anim="scale"] .reveal{opacity:0;transform:scale(.93);transition:opacity .6s ease,transform .65s cubic-bezier(.34,1.4,.64,1)}
+[data-anim="scale"] .reveal.active{opacity:1;transform:scale(1)}
+
+/* 4 — blur: cinematic focus pull */
+[data-anim="blur"] .reveal{opacity:0;filter:blur(10px);transform:translateY(8px);transition:opacity .9s ease,transform .9s ease,filter .9s ease}
+[data-anim="blur"] .reveal.active{opacity:1;filter:blur(0);transform:translateY(0)}
+
+/* 5 — clip: editorial wipe reveal */
+[data-anim="clip"] .reveal{clip-path:inset(0 0 100% 0);transition:clip-path .85s cubic-bezier(.22,1,.36,1)}
+[data-anim="clip"] .reveal.active{clip-path:inset(0 0 0% 0)}
+[data-anim="clip"] .reveal.delay-1{transition-delay:.12s}
+[data-anim="clip"] .reveal.delay-2{transition-delay:.24s}
+
+/* 6 — tilt: dimensional settle */
+[data-anim="tilt"] .reveal{opacity:0;transform:perspective(900px) rotateX(7deg) translateY(16px);transform-origin:center top;transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1)}
+[data-anim="tilt"] .reveal.active{opacity:1;transform:perspective(900px) rotateX(0deg) translateY(0)}
+
+/* 7 — cascade: quick steps with wide stagger */
+[data-anim="cascade"] .reveal{opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .55s cubic-bezier(.16,1,.3,1)}
+[data-anim="cascade"] .reveal.active{opacity:1;transform:translateY(0)}
+[data-anim="cascade"] .reveal.delay-1{transition-delay:.15s}
+[data-anim="cascade"] .reveal.delay-2{transition-delay:.3s}
+[data-anim="cascade"] .reveal.delay-3{transition-delay:.45s}
+[data-anim="cascade"] .reveal.delay-4{transition-delay:.6s}
+
+/* 8 — glide: long, luxurious travel */
+[data-anim="glide"] .reveal{opacity:0;transform:translateY(46px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.16,1,.3,1)}
+[data-anim="glide"] .reveal.active{opacity:1;transform:translateY(0)}
+
+/* 9 — aurora: dreamy focus + settle (flagship) */
+[data-anim="aurora"] .reveal{opacity:0;filter:blur(8px);transform:scale(1.03) translateY(10px);transition:opacity 1s ease,transform 1s cubic-bezier(.22,1,.36,1),filter 1s ease}
+[data-anim="aurora"] .reveal.active{opacity:1;filter:blur(0);transform:scale(1) translateY(0)}
+
+/* ---------- Guide pages: hero entrances ---------- */
+html.pm-js [data-anim] .guide-hero-inner > *{
+  --pm-hx:0px;--pm-hy:22px;--pm-hs:1;--pm-hb:0px;--pm-hr:0deg;
+  opacity:0;
+  transform:translate(var(--pm-hx),var(--pm-hy)) scale(var(--pm-hs)) rotate(var(--pm-hr));
+  filter:blur(var(--pm-hb));
+  animation:pm-hero-in .8s cubic-bezier(.22,1,.36,1) both;
+}
+html.pm-js [data-anim] .guide-hero-inner > *:nth-child(2){animation-delay:.09s}
+html.pm-js [data-anim] .guide-hero-inner > *:nth-child(3){animation-delay:.18s}
+html.pm-js [data-anim] .guide-hero-inner > *:nth-child(4){animation-delay:.27s}
+html.pm-js [data-anim] .guide-hero-inner > *:nth-child(5){animation-delay:.36s}
+html.pm-js [data-anim] .guide-hero-inner > *:nth-child(n+6){animation-delay:.42s}
+@keyframes pm-hero-in{
+  from{opacity:0}
+  to{opacity:1;transform:translate(0,0) scale(1) rotate(0);filter:blur(0)}
+}
+[data-anim="drift"] .guide-hero-inner > *{--pm-hx:38px;--pm-hy:0}
+[data-anim="scale"] .guide-hero-inner > *{--pm-hs:.94;--pm-hy:10px}
+[data-anim="blur"] .guide-hero-inner > *{--pm-hb:10px;--pm-hy:8px}
+[data-anim="aurora"] .guide-hero-inner > *{--pm-hb:12px;--pm-hs:1.02;--pm-hy:0}
+[data-anim="tilt"] .guide-hero-inner > *{--pm-hr:2deg;--pm-hy:18px}
+[data-anim="glide"] .guide-hero-inner > *{--pm-hy:48px}
+[data-anim="cascade"] .guide-hero-inner > *{--pm-hy:28px}
+html.pm-js [data-anim="clip"] .guide-hero-inner > *{
+  opacity:1;transform:none;filter:none;
+  clip-path:inset(0 0 100% 0);
+  animation:pm-hero-clip .9s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes pm-hero-clip{
+  from{clip-path:inset(0 0 100% 0)}
+  to{clip-path:inset(0 0 0% 0)}
+}
+
+/* ---------- Guide pages: scroll reveals (wired by page-motion.js) ---------- */
+html.pm-js [data-anim] .g-reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+html.pm-js [data-anim] .g-reveal.in{opacity:1;transform:none}
+[data-anim="drift"] .g-reveal{transform:translateX(28px)}
+[data-anim="drift"] .g-reveal.in{transform:translateX(0)}
+[data-anim="scale"] .g-reveal{transform:scale(.95)}
+[data-anim="scale"] .g-reveal.in{transform:scale(1)}
+[data-anim="blur"] .g-reveal{transform:none;filter:blur(8px)}
+[data-anim="blur"] .g-reveal.in{filter:blur(0)}
+[data-anim="aurora"] .g-reveal{transform:scale(1.02);filter:blur(6px);transition-duration:.9s}
+[data-anim="aurora"] .g-reveal.in{transform:scale(1);filter:blur(0)}
+[data-anim="clip"] .g-reveal{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path .8s cubic-bezier(.22,1,.36,1)}
+[data-anim="clip"] .g-reveal.in{clip-path:inset(0 0 0% 0)}
+[data-anim="tilt"] .g-reveal{transform:perspective(700px) rotateX(6deg)}
+[data-anim="tilt"] .g-reveal.in{transform:perspective(700px) rotateX(0)}
+[data-anim="glide"] .g-reveal{transform:translateY(42px);transition-duration:1s}
+[data-anim="cascade"] .g-reveal{transition-duration:.5s}
+
+/* ---------- Reduced motion: signatures off ---------- */
+@media (prefers-reduced-motion:reduce){
+  [data-anim] .reveal,
+  [data-anim] .g-reveal{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}
+  html.pm-js [data-anim] .guide-hero-inner > *{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;animation:none!important}
+}
