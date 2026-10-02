@@ -137,8 +137,12 @@
     function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     // Pause smooth scrolling while overlays lock the page.
+    // NOTE: only consult <body> here. Lenis adds a `lenis-stopped` class to
+    // <html> (styled `overflow:hidden` in theme-neon.css), so reading the root
+    // element's computed overflow would see Lenis's own lock and deadlock:
+    // stop() -> root hidden -> observer still sees "locked" -> start() never runs.
     new MutationObserver(function () {
-      var locked = getComputedStyle(doc.body).overflow === 'hidden' || getComputedStyle(root).overflow === 'hidden';
+      var locked = getComputedStyle(doc.body).overflow === 'hidden';
       locked ? lenis.stop() : lenis.start();
     }).observe(doc.body, { attributes: true, attributeFilter: ['class', 'style'] });
     onScroll(scrollY);
