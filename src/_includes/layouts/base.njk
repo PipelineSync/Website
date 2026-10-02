@@ -7,7 +7,7 @@
   <meta name="description" content="{{ description }}">
   <meta name="robots" content="{{ robots or 'index, follow' }}">
   <meta name="author" content="PipelineSync">
-  <meta name="theme-color" content="#06245B">
+  <meta name="theme-color" content="#05060d">
   <link rel="canonical" href="{{ canonical }}">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="{{ ogType or 'website' }}">
@@ -26,11 +26,13 @@
   <link rel="icon" href="/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/{{ cssGroup }}.css">
-  <link rel="stylesheet" href="/assets/css/{{ pageCss }}">
+  <link rel="stylesheet" href="{{ "/assets/css/site.css" | v }}">
+  <link rel="stylesheet" href="{{ ("/assets/css/" + cssGroup + ".css") | v }}">
+  <link rel="stylesheet" href="{{ ("/assets/css/" + pageCss) | v }}">
+  <link rel="stylesheet" href="{{ "/assets/css/theme-neon.css" | v }}">
+  <link rel="stylesheet" href="{{ "/assets/css/layouts-neon.css" | v }}">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -44,24 +46,25 @@
 {% if layoutType == 'modern' %}{% include 'partials/footer-modern.njk' %}{% elif layoutType == 'guide' %}{% include 'partials/footer-guide.njk' %}{% else %}{% include 'partials/footer-privacy.njk' %}{% endif %}
 
 {% if layoutType == 'modern' %}{% include 'partials/modal-modern.njk' %}
-<script src="/assets/js/site-header.js"></script>
-<script src="/assets/js/site-footer.js"></script>
-<script src="/assets/js/modern-cursor.js"></script>
-<script src="/assets/js/reveal.js"></script>
-<script src="/assets/js/hubspot-form-modern.js"></script>
-<script src="/assets/js/glassmorphism.js"></script>
-<script src="/assets/js/contact-email.js"></script>
+<script src="{{ "/assets/js/site-header.js" | v }}"></script>
+<script src="{{ "/assets/js/site-footer.js" | v }}"></script>
+<script src="{{ "/assets/js/modern-cursor.js" | v }}"></script>
+<script src="{{ "/assets/js/reveal.js" | v }}"></script>
+<script src="{{ "/assets/js/hubspot-form-modern.js" | v }}"></script>
+<script src="{{ "/assets/js/glassmorphism.js" | v }}"></script>
+<script src="{{ "/assets/js/contact-email.js" | v }}"></script>
 {% elif layoutType == 'guide' %}{% include 'partials/modal-guide.njk' %}
-<script src="/assets/js/guide-header.js"></script>
-<script src="/assets/js/hubspot-form-guide.js"></script>
-<script src="/assets/js/guide-cursor.js"></script>
+<script src="{{ "/assets/js/guide-header.js" | v }}"></script>
+<script src="{{ "/assets/js/hubspot-form-guide.js" | v }}"></script>
+<script src="{{ "/assets/js/guide-cursor.js" | v }}"></script>
 {% else %}
-<script src="/assets/js/privacy-header.js"></script>
-<script src="/assets/js/guide-cursor.js"></script>
+<script src="{{ "/assets/js/privacy-header.js" | v }}"></script>
+<script src="{{ "/assets/js/guide-cursor.js" | v }}"></script>
 {% endif %}
 {% if layoutType != 'privacy' %}<script src="https://js-na2.hsforms.net/forms/embed/247123252.js"></script>{% endif %}
-{% if pageJs %}<script src="/assets/js/{{ pageJs }}"></script>{% endif %}
-{% if loadingType == 'pipeline' %}<script src="/assets/js/loading-screen.js"></script>{% endif %}
-<script src="/assets/js/roi-calculator.js"></script>
+{% if pageJs %}<script src="{{ ("/assets/js/" + pageJs) | v }}"></script>{% endif %}
+{% if loadingType == 'pipeline' %}<script src="{{ "/assets/js/loading-screen.js" | v }}"></script>{% endif %}
+<script src="{{ "/assets/js/roi-calculator.js" | v }}"></script>
+<script src="{{ "/assets/js/motion.js" | v }}"></script>
 </body>
 </html>
