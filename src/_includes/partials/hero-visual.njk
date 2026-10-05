@@ -22,6 +22,11 @@
     </g>
     <circle class="n-core-glow" cx="240" cy="240" r="90" fill="url(#nvcore)"/>
   </svg>
+  {% if hero_art %}
+  <div class="n-visual-art">
+    <img src="/assets/img/hero/{{ hero_art }}.webp" alt="" width="{{ hero_art_w | default('960') }}" height="{{ hero_art_h | default('640') }}" loading="eager" fetchpriority="high">
+  </div>
+  {% else %}
   <div class="n-visual-core">
     <div class="n-dash">
       <div class="n-dash-top"><i></i><i></i><i></i></div>
@@ -30,8 +35,9 @@
       <div class="n-dash-rows"><span></span><span></span><span></span></div>
     </div>
   </div>
-  <div class="n-chip n-chip-a"><i class="fa-solid fa-database"></i></div>
-  <div class="n-chip n-chip-b"><i class="fa-solid fa-diagram-project"></i></div>
-  <div class="n-chip n-chip-c"><i class="fa-solid fa-bolt"></i></div>
-  <div class="n-chip n-chip-d"><i class="fa-solid fa-chart-line"></i></div>
+  {% endif %}
+  <div class="n-chip n-chip-a"><i class="fa-solid {{ hero_chips[0] | default('fa-database') }}"></i></div>
+  <div class="n-chip n-chip-b"><i class="fa-solid {{ hero_chips[1] | default('fa-diagram-project') }}"></i></div>
+  <div class="n-chip n-chip-c"><i class="fa-solid {{ hero_chips[2] | default('fa-bolt') }}"></i></div>
+  <div class="n-chip n-chip-d"><i class="fa-solid {{ hero_chips[3] | default('fa-chart-line') }}"></i></div>
 </div>

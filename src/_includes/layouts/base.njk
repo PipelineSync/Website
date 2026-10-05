@@ -34,8 +34,9 @@
   <link rel="stylesheet" href="{{ "/assets/css/theme-neon.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/layouts-neon.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/hubspot-chat.css" | v }}">
+  <link rel="stylesheet" href="{{ "/assets/css/page-motion.css" | v }}">
 </head>
-<body>
+<body data-anim="{{ anim | default('rise') }}">
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 {% if loadingType == 'resources' %}{% include 'partials/loading-resources.njk' %}{% elif loadingType == 'pipeline' %}{% include 'partials/loading-pipeline.njk' %}{% endif %}
@@ -67,6 +68,7 @@
 {% if loadingType == 'pipeline' %}<script src="{{ "/assets/js/loading-screen.js" | v }}"></script>{% endif %}
 <script src="{{ "/assets/js/roi-calculator.js" | v }}"></script>
 <script src="{{ "/assets/js/motion.js" | v }}"></script>
+<script src="{{ "/assets/js/page-motion.js" | v }}"></script>
 
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/247123252.js"></script>
