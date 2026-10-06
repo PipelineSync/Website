@@ -319,3 +319,392 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     });
   });
 })();
+
+/* ==========================================================================
+   Futuristic Interactive CRM Kanban Pipeline (Hero Visual)
+   ========================================================================== */
+(function() {
+  'use strict';
+
+  var kanban = document.getElementById('heroKanban');
+  if (!kanban) return;
+
+  var stages = ['qualified', 'architecture', 'closed-won'];
+  var stageNames = {
+    'qualified': 'Qualified',
+    'architecture': 'Architecture',
+    'closed-won': 'Closed Won'
+  };
+
+  var defaultDistribution = {
+    'deal-apex': 'qualified',
+    'deal-nova': 'qualified',
+    'deal-fintech': 'architecture',
+    'deal-vanguard': 'architecture',
+    'deal-aero': 'closed-won'
+  };
+
+  var dropzones = {};
+  stages.forEach(function(s) {
+    dropzones[s] = kanban.querySelector('[data-dropzone="' + s + '"]');
+  });
+
+  var countEl = kanban.querySelector('[data-kanban-count]');
+  var totalEl = kanban.querySelector('[data-kanban-total]');
+  var feedText = kanban.querySelector('[data-hud-feed-text]');
+  var simToggleBtn = kanban.querySelector('[data-sim-toggle]');
+  var resetBtn = kanban.querySelector('[data-kanban-reset]');
+  var visualHost = kanban.closest('.n-visual-kanban');
+
+  var autoFlowActive = true;
+  var userInteractedUntil = 0;
+  var alertTimeout = null;
+
+  function formatMoney(num) {
+    return '$' + num.toLocaleString('en-US');
+  }
+
+  function formatShortMoney(num) {
+    if (num >= 1000) return '$' + Math.round(num / 1000) + 'k';
+    return '$' + num;
+  }
+
+  function logTelemetry(msg, isWon) {
+    if (!feedText) return;
+    feedText.textContent = msg;
+    feedText.classList.toggle('is-alert', !!isWon);
+    clearTimeout(alertTimeout);
+    alertTimeout = setTimeout(function() {
+      feedText.classList.remove('is-alert');
+    }, 3500);
+  }
+
+  function pauseAutoFlow(seconds) {
+    userInteractedUntil = Date.now() + ((seconds || 10) * 1000);
+  }
+
+  function spawnSparks(card) {
+    var rect = card.getBoundingClientRect();
+    var kanbanRect = kanban.getBoundingClientRect();
+    var centerX = (rect.left + rect.width / 2) - kanbanRect.left;
+    var centerY = (rect.top + rect.height / 2) - kanbanRect.top;
+
+    var colors = ['#4ade80', '#22e4ff', '#8b5cf6', '#ffffff'];
+    for (var i = 0; i < 12; i++) {
+      var spark = document.createElement('span');
+      spark.className = 'kanban-spark';
+      var angle = (Math.PI * 2 * i) / 12 + (Math.random() * 0.4 - 0.2);
+      var dist = 30 + Math.random() * 45;
+      var dx = Math.cos(angle) * dist + 'px';
+      var dy = Math.sin(angle) * dist + 'px';
+
+      spark.style.left = centerX + 'px';
+      spark.style.top = centerY + 'px';
+      spark.style.setProperty('--dx', dx);
+      spark.style.setProperty('--dy', dy);
+      spark.style.background = colors[i % colors.length];
+      spark.style.boxShadow = '0 0 8px ' + colors[i % colors.length];
+
+      kanban.appendChild(spark);
+      (function(s) {
+        setTimeout(function() {
+          if (s.parentNode) s.parentNode.removeChild(s);
+        }, 900);
+      })(spark);
+    }
+  }
+
+  function updatePipelineTotals() {
+    var grandTotal = 0;
+    var grandCount = 0;
+
+    stages.forEach(function(s, stageIdx) {
+      var dz = dropzones[s];
+      if (!dz) return;
+      var cards = dz.querySelectorAll('.deal-card');
+      var stageTotal = 0;
+
+      cards.forEach(function(card) {
+        var amt = parseInt(card.dataset.amount, 10) || 0;
+        stageTotal += amt;
+        grandTotal += amt;
+        grandCount++;
+
+        // Update card attributes and buttons
+        card.dataset.stage = s;
+        var prevBtn = card.querySelector('.btn-prev');
+        var nextBtn = card.querySelector('.btn-next');
+        if (prevBtn) prevBtn.disabled = (stageIdx === 0);
+        if (nextBtn) nextBtn.disabled = (stageIdx === stages.length - 1);
+
+        if (s === 'closed-won') {
+          card.classList.add('is-won');
+          var wonTag = card.querySelector('.tag-won');
+          if (wonTag) wonTag.style.display = '';
+        } else {
+          card.classList.remove('is-won');
+        }
+      });
+
+      var countBadge = kanban.querySelector('[data-col-count="' + s + '"]');
+      var valBadge = kanban.querySelector('[data-col-val="' + s + '"]');
+      if (countBadge) countBadge.textContent = cards.length;
+      if (valBadge) valBadge.textContent = formatMoney(stageTotal);
+    });
+
+    if (totalEl) totalEl.textContent = formatMoney(grandTotal);
+    if (countEl) countEl.textContent = grandCount + (grandCount === 1 ? ' deal' : ' deals');
+  }
+
+  function moveDeal(card, targetStage, options) {
+    if (!card) return;
+    var currentStage = card.dataset.stage;
+    if (currentStage === targetStage) return;
+
+    var targetDropzone = dropzones[targetStage];
+    if (!targetDropzone) return;
+
+    var opts = options || {};
+    var isWon = (targetStage === 'closed-won');
+    var dealName = card.querySelector('.deal-name') ? card.querySelector('.deal-name').textContent.trim() : 'Deal';
+    var dealAmt = parseInt(card.dataset.amount, 10) || 0;
+
+    // Reparent into new dropzone
+    targetDropzone.appendChild(card);
+    card.dataset.stage = targetStage;
+    card.classList.remove('just-moved');
+    void card.offsetWidth; // force reflow for animation
+    card.classList.add('just-moved');
+
+    updatePipelineTotals();
+
+    if (isWon) {
+      spawnSparks(card);
+      logTelemetry('🎉 WON: ' + dealName + ' reached Closed Won (' + formatShortMoney(dealAmt) + ' ARR)', true);
+    } else {
+      logTelemetry('⚡ ROUTED: ' + dealName + ' → ' + stageNames[targetStage] + ' (' + formatShortMoney(dealAmt) + ')', false);
+    }
+
+    if (!opts.isAuto) {
+      pauseAutoFlow(12);
+    }
+  }
+
+  // Bind drag & drop on cards
+  function initDragAndDrop() {
+    var cards = kanban.querySelectorAll('.deal-card');
+
+    cards.forEach(function(card) {
+      card.addEventListener('dragstart', function(e) {
+        card.classList.add('is-dragging');
+        if (visualHost) visualHost.classList.add('is-interacting');
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', card.dataset.dealId);
+
+        stages.forEach(function(s) {
+          if (dropzones[s]) dropzones[s].classList.add('can-drop');
+        });
+        pauseAutoFlow(15);
+      });
+
+      card.addEventListener('dragend', function() {
+        card.classList.remove('is-dragging');
+        if (visualHost) visualHost.classList.remove('is-interacting');
+        stages.forEach(function(s) {
+          if (dropzones[s]) {
+            dropzones[s].classList.remove('can-drop');
+            dropzones[s].classList.remove('drag-over');
+          }
+        });
+      });
+    });
+
+    stages.forEach(function(s) {
+      var dz = dropzones[s];
+      if (!dz) return;
+
+      dz.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        dz.classList.add('drag-over');
+      });
+
+      dz.addEventListener('dragleave', function(e) {
+        if (!dz.contains(e.relatedTarget)) {
+          dz.classList.remove('drag-over');
+        }
+      });
+
+      dz.addEventListener('drop', function(e) {
+        e.preventDefault();
+        dz.classList.remove('drag-over');
+        var dealId = e.dataTransfer.getData('text/plain');
+        if (!dealId) return;
+        var draggedCard = kanban.querySelector('[data-deal-id="' + dealId + '"]');
+        if (draggedCard) {
+          moveDeal(draggedCard, s);
+        }
+      });
+    });
+  }
+
+  // Touch Drag-and-Drop for mobile / touchscreens
+  function initTouchDrag() {
+    var activeTouchCard = null;
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var hasMoved = false;
+
+    kanban.addEventListener('touchstart', function(e) {
+      var card = e.target.closest('.deal-card');
+      if (!card || e.target.closest('.deal-nav-btn')) return;
+
+      activeTouchCard = card;
+      var touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      hasMoved = false;
+      pauseAutoFlow(12);
+    }, { passive: true });
+
+    kanban.addEventListener('touchmove', function(e) {
+      if (!activeTouchCard) return;
+      var touch = e.touches[0];
+      var diffX = Math.abs(touch.clientX - touchStartX);
+      var diffY = Math.abs(touch.clientY - touchStartY);
+
+      if (diffX > 10 || diffY > 10) {
+        hasMoved = true;
+        activeTouchCard.classList.add('is-dragging');
+        if (visualHost) visualHost.classList.add('is-interacting');
+
+        // Highlight dropzone under touch point
+        var elem = document.elementFromPoint(touch.clientX, touch.clientY);
+        var dz = elem ? elem.closest('.column-dropzone') : null;
+        stages.forEach(function(s) {
+          if (dropzones[s]) {
+            dropzones[s].classList.toggle('drag-over', dropzones[s] === dz);
+          }
+        });
+      }
+    }, { passive: true });
+
+    kanban.addEventListener('touchend', function(e) {
+      if (!activeTouchCard) return;
+      if (hasMoved) {
+        var touch = e.changedTouches[0];
+        var elem = document.elementFromPoint(touch.clientX, touch.clientY);
+        var dz = elem ? elem.closest('.column-dropzone') : null;
+        if (dz && dz.dataset.dropzone) {
+          moveDeal(activeTouchCard, dz.dataset.dropzone);
+        }
+      }
+      activeTouchCard.classList.remove('is-dragging');
+      if (visualHost) visualHost.classList.remove('is-interacting');
+      stages.forEach(function(s) {
+        if (dropzones[s]) dropzones[s].classList.remove('drag-over');
+      });
+      activeTouchCard = null;
+      hasMoved = false;
+    });
+  }
+
+  // Button clicks: Next / Prev arrows on cards
+  kanban.addEventListener('click', function(e) {
+    var navBtn = e.target.closest('.deal-nav-btn');
+    if (navBtn) {
+      e.preventDefault();
+      var card = navBtn.closest('.deal-card');
+      if (!card) return;
+      var currentStage = card.dataset.stage;
+      var currentIdx = stages.indexOf(currentStage);
+      if (currentIdx === -1) return;
+
+      var dir = navBtn.dataset.dir;
+      var nextIdx = dir === 'next' ? currentIdx + 1 : currentIdx - 1;
+      if (nextIdx >= 0 && nextIdx < stages.length) {
+        moveDeal(card, stages[nextIdx]);
+      }
+      return;
+    }
+
+    var simBtn = e.target.closest('[data-sim-toggle]');
+    if (simBtn) {
+      e.preventDefault();
+      autoFlowActive = !autoFlowActive;
+      simBtn.classList.toggle('is-active', autoFlowActive);
+      simBtn.setAttribute('aria-pressed', autoFlowActive ? 'true' : 'false');
+      var label = simBtn.querySelector('.hud-btn-text');
+      if (label) label.textContent = autoFlowActive ? 'Auto-Flow' : 'Paused';
+      logTelemetry(autoFlowActive ? '⚡ Auto-Flow simulation resumed' : '⏸ Auto-Flow paused by user', false);
+      if (autoFlowActive) pauseAutoFlow(1);
+      return;
+    }
+
+    var resetTrigger = e.target.closest('[data-kanban-reset]');
+    if (resetTrigger) {
+      e.preventDefault();
+      resetDeals();
+      logTelemetry('↺ Pipeline reset to default RevOps architecture', false);
+      pauseAutoFlow(8);
+      return;
+    }
+  });
+
+  function resetDeals() {
+    Object.keys(defaultDistribution).forEach(function(dealId) {
+      var card = kanban.querySelector('[data-deal-id="' + dealId + '"]');
+      var targetStage = defaultDistribution[dealId];
+      if (card && dropzones[targetStage]) {
+        dropzones[targetStage].appendChild(card);
+        card.dataset.stage = targetStage;
+      }
+    });
+    updatePipelineTotals();
+  }
+
+  // Autonomous Pipeline Stage Moving (Auto-Flow Simulation)
+  function runAutoFlowStep() {
+    if (!autoFlowActive || Date.now() < userInteractedUntil || document.hidden) return;
+
+    // Find candidates in Stage 1 or 2
+    var candidatesStage1 = dropzones['qualified'] ? Array.from(dropzones['qualified'].querySelectorAll('.deal-card')) : [];
+    var candidatesStage2 = dropzones['architecture'] ? Array.from(dropzones['architecture'].querySelectorAll('.deal-card')) : [];
+
+    if (candidatesStage2.length > 0 && (Math.random() > 0.4 || candidatesStage1.length === 0)) {
+      // Advance an architecture deal to closed-won
+      var pick2 = candidatesStage2[Math.floor(Math.random() * candidatesStage2.length)];
+      moveDeal(pick2, 'closed-won', { isAuto: true });
+    } else if (candidatesStage1.length > 0) {
+      // Advance a qualified deal to architecture
+      var pick1 = candidatesStage1[Math.floor(Math.random() * candidatesStage1.length)];
+      moveDeal(pick1, 'architecture', { isAuto: true });
+    } else {
+      // All deals are in Closed Won! Reset one back to Qualified to keep the conveyor cycling
+      var wonDeals = dropzones['closed-won'] ? Array.from(dropzones['closed-won'].querySelectorAll('.deal-card')) : [];
+      if (wonDeals.length > 0) {
+        var cycleDeal = wonDeals[0];
+        moveDeal(cycleDeal, 'qualified', { isAuto: true });
+      }
+    }
+  }
+
+  // Pause auto flow on mouse hover
+  kanban.addEventListener('mouseenter', function() {
+    pauseAutoFlow(8);
+    if (visualHost) visualHost.classList.add('is-interacting');
+  });
+
+  kanban.addEventListener('mouseleave', function() {
+    if (visualHost) visualHost.classList.remove('is-interacting');
+  });
+
+  // Initialize
+  initDragAndDrop();
+  initTouchDrag();
+  updatePipelineTotals();
+
+  // Run autonomous conveyor step every 4.6 seconds
+  setInterval(runAutoFlowStep, 4600);
+
+})();

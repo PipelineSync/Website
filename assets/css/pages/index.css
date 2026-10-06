@@ -385,3 +385,931 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
 /* Center the Questions accordion within the homepage content column. */
 #faq .accordion{width:100%;max-width:900px;margin:30px auto 0!important;box-sizing:border-box}
 #faq .accordion-item{width:100%;box-sizing:border-box}
+
+/* ==========================================================================
+   Futuristic Animated Interactive CRM Kanban Pipeline (Hero Featured)
+   ========================================================================== */
+
+html body #home .n-visual.n-visual-kanban {
+  max-width: 630px !important;
+  aspect-ratio: auto !important;
+  min-height: 520px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(.16, 1, .3, 1);
+  padding: 10px 0;
+}
+
+html body #home .n-visual.n-visual-kanban:hover,
+html body #home .n-visual.n-visual-kanban.is-interacting {
+  transform: none !important;
+}
+
+html body #home .n-visual.n-visual-kanban .n-visual-art.n-visual-kanban-art {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  width: 100% !important;
+  transform: none !important;
+  animation: none !important;
+  z-index: 2 !important;
+}
+
+html body #home .n-visual.n-visual-kanban .n-visual-net {
+  pointer-events: none !important;
+  opacity: 0.55 !important;
+}
+
+html body #home .n-visual.n-visual-kanban .n-visual-rings {
+  pointer-events: none !important;
+  opacity: 0.45 !important;
+}
+
+html body #home .n-visual.n-visual-kanban .n-chip {
+  pointer-events: none !important;
+  z-index: 3 !important;
+}
+
+/* Kanban Glass Shell */
+.hero-kanban {
+  position: relative;
+  width: 100%;
+  background: rgba(9, 12, 28, 0.82);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(34, 228, 255, 0.28);
+  border-radius: 20px;
+  padding: 14px 14px 12px;
+  box-shadow: 
+    0 24px 70px -15px rgba(0, 0, 0, 0.85),
+    0 0 35px -8px rgba(34, 228, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 0 30px rgba(34, 228, 255, 0.04);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Glowing Top Scanner Laser Beam */
+.hero-kanban::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22e4ff, #ffffff, #22e4ff, transparent);
+  box-shadow: 0 0 12px #22e4ff, 0 0 20px #8b5cf6;
+  animation: kanbanScan 4.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes kanbanScan {
+  0% { left: -50%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { left: 120%; opacity: 0; }
+}
+
+/* Corner Cyber HUD Accents */
+.hero-kanban::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid rgba(34, 228, 255, 0.5);
+  border-right: 2px solid rgba(34, 228, 255, 0.5);
+  border-bottom-right-radius: 20px;
+  pointer-events: none;
+}
+
+/* HUD Top Header */
+.kanban-hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 10px;
+}
+
+.hud-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hud-beacon {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beacon-core {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22e4ff;
+  box-shadow: 0 0 8px #22e4ff, 0 0 14px #22e4ff;
+}
+
+.beacon-pulse {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid #22e4ff;
+  animation: beaconWave 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes beaconWave {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+.hud-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--n-text-3, #7d86a8);
+  line-height: 1.1;
+}
+
+.hud-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(34, 228, 255, 0.4);
+  line-height: 1.2;
+}
+
+.hud-stats-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hud-metric-lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7d86a8;
+  line-height: 1;
+}
+
+.hud-metric-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #f1f3ff;
+  line-height: 1.3;
+}
+
+.hud-metric-val.accent {
+  color: #22e4ff;
+  text-shadow: 0 0 8px rgba(34, 228, 255, 0.5);
+}
+
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #b4bbd8;
+  border-radius: 100px;
+  padding: 4px 9px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.hud-btn:hover {
+  background: rgba(34, 228, 255, 0.1);
+  border-color: rgba(34, 228, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(34, 228, 255, 0.25);
+}
+
+.hud-btn.is-active {
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.45);
+  color: #4ade80;
+}
+
+.hud-btn-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+  animation: hudDotBlink 1.8s ease-in-out infinite;
+}
+
+@keyframes hudDotBlink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.hud-btn.hud-btn-icon {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.hud-btn.hud-btn-icon:hover {
+  transform: rotate(180deg);
+}
+
+/* Stage Energy Conduit Rail */
+.kanban-conduit-rail {
+  position: relative;
+  padding: 0 8px;
+  margin-bottom: 12px;
+}
+
+.conduit-track {
+  position: relative;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.conduit-glow-runner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #22e4ff, #8b5cf6, transparent);
+  box-shadow: 0 0 8px #22e4ff;
+  animation: railRunner 3.4s linear infinite;
+}
+
+@keyframes railRunner {
+  0% { left: -60px; }
+  100% { left: 100%; }
+}
+
+.conduit-milestones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.conduit-node {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.node-ring {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #090c1c;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.conduit-node[data-node="qualified"] .node-ring { border-color: #22e4ff; box-shadow: 0 0 6px rgba(34, 228, 255, 0.6); }
+.conduit-node[data-node="architecture"] .node-ring { border-color: #8b5cf6; box-shadow: 0 0 6px rgba(139, 92, 246, 0.6); }
+.conduit-node[data-node="closed-won"] .node-ring { border-color: #4ade80; box-shadow: 0 0 6px rgba(74, 222, 128, 0.6); }
+
+.node-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7d86a8;
+}
+
+.conduit-link {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 8px;
+}
+
+.conduit-link.link-1 .conduit-arrow {
+  animation: chevronGlow 2.4s ease-in-out infinite;
+}
+
+.conduit-link.link-2 .conduit-arrow {
+  animation: chevronGlow 2.4s ease-in-out infinite 1.2s;
+}
+
+@keyframes chevronGlow {
+  0%, 100% { color: rgba(255, 255, 255, 0.15); transform: translateX(0); }
+  50% { color: #22e4ff; text-shadow: 0 0 8px #22e4ff; transform: translateX(2px); }
+}
+
+/* Kanban 3-Column Grid */
+.kanban-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.kanban-column {
+  background: rgba(14, 18, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 8px 8px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.25s cubic-bezier(.16, 1, .3, 1);
+  min-width: 0;
+}
+
+.kanban-column:hover {
+  background: rgba(16, 21, 50, 0.75);
+}
+
+.stage-col-qualified {
+  border-top: 2px solid rgba(34, 228, 255, 0.6);
+}
+
+.stage-col-architecture {
+  border-top: 2px solid rgba(139, 92, 246, 0.6);
+}
+
+.stage-col-closed-won {
+  border-top: 2px solid rgba(74, 222, 128, 0.7);
+}
+
+/* Column Header */
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 2px 6px;
+  gap: 6px;
+}
+
+.col-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.col-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.stage-col-qualified .col-indicator { background: #22e4ff; box-shadow: 0 0 6px #22e4ff; }
+.stage-col-architecture .col-indicator { background: #8b5cf6; box-shadow: 0 0 6px #8b5cf6; }
+.stage-col-closed-won .col-indicator { background: #4ade80; box-shadow: 0 0 6px #4ade80; }
+
+.col-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.col-id {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.06em;
+  color: #7d86a8;
+  line-height: 1;
+}
+
+.col-name {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #f1f3ff;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.col-metrics {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.col-counter {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #b4bbd8;
+  line-height: 1.2;
+}
+
+.col-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: #7defff;
+  line-height: 1.2;
+}
+
+.stage-col-architecture .col-amount { color: #b69cff; }
+.stage-col-closed-won .col-amount { color: #4ade80; }
+
+/* Animated Column Scanner Line */
+.col-scanner-bar {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-col-qualified .col-scanner-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 40%; height: 100%;
+  background: #22e4ff;
+  box-shadow: 0 0 6px #22e4ff;
+  animation: scanBar 3s ease-in-out infinite;
+}
+
+.stage-col-architecture .col-scanner-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 40%; height: 100%;
+  background: #8b5cf6;
+  box-shadow: 0 0 6px #8b5cf6;
+  animation: scanBar 3s ease-in-out infinite 1s;
+}
+
+.stage-col-closed-won .col-scanner-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 40%; height: 100%;
+  background: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+  animation: scanBar 3s ease-in-out infinite 2s;
+}
+
+@keyframes scanBar {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(250%); }
+}
+
+/* Dropzone Area */
+.column-dropzone {
+  min-height: 236px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 3px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.column-dropzone.can-drop {
+  background: rgba(255, 255, 255, 0.02);
+  outline: 1px dashed rgba(255, 255, 255, 0.18);
+  outline-offset: 1px;
+}
+
+.column-dropzone.drag-over {
+  background: rgba(34, 228, 255, 0.08) !important;
+  outline: 1.5px dashed #22e4ff !important;
+  box-shadow: inset 0 0 16px rgba(34, 228, 255, 0.2);
+}
+
+.stage-col-architecture .column-dropzone.drag-over {
+  background: rgba(139, 92, 246, 0.08) !important;
+  outline-color: #8b5cf6 !important;
+  box-shadow: inset 0 0 16px rgba(139, 92, 246, 0.2);
+}
+
+.stage-col-closed-won .column-dropzone.drag-over {
+  background: rgba(74, 222, 128, 0.08) !important;
+  outline-color: #4ade80 !important;
+  box-shadow: inset 0 0 16px rgba(74, 222, 128, 0.2);
+}
+
+/* Deal Cards */
+.deal-card {
+  position: relative;
+  background: rgba(19, 24, 52, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 8px;
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 0.22s cubic-bezier(.16, 1, .3, 1), box-shadow 0.22s ease, border-color 0.22s ease, opacity 0.2s ease;
+  overflow: hidden;
+}
+
+.deal-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 228, 255, 0.45);
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.7), 0 0 14px -2px rgba(34, 228, 255, 0.3);
+}
+
+.deal-card:focus-visible {
+  outline: 2px solid #22e4ff;
+  outline-offset: 1px;
+}
+
+.deal-card.is-dragging {
+  opacity: 0.45;
+  transform: scale(0.98) rotate(1.5deg);
+  border-color: #22e4ff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.8), 0 0 20px rgba(34, 228, 255, 0.5);
+  cursor: grabbing;
+}
+
+.deal-card.is-won {
+  border-color: rgba(74, 222, 128, 0.35);
+}
+
+.deal-card.is-won:hover {
+  border-color: rgba(74, 222, 128, 0.6);
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.7), 0 0 16px -2px rgba(74, 222, 128, 0.4);
+}
+
+.deal-card.just-moved {
+  animation: cardPulseDrop 0.5s cubic-bezier(.16, 1, .3, 1);
+}
+
+@keyframes cardPulseDrop {
+  0% { transform: scale(1.05) translateY(-4px); }
+  60% { transform: scale(0.98) translateY(1px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.deal-card-glow {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 228, 255, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.deal-card.is-won .deal-card-glow {
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.22) 0%, transparent 70%);
+}
+
+.deal-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.deal-company {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.deal-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #22e4ff;
+  flex-shrink: 0;
+}
+
+.deal-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.deal-name {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #f1f3ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.deal-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7.5px;
+  color: #7d86a8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1;
+}
+
+.deal-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #22e4ff;
+  text-shadow: 0 0 6px rgba(34, 228, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.deal-card.is-won .deal-amount {
+  color: #4ade80;
+  text-shadow: 0 0 6px rgba(74, 222, 128, 0.4);
+}
+
+.deal-tags-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.deal-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.02em;
+  padding: 1.5px 5px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #b4bbd8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.2;
+}
+
+.deal-tag.tag-status {
+  color: #7defff;
+  border-color: rgba(34, 228, 255, 0.2);
+  background: rgba(34, 228, 255, 0.06);
+}
+
+.deal-tag.tag-won {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.deal-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.deal-drag-grip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7.5px;
+  color: #58697b;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.deal-card:hover .deal-drag-grip {
+  color: #22e4ff;
+}
+
+.deal-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.deal-nav-btn {
+  width: 19px;
+  height: 19px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #b4bbd8;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.deal-nav-btn:not(:disabled):hover {
+  background: rgba(34, 228, 255, 0.2);
+  border-color: #22e4ff;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(34, 228, 255, 0.5);
+}
+
+.deal-nav-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* HUD Footer & Telemetry Feed */
+.kanban-hud-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hud-telemetry-feed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hud-feed-icon {
+  font-size: 10px;
+  color: #22e4ff;
+  animation: feedIconPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes feedIconPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); filter: drop-shadow(0 0 4px #22e4ff); }
+}
+
+.hud-feed-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+  color: #b4bbd8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  transition: color 0.3s;
+}
+
+.hud-feed-text.is-alert {
+  color: #4ade80;
+  text-shadow: 0 0 6px rgba(74, 222, 128, 0.5);
+}
+
+.hud-sync-pulse {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.pulse-bar {
+  width: 2.5px;
+  background: #22e4ff;
+  border-radius: 1px;
+  box-shadow: 0 0 4px rgba(34, 228, 255, 0.5);
+  animation: syncWave 1.4s ease-in-out infinite;
+}
+
+.pulse-bar.bar-1 { animation-delay: 0s; height: 6px; }
+.pulse-bar.bar-2 { animation-delay: 0.2s; height: 11px; }
+.pulse-bar.bar-3 { animation-delay: 0.4s; height: 8px; }
+.pulse-bar.bar-4 { animation-delay: 0.6s; height: 4px; }
+
+@keyframes syncWave {
+  0%, 100% { height: 3px; opacity: 0.4; }
+  50% { height: 12px; opacity: 1; }
+}
+
+/* Floating Confetti / Victory Particles */
+.kanban-spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkBurst 0.9s cubic-bezier(.16, 1, .3, 1) forwards;
+  z-index: 20;
+}
+
+@keyframes sparkBurst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+}
+
+/* Responsive Styles */
+@media (max-width: 680px) {
+  html body #home .n-visual.n-visual-kanban {
+    max-width: 100% !important;
+    min-height: auto;
+  }
+  .hero-kanban {
+    padding: 10px 8px 8px;
+  }
+  .kanban-columns {
+    gap: 6px;
+  }
+  .kanban-column {
+    padding: 6px 4px 8px;
+  }
+  .deal-card {
+    padding: 6px;
+  }
+  .deal-name {
+    font-size: 9.5px;
+  }
+  .deal-amount {
+    font-size: 9.5px;
+  }
+  .deal-sub {
+    display: none;
+  }
+  .deal-tag:not(.tag-status):not(.tag-won) {
+    display: none;
+  }
+  .node-name {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .hud-brand .hud-kicker {
+    display: none;
+  }
+  .hud-metric:first-child {
+    display: none;
+  }
+  .kanban-column-header .col-id {
+    display: none;
+  }
+  .col-amount {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kanban::before,
+  .conduit-glow-runner,
+  .beacon-pulse,
+  .col-scanner-bar::after,
+  .pulse-bar {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,327 @@
+<div class="hero-kanban" id="heroKanban" data-hero-kanban>
+  <!-- Futuristic HUD Top Bar -->
+  <div class="kanban-hud-bar">
+    <div class="hud-brand">
+      <span class="hud-beacon" aria-hidden="true">
+        <span class="beacon-pulse"></span>
+        <span class="beacon-core"></span>
+      </span>
+      <div class="hud-title-wrap">
+        <span class="hud-kicker">HubSpot RevOps Engine</span>
+        <span class="hud-title">LIVE PIPELINE SYNC</span>
+      </div>
+    </div>
+    <div class="hud-stats-cluster">
+      <div class="hud-metric">
+        <span class="hud-metric-lbl">Active</span>
+        <span class="hud-metric-val" data-kanban-count>5 deals</span>
+      </div>
+      <div class="hud-metric">
+        <span class="hud-metric-lbl">Total ARR</span>
+        <span class="hud-metric-val accent" data-kanban-total>$470,000</span>
+      </div>
+      <div class="hud-actions">
+        <button type="button" class="hud-btn is-active" data-sim-toggle aria-pressed="true" title="Toggle autonomous moving stages">
+          <span class="hud-btn-dot" aria-hidden="true"></span>
+          <span class="hud-btn-text">Auto-Flow</span>
+        </button>
+        <button type="button" class="hud-btn hud-btn-icon" data-kanban-reset title="Reset deals to starting stages" aria-label="Reset pipeline">
+          <i class="fa-solid fa-arrow-rotate-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated Stage Energy Conduit / Rail -->
+  <div class="kanban-conduit-rail" aria-hidden="true">
+    <div class="conduit-track">
+      <div class="conduit-glow-runner"></div>
+    </div>
+    <div class="conduit-milestones">
+      <div class="conduit-node active" data-node="qualified">
+        <span class="node-ring"></span>
+        <span class="node-name">01 Qualified</span>
+      </div>
+      <div class="conduit-link link-1">
+        <span class="link-beam"></span>
+        <i class="fa-solid fa-angles-right conduit-arrow"></i>
+      </div>
+      <div class="conduit-node active" data-node="architecture">
+        <span class="node-ring"></span>
+        <span class="node-name">02 Architecture</span>
+      </div>
+      <div class="conduit-link link-2">
+        <span class="link-beam"></span>
+        <i class="fa-solid fa-angles-right conduit-arrow"></i>
+      </div>
+      <div class="conduit-node active" data-node="closed-won">
+        <span class="node-ring"></span>
+        <span class="node-name">03 Closed Won</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kanban Columns Grid -->
+  <div class="kanban-columns" role="region" aria-label="CRM Deal Pipeline Stages">
+    <!-- STAGE 1: Qualified -->
+    <div class="kanban-column stage-col-qualified" data-stage="qualified">
+      <div class="column-header">
+        <div class="col-title-group">
+          <span class="col-indicator" aria-hidden="true"></span>
+          <div class="col-text">
+            <span class="col-id">01 / STAGE</span>
+            <h3 class="col-name">Qualified</h3>
+          </div>
+        </div>
+        <div class="col-metrics">
+          <span class="col-counter" data-col-count="qualified">2</span>
+          <span class="col-amount" data-col-val="qualified">$120,000</span>
+        </div>
+      </div>
+      <div class="col-scanner-bar" aria-hidden="true"></div>
+      <div class="column-dropzone" data-dropzone="qualified" aria-label="Qualified stage drop area">
+        <!-- Deal 1 -->
+        <div class="deal-card" 
+             draggable="true" 
+             tabindex="0" 
+             data-deal-id="deal-apex" 
+             data-stage="qualified" 
+             data-amount="48000"
+             role="button"
+             aria-grabbed="false"
+             aria-label="Apex BioTech, $48,000 ARR deal in Qualified stage">
+          <div class="deal-card-glow" aria-hidden="true"></div>
+          <div class="deal-card-top">
+            <div class="deal-company">
+              <span class="deal-icon" aria-hidden="true"><i class="fa-solid fa-dna"></i></span>
+              <div class="deal-meta">
+                <strong class="deal-name">Apex BioTech</strong>
+                <span class="deal-sub">Life Sciences • 180 seats</span>
+              </div>
+            </div>
+            <span class="deal-amount">$48k</span>
+          </div>
+          <div class="deal-tags-row">
+            <span class="deal-tag tag-hub"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Sales Hub</span>
+            <span class="deal-tag tag-status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 98% SLA</span>
+          </div>
+          <div class="deal-card-footer">
+            <span class="deal-drag-grip" aria-hidden="true"><i class="fa-solid fa-grip-vertical"></i> Drag</span>
+            <div class="deal-nav-controls">
+              <button type="button" class="deal-nav-btn btn-prev" data-dir="prev" disabled title="Cannot move before first stage" aria-label="Move Apex BioTech backward">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="deal-nav-btn btn-next" data-dir="next" title="Advance Apex BioTech to Architecture stage" aria-label="Advance Apex BioTech to next stage">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 2 -->
+        <div class="deal-card" 
+             draggable="true" 
+             tabindex="0" 
+             data-deal-id="deal-nova" 
+             data-stage="qualified" 
+             data-amount="72000"
+             role="button"
+             aria-grabbed="false"
+             aria-label="Nova Cloud, $72,000 ARR deal in Qualified stage">
+          <div class="deal-card-glow" aria-hidden="true"></div>
+          <div class="deal-card-top">
+            <div class="deal-company">
+              <span class="deal-icon" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+              <div class="deal-meta">
+                <strong class="deal-name">Nova Cloud</strong>
+                <span class="deal-sub">B2B SaaS • Data Audit</span>
+              </div>
+            </div>
+            <span class="deal-amount">$72k</span>
+          </div>
+          <div class="deal-tags-row">
+            <span class="deal-tag tag-hub"><i class="fa-solid fa-database" aria-hidden="true"></i> Migration</span>
+            <span class="deal-tag tag-status"><i class="fa-solid fa-shield-check" aria-hidden="true"></i> Clean 99%</span>
+          </div>
+          <div class="deal-card-footer">
+            <span class="deal-drag-grip" aria-hidden="true"><i class="fa-solid fa-grip-vertical"></i> Drag</span>
+            <div class="deal-nav-controls">
+              <button type="button" class="deal-nav-btn btn-prev" data-dir="prev" disabled title="Cannot move before first stage" aria-label="Move Nova Cloud backward">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="deal-nav-btn btn-next" data-dir="next" title="Advance Nova Cloud to Architecture stage" aria-label="Advance Nova Cloud to next stage">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2: Architecture -->
+    <div class="kanban-column stage-col-architecture" data-stage="architecture">
+      <div class="column-header">
+        <div class="col-title-group">
+          <span class="col-indicator" aria-hidden="true"></span>
+          <div class="col-text">
+            <span class="col-id">02 / STAGE</span>
+            <h3 class="col-name">Architecture</h3>
+          </div>
+        </div>
+        <div class="col-metrics">
+          <span class="col-counter" data-col-count="architecture">2</span>
+          <span class="col-amount" data-col-val="architecture">$205,000</span>
+        </div>
+      </div>
+      <div class="col-scanner-bar" aria-hidden="true"></div>
+      <div class="column-dropzone" data-dropzone="architecture" aria-label="Architecture stage drop area">
+        <!-- Deal 3 -->
+        <div class="deal-card" 
+             draggable="true" 
+             tabindex="0" 
+             data-deal-id="deal-fintech" 
+             data-stage="architecture" 
+             data-amount="95000"
+             role="button"
+             aria-grabbed="false"
+             aria-label="FinTech Prime, $95,000 ARR deal in Architecture stage">
+          <div class="deal-card-glow" aria-hidden="true"></div>
+          <div class="deal-card-top">
+            <div class="deal-company">
+              <span class="deal-icon" aria-hidden="true"><i class="fa-solid fa-vault"></i></span>
+              <div class="deal-meta">
+                <strong class="deal-name">FinTech Prime</strong>
+                <span class="deal-sub">FinServ • Rebuild</span>
+              </div>
+            </div>
+            <span class="deal-amount">$95k</span>
+          </div>
+          <div class="deal-tags-row">
+            <span class="deal-tag tag-hub"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Multi-Hub</span>
+            <span class="deal-tag tag-status"><i class="fa-solid fa-arrows-split-up-and-left" aria-hidden="true"></i> Routing</span>
+          </div>
+          <div class="deal-card-footer">
+            <span class="deal-drag-grip" aria-hidden="true"><i class="fa-solid fa-grip-vertical"></i> Drag</span>
+            <div class="deal-nav-controls">
+              <button type="button" class="deal-nav-btn btn-prev" data-dir="prev" title="Move FinTech Prime to Qualified stage" aria-label="Move FinTech Prime to Qualified stage">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="deal-nav-btn btn-next" data-dir="next" title="Advance FinTech Prime to Closed Won stage" aria-label="Advance FinTech Prime to Closed Won stage">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 4 -->
+        <div class="deal-card" 
+             draggable="true" 
+             tabindex="0" 
+             data-deal-id="deal-vanguard" 
+             data-stage="architecture" 
+             data-amount="110000"
+             role="button"
+             aria-grabbed="false"
+             aria-label="Vanguard AI, $110,000 ARR deal in Architecture stage">
+          <div class="deal-card-glow" aria-hidden="true"></div>
+          <div class="deal-card-top">
+            <div class="deal-company">
+              <span class="deal-icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
+              <div class="deal-meta">
+                <strong class="deal-name">Vanguard AI</strong>
+                <span class="deal-sub">Enterprise RevOps</span>
+              </div>
+            </div>
+            <span class="deal-amount">$110k</span>
+          </div>
+          <div class="deal-tags-row">
+            <span class="deal-tag tag-hub"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Attribution</span>
+            <span class="deal-tag tag-status"><i class="fa-solid fa-lock" aria-hidden="true"></i> Stage Gates</span>
+          </div>
+          <div class="deal-card-footer">
+            <span class="deal-drag-grip" aria-hidden="true"><i class="fa-solid fa-grip-vertical"></i> Drag</span>
+            <div class="deal-nav-controls">
+              <button type="button" class="deal-nav-btn btn-prev" data-dir="prev" title="Move Vanguard AI to Qualified stage" aria-label="Move Vanguard AI to Qualified stage">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="deal-nav-btn btn-next" data-dir="next" title="Advance Vanguard AI to Closed Won stage" aria-label="Advance Vanguard AI to Closed Won stage">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: Closed Won -->
+    <div class="kanban-column stage-col-closed-won" data-stage="closed-won">
+      <div class="column-header">
+        <div class="col-title-group">
+          <span class="col-indicator" aria-hidden="true"></span>
+          <div class="col-text">
+            <span class="col-id">03 / STAGE</span>
+            <h3 class="col-name">Closed Won</h3>
+          </div>
+        </div>
+        <div class="col-metrics">
+          <span class="col-counter" data-col-count="closed-won">1</span>
+          <span class="col-amount" data-col-val="closed-won">$145,000</span>
+        </div>
+      </div>
+      <div class="col-scanner-bar" aria-hidden="true"></div>
+      <div class="column-dropzone" data-dropzone="closed-won" aria-label="Closed Won stage drop area">
+        <!-- Deal 5 -->
+        <div class="deal-card is-won" 
+             draggable="true" 
+             tabindex="0" 
+             data-deal-id="deal-aero" 
+             data-stage="closed-won" 
+             data-amount="145000"
+             role="button"
+             aria-grabbed="false"
+             aria-label="AeroDynamics, $145,000 ARR deal in Closed Won stage">
+          <div class="deal-card-glow" aria-hidden="true"></div>
+          <div class="deal-card-top">
+            <div class="deal-company">
+              <span class="deal-icon" aria-hidden="true"><i class="fa-solid fa-rocket"></i></span>
+              <div class="deal-meta">
+                <strong class="deal-name">AeroDynamics</strong>
+                <span class="deal-sub">Aerospace • Portal Live</span>
+              </div>
+            </div>
+            <span class="deal-amount">$145k</span>
+          </div>
+          <div class="deal-tags-row">
+            <span class="deal-tag tag-hub"><i class="fa-solid fa-cubes" aria-hidden="true"></i> Full Suite</span>
+            <span class="deal-tag tag-won"><i class="fa-solid fa-sparkles" aria-hidden="true"></i> Won & Synced</span>
+          </div>
+          <div class="deal-card-footer">
+            <span class="deal-drag-grip" aria-hidden="true"><i class="fa-solid fa-grip-vertical"></i> Drag</span>
+            <div class="deal-nav-controls">
+              <button type="button" class="deal-nav-btn btn-prev" data-dir="prev" title="Move AeroDynamics back to Architecture stage" aria-label="Move AeroDynamics back to Architecture stage">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="deal-nav-btn btn-next" data-dir="next" disabled title="Deal already reached final stage" aria-label="Deal already in Closed Won">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD Real-Time Telemetry Bar / Event Feed -->
+  <div class="kanban-hud-footer">
+    <div class="hud-telemetry-feed" data-hud-feed>
+      <i class="fa-solid fa-bolt-lightning hud-feed-icon" aria-hidden="true"></i>
+      <span class="hud-feed-text" data-hud-feed-text>Interactive Pipeline: Drag deals or use arrows to route between stages</span>
+    </div>
+    <div class="hud-sync-pulse" aria-hidden="true">
+      <span class="pulse-bar bar-1"></span>
+      <span class="pulse-bar bar-2"></span>
+      <span class="pulse-bar bar-3"></span>
+      <span class="pulse-bar bar-4"></span>
+    </div>
+  </div>
+</div>
