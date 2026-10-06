@@ -1,6 +1,9 @@
 {# Home hero visual — futuristic animated deal-stage board.
    Columns follow the condensed HubSpot deal stages (Qualified → Proposal → Negotiation → Closed Won).
-   A deal card travels the stages on a loop; hovering a stage column freezes the travel and highlights it.
+   A deal card travels the stages on a loop and docks at the top of the column it reaches,
+   pushing that column's cards down one place. Visitors can also drag any deal card into
+   another stage with a mouse; counters, stage weights and the won-this-quarter figure
+   follow both the loop and the visitor.
    Decorative only: the whole block is aria-hidden and the animation is driven by assets/js/pages/index.js. #}
 {% set stages = hero_stages %}
 {% set deals = hero_deals %}
@@ -12,6 +15,7 @@
        data-hb-won="{{ hero_won_base | default('486') }}">
     <div class="hb-top">
       <span class="hb-top-title"><i class="hb-signal"></i>Deal pipeline</span>
+      <span class="hb-hint" data-hb-hint>Drag a card to a stage</span>
       <span class="hb-top-meta">Won this quarter <b data-hb-won-value>${{ hero_won_base | default('486') }}k+</b></span>
     </div>
 
@@ -24,8 +28,7 @@
           <span class="hb-col-count"><b data-hb-count>{{ stage.count | default('2') }}</b></span>
         </div>
         <div class="hb-col-share"><span></span></div>
-        <div class="hb-col-body">
-          <div class="hb-slot" data-hb-slot><span></span></div>
+        <div class="hb-col-body" data-hb-body>
           {% for deal in stage.deals %}
           <div class="hb-card">
             <span class="hb-card-name">{{ deal.name }}</span>

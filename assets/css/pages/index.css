@@ -434,7 +434,6 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
 .hb-top-meta b{color:var(--n-cyan-soft);font-weight:600}
 .hb-signal{width:6px;height:6px;border-radius:50%;background:var(--n-green);box-shadow:0 0 10px var(--n-green);animation:hbLive 1.9s ease-in-out infinite}
 @keyframes hbLive{50%{opacity:.35;transform:scale(.78)}}
-.hb-board.is-paused .hb-top-title::after{content:'— paused';color:var(--n-cyan);letter-spacing:.08em}
 
 /* Stage columns */
 .hb-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
@@ -459,7 +458,8 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
 .hb-col-share span{display:block;height:100%;width:var(--hb-share);border-radius:3px;transition:width .55s var(--n-ease);
   background:linear-gradient(90deg,rgba(255,255,255,.18),var(--hb-accent));animation:hbShare 4.6s ease-in-out infinite alternate}
 @keyframes hbShare{0%{opacity:.65}100%{opacity:1}}
-.hb-col-body{position:relative;display:flex;flex-direction:column;gap:8px;min-height:104px;padding-top:13px}
+.hb-col-body{position:relative;display:flex;flex-direction:column;gap:8px;padding-top:13px;
+  box-sizing:content-box;overflow:hidden}
 .hb-col.is-current{border-color:var(--hb-accent);
   background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),radial-gradient(120% 80% at 50% 0,rgba(34,228,255,.14),transparent 72%);
   box-shadow:0 0 0 1px var(--hb-accent),0 20px 46px -22px var(--hb-accent)}
@@ -467,12 +467,11 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
 @keyframes hbFlash{0%{box-shadow:0 0 0 0 var(--hb-accent)}100%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
 
 /* Deal cards inside a column */
-.hb-card{border-radius:10px;padding:8px 8px;border:1px solid rgba(255,255,255,.09);
+.hb-card{flex:0 0 auto;border-radius:10px;padding:8px 8px;border:1px solid rgba(255,255,255,.09);
   background:linear-gradient(150deg,rgba(255,255,255,.085),rgba(255,255,255,.018));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);animation:hbCard 7s ease-in-out infinite alternate}
-.hb-card:nth-of-type(3){animation-delay:-2.4s}
-.hb-card:nth-of-type(4){animation-delay:-4.2s}
-@keyframes hbCard{0%{transform:translateY(0)}100%{transform:translateY(-3px)}}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .45s var(--n-ease)}
+.hb-col-body.is-incoming .hb-card{transform:translateY(var(--hb-shift,60px))}
 .hb-card-name{display:block;font:600 11px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#eef1ff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hb-card-foot{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:6px}
 .hb-card-foot b{font:600 10px/1 'IBM Plex Mono',monospace;color:var(--n-cyan-soft)}
@@ -480,13 +479,6 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
   background:linear-gradient(140deg,var(--n-cyan-soft),var(--n-violet-soft))}
 
 /* Dock slot waiting for the travelling card */
-.hb-slot{position:relative;min-height:52px;border-radius:10px;opacity:.42;border:1px dashed rgba(34,228,255,.3);
-  background:rgba(34,228,255,.03);display:grid;place-items:center;transition:opacity .4s ease}
-.hb-slot span{width:11px;height:11px;border-radius:50%;border:1px solid rgba(34,228,255,.4);animation:hbSlot 2.6s ease-in-out infinite}
-@keyframes hbSlot{50%{transform:scale(1.35);opacity:.35}}
-.hb-slot.is-filled{opacity:0}
-.hb-col.is-current .hb-slot{opacity:.78}
-.hb-col.is-current .hb-slot span{border-color:rgba(34,228,255,.85)}
 
 /* Travelling deal card */
 .hb-deal{position:absolute;left:0;top:0;z-index:6;width:120px;border-radius:11px;padding:8px 9px 7px;
@@ -530,7 +522,8 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
   .hb-board.is-hovered .hb-col:not(:hover){opacity:.5;filter:saturate(.55)}
 }
 @media (prefers-reduced-motion:reduce){
-  .hb-board,.hb-card,.hb-col-share span,.hb-signal,.hb-slot span,.hb-link{animation:none!important}
+  .hb-board,.hb-card,.hb-col-share span,.hb-signal,.hb-link{animation:none!important}
+  .hb-col-body .hb-card{transition:none}
   .hb-scan{display:none}
 }
 
@@ -545,7 +538,6 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
   /* The board is full-bleed on phones, so the floating chips would sit on top of
      it. Hide them: the stage columns carry the visual on their own. */
   #home .n-visual-board .n-chip{display:none}
-  .hb-slot{opacity:.3}
   .hb-board{transform:none;animation:none;padding:9px 9px 10px;border-radius:16px}
   .hb-top{font-size:8px;padding-bottom:8px;gap:8px}
   .hb-top-meta{text-align:right}
@@ -555,13 +547,11 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
   .hb-col-dot{width:5px;height:5px}
   .hb-col-count{font-size:7px;min-width:12px;padding:2px 3px}
   .hb-col-share{margin:6px 0 7px}
-  .hb-col-body{min-height:78px;gap:5px;padding-top:12px}
+  .hb-col-body{gap:5px;padding-top:12px}
   .hb-card{padding:5px 6px}
   .hb-card-name{font-size:9px;line-height:1.15}
   .hb-card-foot{gap:4px;margin-top:4px}
   .hb-card-foot b{font-size:8.5px}
-  .hb-card:nth-of-type(n+3){display:none}
-  .hb-slot{min-height:42px}
   .hb-deal{padding:5px 6px}
   .hb-deal-name{font-size:9px}
   .hb-deal-foot{margin-top:4px}
@@ -588,4 +578,43 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
   .hb-col{padding:6px 3px 7px}
   .hb-card{padding:5px 3px}
   .hb-deal{padding:5px 4px}
+}
+
+/* ==========================================================================
+   Home hero board — interactivity
+   Visitors drag a deal card into another stage with a mouse; the demo loop keeps
+   running. The travelling card never intercepts pointer events, and everything
+   here is desktop-only so phones keep the hero's normal page scrolling.
+   ========================================================================== */
+.hb-deal{pointer-events:none}
+.hb-hint{flex:1 1 auto;min-width:0;text-align:center;color:var(--n-text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb-hint::before{content:'';display:inline-block;width:5px;height:5px;margin-right:6px;border-radius:1px;background:var(--n-cyan);opacity:.7;vertical-align:middle;transform:rotate(45deg)}
+
+/* A card that has just been dropped into a stage. */
+.hb-drop-in{animation:hbDropIn .42s var(--n-ease)}
+@keyframes hbDropIn{from{opacity:.3;transform:translateY(-9px) scale(.93)}}
+
+.hb-drag-ghost{position:fixed;z-index:9999;pointer-events:none;margin:0;border-radius:10px;
+  box-shadow:0 28px 60px -18px rgba(34,228,255,.85),0 0 0 1px rgba(34,228,255,.5);
+  will-change:transform,left,top}
+
+@media (hover:hover) and (pointer:fine){
+  .hb-card{cursor:grab}
+  .hb-board.is-dragging,.hb-board.is-dragging .hb-card{cursor:grabbing}
+  .hb-col-body.is-targeting .hb-card{transform:translateY(var(--hb-shift,60px))}
+  .hb-col.is-drop-target{z-index:4;transform:translateY(-5px);border-color:var(--hb-accent);
+    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),radial-gradient(120% 80% at 50% 0,rgba(34,228,255,.16),transparent 72%);
+    box-shadow:0 0 0 1px var(--hb-accent),0 24px 50px -22px var(--hb-accent)}
+  .hb-board.is-dragging .hb-col:not(.is-drop-target){opacity:.55}
+  .hb-board.is-dragging .hb-col.is-drop-target{opacity:1}
+}
+html.hb-dragging,html.hb-dragging body{user-select:none;-webkit-user-select:none;cursor:grabbing}
+
+/* No drag affordance where there is no mouse, or when motion is reduced. */
+@media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){
+  .hb-hint{display:none}
+  .hb-card{cursor:default}
+}
+@media (max-width:560px){
+  .hb-hint{display:none}
 }

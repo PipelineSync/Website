@@ -321,13 +321,21 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
 })();
 
 /* Home hero — futuristic animated deal-stage board (partials/hero-kanban.njk).
-   One deal card travels the condensed HubSpot stages, the stage counters and the
-   "won this quarter" readout follow it, and hovering a stage column freezes the
-   travel while that column is highlighted (the dimming/highlight is CSS).
+   Two actors share one board:
+     1. the demo loop — a deal card travels the condensed HubSpot stages and docks
+        at the top of the column it reaches, pushing that column's cards down one
+        place (no column keeps a reserved empty slot: cards always start at the
+        top, and a column's bottom card is clipped out of view while a deal is
+        docked there);
+     2. the visitor — with a mouse, any deal card can be dragged into another
+        stage, and the loop keeps running while they do it.
+   Stage counters, stage-weight bars and the won-this-quarter figure are all
+   derived from the board's own state, so the loop and the visitor stay in sync.
    Presentational only: the whole board is aria-hidden in the markup. */
 (function () {
   'use strict';
   var doc = document;
+  var root = doc.documentElement;
   var board = doc.querySelector('[data-hb-board]');
   if (!board) return;
   var grid = board.querySelector('[data-hb-grid]');
@@ -335,6 +343,8 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
   var link = board.querySelector('[data-hb-link]');
   var burst = board.querySelector('[data-hb-burst]');
   var wonReadout = board.querySelector('[data-hb-won-value]');
+  var hint = board.querySelector('[data-hb-hint]');
+  var HINT_IDLE = hint ? hint.textContent : '';
   var cols = Array.prototype.slice.call(board.querySelectorAll('[data-hb-col]'));
   if (!grid || !deal || cols.length < 2) return;
 
@@ -342,17 +352,15 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   var stages = cols.map(function (col) {
-    var countEl = col.querySelector('[data-hb-count]');
     return {
       el: col,
-      slot: col.querySelector('[data-hb-slot]'),
-      countEl: countEl,
-      base: parseInt((countEl || {}).textContent || '0', 10) || 0,
-      value: 0,
+      body: col.querySelector('[data-hb-body]'),
+      countEl: col.querySelector('[data-hb-count]'),
       name: (((col.querySelector('.hb-col-name') || {}).textContent) || '').trim()
     };
-  });
-  stages.forEach(function (s) { s.value = s.base; });
+  }).filter(function (stage) { return !!stage.body; });
+  if (stages.length < 2) return;
+  var lastIndex = stages.length - 1;
 
   var pool = [];
   try { pool = JSON.parse(board.getAttribute('data-hb-deals') || '[]') || []; } catch (err) { pool = []; }
@@ -367,25 +375,53 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
   var points = [];
   var dealW = 0, dealH = 0;
 
-  function offsetIn(el, root) {
+  function offsetIn(el, rootEl) {
     var x = 0, y = 0, node = el;
-    while (node && node !== root) { x += node.offsetLeft; y += node.offsetTop; node = node.offsetParent; }
-    return node === root ? { x: x, y: y } : null;
+    while (node && node !== rootEl) { x += node.offsetLeft; y += node.offsetTop; node = node.offsetParent; }
+    return node === rootEl ? { x: x, y: y } : null;
+  }
+  /* Displayed cards only: a card being dragged is hidden, so it leaves its column. */
+  function liveCards(stage) {
+    return Array.prototype.filter.call(stage.body.children, function (child) {
+      return child.classList && child.classList.contains('hb-card') && child.offsetParent !== null;
+    });
   }
   function measure() {
-    var ref = stages[0].slot || stages[0].el;
+    var ref = null;
+    for (var k = 0; k < stages.length && !ref; k++) {
+      var list = liveCards(stages[k]);
+      if (list.length) ref = list[0];
+    }
     if (!ref || !ref.offsetWidth) return false;
-    dealW = ref.offsetWidth;
-    dealH = ref.offsetHeight;
+
+    dealH = Math.round(ref.offsetHeight);
+    dealW = Math.round(ref.offsetWidth);
     deal.style.width = dealW + 'px';
+    deal.style.height = dealH + 'px';
+
     points = stages.map(function (stage) {
-      var target = stage.slot || stage.el;
-      var p = offsetIn(target, grid);
+      var cs = window.getComputedStyle(stage.body);
+      var gap = parseFloat(cs.rowGap || cs.gap) || 0;
+      var padL = parseFloat(cs.paddingLeft) || 0;
+      var padT = parseFloat(cs.paddingTop) || 0;
+      var cards = liveCards(stage);
+      var content = 0;
+      cards.forEach(function (card) { content += card.offsetHeight; });
+      content += gap * Math.max(0, cards.length - 1);
+
+      /* Height = exactly the resting cards (content-box). Pushing them down one
+         slot therefore slides the last card out of the clip box instead of
+         resizing the column, so the board never changes height mid-lap. */
+      stage.body.style.height = content ? Math.round(content) + 'px' : '';
+      stage.body.style.setProperty('--hb-shift', (dealH + gap) + 'px');
+
+      var p = offsetIn(stage.body, grid);
       if (!p) {
-        var a = target.getBoundingClientRect(), b = grid.getBoundingClientRect();
+        var a = stage.body.getBoundingClientRect(), b = grid.getBoundingClientRect();
         p = { x: a.left - b.left, y: a.top - b.top };
       }
-      return p;
+      /* Dock point = the column's first card position, i.e. the content box top-left. */
+      return { x: p.x + padL, y: p.y + padT };
     });
     return true;
   }
@@ -395,41 +431,72 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
   }
   function ease(u) { return u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; }
 
-  /* ---------- board readouts ---------- */
+  function readValue(text) {
+    return parseInt(String(text).replace(/[^0-9]/g, ''), 10) || 0;
+  }
+
+  /* ---------- derived readouts: counters, stage weights, won-this-quarter ---------- */
+  var dockedIndex = -1;
+  var wonTotal = parseInt(board.getAttribute('data-hb-won') || '0', 10) || 0;
+
   function syncShares() {
-    var total = stages.reduce(function (sum, s) { return sum + s.value; }, 0) || 1;
-    stages.forEach(function (s) {
-      s.el.style.setProperty('--hb-share', ((s.value / total) * 100).toFixed(1) + '%');
+    var counts = stages.map(function (stage, k) {
+      return liveCards(stage).length + (k === dockedIndex ? 1 : 0);
+    });
+    var total = counts.reduce(function (sum, n) { return sum + n; }, 0) || 1;
+    stages.forEach(function (stage, k) {
+      stage.el.style.setProperty('--hb-share', ((counts[k] / total) * 100).toFixed(1) + '%');
     });
   }
   function setCount(stage, value) {
-    stage.value = value;
-    if (!stage.countEl) return;
+    if (!stage.countEl || stage.countEl.textContent === String(value)) return;
     stage.countEl.textContent = value;
     stage.countEl.classList.add('is-flip');
     window.clearTimeout(stage._flipTimer);
     stage._flipTimer = window.setTimeout(function () { stage.countEl.classList.remove('is-flip'); }, 180);
   }
-  function resetCounts() {
-    stages.forEach(function (s) { if (s.value !== s.base) setCount(s, s.base); });
+  function renderCounts() {
+    stages.forEach(function (stage, k) {
+      setCount(stage, liveCards(stage).length + (k === dockedIndex ? 1 : 0));
+    });
+    syncShares();
   }
-  var wonTotal = parseInt(board.getAttribute('data-hb-won') || '0', 10) || 0;
-  function bumpWon(value) {
-    var amount = parseInt(String(value).replace(/[^0-9]/g, ''), 10) || 0;
-    wonTotal += amount;
+  function renderWon() {
     if (wonReadout) wonReadout.textContent = '$' + wonTotal + 'k+';
+  }
+  /* A deal that reaches Closed Won is cashed in; dragging it back out refunds it. */
+  function cashAmount(amount) {
+    wonTotal += amount;
+    renderWon();
+  }
+  function cashCard(card) {
+    if (!card || card.dataset.cashed) return;
+    card.dataset.cashed = '1';
+    cashAmount(readValue((card.querySelector('b') || {}).textContent));
+  }
+  function uncashCard(card) {
+    if (!card || !card.dataset.cashed) return;
+    delete card.dataset.cashed;
+    cashAmount(-readValue((card.querySelector('b') || {}).textContent));
   }
   function setDeal(data) {
     if (nameEl) nameEl.textContent = data.name || '';
     if (valueEl) valueEl.textContent = data.value || '';
     if (ownerEl) ownerEl.textContent = data.owner || '';
-    if (tagEl) tagEl.textContent = stages[0].name;
   }
-  function fillSlot(index, filled) {
-    if (stages[index] && stages[index].slot) stages[index].slot.classList.toggle('is-filled', !!filled);
+  function setHint(text) {
+    if (hint && hint.textContent !== text) hint.textContent = text;
+  }
+
+  /* ---------- column states: only one column makes room for a docking deal ---------- */
+  function setOpen(index, on) {
+    if (stages[index]) stages[index].body.classList.toggle('is-incoming', !!on);
+  }
+  function clearOpen() {
+    stages.forEach(function (stage) { stage.body.classList.remove('is-incoming'); });
   }
   function focusStage(index) {
-    stages.forEach(function (s, k) { s.el.classList.toggle('is-current', k === index); });
+    stages.forEach(function (stage, k) { stage.el.classList.toggle('is-current', k === index); });
   }
   function flashStage(index) {
     var el = stages[index].el;
@@ -438,24 +505,29 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     el.classList.add('is-flash');
   }
 
-  /* ---------- timeline ---------- */
-  var DWELL = 2100, TRAVEL = 950, WIN_HOLD = 2500, FADE = 480;
-  var lastIndex = stages.length - 1;
-  var i = 0, phase = 'dwell', t = 0, dealIndex = 0;
-  var paused = false, visible = true, running = false, last = 0, raf = 0;
+  /* ---------- demo loop ---------- */
+  var DWELL = 2100, TRAVEL = 950, WIN_HOLD = 2500, FADE = 480, OPEN_AT = 0.72;
+  var i = 0, phase = 'dwell', t = 0, dealIndex = 0, opened = false;
+  var visible = true, running = false, last = 0, raf = 0;
 
   function dock(index) {
+    clearOpen();
     focusStage(index);
-    fillSlot(index, true);
+    setOpen(index, true);
+    dockedIndex = index;
     if (tagEl) tagEl.textContent = stages[index].name;
     place(points[index] ? points[index].x : 0, points[index] ? points[index].y : 0, 0);
+    renderCounts();
   }
 
   function startTravel() {
     phase = 'travel';
     t = 0;
+    opened = false;
     deal.classList.add('is-moving');
-    fillSlot(i, false);
+    setOpen(i, false);              /* the column it leaves closes back up */
+    dockedIndex = -1;
+    renderCounts();
     if (link) link.classList.add('is-on');
   }
 
@@ -469,8 +541,7 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
           phase = 'win';
           t = 0;
           deal.classList.add('is-won');
-          setCount(stages[i], stages[i].value + 1);
-          bumpWon(valueEl ? valueEl.textContent : '');
+          cashAmount(readValue(valueEl ? valueEl.textContent : ''));
           flashStage(i);
           if (burst) {
             burst.style.transform = 'translate3d(' + (points[i].x + dealW / 2).toFixed(1) + 'px,' + (points[i].y + dealH / 2).toFixed(1) + 'px,0)';
@@ -479,7 +550,6 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
             burst.classList.add('is-on');
           }
         } else {
-          setCount(stages[i], Math.max(0, stages[i].value - 1));
           startTravel();
         }
       }
@@ -504,13 +574,15 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
           link.style.width = '0px';
         }
       }
+      /* Make room in the destination just before the card lands, so it slides
+         into the top place instead of on top of an occupied one. */
+      if (!opened && u >= OPEN_AT) { opened = true; setOpen(i + 1, true); }
       if (u >= 1) {
         i += 1;
         phase = 'dwell';
         t = 0;
         deal.classList.remove('is-moving');
         if (link) { link.classList.remove('is-on'); link.style.width = '0px'; }
-        setCount(stages[i], stages[i].value + 1);
         dock(i);
         flashStage(i);
       }
@@ -523,19 +595,18 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
       return;
     }
 
-    /* reset: the closed deal leaves the board and the pipeline rebalances */
+    /* reset — the closed deal leaves the board and the next one takes the first
+       stage. Every column is explicitly returned to its resting arrangement so
+       Closed Won can never be left holding an empty top slot. */
     t += dt;
     if (t < FADE) return;
     dealIndex = (dealIndex + 1) % pool.length;
     i = 0;
     t = 0;
     phase = 'dwell';
-    resetCounts();
+    clearOpen();
     setDeal(pool[dealIndex]);
-    fillSlot(lastIndex, false);
-    fillSlot(0, true);
-    focusStage(0);
-    place(points[0] ? points[0].x : 0, points[0] ? points[0].y : 0, 0);
+    dock(0);
     deal.classList.add('is-ready');
   }
 
@@ -544,8 +615,158 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     if (!last) last = ts;
     var dt = Math.min(64, ts - last);
     last = ts;
-    if (!running || paused || !visible || doc.hidden) return;
+    if (!running || !visible || doc.hidden) return;
     step(dt);
+  }
+
+  /* ---------- visitor drag: move a deal card into another stage (mouse only) ---------- */
+  var drag = null;
+  var dragEnabled = finePointer && !reduced;
+
+  function columnAt(x, y) {
+    for (var k = 0; k < stages.length; k++) {
+      var r = stages[k].el.getBoundingClientRect();
+      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return k;
+    }
+    return -1;
+  }
+  function stageIndexFor(el) {
+    for (var k = 0; k < stages.length; k++) { if (stages[k].el === el) return k; }
+    return -1;
+  }
+  function setDropTarget(index) {
+    stages.forEach(function (stage, k) {
+      stage.el.classList.toggle('is-drop-target', k === index);
+      stage.body.classList.toggle('is-targeting', !!drag && k === index && k !== drag.from);
+    });
+  }
+  function makeGhost(card) {
+    var rect = card.getBoundingClientRect();
+    var ghost = card.cloneNode(true);
+    ghost.className = 'hb-card hb-drag-ghost' + (card.classList.contains('is-won') ? ' is-won' : '');
+    ghost.style.left = rect.left + 'px';
+    ghost.style.top = rect.top + 'px';
+    ghost.style.width = rect.width + 'px';
+    ghost.style.height = rect.height + 'px';
+    doc.body.appendChild(ghost);
+    return { el: ghost, rect: rect };
+  }
+  function dropIn(card) {
+    card.classList.remove('hb-drop-in');
+    void card.offsetWidth;
+    card.classList.add('hb-drop-in');
+    window.setTimeout(function () { card.classList.remove('hb-drop-in'); }, 460);
+  }
+  function moveCard(card, from, to) {
+    var wasWon = card.classList.contains('is-won');
+    card.style.display = '';
+    stages[to].body.insertBefore(card, stages[to].body.firstChild);
+    dropIn(card);
+
+    if (to === lastIndex) {
+      card.classList.add('is-won');
+      if (!wasWon) cashCard(card);
+    } else if (wasWon) {
+      card.classList.remove('is-won');
+      uncashCard(card);
+    }
+
+    /* The column that just received a new top card closes its made-room gap. */
+    stages[to].body.classList.remove('is-targeting');
+    renderCounts();
+    flashStage(to);
+    if (from !== to) flashStage(from);
+  }
+
+  function onDown(e) {
+    if (!dragEnabled || drag) return;
+    if (e.pointerType && e.pointerType !== 'mouse') return;
+    if (e.button !== undefined && e.button !== 0) return;
+    var card = e.target.closest ? e.target.closest('.hb-card') : null;
+    if (!card || !grid.contains(card)) return;
+    var from = stageIndexFor(card.closest('[data-hb-col]'));
+    if (from < 0) return;
+
+    var rect = card.getBoundingClientRect();
+    drag = {
+      card: card, from: from, target: -1, active: false,
+      x0: e.clientX, y0: e.clientY,
+      grabX: e.clientX - rect.left, grabY: e.clientY - rect.top,
+      rect: rect, ghost: null
+    };
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+    window.addEventListener('blur', onCancel);
+    doc.addEventListener('keydown', onKey);
+    e.preventDefault();
+  }
+
+  function onMove(e) {
+    if (!drag) return;
+    if (!drag.active) {
+      if (Math.abs(e.clientX - drag.x0) + Math.abs(e.clientY - drag.y0) < 6) return;
+      var made = makeGhost(drag.card);
+      drag.active = true;
+      drag.ghost = made.el;
+      drag.rect = made.rect;
+      drag.card.style.display = 'none';
+      board.classList.add('is-dragging');
+      root.classList.add('hb-dragging');
+      setHint('Drop on a stage');
+      renderCounts();
+    }
+    var left = e.clientX - drag.grabX, top = e.clientY - drag.grabY;
+    drag.ghost.style.transform = 'translate3d(' + (left - drag.rect.left).toFixed(1) + 'px,' + (top - drag.rect.top).toFixed(1) + 'px,0) rotate(1.5deg) scale(1.04)';
+    var target = columnAt(e.clientX, e.clientY);
+    if (target !== drag.target) { drag.target = target; setDropTarget(target); }
+  }
+
+  function detach() {
+    window.removeEventListener('pointermove', onMove);
+    window.removeEventListener('pointerup', onUp);
+    window.removeEventListener('pointercancel', onUp);
+    window.removeEventListener('blur', onCancel);
+    doc.removeEventListener('keydown', onKey);
+  }
+  function endDrag(commit) {
+    if (!drag) return;
+    var d = drag;
+    drag = null;
+    detach();
+    board.classList.remove('is-dragging');
+    root.classList.remove('hb-dragging');
+    setDropTarget(-1);
+    setHint(HINT_IDLE);
+
+    if (!d.active) return;
+    if (d.ghost) d.ghost.remove();
+
+    if (commit && d.target >= 0 && d.target !== d.from) {
+      moveCard(d.card, d.from, d.target);
+      return;
+    }
+    /* cancelled or dropped on the stage it came from: put it back untouched */
+    d.card.style.display = '';
+    dropIn(d.card);
+    renderCounts();
+  }
+  function onUp() { endDrag(true); }
+  function onCancel() { endDrag(false); }
+  function onKey(e) { if (e.key === 'Escape') endDrag(false); }
+
+  if (dragEnabled) {
+    grid.addEventListener('pointerdown', onDown);
+    /* Hover still spotlights a stage (the loop deliberately keeps running). */
+    cols.forEach(function (col) {
+      col.addEventListener('pointerenter', function () {
+        if (drag) return;
+        board.classList.add('is-hovered');
+      });
+      col.addEventListener('pointerleave', function () {
+        board.classList.remove('is-hovered');
+      });
+    });
   }
 
   /* ---------- start ---------- */
@@ -555,11 +776,10 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     running = true;
 
     if (reduced) {
-      /* Static board: the card rests mid-pipeline, no timers, no travel. */
-      var park = Math.max(0, Math.min(lastIndex, stages.length - 2));
-      i = park;
+      /* Static board: the card rests mid-pipeline in its own top place, no timers. */
+      i = Math.max(0, Math.min(lastIndex, stages.length - 2));
       setDeal(pool[0]);
-      dock(park);
+      dock(i);
       deal.classList.add('is-ready');
       return;
     }
@@ -577,24 +797,11 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     io.observe(board);
   }
 
-  if (finePointer) {
-    cols.forEach(function (col) {
-      col.addEventListener('pointerenter', function () {
-        if (!running || reduced) return;
-        paused = true;
-        board.classList.add('is-paused', 'is-hovered');
-      });
-      col.addEventListener('pointerleave', function () {
-        paused = false;
-        board.classList.remove('is-paused', 'is-hovered');
-      });
-    });
-  }
-
   var resizeTimer = 0;
   window.addEventListener('resize', function () {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(function () {
+      if (drag && drag.active) return;
       if (!measure()) return;
       var target = points[i] || points[0];
       if (target && (phase === 'dwell' || phase === 'win')) place(target.x, target.y, 0);
