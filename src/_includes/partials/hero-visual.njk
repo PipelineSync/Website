@@ -1,3 +1,4 @@
+{% if hero_visual == 'kanban' %}{% include 'partials/hero-kanban.njk' %}{% else %}
 <div class="n-visual" aria-hidden="true">
   <div class="n-visual-rings"><span></span><span></span><span></span></div>
   <svg class="n-visual-net" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,3 +42,4 @@
   <div class="n-chip n-chip-c"><i class="fa-solid {{ hero_chips[2] | default('fa-bolt') }}"></i></div>
   <div class="n-chip n-chip-d"><i class="fa-solid {{ hero_chips[3] | default('fa-chart-line') }}"></i></div>
 </div>
+{% endif %}
