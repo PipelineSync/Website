@@ -1,9 +1,47 @@
 ---
 anim: aurora
-hero_art: "hero-home"
-hero_art_w: "960"
-hero_art_h: "640"
-hero_chips: ["fa-database", "fa-diagram-project", "fa-bolt", "fa-chart-line"]
+hero_visual: "kanban"
+hero_chips: ["fa-table-columns", "fa-diagram-project", "fa-arrow-trend-up", "fa-circle-check"]
+hero_won_base: "486"
+# Condensed HubSpot deal stages shown on the animated hero board.
+# `share` seeds the stage-weight bar, `count` the live deal counter; both
+# follow the travelling card at runtime (open + travelling cards per stage).
+hero_stages:
+  - name: "Qualified"
+    count: 3
+    share: 25
+    deals:
+      - { name: "Northwind", value: "$48k", owner: "AR" }
+      - { name: "Vertex Mfg", value: "$72k", owner: "JD" }
+      - { name: "Orion Group", value: "$39k", owner: "MK" }
+  - name: "Proposal"
+    count: 3
+    share: 25
+    deals:
+      - { name: "Halcyon", value: "$96k", owner: "MK" }
+      - { name: "Atlas Freight", value: "$64k", owner: "AR" }
+      - { name: "Cedarline", value: "$57k", owner: "JD" }
+  - name: "Negotiation"
+    count: 3
+    share: 25
+    deals:
+      - { name: "Blue Harbor", value: "$120k", owner: "JD" }
+      - { name: "Kestrel", value: "$88k", owner: "MK" }
+      - { name: "Marbury", value: "$75k", owner: "AR" }
+  - name: "Closed Won"
+    count: 3
+    share: 25
+    deals:
+      - { name: "Lumen Path", value: "$54k", owner: "AR" }
+      - { name: "Ridgeline", value: "$132k", owner: "JD" }
+      - { name: "Solstice", value: "$91k", owner: "MK" }
+# One deal per lap travels the stages on the board.
+hero_deals:
+  - { name: "Cobalt Labs", value: "$58k", owner: "AR" }
+  - { name: "Meridian Co", value: "$84k", owner: "JD" }
+  - { name: "Pine & Oak", value: "$46k", owner: "MK" }
+  - { name: "Sable Group", value: "$110k", owner: "AR" }
+  - { name: "Tidewater", value: "$69k", owner: "JD" }
 layout: layouts/base.njk
 title: "HubSpot Consultant & CRM Implementation | PipelineSync"
 description: "A HubSpot Solutions Partner that rebuilds HubSpot into a CRM your team trusts. Implementation, migration, data cleanup, and reporting. Book a free consultation."

@@ -319,3 +319,300 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     });
   });
 })();
+
+/* Home hero — futuristic animated deal-stage board (partials/hero-kanban.njk).
+   One deal card travels the condensed HubSpot stages, the stage counters and the
+   "won this quarter" readout follow it, and hovering a stage column freezes the
+   travel while that column is highlighted (the dimming/highlight is CSS).
+   Presentational only: the whole board is aria-hidden in the markup. */
+(function () {
+  'use strict';
+  var doc = document;
+  var board = doc.querySelector('[data-hb-board]');
+  if (!board) return;
+  var grid = board.querySelector('[data-hb-grid]');
+  var deal = board.querySelector('[data-hb-deal]');
+  var link = board.querySelector('[data-hb-link]');
+  var burst = board.querySelector('[data-hb-burst]');
+  var wonReadout = board.querySelector('[data-hb-won-value]');
+  var cols = Array.prototype.slice.call(board.querySelectorAll('[data-hb-col]'));
+  if (!grid || !deal || cols.length < 2) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  var stages = cols.map(function (col) {
+    var countEl = col.querySelector('[data-hb-count]');
+    return {
+      el: col,
+      slot: col.querySelector('[data-hb-slot]'),
+      countEl: countEl,
+      base: parseInt((countEl || {}).textContent || '0', 10) || 0,
+      value: 0,
+      name: (((col.querySelector('.hb-col-name') || {}).textContent) || '').trim()
+    };
+  });
+  stages.forEach(function (s) { s.value = s.base; });
+
+  var pool = [];
+  try { pool = JSON.parse(board.getAttribute('data-hb-deals') || '[]') || []; } catch (err) { pool = []; }
+  if (!pool.length) pool = [{ name: 'New deal', value: '$50k', owner: 'PS' }];
+
+  var nameEl = deal.querySelector('[data-hb-deal-name]');
+  var valueEl = deal.querySelector('[data-hb-deal-value]');
+  var ownerEl = deal.querySelector('[data-hb-deal-owner]');
+  var tagEl = deal.querySelector('[data-hb-deal-tag]');
+
+  /* ---------- geometry: layout space, so the board's 3D tilt can't skew it ---------- */
+  var points = [];
+  var dealW = 0, dealH = 0;
+
+  function offsetIn(el, root) {
+    var x = 0, y = 0, node = el;
+    while (node && node !== root) { x += node.offsetLeft; y += node.offsetTop; node = node.offsetParent; }
+    return node === root ? { x: x, y: y } : null;
+  }
+  function measure() {
+    var ref = stages[0].slot || stages[0].el;
+    if (!ref || !ref.offsetWidth) return false;
+    dealW = ref.offsetWidth;
+    dealH = ref.offsetHeight;
+    deal.style.width = dealW + 'px';
+    points = stages.map(function (stage) {
+      var target = stage.slot || stage.el;
+      var p = offsetIn(target, grid);
+      if (!p) {
+        var a = target.getBoundingClientRect(), b = grid.getBoundingClientRect();
+        p = { x: a.left - b.left, y: a.top - b.top };
+      }
+      return p;
+    });
+    return true;
+  }
+
+  function place(x, y, rot) {
+    deal.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)' + (rot ? ' rotate(' + rot.toFixed(2) + 'deg)' : '');
+  }
+  function ease(u) { return u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; }
+
+  /* ---------- board readouts ---------- */
+  function syncShares() {
+    var total = stages.reduce(function (sum, s) { return sum + s.value; }, 0) || 1;
+    stages.forEach(function (s) {
+      s.el.style.setProperty('--hb-share', ((s.value / total) * 100).toFixed(1) + '%');
+    });
+  }
+  function setCount(stage, value) {
+    stage.value = value;
+    if (!stage.countEl) return;
+    stage.countEl.textContent = value;
+    stage.countEl.classList.add('is-flip');
+    window.clearTimeout(stage._flipTimer);
+    stage._flipTimer = window.setTimeout(function () { stage.countEl.classList.remove('is-flip'); }, 180);
+  }
+  function resetCounts() {
+    stages.forEach(function (s) { if (s.value !== s.base) setCount(s, s.base); });
+  }
+  var wonTotal = parseInt(board.getAttribute('data-hb-won') || '0', 10) || 0;
+  function bumpWon(value) {
+    var amount = parseInt(String(value).replace(/[^0-9]/g, ''), 10) || 0;
+    wonTotal += amount;
+    if (wonReadout) wonReadout.textContent = '$' + wonTotal + 'k+';
+  }
+  function setDeal(data) {
+    if (nameEl) nameEl.textContent = data.name || '';
+    if (valueEl) valueEl.textContent = data.value || '';
+    if (ownerEl) ownerEl.textContent = data.owner || '';
+    if (tagEl) tagEl.textContent = stages[0].name;
+  }
+  function fillSlot(index, filled) {
+    if (stages[index] && stages[index].slot) stages[index].slot.classList.toggle('is-filled', !!filled);
+  }
+  function focusStage(index) {
+    stages.forEach(function (s, k) { s.el.classList.toggle('is-current', k === index); });
+  }
+  function flashStage(index) {
+    var el = stages[index].el;
+    el.classList.remove('is-flash');
+    void el.offsetWidth;
+    el.classList.add('is-flash');
+  }
+
+  /* ---------- timeline ---------- */
+  var DWELL = 2100, TRAVEL = 950, WIN_HOLD = 2500, FADE = 480;
+  var lastIndex = stages.length - 1;
+  var i = 0, phase = 'dwell', t = 0, dealIndex = 0;
+  var paused = false, visible = true, running = false, last = 0, raf = 0;
+
+  function dock(index) {
+    focusStage(index);
+    fillSlot(index, true);
+    if (tagEl) tagEl.textContent = stages[index].name;
+    place(points[index] ? points[index].x : 0, points[index] ? points[index].y : 0, 0);
+  }
+
+  function startTravel() {
+    phase = 'travel';
+    t = 0;
+    deal.classList.add('is-moving');
+    fillSlot(i, false);
+    if (link) link.classList.add('is-on');
+  }
+
+  function step(dt) {
+    if (!points.length) return;
+
+    if (phase === 'dwell') {
+      t += dt;
+      if (t >= DWELL) {
+        if (i === lastIndex) {
+          phase = 'win';
+          t = 0;
+          deal.classList.add('is-won');
+          setCount(stages[i], stages[i].value + 1);
+          bumpWon(valueEl ? valueEl.textContent : '');
+          flashStage(i);
+          if (burst) {
+            burst.style.transform = 'translate3d(' + (points[i].x + dealW / 2).toFixed(1) + 'px,' + (points[i].y + dealH / 2).toFixed(1) + 'px,0)';
+            burst.classList.remove('is-on');
+            void burst.offsetWidth;
+            burst.classList.add('is-on');
+          }
+        } else {
+          setCount(stages[i], Math.max(0, stages[i].value - 1));
+          startTravel();
+        }
+      }
+      return;
+    }
+
+    if (phase === 'travel') {
+      t += dt;
+      var u = Math.min(1, t / TRAVEL);
+      var e = ease(u);
+      var from = points[i], to = points[i + 1];
+      var x = from.x + (to.x - from.x) * e;
+      var y = from.y + (to.y - from.y) * e - Math.sin(Math.PI * u) * 16;
+      place(x, y, -2.2 * Math.sin(Math.PI * u));
+      if (link) {
+        var startX = from.x + dealW;
+        var beam = x - startX;
+        if (beam > 0) {
+          link.style.width = beam.toFixed(1) + 'px';
+          link.style.transform = 'translate3d(' + startX.toFixed(1) + 'px,' + (from.y + dealH / 2 - 1).toFixed(1) + 'px,0)';
+        } else {
+          link.style.width = '0px';
+        }
+      }
+      if (u >= 1) {
+        i += 1;
+        phase = 'dwell';
+        t = 0;
+        deal.classList.remove('is-moving');
+        if (link) { link.classList.remove('is-on'); link.style.width = '0px'; }
+        setCount(stages[i], stages[i].value + 1);
+        dock(i);
+        flashStage(i);
+      }
+      return;
+    }
+
+    if (phase === 'win') {
+      t += dt;
+      if (t >= WIN_HOLD) { phase = 'reset'; t = 0; deal.classList.remove('is-won', 'is-ready'); }
+      return;
+    }
+
+    /* reset: the closed deal leaves the board and the pipeline rebalances */
+    t += dt;
+    if (t < FADE) return;
+    dealIndex = (dealIndex + 1) % pool.length;
+    i = 0;
+    t = 0;
+    phase = 'dwell';
+    resetCounts();
+    setDeal(pool[dealIndex]);
+    fillSlot(lastIndex, false);
+    fillSlot(0, true);
+    focusStage(0);
+    place(points[0] ? points[0].x : 0, points[0] ? points[0].y : 0, 0);
+    deal.classList.add('is-ready');
+  }
+
+  function frame(ts) {
+    raf = window.requestAnimationFrame(frame);
+    if (!last) last = ts;
+    var dt = Math.min(64, ts - last);
+    last = ts;
+    if (!running || paused || !visible || doc.hidden) return;
+    step(dt);
+  }
+
+  /* ---------- start ---------- */
+  function begin() {
+    if (running) return;
+    if (!measure()) { window.setTimeout(begin, 400); return; }
+    running = true;
+
+    if (reduced) {
+      /* Static board: the card rests mid-pipeline, no timers, no travel. */
+      var park = Math.max(0, Math.min(lastIndex, stages.length - 2));
+      i = park;
+      setDeal(pool[0]);
+      dock(park);
+      deal.classList.add('is-ready');
+      return;
+    }
+
+    setDeal(pool[0]);
+    dock(0);
+    deal.classList.add('is-ready');
+    raf = window.requestAnimationFrame(frame);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      visible = entries.some(function (entry) { return entry.isIntersecting; });
+    }, { threshold: 0.12 });
+    io.observe(board);
+  }
+
+  if (finePointer) {
+    cols.forEach(function (col) {
+      col.addEventListener('pointerenter', function () {
+        if (!running || reduced) return;
+        paused = true;
+        board.classList.add('is-paused', 'is-hovered');
+      });
+      col.addEventListener('pointerleave', function () {
+        paused = false;
+        board.classList.remove('is-paused', 'is-hovered');
+      });
+    });
+  }
+
+  var resizeTimer = 0;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      if (!measure()) return;
+      var target = points[i] || points[0];
+      if (target && (phase === 'dwell' || phase === 'win')) place(target.x, target.y, 0);
+    }, 160);
+  });
+
+  /* Wait for the preloader, exactly like the reveal layer does, so the board
+     animation is not spent behind the loading screen. */
+  var loader = doc.getElementById('pipelineLoadingScreen');
+  if (!loader) {
+    begin();
+  } else {
+    var started = false;
+    var go = function () { if (started) return; started = true; window.setTimeout(begin, 120); };
+    var mo = new MutationObserver(function () {
+      if (loader.classList.contains('is-hidden')) { mo.disconnect(); go(); }
+    });
+    mo.observe(loader, { attributes: true, attributeFilter: ['class'] });
+    window.setTimeout(function () { mo.disconnect(); go(); }, 6000);
+  }
+})();

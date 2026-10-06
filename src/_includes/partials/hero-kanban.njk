@@ -1,0 +1,62 @@
+{# Home hero visual — futuristic animated deal-stage board.
+   Columns follow the condensed HubSpot deal stages (Qualified → Proposal → Negotiation → Closed Won).
+   A deal card travels the stages on a loop; hovering a stage column freezes the travel and highlights it.
+   Decorative only: the whole block is aria-hidden and the animation is driven by assets/js/pages/index.js. #}
+{% set stages = hero_stages %}
+{% set deals = hero_deals %}
+<div class="n-visual n-visual-board" aria-hidden="true">
+  <div class="n-visual-rings"><span></span><span></span></div>
+
+  <div class="hb-board" data-hb-board
+       data-hb-deals="{{ deals | dump | forceescape }}"
+       data-hb-won="{{ hero_won_base | default('486') }}">
+    <div class="hb-top">
+      <span class="hb-top-title"><i class="hb-signal"></i>Deal pipeline</span>
+      <span class="hb-top-meta">Won this quarter <b data-hb-won-value>${{ hero_won_base | default('486') }}k+</b></span>
+    </div>
+
+    <div class="hb-grid" data-hb-grid>
+      {% for stage in stages %}
+      <div class="hb-col hb-col-{{ loop.index }}{{ ' is-final' if loop.last }}" data-hb-col="{{ loop.index0 }}" style="--hb-share:{{ stage.share | default('25') }}%">
+        <div class="hb-col-head">
+          <span class="hb-col-dot"></span>
+          <span class="hb-col-name">{{ stage.name }}</span>
+          <span class="hb-col-count"><b data-hb-count>{{ stage.count | default('2') }}</b></span>
+        </div>
+        <div class="hb-col-share"><span></span></div>
+        <div class="hb-col-body">
+          <div class="hb-slot" data-hb-slot><span></span></div>
+          {% for deal in stage.deals %}
+          <div class="hb-card">
+            <span class="hb-card-name">{{ deal.name }}</span>
+            <span class="hb-card-foot"><b>{{ deal.value }}</b><i class="hb-owner">{{ deal.owner }}</i></span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+
+      <span class="hb-link" data-hb-link></span>
+      <span class="hb-burst" data-hb-burst></span>
+
+      <div class="hb-deal" data-hb-deal>
+        <span class="hb-deal-name" data-hb-deal-name>Northwind</span>
+        <span class="hb-deal-foot">
+          <b data-hb-deal-value>$48k</b>
+          <i class="hb-owner" data-hb-deal-owner>AR</i>
+        </span>
+        <span class="hb-deal-tag" data-hb-deal-tag>{{ stages[0].name | default('Qualified') }}</span>
+        <i class="hb-deal-check fa-solid fa-check"></i>
+      </div>
+
+      <span class="hb-scan"></span>
+    </div>
+
+    <span class="hb-frame"></span>
+  </div>
+
+  <div class="n-chip n-chip-a"><i class="fa-solid {{ hero_chips[0] | default('fa-table-columns') }}"></i></div>
+  <div class="n-chip n-chip-b"><i class="fa-solid {{ hero_chips[1] | default('fa-diagram-project') }}"></i></div>
+  <div class="n-chip n-chip-c"><i class="fa-solid {{ hero_chips[2] | default('fa-arrow-trend-up') }}"></i></div>
+  <div class="n-chip n-chip-d"><i class="fa-solid {{ hero_chips[3] | default('fa-circle-check') }}"></i></div>
+</div>
