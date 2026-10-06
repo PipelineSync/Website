@@ -385,3 +385,86 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
 /* Center the Questions accordion within the homepage content column. */
 #faq .accordion{width:100%;max-width:900px;margin:30px auto 0!important;box-sizing:border-box}
 #faq .accordion-item{width:100%;box-sizing:border-box}
+
+/* ==========================================================================
+   Home hero — animated HubSpot deal-stage kanban (replaces hero artwork).
+   Markup: src/_includes/partials/hero-kanban.njk · Motion: assets/js/pages/index.js
+   ========================================================================== */
+html body .n-visual--kanban{max-width:600px}
+.nk-board{
+  position:absolute;left:50%;top:50%;width:100%;height:76%;
+  transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;gap:.9em;
+  padding:1.2em 1.3em 1.3em;border-radius:1.6em;overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(155deg,rgba(24,28,58,.72),rgba(8,10,24,.88));
+  -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
+  box-shadow:0 0 0 1px rgba(34,228,255,.12),0 40px 90px -30px rgba(139,92,246,.55),inset 0 1px 0 rgba(255,255,255,.08);
+  font-size:clamp(7.5px,.55vw + 4.6px,10px);
+  animation:nkFloat 9s ease-in-out infinite;
+}
+@keyframes nkFloat{50%{transform:translate(-50%,calc(-50% - 9px))}}
+/* HUD corner brackets */
+.nk-board::before,.nk-board::after{content:'';position:absolute;width:2.4em;height:2.4em;pointer-events:none;z-index:3}
+.nk-board::before{top:.55em;left:.55em;border-top:1px solid rgba(34,228,255,.6);border-left:1px solid rgba(34,228,255,.6);border-radius:.8em 0 0 0}
+.nk-board::after{bottom:.55em;right:.55em;border-bottom:1px solid rgba(255,63,210,.55);border-right:1px solid rgba(255,63,210,.55);border-radius:0 0 .8em 0}
+/* Board header row */
+.nk-board-top{display:flex;justify-content:space-between;align-items:center;gap:1em;font:600 1em/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--n-text-2)}
+.nk-board-title{display:inline-flex;align-items:center;gap:.6em;color:var(--n-cyan-soft)}
+.nk-live-dot{width:.7em;height:.7em;border-radius:50%;background:var(--n-green);box-shadow:0 0 .9em rgba(74,222,128,.9);animation:nkBeat 1.6s ease-in-out infinite}
+@keyframes nkBeat{50%{opacity:.35;transform:scale(.75)}}
+.nk-board-won b{color:var(--n-green);font-weight:600}
+.nk-board-won-amt{margin-left:.6em;color:var(--n-text-3)}
+.nk-board-won-amt::before{content:'· '}
+/* Stage columns */
+.nk-cols{flex:1;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.8em;min-height:0}
+.nk-col{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:1em;border:1px solid rgba(255,255,255,.07);border-top:2px solid var(--nk-accent);background:rgba(255,255,255,.028);transition:background .4s var(--n-ease),border-color .4s var(--n-ease)}
+.nk-col.is-target{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.16)}
+.nk-col-head{position:relative;display:grid;grid-template-columns:1fr auto;gap:.4em .5em;align-items:start;padding:.9em .7em .8em}
+.nk-col-head::after{content:'';position:absolute;left:.7em;right:.7em;bottom:0;height:1px;background:linear-gradient(90deg,var(--nk-accent),transparent);opacity:.5}
+.nk-col-idx{font:600 .9em/1.4 'IBM Plex Mono',monospace;letter-spacing:.08em;color:var(--nk-accent)}
+.nk-col-count{min-width:1.8em;height:1.8em;padding:0 .5em;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);font:600 .9em/1 'IBM Plex Mono',monospace;color:var(--n-text-2);transition:background .3s,color .3s,box-shadow .3s}
+.nk-col.is-target .nk-col-count{background:var(--nk-accent);border-color:transparent;color:#05060d;box-shadow:0 0 1.4em var(--nk-accent)}
+.nk-col-name{grid-column:1 / -1;font:600 .85em/1.3 'IBM Plex Mono',monospace;letter-spacing:.03em;text-transform:uppercase;color:var(--n-text-2);min-height:3.9em;overflow-wrap:break-word}
+.nk-col-body{flex:1;display:flex;flex-direction:column;gap:.6em;padding:.7em .6em;min-height:0}
+/* Dashed drop-slot filler keeps empty space reading as a kanban lane */
+.nk-col-body::after{content:'';flex:1 1 auto;min-height:1.8em;border:1px dashed rgba(255,255,255,.09);border-radius:.8em}
+/* Deal cards */
+.nk-card{
+  position:relative;display:grid;grid-template-columns:auto 1fr;gap:.15em .55em;align-items:center;
+  padding:.75em .7em;border-radius:.8em;will-change:transform;
+  background:linear-gradient(150deg,rgba(255,255,255,.09),rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 .6em 1.6em -.8em rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.08);
+}
+.nk-card-dot{grid-row:span 2;width:.8em;height:.8em;border-radius:50%;background:var(--nk-accent);box-shadow:0 0 .9em var(--nk-accent)}
+.nk-card-name{font:600 1.05em/1.15 'Inter',sans-serif;color:var(--n-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nk-card-amt{grid-column:2;font:500 .95em/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--n-text-3)}
+.nk-card.is-won{border-color:rgba(74,222,128,.45);background:linear-gradient(150deg,rgba(74,222,128,.16),rgba(74,222,128,.04))}
+.nk-card.is-won .nk-card-dot{background:var(--n-green);box-shadow:0 0 1em rgba(74,222,128,.9)}
+.nk-card.is-won .nk-card-amt{color:var(--n-green)}
+.nk-card.is-moving{z-index:6;border-color:rgba(34,228,255,.6);box-shadow:0 0 2.4em rgba(34,228,255,.6),0 1em 2em -1em rgba(0,0,0,.85)}
+.nk-card.is-spawn{animation:nkSpawn .6s var(--n-ease)}
+@keyframes nkSpawn{from{opacity:0;transform:translateY(-1.2em) scale(.92)}}
+.nk-card.is-out{opacity:0;transform:scale(.85);transition:opacity .5s ease,transform .5s ease}
+/* Scanline sweep + closed-won burst */
+.nk-scan{position:absolute;left:0;right:0;top:0;height:34%;pointer-events:none;mix-blend-mode:screen;
+  background:linear-gradient(180deg,transparent,rgba(34,228,255,.06) 45%,rgba(34,228,255,.15) 50%,rgba(34,228,255,.06) 55%,transparent);
+  animation:nkScan 5.5s linear infinite}
+@keyframes nkScan{from{transform:translateY(-110%)}to{transform:translateY(320%)}}
+.nk-burst{position:absolute;left:50%;top:50%;width:6em;height:6em;border-radius:50%;border:2px solid rgba(74,222,128,.85);opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.25);z-index:4}
+.nk-burst.is-on{animation:nkBurst .9s var(--n-ease)}
+@keyframes nkBurst{0%{opacity:.95;transform:translate(-50%,-50%) scale(.25)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.6)}}
+/* Keep the ambient frame, tuned down so the board reads as the hero art */
+html body .n-visual--kanban .n-paths path{opacity:.16}
+html body .n-visual--kanban .n-pulses path{opacity:.4}
+html body .n-visual--kanban .n-core-glow{opacity:.35}
+html body .n-visual--kanban .n-chip{width:46px;height:46px;font-size:17px;border-radius:14px}
+html body .n-visual--kanban .n-chip-a{left:1%;top:3%}
+html body .n-visual--kanban .n-chip-b{right:1%;top:8%}
+html body .n-visual--kanban .n-chip-c{left:5%;bottom:3%}
+html body .n-visual--kanban .n-chip-d{right:5%;bottom:8%}
+@media (prefers-reduced-motion:reduce){
+  .nk-board,.nk-scan,.nk-live-dot,.nk-card.is-spawn,.nk-burst.is-on{animation:none!important}
+  .nk-card,.nk-col,.nk-col-count{transition:none!important}
+}

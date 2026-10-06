@@ -1,4 +1,4 @@
-<div class="n-visual" aria-hidden="true">
+<div class="n-visual{% if hero_kanban %} n-visual--kanban{% endif %}" aria-hidden="true">
   <div class="n-visual-rings"><span></span><span></span><span></span></div>
   <svg class="n-visual-net" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -22,7 +22,9 @@
     </g>
     <circle class="n-core-glow" cx="240" cy="240" r="90" fill="url(#nvcore)"/>
   </svg>
-  {% if hero_art %}
+  {% if hero_kanban %}
+  {% include 'partials/hero-kanban.njk' %}
+  {% elif hero_art %}
   <div class="n-visual-art">
     <img src="/assets/img/hero/{{ hero_art }}.webp" alt="" width="{{ hero_art_w | default('960') }}" height="{{ hero_art_h | default('640') }}" loading="eager" fetchpriority="high">
   </div>

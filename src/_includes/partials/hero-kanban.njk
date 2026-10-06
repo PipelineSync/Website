@@ -1,0 +1,48 @@
+{#- Futuristic animated deal-stage kanban (HubSpot default pipeline stages).
+    Replaces the static hero artwork on the home page. Decorative: the parent
+    .n-visual wrapper is aria-hidden. assets/js/pages/index.js animates deals
+    forward through the stages; without JS the board renders fully populated. -#}
+{% set stages = [
+  { name: "Appointment Scheduled", accent: "#22e4ff" },
+  { name: "Qualified to Buy", accent: "#58b7ff" },
+  { name: "Presentation Scheduled", accent: "#8b5cf6" },
+  { name: "Decision Maker Bought-In", accent: "#c44ae0" },
+  { name: "Contract Sent", accent: "#ff3fd2" },
+  { name: "Closed Won", accent: "#4ade80" }
+] %}
+{% set deals = [
+  [ { n: "Northwind", a: "$12k", v: 12 }, { n: "Acme Robotics", a: "$8k", v: 8 } ],
+  [ { n: "ESA Group", a: "$24k", v: 24 } ],
+  [ { n: "Jayo Studio", a: "$15k", v: 15 }, { n: "Broker Capital", a: "$30k", v: 30 } ],
+  [ { n: "Modern Eng.", a: "$42k", v: 42 } ],
+  [ { n: "Private Tax", a: "$28k", v: 28 } ],
+  [ { n: "CW Systems", a: "$38k", v: 38, won: true } ]
+] %}
+<div class="nk-board" data-kanban>
+  <div class="nk-board-top">
+    <span class="nk-board-title"><i class="nk-live-dot"></i>Deal pipeline · live</span>
+    <span class="nk-board-won">Won <b data-nk-won>1</b><span class="nk-board-won-amt" data-nk-won-amt>$38k</span></span>
+  </div>
+  <div class="nk-cols">
+    {% for stage in stages %}
+    <div class="nk-col" data-stage="{{ loop.index0 }}" style="--nk-accent:{{ stage.accent }}">
+      <header class="nk-col-head">
+        <span class="nk-col-idx">{{ "0" ~ loop.index if loop.index < 10 else loop.index }}</span>
+        <span class="nk-col-name">{{ stage.name }}</span>
+        <span class="nk-col-count" data-nk-count>{{ deals[loop.index0] | length }}</span>
+      </header>
+      <div class="nk-col-body" data-nk-col>
+        {% for deal in deals[loop.index0] %}
+        <article class="nk-card{% if deal.won %} is-won{% endif %}" data-amt="{{ deal.v }}">
+          <span class="nk-card-dot"></span>
+          <span class="nk-card-name">{{ deal.n }}</span>
+          <span class="nk-card-amt">{{ deal.a }}</span>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <span class="nk-scan" aria-hidden="true"></span>
+  <span class="nk-burst" data-nk-burst aria-hidden="true"></span>
+</div>

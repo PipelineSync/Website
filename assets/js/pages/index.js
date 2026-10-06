@@ -319,3 +319,121 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     });
   });
 })();
+
+/* Home hero kanban — deals advance through HubSpot deal stages on a loop. */
+(function(){
+  'use strict';
+  var board=document.querySelector('[data-kanban]');
+  if(!board)return;
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cols=Array.prototype.slice.call(board.querySelectorAll('[data-nk-col]'));
+  if(cols.length<2)return;
+  var wonEl=board.querySelector('[data-nk-won]');
+  var wonAmtEl=board.querySelector('[data-nk-won-amt]');
+  var burst=board.querySelector('[data-nk-burst]');
+  var hero=board.closest('.hero')||document.body;
+  var won=parseInt(wonEl?wonEl.textContent:'0',10)||0;
+  var wonAmt=parseInt(wonAmtEl?(wonAmtEl.textContent||'').replace(/[^0-9]/g,''):'0',10)||0;
+  var pool=[['Vanta Labs',9],['Hexa Freight',17],['Lumen Care',21],['Orbit Legal',26],['Ferro Foods',14],['Quanta Edu',33],['Solis Energy',19],['Nimbus Retail',23]];
+  var poolIdx=0;
+  var cursor=0;
+  var visible=true;
+  function fmt(k){return '$'+k+'k';}
+  function setCount(body){
+    var col=body.closest?body.closest('.nk-col'):null;
+    var count=col?col.querySelector('[data-nk-count]'):null;
+    if(count)count.textContent=body.children.length;
+  }
+  function makeCard(name,amt){
+    var el=document.createElement('article');
+    el.className='nk-card is-spawn';
+    el.setAttribute('data-amt',String(amt));
+    el.innerHTML='<span class="nk-card-dot"></span><span class="nk-card-name"></span><span class="nk-card-amt"></span>';
+    el.querySelector('.nk-card-name').textContent=name;
+    el.querySelector('.nk-card-amt').textContent=fmt(amt);
+    window.setTimeout(function(){el.classList.remove('is-spawn');},700);
+    return el;
+  }
+  function pulse(col){
+    if(!col)return;
+    col.classList.add('is-target');
+    window.setTimeout(function(){col.classList.remove('is-target');},950);
+  }
+  function move(card,targetBody){
+    var first=card.getBoundingClientRect();
+    var prev=card.parentElement;
+    targetBody.appendChild(card);
+    setCount(targetBody);
+    if(prev&&prev!==targetBody)setCount(prev);
+    var last=card.getBoundingClientRect();
+    var dx=first.left-last.left;
+    var dy=first.top-last.top;
+    card.classList.add('is-moving');
+    if(card.animate){
+      var anim=card.animate([
+        {transform:'translate('+dx+'px,'+dy+'px) scale(1.07)'},
+        {transform:'translate(0,0) scale(1)'}
+      ],{duration:760,easing:'cubic-bezier(.16,1,.3,1)'});
+      anim.onfinish=function(){card.classList.remove('is-moving');};
+    }else{
+      card.classList.remove('is-moving');
+    }
+  }
+  function spawn(){
+    var item=pool[poolIdx%pool.length];
+    poolIdx+=1;
+    cols[0].appendChild(makeCard(item[0],item[1]));
+    setCount(cols[0]);
+    pulse(cols[0].closest('.nk-col'));
+  }
+  function win(card,col){
+    card.classList.add('is-won');
+    won+=1;
+    wonAmt+=parseInt(card.getAttribute('data-amt'),10)||0;
+    if(wonEl)wonEl.textContent=won;
+    if(wonAmtEl)wonAmtEl.textContent=fmt(wonAmt);
+    if(burst&&col){
+      var br=board.getBoundingClientRect();
+      var cr=col.getBoundingClientRect();
+      burst.style.left=(cr.left-br.left+cr.width/2)+'px';
+      burst.style.top=(cr.top-br.top+cr.height/2)+'px';
+      burst.classList.remove('is-on');
+      void burst.offsetWidth;
+      burst.classList.add('is-on');
+    }
+    window.setTimeout(function(){
+      card.classList.add('is-out');
+      window.setTimeout(function(){
+        var body=card.parentElement;
+        if(card.parentNode)card.parentNode.removeChild(card);
+        if(body)setCount(body);
+        spawn();
+      },520);
+    },1600);
+  }
+  function tick(){
+    if(document.hidden||!visible)return;
+    var from=-1;
+    for(var i=0;i<cols.length-1;i++){
+      var idx=(cursor+i)%(cols.length-1);
+      if(cols[idx].children.length){from=idx;break;}
+    }
+    cursor=(cursor+1)%(cols.length-1);
+    if(from<0)return;
+    var target=cols[from+1];
+    if(target.children.length>=3)return;
+    var card=cols[from].children[0];
+    if(!card)return;
+    move(card,target);
+    pulse(target.closest('.nk-col'));
+    if(from+1===cols.length-1)win(card,target.closest('.nk-col'));
+  }
+  if(reduced)return; // static, fully populated board for reduced-motion users
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){visible=entry.isIntersecting;});
+    },{threshold:0.15});
+    io.observe(hero);
+  }
+  window.setInterval(tick,2600);
+})();
