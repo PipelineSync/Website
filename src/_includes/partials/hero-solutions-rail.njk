@@ -1,0 +1,64 @@
+{# Solutions hero visual — "Engagement rail".
+   A four-node rail (Discovery, Architecture, Build, Train) with a playhead
+   that dwells at each node. At every node an artifact card materialises above
+   the rail, then slides into the delivered stack at the right end. Driven by
+   assets/js/pages/solutions.js. Decorative only. #}
+<div class="n-visual n-visual-rail" aria-hidden="true">
+  <div class="n-visual-rings"><span></span><span></span></div>
+
+  <div class="sr-board" data-sr-board>
+    <div class="sr-top">
+      <span class="sr-top-title"><i class="sr-signal"></i>Engagement</span>
+      <span class="sr-count" data-sr-count>Stage 1 of 4</span>
+    </div>
+
+    <div class="sr-art" data-sr-art>
+      <span class="sr-stack-tag">delivered</span>
+      <div class="sr-card" data-sr-card="0">
+        <em>audit notes</em>
+        <span class="sr-titlebar"></span>
+        <span class="sr-rule" style="--w:92%"></span><span class="sr-rule" style="--w:78%"></span>
+        <span class="sr-rule" style="--w:86%"></span><span class="sr-rule" style="--w:64%"></span>
+      </div>
+      <div class="sr-card" data-sr-card="1">
+        <em>data model</em>
+        <svg class="sr-blue" viewBox="0 0 120 56" fill="none">
+          <path d="M30 28h22M68 28h22" stroke-width="1.4"/>
+          <rect x="2" y="16" width="28" height="24" rx="4"/><rect x="52" y="16" width="28" height="24" rx="4"/><rect x="90" y="16" width="28" height="24" rx="4"/>
+          <path d="M8 26h16M58 26h16M96 26h16" stroke-width="1.2"/>
+        </svg>
+        <span class="sr-rule" style="--w:70%"></span>
+      </div>
+      <div class="sr-card" data-sr-card="2">
+        <em>sandbox build</em>
+        <svg class="sr-flow" viewBox="0 0 120 56" fill="none">
+          <path d="M14 28h26M66 28h12c10 0 10-14 20-14M78 28c0 8 8 8 10 14" stroke-width="1.4"/>
+          <circle cx="10" cy="28" r="6"/><circle cx="66" cy="28" r="6"/><circle cx="108" cy="14" r="6"/><circle cx="88" cy="44" r="6"/>
+        </svg>
+        <span class="sr-rule" style="--w:58%"></span>
+      </div>
+      <div class="sr-card" data-sr-card="3">
+        <em>sop + training</em>
+        <span class="sr-check"><i class="is-on"></i><b style="--w:80%"></b></span>
+        <span class="sr-check"><i class="is-on"></i><b style="--w:64%"></b></span>
+        <span class="sr-check"><i></i><b style="--w:72%"></b></span>
+      </div>
+    </div>
+
+    <div class="sr-rail" data-sr-rail>
+      <div class="sr-track"><i data-sr-fill></i></div>
+      <div class="sr-nodes">
+        <span class="sr-node" data-sr-node="0"><b></b><em>Discovery</em></span>
+        <span class="sr-node" data-sr-node="1"><b></b><em>Architecture</em></span>
+        <span class="sr-node" data-sr-node="2"><b></b><em>Build</em></span>
+        <span class="sr-node" data-sr-node="3"><b></b><em>Train</em></span>
+      </div>
+      <span class="sr-head" data-sr-head></span>
+    </div>
+  </div>
+
+  <div class="n-chip n-chip-a"><i class="fa-solid {{ hero_chips[0] | default('fa-cubes') }}"></i></div>
+  <div class="n-chip n-chip-b"><i class="fa-solid {{ hero_chips[1] | default('fa-layer-group') }}"></i></div>
+  <div class="n-chip n-chip-c"><i class="fa-solid {{ hero_chips[2] | default('fa-screwdriver-wrench') }}"></i></div>
+  <div class="n-chip n-chip-d"><i class="fa-solid {{ hero_chips[3] | default('fa-gauge-high') }}"></i></div>
+</div>
