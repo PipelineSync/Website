@@ -215,3 +215,198 @@ filterBtns.forEach(btn=>{
   // If scripts are limited, reveal content rather than leaving it invisible.
   if(!('IntersectionObserver' in window)){doc.querySelectorAll('.reveal').forEach(function(el){el.classList.add('active');});}
 })();
+
+/* Integrations hero: Sync monitor (partials/hero-integrations-sync.njk). Six
+   curved links carry packets both ways between the HubSpot core and the tool
+   pills while a console streams sync lines. At ~60% of each ~20s lap one link
+   degrades (amber retry, red error, green heal); the link rotates each lap.
+   Path geometry is sampled once into point tables, so the frame loop only
+   writes transforms and opacity. Decorative only. */
+(function () {
+  'use strict';
+  var doc = document;
+  var board = doc.querySelector('[data-sy-board]');
+  if (!board) return;
+  var svg = board.querySelector('[data-sy-svg]');
+  var status = board.querySelector('[data-sy-status]');
+  var badge = board.querySelector('[data-sy-badge]');
+  var cons = board.querySelector('[data-sy-console]');
+  var links = [0, 1, 2, 3, 4, 5].map(function (i) { return board.querySelector('[data-sy-link="' + i + '"]'); });
+  var tools = [0, 1, 2, 3, 4, 5].map(function (i) { return board.querySelector('[data-sy-tool="' + i + '"]'); });
+  var packets = Array.prototype.slice.call(board.querySelectorAll('[data-sy-l]'));
+  var lines = cons ? Array.prototype.slice.call(cons.children) : [];
+  if (!svg || links.indexOf(null) >= 0 || tools.indexOf(null) >= 0 || !packets.length || lines.length < 4) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var LOOP = 20000, AT = 12000, WARN = 2200, ERR = 2000, HEAL = 1400, TICK = 1700;
+  var PERIOD = [1900, 2300, 1700, 2100, 2500, 1800];
+  var NAMES = ['salesforce', 'mailchimp', 'google ads', 'slack', 'quickbooks', 'zoom'];
+  var N = 48, tables = [];
+
+  function sample() {
+    tables = links.map(function (p) {
+      var len = 0;
+      try { len = p.getTotalLength(); } catch (err) { len = 0; }
+      if (!len) return null;
+      var pts = [], k, pt;
+      for (k = 0; k < N; k++) {
+        pt = p.getPointAtLength((len * k) / (N - 1));
+        pts.push([pt.x, pt.y]);
+      }
+      return pts;
+    });
+    return tables.every(Boolean);
+  }
+
+  var pmeta = packets.map(function (el) {
+    return { el: el, l: parseInt(el.getAttribute('data-sy-l'), 10) || 0, d: el.getAttribute('data-sy-d') === '1' ? 1 : 0 };
+  });
+
+  function placePacket(p, u) {
+    var pts = tables[p.l];
+    var idx = Math.min(N - 1, Math.max(0, Math.floor(u * N)));
+    p.el.style.transform = 'translate(' + pts[idx][0].toFixed(1) + 'px,' + pts[idx][1].toFixed(1) + 'px)';
+    p.el.style.opacity = (0.25 + 0.75 * Math.sin(Math.PI * Math.min(1, Math.max(0, u)))).toFixed(3);
+  }
+
+  /* Reduced motion: packets parked mid-link, console as marked up. No timers. */
+  if (reduced) {
+    var ok = sample();
+    var park = function () {
+      if (!sample()) return;
+      pmeta.forEach(function (p) { placePacket(p, (p.l * 0.17 + p.d * 0.5) % 1); });
+    };
+    if (ok) park(); else window.addEventListener('load', park, { once: true });
+    return;
+  }
+
+  var buf = lines.map(function (el) { return { text: el.textContent, cls: '' }; });
+  function renderCons() {
+    for (var i = 0; i < lines.length; i++) {
+      if (lines[i].textContent !== buf[i].text) lines[i].textContent = buf[i].text;
+      var want = buf[i].cls;
+      if (lines[i]._c !== want) {
+        lines[i]._c = want;
+        lines[i].className = want;
+      }
+    }
+  }
+  function push(text, cls) {
+    buf.push({ text: text, cls: cls || '' });
+    while (buf.length > lines.length) buf.shift();
+    renderCons();
+  }
+  function num(n) { return n.toLocaleString('en-US'); }
+  function okLine(tick) {
+    var a = NAMES[tick % 6], b = NAMES[(tick + 3) % 6], out = tick % 2 === 0;
+    var n = 200 + ((tick * 7919) % 1800);
+    var s = (0.6 + ((tick * 104729) % 40) / 10).toFixed(1);
+    var unit = a === 'quickbooks' || b === 'quickbooks' ? 'invoices' : (out ? 'events' : 'records');
+    return (out ? 'hubspot -> ' + a : a + ' -> hubspot') + ' \u00B7 ' + num(n) + ' ' + unit + ' \u00B7 ' + s + 's \u00B7 ok';
+  }
+
+  var CLS = ['is-warn', 'is-err', 'is-heal'];
+  function clearFlags() {
+    links.forEach(function (p) { p.classList.remove(CLS[0], CLS[1], CLS[2]); });
+    tools.forEach(function (p) { p.classList.remove(CLS[0], CLS[1], CLS[2]); });
+    badge.classList.remove(CLS[0], CLS[1], CLS[2]);
+    status.classList.remove(CLS[0], CLS[1]);
+  }
+  function flag(list, k, cls) { if (list[k]) list[k].classList.add(cls); }
+
+  var t = 0, last = 0, raf = 0, visible = true, running = false;
+  var phase = '', tickN = 0, nextTick = 0;
+
+  function setPhase(key, k) {
+    if (key === phase) return;
+    phase = key;
+    clearFlags();
+    if (key === 'w') {
+      flag(links, k, CLS[0]); flag(tools, k, CLS[0]); badge.classList.add(CLS[0]);
+      badge.textContent = 'retry 1 of 3';
+      status.textContent = 'retrying ' + NAMES[k];
+      status.classList.add(CLS[0]);
+      push(NAMES[k] + ' -> hubspot \u00B7 retry 1 of 3', CLS[0]);
+      var tool = tools[k];
+      badge.style.left = tool.style.getPropertyValue('--x') || '66.4%';
+      badge.style.top = tool.style.getPropertyValue('--y') || '50%';
+    } else if (key === 'e') {
+      flag(links, k, CLS[1]); flag(tools, k, CLS[1]); badge.classList.add(CLS[1]);
+      badge.textContent = 'error \u00B7 queued';
+      status.textContent = 'link error \u00B7 queued';
+      status.classList.add(CLS[1]);
+      push(NAMES[k] + ' -> hubspot \u00B7 error \u00B7 queued', CLS[1]);
+    } else if (key === 'h') {
+      flag(links, k, CLS[2]); flag(tools, k, CLS[2]); badge.classList.add(CLS[2]);
+      var lp = links[k];
+      lp.classList.remove(CLS[2]); void svg.offsetWidth; lp.classList.add(CLS[2]);
+      badge.textContent = 'retry ok';
+      status.textContent = 'healed \u00B7 queue drained';
+      push(NAMES[k] + ' -> hubspot \u00B7 retry ok \u00B7 2.4s \u00B7 queue drained', CLS[2]);
+    } else {
+      status.textContent = 'all systems normal';
+    }
+  }
+
+  function frame(ts) {
+    raf = window.requestAnimationFrame(frame);
+    if (!last) last = ts;
+    var dt = Math.min(64, ts - last);
+    last = ts;
+    if (!running || !visible || doc.hidden) return;
+    t += dt;
+    var lt = t % LOOP, k = Math.floor(t / LOOP) % 6, i;
+
+    if (lt < AT) setPhase('n', k);
+    else if (lt < AT + WARN) setPhase('w', k);
+    else if (lt < AT + WARN + ERR) setPhase('e', k);
+    else if (lt < AT + WARN + ERR + HEAL) setPhase('h', k);
+    else setPhase('a', k);
+
+    if (t >= nextTick) {
+      nextTick = t + TICK;
+      push(okLine(tickN));
+      tickN += 1;
+    }
+
+    var dark = (phase === 'w' || phase === 'e') ? k : -1;
+    for (i = 0; i < pmeta.length; i++) {
+      var p = pmeta[i];
+      if (p.l === dark) {
+        if (p.el.style.opacity !== '0') p.el.style.opacity = '0';
+        continue;
+      }
+      var P = PERIOD[p.l];
+      var u = (((t % P) / P) + p.l * 0.13 + p.d * 0.5) % 1;
+      placePacket(p, p.d ? 1 - u : u);
+    }
+  }
+
+  function begin() {
+    if (running) return;
+    if (!sample()) { window.setTimeout(begin, 400); return; }
+    running = true;
+    raf = window.requestAnimationFrame(frame);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      visible = entries.some(function (entry) { return entry.isIntersecting; });
+    }, { threshold: 0.12 });
+    io.observe(board);
+  }
+
+  var loader = doc.getElementById('pipelineLoadingScreen');
+  if (!loader) {
+    begin();
+  } else {
+    var started = false;
+    var go = function () { if (started) return; started = true; window.setTimeout(begin, 120); };
+    var mo = new MutationObserver(function () {
+      if (loader.classList.contains('is-hidden')) { mo.disconnect(); go(); }
+    });
+    mo.observe(loader, { attributes: true, attributeFilter: ['class'] });
+    window.setTimeout(function () { mo.disconnect(); go(); }, 6000);
+  }
+})();
