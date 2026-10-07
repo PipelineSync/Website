@@ -1,4 +1,8 @@
-{% if hero_visual == 'kanban' %}{% include 'partials/hero-kanban.njk' %}{% else %}
+{% if hero_visual == 'kanban' %}{% include 'partials/hero-kanban.njk' %}
+{% elif hero_visual == 'about-team' %}{% include 'partials/hero-about-ring.njk' %}
+{% elif hero_visual == 'solutions-rail' %}{% include 'partials/hero-solutions-rail.njk' %}
+{% elif hero_visual == 'integrations-sync' %}{% include 'partials/hero-integrations-sync.njk' %}
+{% else %}
 <div class="n-visual" aria-hidden="true">
   <div class="n-visual-rings"><span></span><span></span><span></span></div>
   <svg class="n-visual-net" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">

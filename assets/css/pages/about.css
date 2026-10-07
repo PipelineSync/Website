@@ -88,3 +88,91 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;letter-spacing:-0.01em;line-height:
 #main-content .hero-inner>.reveal{width:100%;max-width:900px;margin:0 auto;text-align:center}
 #main-content .hero p{margin-left:auto;margin-right:auto}
 @media(max-width:768px){#main-content .hero-inner{width:calc(100% - 32px)}}
+
+/* ==========================================================================
+   About hero — Coverage ring (partials/hero-about-ring.njk, front matter
+   `hero_visual: "about-team"`). Glass core with two counter-rotating rings of
+   role chips, a radar sweep, an office-hours strip and credential counters.
+   Rotation is driven by assets/js/pages/about.js through --ha-r0/--ha-r1/
+   --ha-sw custom properties; chip radii use cqw units so the whole ring
+   scales with the stage and can never overflow it. Decorative only.
+   ========================================================================== */
+html body .n-hero-split-page .n-visual.n-visual-ring{aspect-ratio:auto;max-width:480px}
+html body .n-hero-split-page .n-visual-ring .n-chip{width:44px;height:44px;border-radius:14px;font-size:16px;opacity:.8}
+html body .n-hero-split-page .n-visual-ring .n-chip-a{left:-12px;top:1%}
+html body .n-hero-split-page .n-visual-ring .n-chip-b{right:-12px;top:1%}
+html body .n-hero-split-page .n-visual-ring .n-chip-c{left:-12px;top:52%}
+html body .n-hero-split-page .n-visual-ring .n-chip-d{right:-12px;top:52%}
+.n-visual-ring .n-visual-rings{left:0;right:0;top:0;bottom:auto;aspect-ratio:1;opacity:.8}
+
+.ha-stage{position:relative;aspect-ratio:1;container-type:inline-size;border-radius:20px;overflow:hidden;
+  border:1px solid var(--n-line-2);
+  background:radial-gradient(120% 60% at 50% 0%,rgba(139,92,246,.22),transparent 60%),radial-gradient(80% 50% at 50% 110%,rgba(34,228,255,.14),transparent 62%),linear-gradient(160deg,rgba(26,30,64,.92),rgba(7,9,21,.94));
+  box-shadow:0 42px 90px -34px rgba(139,92,246,.55),0 0 0 1px rgba(34,228,255,.14),inset 0 1px 0 rgba(255,255,255,.09)}
+.ha-ring{position:absolute;border-radius:50%}
+.ha-ring-o{left:12%;top:12%;width:76%;height:76%;border:1px dashed rgba(34,228,255,.35);transform:rotate(var(--ha-r0,18deg))}
+.ha-ring-o::after{content:'';position:absolute;left:50%;top:-3px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--n-cyan);box-shadow:0 0 10px var(--n-cyan)}
+.ha-ring-i{left:24%;top:24%;width:52%;height:52%;border:1px dashed rgba(139,92,246,.45);transform:rotate(var(--ha-r1,-24deg))}
+.ha-ring-i::after{content:'';position:absolute;left:50%;top:-3px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--n-violet);box-shadow:0 0 10px var(--n-violet)}
+.ha-sweep{position:absolute;left:8%;top:8%;width:84%;height:84%;border-radius:50%;transform:rotate(var(--ha-sw,120deg));
+  background:conic-gradient(from 90deg at 50% 50%,rgba(34,228,255,.30),rgba(34,228,255,.05) 60deg,transparent 90deg)}
+.ha-sweep::after{content:'';position:absolute;left:50%;top:50%;width:50%;height:1px;background:linear-gradient(90deg,var(--n-cyan),transparent);box-shadow:0 0 8px rgba(34,228,255,.8)}
+
+/* Role chips: rotate around the centre on their ring, counter-rotated upright. */
+.ha-chip{position:absolute;left:50%;top:50%;display:flex;align-items:center;gap:5px;padding:4px 8px 4px 6px;border-radius:999px;white-space:nowrap;
+  border:1px solid var(--n-line-2);background:rgba(10,13,30,.85);box-shadow:0 8px 24px -10px rgba(0,0,0,.8);
+  font:600 9px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--n-text-2);
+  transform:translate(-50%,-50%) rotate(calc(var(--ha-a) + var(--ha-r0,18deg))) translate(38cqw) rotate(calc((var(--ha-a) + var(--ha-r0,18deg)) * -1));
+  transition:border-color .35s ease,color .35s ease,box-shadow .35s ease,background .35s ease}
+.ha-chip[data-ha-ring="1"]{
+  transform:translate(-50%,-50%) rotate(calc(var(--ha-a) + var(--ha-r1,-24deg))) translate(26cqw) rotate(calc((var(--ha-a) + var(--ha-r1,-24deg)) * -1))}
+.ha-chip i{font-size:9px;color:var(--n-text-3);transition:color .35s ease}
+.ha-chip.is-lit{border-color:rgba(34,228,255,.7);color:#fff;background:rgba(34,228,255,.12);
+  box-shadow:0 0 0 1px rgba(34,228,255,.4),0 0 22px -4px rgba(34,228,255,.7)}
+.ha-chip.is-lit i{color:var(--n-cyan)}
+
+.ha-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;padding:12px 18px;border-radius:16px;
+  border:1px solid var(--n-line-2);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  box-shadow:0 0 0 1px rgba(139,92,246,.25),0 20px 50px -18px rgba(139,92,246,.7);
+  animation:haCore 6s ease-in-out infinite}
+@keyframes haCore{50%{transform:translate(-50%,calc(-50% - 5px))}}
+.ha-core b{display:block;font:600 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#fff}
+.ha-core>span{display:block;margin-top:2px;font:600 9px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--n-text-3)}
+.ha-core em{display:block;margin-top:6px;min-height:14px;font:600 9px/1.4 'IBM Plex Mono',monospace;font-style:normal;letter-spacing:.05em;color:var(--n-cyan-soft);white-space:nowrap}
+
+.ha-hours{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--n-line);background:var(--n-glass)}
+.ha-hours-labels{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
+  font:600 9px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--n-text-3)}
+.ha-hours-row{display:flex;align-items:center;gap:10px;margin-top:9px}
+.ha-hours-track{position:relative;flex:1;min-width:0;height:4px;border-radius:4px;
+  background:linear-gradient(90deg,rgba(34,228,255,.4),rgba(139,92,246,.4))}
+.ha-mk{position:absolute;left:0;top:0;bottom:0;width:calc(100% - 10px);transform:translateX(var(--ha-mk,62%))}
+.ha-mk i{position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--n-cyan);box-shadow:0 0 12px var(--n-cyan)}
+.ha-now{display:flex;align-items:center;gap:6px;white-space:nowrap;
+  font:600 9px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--n-green)}
+.ha-now i{width:7px;height:7px;border-radius:50%;background:var(--n-green);box-shadow:0 0 10px var(--n-green);animation:haNow 1.8s ease-in-out infinite}
+@keyframes haNow{50%{opacity:.35;transform:scale(.75)}}
+
+.ha-creds{display:flex;gap:8px;margin-top:10px}
+.ha-cred{flex:1;min-width:0;text-align:center;padding:10px 6px;border-radius:12px;border:1px solid var(--n-line);background:var(--n-glass)}
+.ha-cred b{display:block;font:600 20px/1 'Space Grotesk',sans-serif;color:#fff;transition:color .3s ease}
+.ha-cred b.is-tick{color:var(--n-cyan)}
+.ha-cred i{display:block;margin-top:4px;font:600 8px/1.35 'IBM Plex Mono',monospace;font-style:normal;letter-spacing:.07em;text-transform:uppercase;color:var(--n-text-3)}
+
+@media (prefers-reduced-motion:reduce){
+  .n-visual-ring .ha-core,.n-visual-ring .ha-now i{animation:none}
+  .n-visual-ring .n-visual-rings span,.n-visual-ring .n-chip{animation:none}
+  .n-visual-ring .ha-chip,.n-visual-ring .ha-cred b{transition:none}
+}
+@media (max-width:560px){
+  .ha-core{padding:10px 14px}
+  .ha-chip{padding:3px 7px 3px 5px;font-size:8px;gap:4px}
+  .ha-chip i{font-size:8px}
+  .ha-cred b{font-size:17px}
+}
+@media (max-width:380px){
+  .ha-chip{font-size:7.5px}
+  .ha-hours-labels{font-size:8px;letter-spacing:.05em}
+  .ha-core em{font-size:8px}
+}
