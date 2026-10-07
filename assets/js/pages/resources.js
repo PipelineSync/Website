@@ -364,3 +364,112 @@ document.querySelectorAll('.accordion-item').forEach(item=>{
     });
   });
 })();
+
+/* Resources hero: Library band (partials/hero-resources-library.njk). Ambient
+   background only: the layer drifts a few pixels over ~20s with per-card
+   parallax, and every ~7s one card lifts, shows the NEW tag for ~2s, then
+   settles as the tag moves on. Card anchors are measured once in layout
+   space; the frame loop only writes transforms. Decorative only. */
+(function () {
+  'use strict';
+  var doc = document;
+  var root = doc.querySelector('[data-rl-root]');
+  if (!root) return;
+  var drift = root.querySelector('[data-rl-drift]');
+  var cards = Array.prototype.slice.call(root.querySelectorAll('[data-rl-card]'));
+  var tag = root.querySelector('[data-rl-new]');
+  if (!drift || !cards.length || !tag) return;
+
+  /* Reduced motion: the markup + CSS already compose the static frame. */
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var LOOP = 20000, CYCLE = 7000, TAU = Math.PI * 2;
+  var anchors = [];
+
+  function measure() {
+    if (!root.offsetWidth || !root.offsetHeight) return false;
+    anchors = cards.map(function (c) {
+      return {
+        x: c.offsetLeft + c.offsetWidth / 2,
+        y: c.offsetTop + c.offsetHeight / 2,
+        w: c.offsetWidth, h: c.offsetHeight,
+        d: parseFloat(c.style.getPropertyValue('--d')) || 0.7
+      };
+    });
+    return true;
+  }
+
+  var t = 0, last = 0, raf = 0, visible = true, running = false;
+  var lit = -1, tagOn = true;
+
+  function setLit(i, on) {
+    if (i === lit && on === tagOn) return;
+    if (lit >= 0 && cards[lit]) cards[lit].classList.remove('is-lift');
+    lit = i; tagOn = on;
+    if (on && cards[i]) cards[i].classList.add('is-lift');
+    tag.classList.toggle('is-off', !on);
+  }
+
+  function frame(ts) {
+    raf = window.requestAnimationFrame(frame);
+    if (!last) last = ts;
+    var dt = Math.min(64, ts - last);
+    last = ts;
+    if (!running || !visible || doc.hidden || !anchors.length) return;
+    t += dt;
+    var ph = ((t % LOOP) / LOOP) * TAU;
+    var dx = 8 * Math.sin(ph), dy = 7 * Math.sin(ph * 0.9 + 1.3);
+    drift.style.transform = 'translate3d(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px,0)';
+
+    var cyc = Math.floor(t / CYCLE) % cards.length, cl = t % CYCLE;
+    var lift = cl < 600 ? cl / 600 : cl < 2600 ? 1 : cl < 3400 ? 1 - (cl - 2600) / 800 : 0;
+    lift = lift * lift * (3 - 2 * lift);
+    setLit(cyc, cl > 350 && cl < 2800);
+
+    var tox = 0, toy = 0;
+    for (var i = 0; i < cards.length; i++) {
+      var a = anchors[i];
+      var ox = dx * a.d + 4 * Math.cos(ph * 1.4 + i * 2.3);
+      var oy = dy * a.d + 5 * Math.sin(ph * 1.8 + i * 1.7) - (i === cyc ? lift * 10 : 0);
+      cards[i].style.transform = 'translate(-50%,-50%) translate3d(' + ox.toFixed(1) + 'px,' + oy.toFixed(1) + 'px,0)';
+      if (i === cyc) { tox = a.x + ox + a.w / 2 - 20; toy = a.y + oy - a.h / 2 - 4; }
+    }
+    tag.style.transform = 'translate(-50%,-50%) translate3d(' + tox.toFixed(1) + 'px,' + toy.toFixed(1) + 'px,0)';
+  }
+
+  function begin() {
+    if (running) return;
+    if (!measure()) { window.setTimeout(begin, 400); return; }
+    tag.style.left = '0';
+    tag.style.top = '0';
+    running = true;
+    raf = window.requestAnimationFrame(frame);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      visible = entries.some(function (entry) { return entry.isIntersecting; });
+    }, { threshold: 0.12 });
+    io.observe(root);
+  }
+
+  var resizeTimer = 0;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(measure, 160);
+  });
+
+  /* Resources uses its own loading screen; same 6s safety timeout. */
+  var loader = doc.querySelector('.resources-loading-screen');
+  if (!loader) {
+    begin();
+  } else {
+    var started = false;
+    var go = function () { if (started) return; started = true; window.setTimeout(begin, 120); };
+    var mo = new MutationObserver(function () {
+      if (loader.classList.contains('is-hidden')) { mo.disconnect(); go(); }
+    });
+    mo.observe(loader, { attributes: true, attributeFilter: ['class'] });
+    window.setTimeout(function () { mo.disconnect(); go(); }, 6000);
+  }
+})();
