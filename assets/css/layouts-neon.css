@@ -46,6 +46,11 @@ html body .n-hero-split,html body .n-hero-split-page .hero-inner,html body .n-40
   display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:start;
   max-width:1240px!important;margin:0 auto!important;padding:0 24px!important;text-align:left!important;
 }
+/* Keep the animated artwork visually balanced with the copy instead of
+   pinning it to the top edge of the hero row. */
+html body .n-hero-split > .n-visual,
+html body .n-hero-split-page .hero-inner > .n-visual,
+html body .n-404 .hero-inner > .n-visual{align-self:center}
 html body .n-hero-split h1,html body .n-hero-split-page h1,html body .n-404 h1{
   font-size:clamp(44px,6.4vw,92px)!important;line-height:.95!important;letter-spacing:-.045em!important;margin:22px 0 24px!important;max-width:12ch;
 }
