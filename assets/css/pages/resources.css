@@ -136,3 +136,64 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;letter-spacing:-0.01em;line-height:
   #faq .accordion-header,#tab-faq .accordion-header{min-height:68px;padding:15px 16px!important}
   #faq .accordion-inner,#tab-faq .accordion-inner{padding:15px 16px 18px!important}
 }
+
+/* ==========================================================================
+   Resources hero — Library band (partials/hero-resources-library.njk).
+   Ambient background only: an absolutely positioned, pointer-transparent
+   layer behind the hero copy holding drifting document wireframes on a 4px
+   inner grid. It never affects layout (the tab row position is untouched)
+   and is masked so it fades out under the headline and the tab row. Drift,
+   per-card parallax and the rotating NEW tag are driven by
+   assets/js/pages/resources.js. Peak opacity is deliberately low so the h1
+   and lead keep their contrast.
+   ========================================================================== */
+html body .n-hero-res .rl-band{position:absolute;inset:0;z-index:0;overflow:clip;pointer-events:none;opacity:.38;
+  -webkit-mask-image:linear-gradient(100deg,transparent 2%,#000 38%),linear-gradient(180deg,#000 70%,transparent 99%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(100deg,transparent 2%,#000 38%),linear-gradient(180deg,#000 70%,transparent 99%);
+  mask-composite:intersect}
+.rl-drift{position:absolute;inset:0;will-change:transform}
+.rl-card{position:absolute;left:var(--x);top:var(--y);width:var(--w);padding:12px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.15);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.7);will-change:transform,opacity;
+  transform:translate(-50%,-50%);transition:border-color .5s ease,box-shadow .5s ease;
+  font-size:0;line-height:0}
+.rl-card.is-lift{border-color:rgba(34,228,255,.55);box-shadow:0 0 0 1px rgba(34,228,255,.35),0 26px 60px -20px rgba(34,228,255,.35)}
+.rl-card i{display:block}
+.rl-tag{width:32px;height:10px;border-radius:3px;background:rgba(34,228,255,.38);margin-bottom:8px}
+.rl-bar{height:8px;border-radius:2px;width:var(--w);margin-bottom:8px;background:linear-gradient(90deg,rgba(125,239,255,.4),rgba(139,92,246,.3))}
+.rl-line{height:4px;border-radius:2px;width:var(--w);margin-top:4px;background:rgba(255,255,255,.18)}
+.rl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:8px}
+.rl-grid b{height:14px;border-radius:2px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
+.rl-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.rl-row b{flex:0 0 auto;width:8px;height:8px;border-radius:2px;border:1px solid rgba(255,255,255,.25)}
+.rl-row b.is-on{background:rgba(74,222,128,.7);border-color:transparent}
+.rl-row u{display:block;height:4px;border-radius:2px;width:var(--w);background:rgba(255,255,255,.18);text-decoration:none}
+.rl-quote{margin:8px 0;padding-left:8px;border-left:2px solid rgba(34,228,255,.42)}
+.rl-quote u{display:block;height:4px;border-radius:2px;width:var(--w);background:rgba(255,255,255,.22);text-decoration:none;margin-top:4px}
+.rl-quote u:first-child{margin-top:0}
+.rl-new{position:absolute;left:60%;top:14%;transform:translate(46px,-50px);padding:2px 7px;border-radius:99px;
+  font:600 8px/1.5 'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+  color:#0a0c1b;background:linear-gradient(120deg,var(--n-cyan),var(--n-violet-soft));
+  box-shadow:0 0 18px -2px rgba(34,228,255,.8);opacity:1;transition:opacity .4s ease;will-change:transform,opacity}
+.rl-new.is-off{opacity:0}
+
+@media (prefers-reduced-motion:reduce){
+  .rl-card,.rl-new{transition:none}
+}
+@media (max-width:760px){
+  .rl-card{width:calc(var(--w) * .72);padding:9px}
+  .rl-card:nth-child(1){left:54%}
+  .rl-card:nth-child(2){left:74%}
+  .rl-card:nth-child(3){left:78%}
+  .rl-card:nth-child(4){left:62%}
+  .rl-card:nth-child(5){left:76%}
+  .rl-card:nth-child(6){left:54%}
+  .rl-card:nth-child(7){left:80%}
+}
+@media (max-width:560px){
+  .rl-card{width:calc(var(--w) * .6);padding:8px}
+  html body .n-hero-res .rl-band{
+    -webkit-mask-image:linear-gradient(100deg,transparent 2%,#000 30%),linear-gradient(180deg,#000 66%,transparent 99%);
+    mask-image:linear-gradient(100deg,transparent 2%,#000 30%),linear-gradient(180deg,#000 66%,transparent 99%)}
+}

@@ -130,3 +130,103 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;letter-spacing:-0.01em;line-height:
 /* Keep comfortable separation between the filter bar and integration cards. */
 #categoryTabs{margin-bottom:32px}
 @media(max-width:768px){body #categoryTabs{margin-bottom:32px!important}}
+
+/* ==========================================================================
+   Integrations hero — Sync monitor (partials/hero-integrations-sync.njk,
+   front matter `hero_visual: "integrations-sync"`). HubSpot core pill, six
+   monochrome tool pills, curved hairline links carrying packets both ways,
+   and a mono console. Link endpoints are buried inside the pills in the
+   markup so every link stays visibly connected at any size or font. Packet
+   motion, the degrade beat and the console stream are driven by
+   assets/js/pages/integrations.js. Decorative only.
+   Note: the amber/red below are functional status colours used only for the
+   transient degraded-link beat (retry/error); everything else is theme tokens.
+   ========================================================================== */
+html body .n-hero-split-page .n-visual.n-visual-sync{aspect-ratio:auto;max-width:520px}
+html body .n-hero-split-page .n-visual-sync .n-chip{width:42px;height:42px;border-radius:13px;font-size:15px;opacity:.7}
+html body .n-hero-split-page .n-visual-sync .n-chip-a{left:-16px;top:-14px}
+html body .n-hero-split-page .n-visual-sync .n-chip-b{right:-16px;top:-14px}
+html body .n-hero-split-page .n-visual-sync .n-chip-c{left:-16px;bottom:-14px}
+html body .n-hero-split-page .n-visual-sync .n-chip-d{right:-16px;bottom:-14px}
+.n-visual-sync .n-visual-rings{opacity:.45}
+
+.sy-board{position:relative;border-radius:18px;padding:13px 14px 14px;border:1px solid var(--n-line-2);
+  background:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px) 0 0/26px 26px,
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px) 0 0/26px 26px,
+    radial-gradient(120% 60% at 80% 0%,rgba(139,92,246,.16),transparent 60%),
+    linear-gradient(158deg,rgba(24,28,58,.94),rgba(7,9,21,.95));
+  box-shadow:0 36px 80px -34px rgba(139,92,246,.55),0 0 0 1px rgba(34,228,255,.12),inset 0 1px 0 rgba(255,255,255,.08)}
+.sy-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 4px 10px;
+  font:600 9px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--n-text-3)}
+.sy-top-title{display:flex;align-items:center;gap:6px;color:var(--n-text-2)}
+.sy-signal{width:6px;height:6px;border-radius:50%;background:var(--n-green);box-shadow:0 0 10px var(--n-green);animation:syLive 1.9s ease-in-out infinite}
+@keyframes syLive{50%{opacity:.35;transform:scale(.78)}}
+.sy-status{color:var(--n-green);white-space:nowrap;font-variant-numeric:tabular-nums;transition:color .4s ease}
+.sy-status.is-warn{color:#fcd34d}
+.sy-status.is-err{color:#fca5a5}
+
+.sy-map{position:relative;aspect-ratio:560/380;container-type:inline-size}
+.sy-links{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sy-links path[data-sy-link]{fill:none;stroke-width:1.3;stroke-linecap:round;opacity:.8;transition:stroke .4s ease,opacity .4s ease}
+.sy-links path[data-sy-link="0"],.sy-links path[data-sy-link="2"],.sy-links path[data-sy-link="4"]{stroke:var(--n-cyan)}
+.sy-links path[data-sy-link="1"],.sy-links path[data-sy-link="3"],.sy-links path[data-sy-link="5"]{stroke:var(--n-green)}
+.sy-links path.is-warn{stroke:#fbbf24;opacity:1}
+.sy-links path.is-err{stroke:#f87171;opacity:1}
+.sy-links path.is-heal{stroke:var(--n-green);stroke-width:2;opacity:1;animation:syHeal .7s ease-out}
+@keyframes syHeal{0%{opacity:.25}100%{opacity:1}}
+.sy-packets circle{will-change:transform,opacity;stroke:rgba(255,255,255,.55);stroke-width:.8}
+.sy-packets circle[data-sy-l="0"],.sy-packets circle[data-sy-l="2"],.sy-packets circle[data-sy-l="4"]{fill:var(--n-cyan)}
+.sy-packets circle[data-sy-l="1"],.sy-packets circle[data-sy-l="3"],.sy-packets circle[data-sy-l="5"]{fill:var(--n-green)}
+
+.sy-core{position:absolute;left:15.7%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:1.6cqw;
+  padding:2.2cqw 3cqw;border-radius:2.6cqw;white-space:nowrap;
+  border:1px solid var(--n-line-2);background:linear-gradient(155deg,rgba(34,228,255,.14),rgba(139,92,246,.12) 60%,rgba(9,11,24,.92));
+  box-shadow:0 0 0 1px rgba(34,228,255,.20),0 16px 38px -16px rgba(34,228,255,.5),inset 0 1px 0 rgba(255,255,255,.08);
+  font:600 2.8cqw/1 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#fff}
+.sy-core i{font-size:3.2cqw;color:var(--n-cyan-soft)}
+.sy-tool{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);display:flex;align-items:center;gap:1.2cqw;
+  padding:1.4cqw 2.1cqw;border-radius:99px;white-space:nowrap;
+  border:1px solid var(--n-line-2);background:rgba(10,13,30,.9);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+  font:600 2.2cqw/1 'Space Grotesk',sans-serif;letter-spacing:.01em;color:var(--n-text-2);
+  transition:border-color .4s ease,color .4s ease,box-shadow .4s ease}
+.sy-tool i{font-size:2.4cqw;color:var(--n-text-2)}
+.sy-tool.is-warn{border-color:rgba(251,191,36,.75);color:#fde9c8;box-shadow:0 0 16px -4px rgba(251,191,36,.65)}
+.sy-tool.is-warn i{color:#fcd34d}
+.sy-tool.is-err{border-color:rgba(248,113,113,.8);color:#ffe1e1;box-shadow:0 0 16px -4px rgba(248,113,113,.65)}
+.sy-tool.is-err i{color:#fca5a5}
+.sy-tool.is-heal{border-color:rgba(74,222,128,.8);color:#d8ffe5;box-shadow:0 0 18px -4px rgba(74,222,128,.75)}
+.sy-tool.is-heal i{color:var(--n-green)}
+
+.sy-badge{position:absolute;left:66.4%;top:15.8%;transform:translate(-50%,-135%);padding:3px 8px;border-radius:99px;
+  font:600 8px/1.5 'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  background:rgba(8,10,22,.94);border:1px solid transparent;opacity:0;transition:opacity .3s ease}
+.sy-badge.is-warn{opacity:1;border-color:rgba(251,191,36,.6);color:#fcd34d}
+.sy-badge.is-err{opacity:1;border-color:rgba(248,113,113,.65);color:#fca5a5}
+.sy-badge.is-heal{opacity:1;border-color:rgba(74,222,128,.6);color:var(--n-green)}
+
+.sy-console{margin-top:10px;border-radius:12px;border:1px solid var(--n-line);background:rgba(4,6,14,.72);
+  padding:6px 12px;display:flex;flex-direction:column}
+.sy-console p{padding:4px 0;font:500 10px/1.5 'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;color:var(--n-text-3);white-space:nowrap;overflow:hidden}
+.sy-console p+p{border-top:1px solid rgba(255,255,255,.06)}
+.sy-console p::before{content:'\203A';margin-right:8px;color:var(--n-cyan);opacity:.75}
+.sy-console p:last-child{color:var(--n-text-2)}
+.sy-console p.is-warn{color:#fcd34d}
+.sy-console p.is-err{color:#fca5a5}
+.sy-console p.is-heal{color:var(--n-green)}
+
+@media (prefers-reduced-motion:reduce){
+  .n-visual-sync .sy-signal,.n-visual-sync .sy-links path.is-heal{animation:none}
+  .n-visual-sync .n-visual-rings span,.n-visual-sync .n-chip{animation:none}
+  .n-visual-sync .sy-links path,.n-visual-sync .sy-tool,.n-visual-sync .sy-status,.n-visual-sync .sy-badge{transition:none}
+}
+@media (max-width:560px){
+  .sy-console{padding:5px 10px}
+  .sy-console p{font-size:8px}
+  .sy-badge{font-size:7px;padding:2px 6px}
+}
+@media (max-width:380px){
+  .sy-board{padding:11px 10px 12px}
+  .sy-console p{font-size:7.5px}
+}

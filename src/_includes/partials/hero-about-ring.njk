@@ -1,0 +1,46 @@
+{# About hero visual — "Coverage ring".
+   A glass core (PipelineSync / 8 specialists) with two counter-rotating rings
+   carrying eight role chips. A radar sweep lights each chip it passes and the
+   role name lands in the readout; below, an office-hours strip and three
+   credential counters. Driven by assets/js/pages/about.js. Decorative only. #}
+<div class="n-visual n-visual-ring" aria-hidden="true">
+  <div class="n-visual-rings"><span></span><span></span></div>
+
+  <div class="ha-stage" data-ha-stage>
+    <div class="ha-ring ha-ring-o"></div>
+    <div class="ha-ring ha-ring-i"></div>
+    <div class="ha-sweep" data-ha-sweep></div>
+    <span class="ha-chip" data-ha-chip data-ha-ring="0" data-role="Implementation lead" style="--ha-a:8deg"><i class="fa-solid fa-user-tie"></i><b>IL</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="0" data-role="Migration engineer" style="--ha-a:98deg"><i class="fa-solid fa-right-left"></i><b>ME</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="0" data-role="Integrations dev" style="--ha-a:188deg"><i class="fa-solid fa-plug"></i><b>ID</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="0" data-role="Reporting analyst" style="--ha-a:278deg"><i class="fa-solid fa-chart-line"></i><b>RA</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="1" data-role="Data architect" style="--ha-a:53deg"><i class="fa-solid fa-database"></i><b>DA</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="1" data-role="Automation builder" style="--ha-a:143deg"><i class="fa-solid fa-bolt"></i><b>AB</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="1" data-role="QA" style="--ha-a:233deg"><i class="fa-solid fa-circle-check"></i><b>QA</b></span>
+    <span class="ha-chip" data-ha-chip data-ha-ring="1" data-role="Trainer" style="--ha-a:323deg"><i class="fa-solid fa-graduation-cap"></i><b>TR</b></span>
+    <div class="ha-core">
+      <b>PipelineSync</b>
+      <span>8 specialists</span>
+      <em data-ha-readout>Implementation lead</em>
+    </div>
+  </div>
+
+  <div class="ha-hours">
+    <div class="ha-hours-labels"><span>PH office 09:00&ndash;18:00</span><span>US business hours 08:00&ndash;17:00 ET</span></div>
+    <div class="ha-hours-row">
+      <div class="ha-hours-track"><span class="ha-mk" data-ha-mk><i></i></span></div>
+      <span class="ha-now"><i></i>working now</span>
+    </div>
+  </div>
+
+  <div class="ha-creds">
+    <span class="ha-cred"><b data-ha-count="12">12</b><i>certifications</i></span>
+    <span class="ha-cred"><b data-ha-count="10">10</b><i>five-star reviews</i></span>
+    <span class="ha-cred"><b data-ha-count="5">5</b><i>years experience</i></span>
+  </div>
+
+  <div class="n-chip n-chip-a"><i class="fa-solid {{ hero_chips[0] | default('fa-users') }}"></i></div>
+  <div class="n-chip n-chip-b"><i class="fa-solid {{ hero_chips[1] | default('fa-handshake') }}"></i></div>
+  <div class="n-chip n-chip-c"><i class="fa-solid {{ hero_chips[2] | default('fa-award') }}"></i></div>
+  <div class="n-chip n-chip-d"><i class="fa-solid {{ hero_chips[3] | default('fa-comments') }}"></i></div>
+</div>

@@ -192,3 +192,211 @@
   // If scripts are limited, reveal content rather than leaving it invisible.
   if(!('IntersectionObserver' in window)){doc.querySelectorAll('.reveal').forEach(function(el){el.classList.add('active');});}
 })();
+
+/* Solutions hero: Engagement rail (partials/hero-solutions-rail.njk). A playhead
+   dwells ~2.3s at each of four nodes; at each stop an artifact card appears
+   above the rail, then slides into the delivered stack. The ~14s loop is a pure
+   function of elapsed time, so pause/resize never jump. Layout-space geometry,
+   cards clamped in the artifact zone. Decorative only. */
+(function () {
+  'use strict';
+  var doc = document;
+  var board = doc.querySelector('[data-sr-board]');
+  if (!board) return;
+  var art = board.querySelector('[data-sr-art]');
+  var rail = board.querySelector('[data-sr-rail]');
+  var head = board.querySelector('[data-sr-head]');
+  var fill = board.querySelector('[data-sr-fill]');
+  var count = board.querySelector('[data-sr-count]');
+  var nodes = Array.prototype.slice.call(board.querySelectorAll('[data-sr-node]'));
+  var cards = [0, 1, 2, 3].map(function (i) { return board.querySelector('[data-sr-card="' + i + '"]'); });
+  if (!art || !rail || !head || !fill || nodes.length < 4 || cards.indexOf(null) >= 0) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var DWELL = 2300, TRAVEL = 1000, DELIVER = 900, HOLD = 400, CLEAR = 600, ARRIVE = 450;
+  var segs = [];
+  for (var s = 0; s < 4; s++) {
+    segs.push({ kind: 'dwell', i: s, dur: DWELL });
+    if (s < 3) segs.push({ kind: 'travel', from: s, to: s + 1, dur: TRAVEL });
+  }
+  segs.push({ kind: 'deliver', dur: DELIVER }, { kind: 'hold', dur: HOLD }, { kind: 'clear', dur: CLEAR });
+  var LOOP = segs.reduce(function (sum, g) { return sum + g.dur; }, 0);
+
+  function offsetIn(el, root) {
+    var x = 0, y = 0, node = el;
+    while (node && node !== root) { x += node.offsetLeft; y += node.offsetTop; node = node.offsetParent; }
+    return node === root ? { x: x, y: y } : null;
+  }
+
+  var nodeX = [0, 0, 0, 0], headX = [0, 0, 0, 0];
+  var cardW = 0, artW = 0, stackCX = 0, firstHX = 0, spanHX = 1;
+
+  function measure() {
+    if (!art.offsetWidth || !rail.offsetWidth || !cards[0].offsetWidth) return false;
+    var ab = offsetIn(art, board);
+    if (!ab) return false;
+    cardW = cards[0].offsetWidth;
+    artW = art.clientWidth;
+    for (var k = 0; k < 4; k++) {
+      var p = offsetIn(nodes[k], board);
+      var cx = p ? p.x + nodes[k].offsetWidth / 2 - ab.x : artW / 2;
+      nodeX[k] = Math.min(Math.max(cx, cardW / 2 + 8), artW - cardW / 2 - 8);
+      headX[k] = nodes[k].offsetLeft + nodes[k].offsetWidth / 2;
+    }
+    stackCX = artW - 52;
+    firstHX = headX[0];
+    spanHX = Math.max(1, headX[3] - headX[0]);
+    return true;
+  }
+
+  function easeIO(u) { return u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2; }
+  function easeO(u) { return 1 - Math.pow(1 - u, 3); }
+  function f1(n) { return n.toFixed(1); }
+
+  function stackTf(i) {
+    return 'translate3d(' + f1(stackCX - cardW / 2 + (i - 1.5) * 8) + 'px,' + f1(12 - i * 4) + 'px,0) scale(.6) rotate(' + f1((i - 1.5) * 5) + 'deg)';
+  }
+  function placeTf(i, rise) {
+    return 'translate3d(' + f1(nodeX[i] - cardW / 2) + 'px,' + f1(rise) + 'px,0)';
+  }
+
+  var lastKey = '', lastCount = '';
+  function setNodes(done, now) {
+    var key = done + ':' + now;
+    if (key === lastKey) return;
+    lastKey = key;
+    nodes.forEach(function (n, k) {
+      n.classList.toggle('is-done', k <= done);
+      n.classList.toggle('is-now', k === now);
+    });
+  }
+  function setCount(n) {
+    var text = 'Stage ' + n + ' of 4';
+    if (text === lastCount) return;
+    lastCount = text;
+    if (count) count.textContent = text;
+  }
+  function show(i, tf, o, z) {
+    var el = cards[i];
+    el.style.transform = tf;
+    el.style.opacity = o.toFixed(3);
+    el.style.zIndex = String(z);
+    el.classList.toggle('is-on', o > 0.01);
+  }
+  function hide(i) {
+    var el = cards[i];
+    el.style.opacity = '0';
+    el.classList.remove('is-on');
+  }
+
+  /* Render one absolute loop instant — deterministic, resumable, seekable. */
+  function render(lt) {
+    var acc = 0, g = segs[0], local = 0;
+    for (var k = 0; k < segs.length; k++) {
+      if (lt < acc + segs[k].dur) { g = segs[k]; local = lt - acc; break; }
+      acc += segs[k].dur;
+      g = segs[k]; local = segs[k].dur;
+    }
+    var u = Math.min(1, local / g.dur), i;
+    if (g.kind === 'dwell') {
+      i = g.i;
+      head.style.transform = 'translate3d(' + f1(headX[i]) + 'px,0,0)';
+      head.style.opacity = i === 0 ? Math.min(1, local / 300).toFixed(3) : '1';
+      fill.style.transform = 'scaleX(' + ((headX[i] - firstHX) / spanHX).toFixed(3) + ')';
+      setNodes(i - 1, i);
+      setCount(i + 1);
+      var e = easeO(Math.min(1, local / ARRIVE));
+      show(i, placeTf(i, (1 - e) * 16), e, 10);
+      for (var a = 0; a < i; a++) show(a, stackTf(a), 0.95, a + 1);
+      for (var b = i + 1; b < 4; b++) hide(b);
+    } else if (g.kind === 'travel' || g.kind === 'deliver') {
+      var del = g.kind === 'deliver';
+      var fr = del ? 3 : g.from, to = del ? 3 : g.to;
+      var e2 = easeIO(u);
+      var hx = headX[fr] + (headX[to] - headX[fr]) * e2;
+      head.style.transform = 'translate3d(' + f1(hx) + 'px,0,0)';
+      head.style.opacity = '1';
+      fill.style.transform = 'scaleX(' + ((hx - firstHX) / spanHX).toFixed(3) + ')';
+      setNodes(del ? 2 : fr, to);
+      setCount(to + 1);
+      var x0 = nodeX[fr] - cardW / 2, x1 = stackCX - cardW / 2 + (fr - 1.5) * 8;
+      var y1 = 12 - fr * 4, fan = (fr - 1.5) * 5;
+      show(fr, 'translate3d(' + f1(x0 + (x1 - x0) * e2) + 'px,' + f1(y1 * e2 - Math.sin(Math.PI * u) * 10) + 'px,0) scale(' + (1 - 0.4 * e2).toFixed(3) + ') rotate(' + f1(fan * e2) + 'deg)', 1, 10);
+      for (var c = 0; c < fr; c++) show(c, stackTf(c), 0.95, c + 1);
+      for (var d = fr + 1; d < 4; d++) hide(d);
+    } else if (g.kind === 'hold') {
+      head.style.transform = 'translate3d(' + f1(headX[3]) + 'px,0,0)';
+      head.style.opacity = '1';
+      fill.style.transform = 'scaleX(1)';
+      setNodes(3, 3);
+      setCount(4);
+      for (var h = 0; h < 4; h++) show(h, stackTf(h), 0.95, h + 1);
+    } else { /* clear: the stack fades, the head docks out, the fill drains */
+      head.style.transform = 'translate3d(' + f1(headX[3]) + 'px,0,0)';
+      head.style.opacity = (1 - u).toFixed(3);
+      fill.style.transform = 'scaleX(' + (1 - u).toFixed(3) + ')';
+      setNodes(3, -1);
+      setCount(4);
+      for (var q = 0; q < 4; q++) show(q, stackTf(q), 0.95 * (1 - u), q + 1);
+    }
+  }
+
+  /* Reduced motion: one composed mid-loop frame — no timers, no RAF. */
+  if (reduced) {
+    var painted = false;
+    var paintStatic = function () {
+      if (painted || !measure()) return;
+      painted = true;
+      render(DWELL + TRAVEL + DWELL - 1);
+    };
+    paintStatic();
+    window.addEventListener('load', paintStatic, { once: true });
+    return;
+  }
+
+  var t = 0, last = 0, raf = 0, visible = true, running = false;
+
+  function frame(ts) {
+    raf = window.requestAnimationFrame(frame);
+    if (!last) last = ts;
+    var dt = Math.min(64, ts - last);
+    last = ts;
+    if (!running || !visible || doc.hidden) return;
+    t += dt;
+    render(t % LOOP);
+  }
+
+  function begin() {
+    if (running) return;
+    if (!measure()) { window.setTimeout(begin, 400); return; }
+    running = true;
+    raf = window.requestAnimationFrame(frame);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      visible = entries.some(function (entry) { return entry.isIntersecting; });
+    }, { threshold: 0.12 });
+    io.observe(board);
+  }
+
+  var resizeTimer = 0;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(measure, 160);
+  });
+
+  var loader = doc.getElementById('pipelineLoadingScreen');
+  if (!loader) {
+    begin();
+  } else {
+    var started = false;
+    var go = function () { if (started) return; started = true; window.setTimeout(begin, 120); };
+    var mo = new MutationObserver(function () {
+      if (loader.classList.contains('is-hidden')) { mo.disconnect(); go(); }
+    });
+    mo.observe(loader, { attributes: true, attributeFilter: ['class'] });
+    window.setTimeout(function () { mo.disconnect(); go(); }, 6000);
+  }
+})();

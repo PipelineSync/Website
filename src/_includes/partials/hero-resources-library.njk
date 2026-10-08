@@ -1,0 +1,47 @@
+{# Resources hero visual — "Library band".
+   Ambient background only: wireframe document cards drifting behind the hero
+   copy with slight per-card parallax. Every few seconds one card lifts and
+   shows a NEW tag, then settles. Absolutely positioned, pointer-events none,
+   masked so it fades out under the headline and the tab row. Driven by
+   assets/js/pages/resources.js. Decorative only. #}
+<div class="rl-band" aria-hidden="true" data-rl-root>
+  <div class="rl-drift" data-rl-drift>
+    <span class="rl-card rl-guide" data-rl-card style="--x:60%;--y:14%;--w:168px;--d:.9">
+      <i class="rl-tag"></i><i class="rl-bar" style="--w:78%"></i><i class="rl-bar" style="--w:56%"></i>
+      <i class="rl-line" style="--w:94%"></i><i class="rl-line" style="--w:88%"></i><i class="rl-line" style="--w:91%"></i><i class="rl-line" style="--w:70%"></i>
+    </span>
+    <span class="rl-card rl-sheet" data-rl-card style="--x:81%;--y:10%;--w:188px;--d:.5">
+      <i class="rl-grid"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i>
+      <i class="rl-line" style="--w:64%"></i>
+    </span>
+    <span class="rl-card rl-sop" data-rl-card style="--x:90%;--y:36%;--w:152px;--d:1">
+      <i class="rl-bar" style="--w:62%"></i>
+      <i class="rl-row"><b class="is-on"></b><u style="--w:78%"></u></i>
+      <i class="rl-row"><b class="is-on"></b><u style="--w:64%"></u></i>
+      <i class="rl-row"><b></b><u style="--w:72%"></u></i>
+      <i class="rl-row"><b></b><u style="--w:55%"></u></i>
+    </span>
+    <span class="rl-card rl-article" data-rl-card style="--x:68%;--y:44%;--w:176px;--d:.7">
+      <i class="rl-bar" style="--w:70%"></i>
+      <i class="rl-line" style="--w:95%"></i><i class="rl-line" style="--w:90%"></i>
+      <i class="rl-quote"><u style="--w:84%"></u><u style="--w:62%"></u></i>
+      <i class="rl-line" style="--w:75%"></i>
+    </span>
+    <span class="rl-card rl-guide" data-rl-card style="--x:86%;--y:66%;--w:158px;--d:.85">
+      <i class="rl-tag"></i><i class="rl-bar" style="--w:72%"></i><i class="rl-bar" style="--w:48%"></i>
+      <i class="rl-line" style="--w:92%"></i><i class="rl-line" style="--w:80%"></i><i class="rl-line" style="--w:66%"></i>
+    </span>
+    <span class="rl-card rl-sop" data-rl-card style="--x:60%;--y:78%;--w:146px;--d:.55">
+      <i class="rl-bar" style="--w:58%"></i>
+      <i class="rl-row"><b class="is-on"></b><u style="--w:74%"></u></i>
+      <i class="rl-row"><b></b><u style="--w:66%"></u></i>
+      <i class="rl-row"><b></b><u style="--w:58%"></u></i>
+    </span>
+    <span class="rl-card rl-article" data-rl-card style="--x:92%;--y:82%;--w:150px;--d:.75">
+      <i class="rl-bar" style="--w:64%"></i>
+      <i class="rl-line" style="--w:93%"></i><i class="rl-line" style="--w:78%"></i>
+      <i class="rl-quote"><u style="--w:80%"></u><u style="--w:58%"></u></i>
+    </span>
+    <span class="rl-new" data-rl-new>new</span>
+  </div>
+</div>
