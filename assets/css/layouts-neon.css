@@ -20,7 +20,20 @@ html body .n-num{counter-reset:nnum}
 html body .n-num > *{counter-increment:nnum}
 
 /* ======================= HERO (home + inner pages) ======================= */
-html body .hero{padding:150px 0 110px!important;min-height:min(920px,100vh);display:flex;align-items:center;overflow:hidden;position:relative}
+/*
+   Keep the hero framed to the visible viewport below the sticky header.
+   The previous generous padding plus vertical centering pushed the copy too
+   far down on short screens, while overflow:hidden could clip the artwork
+   when the copy needed more than one viewport. Heroes are allowed to grow
+   with their content; the viewport height is only the minimum frame.
+*/
+html body{--n-header-height:78px}
+html body .hero{
+  min-height:calc(100vh - var(--n-header-height));
+  min-height:calc(100svh - var(--n-header-height));
+  padding:clamp(48px,8vh,96px) 0 clamp(48px,6vh,80px)!important;
+  display:flex;align-items:flex-start;overflow:visible;position:relative;
+}
 html body .hero::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
   background:
@@ -30,7 +43,7 @@ html body .hero::before{
 }
 html body .hero > *{position:relative;z-index:1;width:100%}
 html body .n-hero-split,html body .n-hero-split-page .hero-inner,html body .n-404 .hero-inner{
-  display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;
+  display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:start;
   max-width:1240px!important;margin:0 auto!important;padding:0 24px!important;text-align:left!important;
 }
 html body .n-hero-split h1,html body .n-hero-split-page h1,html body .n-404 h1{
@@ -322,7 +335,11 @@ html body #contact.n-cta .contact-grid{background:none!important;border:0!import
 html body #contact.n-cta .contact-grid::before{display:none}
 
 /* ======================= RESOURCES ======================= */
-html body .n-hero-res{min-height:auto!important;padding:170px 0 80px!important}
+html body .n-hero-res{
+  min-height:calc(100vh - var(--n-header-height))!important;
+  min-height:calc(100svh - var(--n-header-height))!important;
+  padding:clamp(48px,8vh,96px) 0 clamp(48px,6vh,80px)!important;
+}
 html body .n-hero-res .hero-inner{text-align:left!important;max-width:1240px!important;margin:0 auto!important;padding:0 24px!important}
 html body .n-hero-res h1{font-size:clamp(48px,7vw,104px)!important;line-height:.94!important;letter-spacing:-.05em!important;max-width:13ch;margin:22px 0 26px!important}
 html body .n-hero-res .hero-inner p{margin:0 0 40px!important;max-width:56ch;text-align:left!important}
@@ -349,7 +366,12 @@ html body .n-res .dark-cta h3{font-size:clamp(30px,3.6vw,48px)!important;letter-
 html body .n-res .dark-cta .btn{grid-column:2;grid-row:1 / span 3;height:58px!important;padding:0 32px!important;background:linear-gradient(120deg,#22e4ff,#8b5cf6 55%,#ff3fd2)!important;background-size:200% 100%!important;color:#05060d!important;border:0!important}
 
 /* ======================= GUIDES (all 12) ======================= */
-html body .guide-hero{padding:170px 0 90px!important;position:relative;overflow:hidden}
+html body .guide-hero{
+  min-height:calc(100vh - var(--n-header-height));
+  min-height:calc(100svh - var(--n-header-height));
+  padding:clamp(48px,8vh,96px) 0 clamp(48px,6vh,80px)!important;
+  display:flex;align-items:flex-start;position:relative;overflow:visible;
+}
 html body .guide-hero::before{content:'';position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(700px 360px at 80% 30%,rgba(139,92,246,.25),transparent 65%),radial-gradient(500px 300px at 10% 80%,rgba(34,228,255,.12),transparent 65%)}
 html body .guide-hero-inner{position:relative;max-width:1240px!important}
@@ -421,8 +443,18 @@ html body .n-404 h1{position:relative}
   html body .n-res .dark-cta .btn{grid-column:1;grid-row:auto;justify-self:start}
 }
 @media (max-width:760px){
+  html body{--n-header-height:74px}
   html body .section{padding:80px 0!important}
-  html body .hero{padding:120px 0 64px!important;min-height:auto}
+  html body .hero{
+    min-height:calc(100vh - var(--n-header-height));
+    min-height:calc(100svh - var(--n-header-height));
+    padding:clamp(36px,6vh,64px) 0 48px!important;
+  }
+  html body .guide-hero{
+    min-height:calc(100vh - var(--n-header-height));
+    min-height:calc(100svh - var(--n-header-height));
+    padding:clamp(36px,6vh,64px) 0 48px!important;
+  }
   html body .n-head-split,html body .n-stats .reveal[style],html body .n-industries .container > .reveal:first-child,html body .n-services .container > .reveal:first-child,
   html body .n-tiers .container > .reveal:first-child,html body .n-library .container > .reveal:first-child,html body .n-trusted .trusted-heading{grid-template-columns:1fr!important}
   html body .n-head-split .lead,html body .n-head-split > p,html body .n-stats .reveal[style] .lead,html body .n-industries .container > .reveal:first-child .lead,
