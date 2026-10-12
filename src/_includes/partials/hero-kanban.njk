@@ -40,7 +40,6 @@
       {% endfor %}
 
       <span class="hb-link" data-hb-link></span>
-      <span class="hb-burst" data-hb-burst></span>
 
       <div class="hb-deal" data-hb-deal>
         <span class="hb-deal-name" data-hb-deal-name>Northwind</span>
@@ -49,7 +48,6 @@
           <i class="hb-owner" data-hb-deal-owner>AR</i>
         </span>
         <span class="hb-deal-tag" data-hb-deal-tag>{{ stages[0].name | default('Qualified') }}</span>
-        <i class="hb-deal-check fa-solid fa-check"></i>
       </div>
 
       <span class="hb-scan"></span>
@@ -57,9 +55,4 @@
 
     <span class="hb-frame"></span>
   </div>
-
-  <div class="n-chip n-chip-a"><i class="fa-solid {{ hero_chips[0] | default('fa-table-columns') }}"></i></div>
-  <div class="n-chip n-chip-b"><i class="fa-solid {{ hero_chips[1] | default('fa-diagram-project') }}"></i></div>
-  <div class="n-chip n-chip-c"><i class="fa-solid {{ hero_chips[2] | default('fa-arrow-trend-up') }}"></i></div>
-  <div class="n-chip n-chip-d"><i class="fa-solid {{ hero_chips[3] | default('fa-circle-check') }}"></i></div>
 </div>

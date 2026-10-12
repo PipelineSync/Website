@@ -4,18 +4,25 @@
 {% elif hero_visual == 'integrations-sync' %}{% include 'partials/hero-integrations-sync.njk' %}
 {% else %}
 <div class="n-visual" aria-hidden="true">
+  <div class="n-visual-horizon"></div>
   <div class="n-visual-rings"><span></span><span></span><span></span></div>
   <svg class="n-visual-net" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="nvg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e4ff"/><stop offset=".55" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ff3fd2"/></linearGradient>
-      <radialGradient id="nvcore"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#22e4ff"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+      <linearGradient id="nvg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C8DFF"/><stop offset=".5" stop-color="#F97A1A"/><stop offset="1" stop-color="#FFC24B"/></linearGradient>
+      <linearGradient id="nvg2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC24B"/><stop offset=".55" stop-color="#F97A1A"/><stop offset="1" stop-color="#4C8DFF"/></linearGradient>
+      <radialGradient id="nvcore"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#FFC24B"/><stop offset=".62" stop-color="#F97A1A" stop-opacity=".55"/><stop offset="1" stop-color="#F97A1A" stop-opacity="0"/></radialGradient>
     </defs>
-    <g class="n-paths" stroke="url(#nvg)" stroke-width="1.4" stroke-linecap="round">
+    <g class="n-paths" stroke="url(#nvg)" stroke-width="1.5" stroke-linecap="round">
       <path d="M40 90 C140 90 160 240 240 240"/><path d="M30 240 H240"/><path d="M40 390 C140 390 160 240 240 240"/>
       <path d="M440 90 C340 90 320 240 240 240"/><path d="M450 240 H240"/><path d="M440 390 C340 390 320 240 240 240"/>
       <path d="M240 30 V240"/><path d="M240 450 V240"/>
     </g>
-    <g class="n-pulses" stroke="#fff" stroke-width="2.4" stroke-linecap="round">
+    <g class="n-pulses n-pulses-ember" stroke="url(#nvg2)" stroke-width="2.6" stroke-linecap="round">
+      <path d="M40 90 C140 90 160 240 240 240"/><path d="M30 240 H240"/><path d="M40 390 C140 390 160 240 240 240"/>
+      <path d="M440 90 C340 90 320 240 240 240"/><path d="M450 240 H240"/><path d="M440 390 C340 390 320 240 240 240"/>
+      <path d="M240 30 V240"/><path d="M240 450 V240"/>
+    </g>
+    <g class="n-pulses n-pulses-slow" stroke="#FFE0A3" stroke-width="1.4" stroke-linecap="round">
       <path d="M40 90 C140 90 160 240 240 240"/><path d="M30 240 H240"/><path d="M40 390 C140 390 160 240 240 240"/>
       <path d="M440 90 C340 90 320 240 240 240"/><path d="M450 240 H240"/><path d="M440 390 C340 390 320 240 240 240"/>
       <path d="M240 30 V240"/><path d="M240 450 V240"/>
@@ -25,7 +32,8 @@
       <circle cx="440" cy="90" r="7"/><circle cx="450" cy="240" r="7"/><circle cx="440" cy="390" r="7"/>
       <circle cx="240" cy="30" r="7"/><circle cx="240" cy="450" r="7"/>
     </g>
-    <circle class="n-core-glow" cx="240" cy="240" r="90" fill="url(#nvcore)"/>
+    <circle class="n-core-glow" cx="240" cy="240" r="96" fill="url(#nvcore)"/>
+    <circle class="n-core-ring" cx="240" cy="240" r="46" stroke="url(#nvg)" stroke-width="1.5"/>
   </svg>
   {% if hero_art %}
   <div class="n-visual-art">
