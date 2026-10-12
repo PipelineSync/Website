@@ -76,24 +76,30 @@
 
 <!-- HubSpot chat widget positioning (see assets/css/hubspot-chat.css) -->
 <script>
-  window.addEventListener('load', function () {
-    var check = setInterval(function () {
+  (function () {
+    function positionHubSpotChat() {
       var el = document.querySelector('#hubspot-messages-iframe-container');
-      if (el) {
-        if (window.matchMedia('(max-width: 768px)').matches) {
-          el.style.setProperty('left', '0', 'important');
-          el.style.setProperty('right', 'auto', 'important');
-          el.style.setProperty('transform', 'scale(0.75)', 'important');
-          el.style.setProperty('transform-origin', 'bottom left', 'important');
-        } else {
-          el.style.setProperty('left', '50%', 'important');
-          el.style.setProperty('right', 'auto', 'important');
-          el.style.setProperty('transform', 'translateX(-50%)', 'important');
-        }
-        clearInterval(check);
-      }
-    }, 300);
-  });
+      if (!el) return false;
+
+      el.style.setProperty('left', '0', 'important');
+      el.style.setProperty('right', 'auto', 'important');
+      el.style.setProperty('transform-origin', 'bottom left', 'important');
+      el.style.setProperty(
+        'transform',
+        window.matchMedia('(max-width: 768px)').matches ? 'scale(0.75)' : 'none',
+        'important'
+      );
+      return true;
+    }
+
+    window.addEventListener('load', function () {
+      if (positionHubSpotChat()) return;
+      var check = setInterval(function () {
+        if (positionHubSpotChat()) clearInterval(check);
+      }, 300);
+    });
+    window.addEventListener('resize', positionHubSpotChat);
+  })();
 </script>
 </body>
 </html>
