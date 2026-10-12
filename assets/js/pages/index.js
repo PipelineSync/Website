@@ -341,7 +341,6 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
   var grid = board.querySelector('[data-hb-grid]');
   var deal = board.querySelector('[data-hb-deal]');
   var link = board.querySelector('[data-hb-link]');
-  var burst = board.querySelector('[data-hb-burst]');
   var wonReadout = board.querySelector('[data-hb-won-value]');
   var hint = board.querySelector('[data-hb-hint]');
   var HINT_IDLE = hint ? hint.textContent : '';
@@ -543,12 +542,6 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
           deal.classList.add('is-won');
           cashAmount(readValue(valueEl ? valueEl.textContent : ''));
           flashStage(i);
-          if (burst) {
-            burst.style.transform = 'translate3d(' + (points[i].x + dealW / 2).toFixed(1) + 'px,' + (points[i].y + dealH / 2).toFixed(1) + 'px,0)';
-            burst.classList.remove('is-on');
-            void burst.offsetWidth;
-            burst.classList.add('is-on');
-          }
         } else {
           startTravel();
         }
