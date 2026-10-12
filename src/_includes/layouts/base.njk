@@ -81,14 +81,16 @@
       var el = document.querySelector('#hubspot-messages-iframe-container');
       if (!el) return false;
 
-      el.style.setProperty('left', '0', 'important');
+      var mobile = window.matchMedia('(max-width: 768px)').matches;
+      el.style.setProperty('left', mobile ? '12px' : '18px', 'important');
       el.style.setProperty('right', 'auto', 'important');
-      el.style.setProperty('transform-origin', 'bottom left', 'important');
       el.style.setProperty(
-        'transform',
-        window.matchMedia('(max-width: 768px)').matches ? 'scale(0.75)' : 'none',
+        'bottom',
+        mobile ? 'calc(12px + env(safe-area-inset-bottom, 0px))' : '18px',
         'important'
       );
+      el.style.setProperty('transform-origin', 'bottom left', 'important');
+      el.style.setProperty('transform', mobile ? 'scale(0.75)' : 'none', 'important');
       return true;
     }
 

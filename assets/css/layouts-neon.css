@@ -609,14 +609,14 @@ html body .policy-card > section h2{grid-row:1 / span 20!important;align-self:st
 html body .guide-label{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 
 /* Mobile utility layout: fit the board inside the hero width (80% on tablets;
-   almost full-width on narrow phones) and keep fixed actions clear of the chat. */
+   almost full-width on narrow phones) and keep fixed controls clear of device safe areas. */
 @media (max-width:760px){
   html body #home .hero-inner.n-hero-center .n-visual-board{
     width:100%!important;max-width:100%!important;justify-self:center!important;
     margin:0 auto!important;perspective:none!important;
   }
   html body .site-quick-actions{
-    right:12px!important;bottom:calc(96px + env(safe-area-inset-bottom,0px))!important;
+    right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;
     z-index:1001;gap:6px;max-width:calc(100vw - 24px);
   }
   html body .site-quick-actions .site-roi-trigger{
@@ -632,12 +632,23 @@ html body .guide-label{-webkit-backdrop-filter:none!important;backdrop-filter:no
   html body .site-roi-panel .roi-shell{max-width:none;padding:24px 20px 32px}
 }
 @media (max-width:380px){
-  html body .site-quick-actions{right:8px!important;bottom:calc(96px + env(safe-area-inset-bottom,0px))!important}
+  html body .site-quick-actions{right:8px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important}
   html body .site-quick-actions .site-roi-trigger{height:38px!important;padding:0 10px!important;font-size:11px!important}
   html body .site-quick-actions .site-quick-top{width:38px;height:38px}
   html body .site-roi-panel{left:6px!important;right:6px!important}
   html body .site-roi-panel .roi-shell{padding-right:16px;padding-left:16px}
 }
 @media (max-height:480px) and (max-width:760px){
-  html body .site-quick-actions{bottom:calc(76px + env(safe-area-inset-bottom,0px))!important}
+  html body .site-quick-actions{bottom:calc(12px + env(safe-area-inset-bottom,0px))!important}
+}
+
+/* Center the primary navigation between the brand mark and header action. */
+@media (min-width:1101px){
+  .site-header-component .nav-inner,
+  header:not(.site-header-component) .nav-inner{position:relative}
+  .site-header-component .nav-links,
+  header:not(.site-header-component) .nav-links{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    margin:0;padding:0;white-space:nowrap;
+  }
 }

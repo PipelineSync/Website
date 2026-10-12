@@ -1,16 +1,18 @@
-/* HubSpot chat widget positioning (externalized so pages stay free of inline <style> tags) */
-
-/* Keep the Ask me anything widget anchored to the lower-left corner. */
+/* HubSpot chat widget positioning (externalized so pages stay free of inline <style> tags). */
+/* Keep the chat launcher fixed in the lower-left corner, opposite the ROI action. */
 #hubspot-messages-iframe-container {
-  left: 0 !important;
+  left: 18px !important;
   right: auto !important;
+  bottom: 18px !important;
   transform: none !important;
   transform-origin: bottom left !important;
 }
 
-/* Preserve the compact chat button on mobile. */
+/* Preserve a compact launcher and a safe-area offset on mobile. */
 @media (max-width: 768px) {
   #hubspot-messages-iframe-container {
+    left: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
     transform: scale(0.75) !important;
   }
 }
