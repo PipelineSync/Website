@@ -1,18 +1,16 @@
 /* HubSpot chat widget positioning (externalized so pages stay free of inline <style> tags) */
 
-/* Desktop & tablet: centered at the bottom */
+/* Keep the Ask me anything widget anchored to the lower-left corner. */
 #hubspot-messages-iframe-container {
-  left: 50% !important;
+  left: 0 !important;
   right: auto !important;
-  transform: translateX(-50%) !important;
+  transform: none !important;
+  transform-origin: bottom left !important;
 }
 
-/* Mobile only: smaller, bottom-left */
+/* Preserve the compact chat button on mobile. */
 @media (max-width: 768px) {
   #hubspot-messages-iframe-container {
-    left: 0 !important;
-    right: auto !important;
     transform: scale(0.75) !important;
-    transform-origin: bottom left !important;
   }
 }

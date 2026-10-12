@@ -69,20 +69,21 @@ html body .n-hero-split .home-credential-bar span:not([aria-hidden]){
 }
 html body .n-hero-split .home-credential-bar span[aria-hidden]{display:none!important}
 
-/* ======================= HOME HERO — centered stack =======================
-   Arrangement (top → bottom): H1 · sub · CTAs · animation · credential titles.
-   Viewport-aware clamps keep the whole hero on one desktop screen without
-   cutting; min-height grows (never clips) on unusually short viewports. */
+/* ======================= HOME HERO — compact centered stack =======================
+   Keep the copy, CTAs, board and credentials grouped rather than spreading
+   them vertically. The content frame uses 80vw on larger screens and widens
+   toward 90vw on narrow phones to preserve the board's legibility. */
 html body #home.hero{
   min-height:calc(100vh - var(--n-header-height))!important;
   min-height:calc(100svh - var(--n-header-height))!important;
-  padding:clamp(18px,3vh,36px) 0 clamp(18px,3vh,36px)!important;
+  padding:clamp(8px,1.5vh,20px) 0!important;
   display:flex!important;align-items:center!important;overflow:visible!important;
 }
+html body #home.hero > .container{width:100%!important;max-width:none!important;padding:0!important}
 html body #home .hero-inner.n-hero-center{
   display:flex!important;flex-direction:column;align-items:center;justify-content:center;
-  gap:clamp(14px,2.6vh,28px);width:100%;max-width:1240px!important;margin:0 auto!important;
-  padding:0 24px!important;text-align:center!important;
+  gap:clamp(14px,2.6vh,28px);width:clamp(80vw,calc(67vw + 75px),92vw)!important;max-width:none!important;margin:0 auto!important;
+  padding:0!important;text-align:center!important;
 }
 html body #home .n-hero-center h1{
   margin:0!important;max-width:18ch;
@@ -102,7 +103,7 @@ html body #home .n-hero-center .hero-ctas .btn{height:52px!important;padding:0 2
    "Drag a card to a stage", "Won this quarter" and the stage names — are
    pulled out of the dim with a warm highlight glow. */
 html body #home .n-hero-center .n-visual{
-  width:min(640px,88vw)!important;max-width:640px!important;aspect-ratio:auto!important;
+  width:min(640px,80vw)!important;max-width:100%!important;aspect-ratio:auto!important;
   margin:0 auto!important;
 }
 /* Dim the texture */
@@ -137,7 +138,7 @@ html body #home .n-hero-center .home-credential-bar span:not([aria-hidden]){
 }
 html body #home .n-hero-center .home-credential-bar span[aria-hidden]{display:none!important}
 @media (max-width:560px){
-  html body #home .n-hero-center{gap:12px;padding:0 12px!important}
+  html body #home .hero-inner.n-hero-center{gap:12px;padding:0!important}
   html body #home .n-hero-center .home-credential-bar span:not([aria-hidden]){padding:6px 10px;font-size:10.5px}
 }
 
@@ -606,3 +607,37 @@ html body .n-res .grid-3 > .card:first-child .resource-meta{margin-top:120px}
 html body .policy-card > section{row-gap:0!important}
 html body .policy-card > section h2{grid-row:1 / span 20!important;align-self:start}
 html body .guide-label{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+
+/* Mobile utility layout: fit the board inside the hero width (80% on tablets;
+   almost full-width on narrow phones) and keep fixed actions clear of the chat. */
+@media (max-width:760px){
+  html body #home .hero-inner.n-hero-center .n-visual-board{
+    width:100%!important;max-width:100%!important;justify-self:center!important;
+    margin:0 auto!important;perspective:none!important;
+  }
+  html body .site-quick-actions{
+    right:12px!important;bottom:calc(96px + env(safe-area-inset-bottom,0px))!important;
+    z-index:1001;gap:6px;max-width:calc(100vw - 24px);
+  }
+  html body .site-quick-actions .site-roi-trigger{
+    min-width:0!important;height:40px!important;padding:0 12px!important;font-size:12px!important;
+  }
+  html body .site-roi-panel{
+    top:max(10px,env(safe-area-inset-top,0px))!important;left:10px!important;right:10px!important;
+    bottom:calc(10px + env(safe-area-inset-bottom,0px))!important;width:auto!important;
+    max-height:calc(100vh - 20px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))!important;
+    max-height:calc(100dvh - 20px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))!important;
+    overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  }
+  html body .site-roi-panel .roi-shell{max-width:none;padding:24px 20px 32px}
+}
+@media (max-width:380px){
+  html body .site-quick-actions{right:8px!important;bottom:calc(96px + env(safe-area-inset-bottom,0px))!important}
+  html body .site-quick-actions .site-roi-trigger{height:38px!important;padding:0 10px!important;font-size:11px!important}
+  html body .site-quick-actions .site-quick-top{width:38px;height:38px}
+  html body .site-roi-panel{left:6px!important;right:6px!important}
+  html body .site-roi-panel .roi-shell{padding-right:16px;padding-left:16px}
+}
+@media (max-height:480px) and (max-width:760px){
+  html body .site-quick-actions{bottom:calc(76px + env(safe-area-inset-bottom,0px))!important}
+}
