@@ -79,7 +79,7 @@
   var bar = doc.querySelector('.scroll-progress');
   if (!bar) {
     bar = doc.createElement('div'); bar.className = 'n-progress'; bar.setAttribute('aria-hidden', 'true');
-    bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);z-index:10060;pointer-events:none;background:linear-gradient(90deg,#4C8DFF,#F97A1A 55%,#FFC24B);box-shadow:0 0 14px rgba(249,122,26,.8)';
+    bar.style.cssText = 'position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);z-index:10060;pointer-events:none;background:#F97A1A';
     doc.body.appendChild(bar);
   }
 
