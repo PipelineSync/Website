@@ -181,7 +181,6 @@ const statsSec=document.querySelector('.stats');if(statsSec) counterObserver.obs
     header.setAttribute('role','button');header.setAttribute('tabindex','0');
     function sync(){header.setAttribute('aria-expanded',item.classList.contains('active')?'true':'false');}
     sync();
-    header.addEventListener('click',function(){setTimeout(sync,0);});
     header.addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===' '){event.preventDefault();header.click();}});
   });
 

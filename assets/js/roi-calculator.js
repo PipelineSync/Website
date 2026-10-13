@@ -40,7 +40,7 @@
       <div class="roi-top">
         <div>
           <h1 id="siteRoiTitle">ROI calculator</h1>
-          <p class="roi-sub">Use your assumptions to estimate monthly impact. Benchmark fields are pre-filled with 2026 HubSpot industry figures.</p>
+          <p class="roi-sub">Estimate your monthly impact from CRM automation.</p>
         </div>
         <button class="roi-close" type="button" aria-label="Close ROI calculator">✕</button>
       </div>
@@ -58,19 +58,19 @@
           <div class="roi-slider-wrap"><input class="roi-slider" id="siteRoiCurrent" type="range" min="0" max="100" step="0.5" value="12" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12"><div class="roi-slider-scale"><span>0%</span><span>100%</span></div></div>
         </div>
         <div class="roi-field roi-locked">
-          <label class="roi-lab" for="siteRoiImproved">Improved close rate (%) <span class="roi-pill" title="2026 industry benchmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>2026 benchmark</span></label>
+          <label class="roi-lab" for="siteRoiImproved">Improved close rate (%) <span class="roi-pill" title="2026 industry benchmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>+22% lift</span></label>
           <input class="roi-input" id="siteRoiImproved" type="text" readonly>
-          <div class="roi-hint">Auto-derived: HubSpot CRM users close ~22% more deals. Updates with your current close rate.</div>
+          <div class="roi-hint">HubSpot CRM benchmark (+22% deals closed)</div>
         </div>
         <div class="roi-field roi-locked">
-          <label class="roi-lab" for="siteRoiHours">Hours saved monthly <span class="roi-pill" title="2026 industry benchmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>2026 benchmark</span></label>
+          <label class="roi-lab" for="siteRoiHours">Hours saved / mo <span class="roi-pill" title="2026 industry benchmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Benchmark</span></label>
           <input class="roi-input" id="siteRoiHours" type="text" value="32" readonly>
-          <div class="roi-hint">~8 hrs/week reclaimed per employee via workflow &amp; reporting automation.</div>
+          <div class="roi-hint">~8 hrs/wk reclaimed via automation</div>
         </div>
         <div class="roi-field roi-locked">
-          <label class="roi-lab" for="siteRoiValHr">Value per saved hour <span class="roi-pill" title="2026 predictive benchmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>2026 benchmark</span></label>
+          <label class="roi-lab" for="siteRoiValHr">Value / saved hour <span class="roi-pill" title="2026 predictive benchmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>$50/hr</span></label>
           <input class="roi-input" id="siteRoiValHr" type="text" value="50" readonly>
-          <div class="roi-hint">Fully-loaded blended employee cost, 2026 estimate.</div>
+          <div class="roi-hint">Blended employee loaded cost</div>
         </div>
         <div class="roi-field full roi-slider-field">
           <label class="roi-lab" for="siteRoiInvest">Monthly CRM investment <output class="roi-slider-value" id="siteRoiInvestValue" for="siteRoiInvest">$2,500</output></label>
@@ -79,14 +79,16 @@
         </div>
       </div>
       <button class="roi-calc-btn" id="siteRoiCalc" type="button">Calculate ROI</button>
-      <div class="roi-divider"></div>
-      <div class="roi-result-hero"><div class="roi-k">Estimated monthly ROI</div><div class="roi-v"><span id="siteRoiPct">-</span></div></div>
-      <div class="roi-results-rows" aria-live="polite">
-        <div class="roi-result-row"><span class="roi-rk">Incremental revenue</span><span class="roi-rv" id="siteRoiIncRev">-</span></div>
-        <div class="roi-result-row"><span class="roi-rk">Time savings value</span><span class="roi-rv" id="siteRoiTimeVal">-</span></div>
-        <div class="roi-result-row total"><span class="roi-rk">Estimated monthly return</span><span class="roi-rv" id="siteRoiNetRet">-</span></div>
+      <div class="roi-results-section" id="siteRoiResults" hidden>
+        <div class="roi-divider"></div>
+        <div class="roi-result-hero"><div class="roi-k">Estimated monthly ROI</div><div class="roi-v"><span id="siteRoiPct">-</span></div></div>
+        <div class="roi-results-rows" aria-live="polite">
+          <div class="roi-result-row"><span class="roi-rk">Incremental revenue</span><span class="roi-rv" id="siteRoiIncRev">-</span></div>
+          <div class="roi-result-row"><span class="roi-rk">Time savings value</span><span class="roi-rv" id="siteRoiTimeVal">-</span></div>
+          <div class="roi-result-row total"><span class="roi-rk">Estimated monthly return</span><span class="roi-rv" id="siteRoiNetRet">-</span></div>
+        </div>
+        <p class="roi-foot">Estimates are for planning purposes only.<span class="roi-src">Based on ~22% deal uplift and workflow automation savings.</span></p>
       </div>
-      <p class="roi-foot">Estimates are for planning purposes only. Actual results depend on your business, data, and implementation.<span class="roi-src">2026 benchmarks: close-rate uplift derived from independent HubSpot CRM performance data (~22% more deals closed); hours saved from HubSpot workflow &amp; reporting automation studies; hourly value based on fully-loaded employee cost.</span></p>
     </div>`;
   document.body.appendChild(panel);
 
@@ -94,6 +96,8 @@
   var calcButton=panel.querySelector('#siteRoiCalc');
   var recoButton=panel.querySelector('#siteRoiReco');
   var recoOut=panel.querySelector('#siteRoiRecoOut');
+  var resultsSection=panel.querySelector('#siteRoiResults');
+  var hasCalculated=false;
   function field(id){return panel.querySelector('#'+id);}
   function setOpen(value){
     panel.classList.toggle('is-open',value);
@@ -148,6 +152,15 @@
     field('siteRoiNetRet').textContent=money(net);
     field('siteRoiPct').textContent=Math.round(roiPct).toLocaleString('en-US')+'%';
   }
+  function showAndCalculate(){
+    hasCalculated=true;
+    calculate();
+    if(resultsSection){
+      resultsSection.hidden=false;
+      resultsSection.classList.add('is-visible');
+      resultsSection.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+  }
   function recommend(){
     var leads=parseFloat(field('siteRoiLeads').value)||0;
     var deal=parseFloat(field('siteRoiDeal').value)||0;
@@ -161,7 +174,7 @@
     tier=Math.round(tier/500)*500;
     field('siteRoiInvest').value=String(tier);
     syncSlider('siteRoiInvest');
-    calculate();
+    if(hasCalculated)calculate();
     var L=leads.toLocaleString(),D=money(deal),T=money(tier);
     var answers=[
       "Based on <strong>"+L+" leads/mo</strong> and a <strong>"+D+"</strong> average deal, we'd start you at <strong>"+T+"/mo</strong>. That tier covers the workflow and reporting automation that drives most of the close-rate lift. Adjust the slider if your budget differs.",
@@ -177,12 +190,11 @@
     field(id).addEventListener('input',function(){
       syncSlider(id);
       if(id==='siteRoiCurrent')updateImproved();
-      calculate();
+      if(hasCalculated)calculate();
     });
   });
-  calcButton.addEventListener('click',calculate);
+  calcButton.addEventListener('click',showAndCalculate);
   recoButton.addEventListener('click',recommend);
   syncAllSliders();
   updateImproved();
-  calculate();
 })();

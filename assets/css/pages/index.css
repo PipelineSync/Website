@@ -308,13 +308,16 @@ textarea.form-input{height:auto;min-height:110px;resize:vertical;padding-top:12p
 .process .timeline-step h4{margin-bottom:8px}
 /* FAQ accordion: clear dropdown rows with accessible button controls. */
 #faq .accordion{max-width:900px;margin-top:30px}
-#faq .accordion-header{width:100%;border:0;background:transparent;font:inherit;color:inherit;appearance:none;-webkit-appearance:none}
-#faq .accordion-item{overflow:hidden}
+#faq .accordion-header{width:100%;border:0;background:transparent;font:inherit;color:inherit;appearance:none;-webkit-appearance:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;text-align:left}
+#faq .accordion-item{overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease}
 #faq .accordion-item.active .accordion-header{background:rgba(239,246,255,.38)}
-#faq .accordion-body{max-height:0}
-#faq .accordion-item.active .accordion-body{max-height:1200px}
+#faq .accordion-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.22,1,.36,1),opacity .3s ease;opacity:0}
+#faq .accordion-body > .accordion-inner{overflow:hidden}
+#faq .accordion-item.active .accordion-body{grid-template-rows:1fr;opacity:1}
 #faq .accordion-inner{font-size:15px;line-height:1.7}
-#faq .accordion-icon{transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+#faq .accordion-icon{transition:transform .35s cubic-bezier(.22,1,.36,1),background .25s ease,color .25s ease;display:flex;align-items:center;justify-content:center}
+#faq .accordion-item.active .accordion-icon{transform:rotate(180deg)}
+#faq .accordion-icon i{transition:transform .35s cubic-bezier(.22,1,.36,1)}
 @media(max-width:1100px){
   .process .timeline{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .process .timeline-step:not(:last-child)::after{display:none}

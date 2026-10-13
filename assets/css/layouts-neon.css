@@ -5,8 +5,8 @@
 
 html body{counter-reset:none}
 html body .container{max-width:1240px!important}
-html body .section{padding:120px 0!important}
-html body .section h2{font-size:clamp(34px,4.6vw,60px)!important;line-height:1.02!important;letter-spacing:-.035em!important;max-width:16ch}
+html body .section{padding:96px 0!important}
+html body .section h2{font-size:clamp(32px,4.2vw,54px)!important;line-height:1.06!important;letter-spacing:-.03em!important;max-width:18ch}
 html body .lead{font-size:clamp(16px,1.35vw,19px)!important;line-height:1.65!important}
 
 /* Shared: split section header (label + title left, intro right) */
@@ -268,7 +268,8 @@ html body .n-stats .stat-label{font:500 13px/1.4 'IBM Plex Mono',monospace!impor
 /* ======================= WHY US — header left + feature bento ======================= */
 html body .n-why .container{display:grid!important;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
 html body .n-why .container > .reveal:first-child{position:sticky;top:120px;text-align:left!important;max-width:none!important;margin:0!important}
-html body .n-why .container > .reveal:first-child .section-label{margin:0 0 14px!important}
+html body .n-why .container > .reveal:first-child .section-label{margin:0 0 10px!important}
+html body .n-why .container > .reveal:first-child h2{margin:0 0 12px!important}
 html body .n-why .grid-3,html body .n-why .values{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important;margin-top:0!important;counter-reset:nnum}
 html body .n-why .grid-3 > .card,html body .n-why .values > .card{counter-increment:nnum;padding:96px 30px 32px!important}
 html body .n-why .grid-3 > .card:first-child,html body .n-why .values > .card:first-child{grid-column:span 2;padding:110px 36px 40px!important;
@@ -292,9 +293,10 @@ html body .n-industries .card .card-icon{margin-bottom:40px!important}
 html body .n-industries .card h4{font-size:20px!important}
 
 /* ======================= PROCESS — horizontal rail ======================= */
-html body .n-rail .container > .reveal:first-child{max-width:none!important;text-align:left!important;margin:0 0 72px!important}
-html body .n-rail .container > .reveal:first-child .section-label{margin:0 0 14px!important}
-html body .n-rail .container > .reveal:first-child .lead{margin:16px 0 0!important;max-width:56ch}
+html body .n-rail .container > .reveal:first-child{max-width:none!important;text-align:left!important;margin:0 0 44px!important}
+html body .n-rail .container > .reveal:first-child .section-label{margin:0 0 10px!important}
+html body .n-rail .container > .reveal:first-child h2{margin:0 0 10px!important}
+html body .n-rail .container > .reveal:first-child .lead{margin:10px 0 0!important;max-width:56ch}
 html body .n-rail .timeline,html body .n-rail .steps{
   position:relative;display:grid!important;grid-template-columns:repeat(var(--n-cols,4),1fr)!important;gap:24px!important;padding-top:70px!important;counter-reset:nnum;margin-top:0!important;
 }
@@ -322,12 +324,19 @@ html body .n-rail .container > .reveal:last-child[style]{text-align:left!importa
 /* ======================= FAQ — split ======================= */
 html body .n-faq .container{display:grid!important;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
 html body .n-faq .container > .reveal:first-child{position:sticky;top:120px;text-align:left!important;margin:0!important;max-width:none!important}
-html body .n-faq .container > .reveal:first-child .section-label{margin:0 0 14px!important}
+html body .n-faq .container > .reveal:first-child .section-label{margin:0 0 10px!important}
+html body .n-faq .container > .reveal:first-child h2{margin:0 0 12px!important}
 html body .n-faq .accordion{max-width:none!important;margin:0!important;display:flex;flex-direction:column;gap:12px}
-html body .accordion-item{border-radius:18px!important}
-html body .accordion-header{padding:24px 26px!important}
+html body .accordion-item{border-radius:18px!important;overflow:hidden}
+html body .accordion-header{padding:24px 26px!important;cursor:pointer;display:flex;align-items:center;justify-content:space-between;text-align:left;width:100%;border:0;background:transparent}
 html body .accordion-header h4{font-size:18px!important}
+html body .accordion-icon{transition:transform .35s cubic-bezier(.22,1,.36,1),background .25s ease,color .25s ease;display:flex;align-items:center;justify-content:center}
+html body .accordion-item.active .accordion-icon{transform:rotate(180deg)}
+html body .accordion-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.22,1,.36,1),opacity .3s ease;opacity:0}
+html body .accordion-body > .accordion-inner{overflow:hidden;padding:0 26px!important}
 html body .accordion-inner{color:var(--n-text-2)!important;padding:0 26px 24px!important;line-height:1.7}
+html body .accordion-item.active .accordion-body{grid-template-rows:1fr;opacity:1}
+html body .accordion-item.active .accordion-body > .accordion-inner{padding:0 26px 24px!important}
 
 /* ======================= CONTACT — CTA panel ======================= */
 html body .n-cta .contact-grid,html body .n-cta.n-cta-simple .container{
@@ -576,17 +585,17 @@ html body #home .n-hero-split{grid-template-columns:minmax(0,1.05fr) minmax(0,.9
 html body .n-stats .stat{display:block!important}
 html body .n-head-split .section-label,html body .n-stats .reveal[style] .section-label,html body .n-industries .container > .reveal:first-child .section-label,
 html body .n-services .container > .reveal:first-child .section-label,html body .n-tiers .container > .reveal:first-child .section-label,
-html body .n-library .container > .reveal:first-child .section-label,html body .n-trusted .trusted-heading .section-label{grid-row:1}
+html body .n-library .container > .reveal:first-child .section-label,html body .n-trusted .trusted-heading .section-label{grid-row:1;margin-bottom:8px!important}
 @media (max-width:1024px){html body #home .n-hero-split{grid-template-columns:1fr!important}}
 html body .n-rail .timeline-step,html body .n-rail .step{width:auto!important;flex:none!important;display:block!important;min-height:0!important}
 html body #home .n-hero-split h1{max-width:none!important;font-size:clamp(44px,5.6vw,84px)!important}
 html body .n-head-split,html body .n-stats .reveal[style],html body .n-industries .container > .reveal:first-child,html body .n-services .container > .reveal:first-child,
-html body .n-tiers .container > .reveal:first-child,html body .n-library .container > .reveal:first-child,html body .n-trusted .trusted-heading{grid-template-rows:1fr auto}
+html body .n-tiers .container > .reveal:first-child,html body .n-library .container > .reveal:first-child,html body .n-trusted .trusted-heading{grid-template-rows:auto auto;row-gap:8px!important}
 html body .n-head-split .section-label,html body .n-stats .reveal[style] .section-label,html body .n-industries .container > .reveal:first-child .section-label,
 html body .n-services .container > .reveal:first-child .section-label,html body .n-tiers .container > .reveal:first-child .section-label,
-html body .n-library .container > .reveal:first-child .section-label,html body .n-trusted .trusted-heading .section-label{align-self:end}
+html body .n-library .container > .reveal:first-child .section-label,html body .n-trusted .trusted-heading .section-label{align-self:start}
 html body .n-head-split h2,html body .n-stats .reveal[style] h2,html body .n-industries .container > .reveal:first-child h2,html body .n-services .container > .reveal:first-child h2,
-html body .n-tiers .container > .reveal:first-child h2,html body .n-library .container > .reveal:first-child h2,html body .n-trusted .trusted-heading h2{grid-row:2}
+html body .n-tiers .container > .reveal:first-child h2,html body .n-library .container > .reveal:first-child h2,html body .n-trusted .trusted-heading h2{grid-row:2;margin-top:0!important}
 html body .n-services .service-card{grid-template-rows:auto auto auto auto;align-items:start}
 html body .n-services .service-card .card-icon{grid-row:1!important;grid-column:1!important}
 html body .n-services .service-card h4{grid-row:2 / span 3!important;grid-column:1!important}
