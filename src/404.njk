@@ -1,9 +1,4 @@
 ---
-anim: tilt
-hero_art: "hero-404"
-hero_art_w: "800"
-hero_art_h: "800"
-hero_chips: ["fa-ghost", "fa-compass", "fa-map-location-dot", "fa-rocket"]
 layout: layouts/base.njk
 permalink: /404.html
 sitemap: false
@@ -13,22 +8,18 @@ canonical: https://pipelinesync.net/404.html
 robots: noindex, follow
 ogType: website
 ogImage: https://pipelinesync.net/pipelinesync_logo_transparent.png
-layoutType: modern
-loadingType: pipeline
-cssGroup: marketing
-pageCss: pages/404.css
-pageJs: pages/404.js
 ---
-<section class="hero n-404" id="main-content" tabindex="-1">
+<main id="main-content" tabindex="-1">
+<section class="hero hero--center" aria-labelledby="hero-title">
   <div class="container">
-    <div class="hero-inner copy-home-hero-inner">
-      <div class="reveal">
-        <div class="eyebrow"><span class="dot"></span> PipelineSync</div>
-        <h1>That page is out of sync.</h1>
-        <p class="lead">The page you requested could not be found. Head back to the homepage or explore the systems we build for growing teams.</p>
-        <div class="hero-ctas"><a href="/" class="btn btn-primary">Back to home</a><a href="/solutions/" class="btn btn-outline">See our solutions</a></div>
-      </div>
-    {% include 'partials/hero-visual.njk' %}
+    <div class="err-code reveal" aria-hidden="true">404</div>
+    <span class="eyebrow reveal" style="--d:1"><span class="eyebrow__dot"></span>PipelineSync</span>
+    <h1 class="hero__title" id="hero-title" data-split>That page is out of <span class="gradient-text">sync.</span></h1>
+    <p class="hero__lead reveal" style="--d:3">The page you requested could not be found. Head back to the homepage or explore the systems we build for growing teams.</p>
+    <div class="btn-row reveal" style="--d:4">
+      <a href="/" class="btn btn-primary btn-lg">Back to home <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="/solutions/" class="btn btn-ghost btn-lg">See our solutions</a>
     </div>
   </div>
 </section>
+</main>

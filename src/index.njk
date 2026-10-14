@@ -1,47 +1,4 @@
 ---
-anim: aurora
-hero_visual: "kanban"
-hero_chips: ["fa-table-columns", "fa-diagram-project", "fa-arrow-trend-up", "fa-circle-check"]
-hero_won_base: "486"
-# Condensed HubSpot deal stages shown on the animated hero board.
-# `share` seeds the stage-weight bar, `count` the live deal counter; both
-# follow the travelling card at runtime (open + travelling cards per stage).
-hero_stages:
-  - name: "Qualified"
-    count: 3
-    share: 25
-    deals:
-      - { name: "Northwind", value: "$48k", owner: "AR" }
-      - { name: "Vertex Mfg", value: "$72k", owner: "JD" }
-      - { name: "Orion Group", value: "$39k", owner: "MK" }
-  - name: "Proposal"
-    count: 3
-    share: 25
-    deals:
-      - { name: "Halcyon", value: "$96k", owner: "MK" }
-      - { name: "Atlas Freight", value: "$64k", owner: "AR" }
-      - { name: "Cedarline", value: "$57k", owner: "JD" }
-  - name: "Negotiation"
-    count: 3
-    share: 25
-    deals:
-      - { name: "Blue Harbor", value: "$120k", owner: "JD" }
-      - { name: "Kestrel", value: "$88k", owner: "MK" }
-      - { name: "Marbury", value: "$75k", owner: "AR" }
-  - name: "Closed Won"
-    count: 3
-    share: 25
-    deals:
-      - { name: "Lumen Path", value: "$54k", owner: "AR" }
-      - { name: "Ridgeline", value: "$132k", owner: "JD" }
-      - { name: "Solstice", value: "$91k", owner: "MK" }
-# One deal per lap travels the stages on the board.
-hero_deals:
-  - { name: "Cobalt Labs", value: "$58k", owner: "AR" }
-  - { name: "Meridian Co", value: "$84k", owner: "JD" }
-  - { name: "Pine & Oak", value: "$46k", owner: "MK" }
-  - { name: "Sable Group", value: "$110k", owner: "AR" }
-  - { name: "Tidewater", value: "$69k", owner: "JD" }
 layout: layouts/base.njk
 title: "HubSpot Consultant & CRM Implementation | PipelineSync"
 description: "A HubSpot Solutions Partner that rebuilds HubSpot into a CRM your team trusts. Implementation, migration, data cleanup, and reporting. Book a free consultation."
@@ -49,12 +6,6 @@ robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-previ
 canonical: "https://pipelinesync.net/"
 ogType: "website"
 ogImage: "https://pipelinesync.net/pipelinesync_logo_transparent.png"
-layoutType: "modern"
-loadingType: "pipeline"
-cssGroup: "marketing"
-pageCss: "pages/index.css"
-pageJs: "pages/index.js"
-headerEmailAttr: ""
 lastmod: "2026-10-03"
 changefreq: "monthly"
 priority: "1.0"
@@ -100,271 +51,230 @@ schema: |
       }
     ]
   }
+pageJs: "pages/home.js"
 ---
 
-<section class="hero" id="home" tabindex="-1">
+<main id="main-content" tabindex="-1">
+<section class="hero hero--center" aria-labelledby="hero-title">
   <div class="container">
-    <div class="hero-inner n-hero-center">
-      <h1>Make the CRM<br>work like the <span class="accent">business.</span></h1>
-      <p class="lead reveal">You bought HubSpot. You still do not trust what it tells you. We rebuild it around how your business actually runs, so the data is clean, the work is automated, and the reporting holds up without a manual check.</p>
-      <div class="hero-ctas reveal delay-1">
-        <a href="javascript:void(0)" class="js-open-hs-form btn btn-primary">Book a free consultation</a>
-        <a href="/solutions/" class="btn btn-outline">See our solutions</a>
-      </div>
-      {% include 'partials/hero-visual.njk' %}
-      <div class="home-credential-bar reveal delay-3" aria-label="PipelineSync credentials">
-        <span>HubSpot Solutions Partner</span><span aria-hidden="true">•</span><span>12 HubSpot certifications</span><span aria-hidden="true">•</span><span>10 five-star client reviews</span>
-      </div>
+    <h1 class="hero__title" id="hero-title" data-split>Make the CRM<br>work like the <span class="gradient-text">business.</span></h1>
+    <p class="hero__lead reveal" style="--d:3">You bought HubSpot. You still do not trust what it tells you. We rebuild it around how your business actually runs, so the data is clean, the work is automated, and the reporting holds up without a manual check.</p>
+    <div class="btn-row reveal" style="--d:4">
+      <a href="#contact" class="btn btn-primary btn-lg js-open-hs-form">Book a free consultation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="/solutions/" class="btn btn-ghost btn-lg">See our solutions</a>
     </div>
-  </div>
-</section>
+    <div class="hero-proof reveal" style="--d:5" aria-label="PipelineSync credentials">
+      <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>HubSpot Solutions Partner</span>
+      <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>12 HubSpot certifications</span>
+      <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>10 five-star client reviews</span>
+    </div>
 
-<section class="trusted-section n-trusted" aria-labelledby="trusted-heading">
-  <div class="container">
-    <div class="trusted-heading-row">
-      <div class="trusted-heading">
-        <div class="section-label"><span class="trusted-label-dot"></span> Client partners</div>
-        <h2 id="trusted-heading">The teams we build for</h2>
-        <p>We work with B2B companies in financial services, energy, education, technology, and professional services, where clean data and a process people follow are not optional.</p>
-      </div>
-    </div>
-    <div class="logo-carousel-shell" data-logo-carousel>
-      <div class="logo-carousel-viewport">
-        <div class="logo-carousel-track" id="trustedLogoTrack" role="list" aria-label="PipelineSync client logos">
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/ESA-1.webp" type="image/webp"><img src="/assets/img/ESA-1.png" alt="ESA logo" width="855" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/BH-Labs-1.webp" type="image/webp"><img src="/assets/img/BH-Labs-1.png" alt="BH Labs logo" width="240" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/CW-Systems-1.webp" type="image/webp"><img src="/assets/img/CW-Systems-1.png" alt="CW Systems logo" width="663" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/Independent-Energy-1.webp" type="image/webp"><img src="/assets/img/Independent-Energy-1.png" alt="Independent Energy logo" width="717" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/Interview-Coach-1.webp" type="image/webp"><img src="/assets/img/Interview-Coach-1.png" alt="Interview Coach AI logo" width="653" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/Jayo-1.webp" type="image/webp"><img src="/assets/img/Jayo-1.png" alt="Jayo Designs logo" width="211" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/modern-engineering-1.webp" type="image/webp"><img src="/assets/img/modern-engineering-1.png" alt="Modern Engineering Solutions logo" width="703" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/private-tax-solutions-1.webp" type="image/webp"><img src="/assets/img/private-tax-solutions-1.png" alt="Private Tax Solutions logo" width="900" height="239" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/S8T-1.webp" type="image/webp"><img src="/assets/img/S8T-1.png" alt="S8T Training logo" width="669" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/broker-capital-1.webp" type="image/webp"><img src="/assets/img/broker-capital-1.png" alt="Broker Capital logo" width="480" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/crypto-consulting-1.webp" type="image/webp"><img src="/assets/img/crypto-consulting-1.png" alt="Crypto Consulting Institute logo" width="549" height="240" loading="lazy" decoding="async"></picture></div>
-          <div class="logo-carousel-slide" role="listitem"><picture class="responsive-image"><source srcset="/assets/img/guitierrez-1.webp" type="image/webp"><img src="/assets/img/guitierrez-1.png" alt="Guitierrez logo" width="260" height="240" loading="lazy" decoding="async"></picture></div>
+    <div class="console-wrap reveal reveal--scale" style="--d:6" id="heroConsole" data-inview>
+      <div class="console" role="region" aria-label="Interactive revenue pipeline demo">
+        <div class="console__body">
+          <div class="console__bar">
+            <div class="console__dots"><i></i><i></i><i></i></div>
+            <div class="console__url">Revenue Pipeline</div>
+            <span class="console__live" id="boardMode">Live</span>
+          </div>
+          {% include "partials/hero-console.njk" %}
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section alt n-pain">
+<section class="logos" aria-labelledby="trusted-heading">
   <div class="container">
-    <div class="reveal n-head-split">
-      <div class="section-label"><span style="width:6px;height:6px;background:var(--orange);border-radius:2px;display:inline-block"></span> Common pain</div>
-      <h2>Sound familiar?</h2>
-      <p class="lead">Most teams do not have a HubSpot problem. They have an architecture problem that shows up in HubSpot. The data was never structured, the pipeline was never designed around how deals actually close, and nobody documented how any of it works.</p>
+    <div class="section-head section-head--center reveal">
+      <h2 id="trusted-heading" class="logos__label">The teams we build for</h2>
+      <p>We work with B2B companies in financial services, energy, education, technology, and professional services, where clean data and a process people follow are not optional.</p>
     </div>
-    <div class="grid-4 n-bento-4">
-      <div class="card reveal">
-        <div class="card-icon"><i class="fa-solid fa-database"></i></div>
-        <h4>Your data lives in four places and agrees in none of them</h4>
+  </div>
+  <div class="marquee reveal" id="logoMarquee">
+    <div class="marquee__track" role="list" aria-label="PipelineSync client logos">
+      {%- set clientLogos = [
+        ["ESA-1", "ESA", 855, 240], ["BH-Labs-1", "BH Labs", 240, 240], ["CW-Systems-1", "CW Systems", 663, 240],
+        ["Independent-Energy-1", "Independent Energy", 717, 240], ["Interview-Coach-1", "Interview Coach AI", 653, 240],
+        ["Jayo-1", "Jayo Designs", 211, 240], ["modern-engineering-1", "Modern Engineering Solutions", 703, 240],
+        ["private-tax-solutions-1", "Private Tax Solutions", 900, 239], ["S8T-1", "S8T Training", 669, 240],
+        ["broker-capital-1", "Broker Capital", 480, 240], ["crypto-consulting-1", "Crypto Consulting Institute", 549, 240],
+        ["guitierrez-1", "Guitierrez", 260, 240]
+      ] -%}
+      {%- for pass in [0, 1] %}{% for logo in clientLogos %}
+      <div class="marquee__item" {% if pass == 1 %}aria-hidden="true"{% else %}role="listitem"{% endif %}><picture><source srcset="/assets/img/{{ logo[0] }}.webp" type="image/webp"><img src="/assets/img/{{ logo[0] }}.png" alt="{% if pass == 0 %}{{ logo[1] }} logo{% endif %}" width="{{ logo[2] }}" height="{{ logo[3] }}" loading="lazy" decoding="async"></picture></div>
+      {%- endfor %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" aria-labelledby="pain-heading">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div class="reveal">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>Common pain</span>
+        <h2 id="pain-heading">Sound familiar?</h2>
+      </div>
+      <p class="reveal" style="--d:1">Most teams do not have a HubSpot problem. They have an architecture problem that shows up in HubSpot. The data was never structured, the pipeline was never designed around how deals actually close, and nobody documented how any of it works.</p>
+    </div>
+    <div class="bento" data-stagger>
+      <article class="card card--feature">
+        <div class="card-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
+        <h3>Your data lives in four places and agrees in none of them</h3>
         <p>Duplicate contacts, half-filled fields, and exports into spreadsheets before anyone will believe a number.</p>
-        <div class="card-pills" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px">
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-orange);background:rgba(249,122,26,.12);border:1px solid rgba(249,122,26,.25);padding:4px 8px;border-radius:6px">Symptom: 30%+ duplicate rate</span>
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-blue);background:rgba(76,141,255,.12);border:1px solid rgba(76,141,255,.25);padding:4px 8px;border-radius:6px">Fix: Golden record rules</span>
-        </div>
-      </div>
-      <div class="card reveal delay-1">
-        <div class="card-icon blue"><i class="fa-solid fa-diagram-project"></i></div>
-        <h4>The pipeline does not match how deals actually close</h4>
+        <dl class="symptom"><dt>Symptom</dt><dd>30%+ duplicate rate</dd><dt>Fix</dt><dd class="fix">Golden record rules</dd></dl>
+      </article>
+      <article class="card">
+        <div class="card-icon card-icon--blue"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+        <h3>The pipeline does not match how deals actually close</h3>
         <p>Stages your reps skip, close dates nobody updates, and a forecast leadership quietly discounts.</p>
-        <div class="card-pills" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-orange);background:rgba(249,122,26,.12);border:1px solid rgba(249,122,26,.25);padding:4px 8px;border-radius:6px">Symptom: Close-date drift</span>
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-blue);background:rgba(76,141,255,.12);border:1px solid rgba(76,141,255,.25);padding:4px 8px;border-radius:6px">Fix: Exit-criteria gates</span>
-        </div>
-      </div>
-      <div class="card reveal delay-2">
-        <div class="card-icon orange"><i class="fa-solid fa-hourglass-half"></i></div>
-        <h4>Your team spends hours on work the CRM should do</h4>
+        <dl class="symptom"><dt>Symptom</dt><dd>Close-date drift</dd><dt>Fix</dt><dd class="fix">Exit-criteria gates</dd></dl>
+      </article>
+      <article class="card">
+        <div class="card-icon card-icon--cyan"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></div>
+        <h3>Your team spends hours on work the CRM should do</h3>
         <p>Copy-pasting between tools, chasing status updates, and building lists by hand.</p>
-        <div class="card-pills" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-orange);background:rgba(249,122,26,.12);border:1px solid rgba(249,122,26,.25);padding:4px 8px;border-radius:6px">Symptom: ~8 hrs/rep lost</span>
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-blue);background:rgba(76,141,255,.12);border:1px solid rgba(76,141,255,.25);padding:4px 8px;border-radius:6px">Fix: Automated routing</span>
-        </div>
-      </div>
-      <div class="card reveal delay-3">
-        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-        <h4>You are using a fraction of what you pay for</h4>
+        <dl class="symptom"><dt>Symptom</dt><dd>~8 hrs/rep lost</dd><dt>Fix</dt><dd class="fix">Automated routing</dd></dl>
+      </article>
+      <article class="card card--feature">
+        <div class="card-icon card-icon--green"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+        <h3>You are using a fraction of what you pay for</h3>
         <p>Licenses for Professional or Enterprise, running at the level of a basic contact database.</p>
-        <div class="card-pills" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-orange);background:rgba(249,122,26,.12);border:1px solid rgba(249,122,26,.25);padding:4px 8px;border-radius:6px">Symptom: Tier shelfware</span>
-          <span style="font:600 11px/1.2 'IBM Plex Mono',monospace;color:var(--n-blue);background:rgba(76,141,255,.12);border:1px solid rgba(76,141,255,.25);padding:4px 8px;border-radius:6px">Fix: Portal architecture</span>
-        </div>
-      </div>
+        <dl class="symptom"><dt>Symptom</dt><dd>Tier shelfware</dd><dt>Fix</dt><dd class="fix">Portal architecture</dd></dl>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="section n-sticky" id="what-we-do">
+<section class="section" id="what-we-do" aria-labelledby="what-heading">
+  <div class="container split">
+    <div class="split__sticky reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>What we do</span>
+      <h2 id="what-heading">Four things, done properly</h2>
+      <p>We work on one platform. HubSpot architecture is the entire business, not a service line next to advertising and brand work. That focus is why we go deeper than a generalist agency will, and it is the reason clients bring us in after someone else has already had a go.</p>
+      <p>We also build custom API integrations, run HubSpot audits, and provide ongoing administration and optimization for teams without an internal CRM owner.</p>
+      <a href="/solutions/" class="btn btn-ghost">Explore our solutions <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="grid grid-2" data-stagger>
+      <article class="card">
+        <div class="card-icon"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
+        <h3>HubSpot implementation and onboarding</h3>
+        <p>Set up the portal correctly the first time: objects, pipelines, lifecycle stages, permissions, automation, and reporting designed around your sales motion instead of HubSpot’s defaults.</p>
+        <div class="card-meta"><span><b>Timeline</b> 2–4 wks</span><span><b class="is-blue">Includes</b> Schema + Permissions + Training</span></div>
+      </article>
+      <article class="card">
+        <div class="card-icon card-icon--blue"><i class="fa-solid fa-right-left" aria-hidden="true"></i></div>
+        <h3>CRM migration</h3>
+        <p>Move from Salesforce, Pipedrive, or a legacy system with fields mapped, duplicates resolved, automation rebuilt, and history preserved where it matters. Your team lands in a working CRM, not a data dump.</p>
+        <div class="card-meta"><span><b>Timeline</b> 3–6 wks</span><span><b class="is-blue">Includes</b> Field Map + Sandbox QA + Cutover</span></div>
+      </article>
+      <article class="card">
+        <div class="card-icon card-icon--cyan"><i class="fa-solid fa-broom" aria-hidden="true"></i></div>
+        <h3>CRM cleanup and data quality</h3>
+        <p>Remove duplicate, incomplete, and conflicting records, then put validation rules and governance in place so the mess does not come back. Reporting and automation only work when the data underneath them is trustworthy.</p>
+        <div class="card-meta"><span><b>Timeline</b> 1–2 wks</span><span><b class="is-blue">Includes</b> Audit + Deduplication + SOPs</span></div>
+      </article>
+      <article class="card">
+        <div class="card-icon card-icon--green"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+        <h3>RevOps infrastructure, lead to close</h3>
+        <p>Connect the whole path: lifecycle stages, lead routing and SLAs, sales and marketing automation, attribution, and dashboards. Leadership sees the funnel, and qualified leads stop sitting unassigned.</p>
+        <div class="card-meta"><span><b>Timeline</b> 2–4 wks</span><span><b class="is-blue">Includes</b> Full-Funnel KPIs + SLAs + Dashboards</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" aria-labelledby="creds-heading">
   <div class="container">
-    <div class="what-grid">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Credentials</span>
+      <h2 id="creds-heading">What we can actually show you</h2>
+      <p>We are a HubSpot Solutions Partner. Our certifications cover Revenue Operations, Solutions Architecture Foundations, Sales Hub Software, Marketing Hub Software, Sales Enablement, Email Marketing, and Inbound. Before founding PipelineSync, our founder worked as a HubSpot subject-matter expert supporting HubSpot Partner agencies.</p>
+    </div>
+    <div class="stats reveal" data-inview>
+      <div class="stat"><div class="stat__num" data-count="5">5</div><div class="stat__label">Years hands-on HubSpot and CRM</div><div class="stat__sub">Active since 2019 across multi-hub portals</div></div>
+      <div class="stat"><div class="stat__num" data-count="30" data-suffix="+">30+</div><div class="stat__label">Businesses helped</div><div class="stat__sub">B2B SaaS, Professional Services &amp; Energy</div></div>
+      <div class="stat"><div class="stat__num" data-count="10">10</div><div class="stat__label">Five-star client reviews</div><div class="stat__sub">100% verified on Upwork &amp; HubSpot Directory</div></div>
+      <div class="stat"><div class="stat__num" data-count="12">12</div><div class="stat__label">HubSpot certifications</div><div class="stat__sub">RevOps, Architecture &amp; Software accreditations</div></div>
+    </div>
+    <div class="cred-strip" data-stagger>
+      <span class="tag"><i class="fa-solid fa-check" aria-hidden="true"></i>Solutions Architecture Foundations</span>
+      <span class="tag"><i class="fa-solid fa-check" aria-hidden="true"></i>Revenue Operations</span>
+      <span class="tag"><i class="fa-solid fa-check" aria-hidden="true"></i>Sales Hub Enterprise</span>
+      <span class="tag"><i class="fa-solid fa-check" aria-hidden="true"></i>Marketing Hub Software</span>
+      <span class="tag"><i class="fa-solid fa-check" aria-hidden="true"></i>Sales Enablement</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-head section-head--split">
       <div class="reveal">
-        <div class="section-label">What we do</div>
-        <h2>Four things, done properly</h2>
-        <p style="color:var(--grey);font-size:17px;line-height:1.6;margin-bottom:16px">We work on one platform. HubSpot architecture is the entire business, not a service line next to advertising and brand work. That focus is why we go deeper than a generalist agency will, and it is the reason clients bring us in after someone else has already had a go.</p>
-        <p style="color:var(--grey);font-size:16px;line-height:1.6;margin-bottom:24px">We also build custom API integrations, run HubSpot audits, and provide ongoing administration and optimization for teams without an internal CRM owner.</p>
-        <a href="/solutions/" class="btn btn-outline">Explore our solutions</a>
+        <span class="eyebrow"><span class="eyebrow__dot"></span>Why us</span>
+        <h2 id="why-heading">What you get that you would not get elsewhere</h2>
       </div>
-      <div class="grid-2">
-        <div class="card reveal">
-          <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
-          <h4>HubSpot implementation and onboarding</h4>
-          <p>Set up the portal correctly the first time: objects, pipelines, lifecycle stages, permissions, automation, and reporting designed around your sales motion instead of HubSpot’s defaults.</p>
-          <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:14px;font-size:12px;color:var(--n-text-3)">
-            <span><strong style="color:var(--n-orange);font-weight:700">Timeline:</strong> 2–4 wks</span>
-            <span><strong style="color:var(--n-blue);font-weight:700">Includes:</strong> Schema + Permissions + Training</span>
-          </div>
-        </div>
-        <div class="card reveal delay-1">
-          <div class="card-icon blue"><i class="fa-solid fa-right-left"></i></div>
-          <h4>CRM migration</h4>
-          <p>Move from Salesforce, Pipedrive, or a legacy system with fields mapped, duplicates resolved, automation rebuilt, and history preserved where it matters. Your team lands in a working CRM, not a data dump.</p>
-          <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:14px;font-size:12px;color:var(--n-text-3)">
-            <span><strong style="color:var(--n-orange);font-weight:700">Timeline:</strong> 3–6 wks</span>
-            <span><strong style="color:var(--n-blue);font-weight:700">Includes:</strong> Field Map + Sandbox QA + Cutover</span>
-          </div>
-        </div>
-        <div class="card reveal delay-1">
-          <div class="card-icon orange"><i class="fa-solid fa-broom"></i></div>
-          <h4>CRM cleanup and data quality</h4>
-          <p>Remove duplicate, incomplete, and conflicting records, then put validation rules and governance in place so the mess does not come back. Reporting and automation only work when the data underneath them is trustworthy.</p>
-          <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:14px;font-size:12px;color:var(--n-text-3)">
-            <span><strong style="color:var(--n-orange);font-weight:700">Timeline:</strong> 1–2 wks</span>
-            <span><strong style="color:var(--n-blue);font-weight:700">Includes:</strong> Audit + Deduplication + SOPs</span>
-          </div>
-        </div>
-        <div class="card reveal delay-2">
-          <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-          <h4>RevOps infrastructure, lead to close</h4>
-          <p>Connect the whole path: lifecycle stages, lead routing and SLAs, sales and marketing automation, attribution, and dashboards. Leadership sees the funnel, and qualified leads stop sitting unassigned.</p>
-          <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:14px;font-size:12px;color:var(--n-text-3)">
-            <span><strong style="color:var(--n-orange);font-weight:700">Timeline:</strong> 2–4 wks</span>
-            <span><strong style="color:var(--n-blue);font-weight:700">Includes:</strong> Full-Funnel KPIs + SLAs + Dashboards</span>
-          </div>
-        </div>
+      <div class="reveal" style="--d:1">
+        <p>Technical consultancy, not generalist retainers. We focus purely on HubSpot architecture, data integrity, and pipeline engineering.</p>
+        <div class="tags" style="margin-top:18px"><span class="tag tag--brand"><i class="fa-solid fa-check" aria-hidden="true"></i>100% In-House Delivery</span><span class="tag tag--blue"><i class="fa-solid fa-check" aria-hidden="true"></i>No Long Lock-in</span></div>
       </div>
+    </div>
+    <div class="grid grid-3" data-stagger>
+      <article class="card"><div class="card-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div><h3>HubSpot depth, not agency breadth</h3><p>We do not run ad accounts or design brand systems. We architect HubSpot. When your problem is a broken data model or a routing rule that silently drops leads, you want the team that has seen it thirty times, not the team adding CRM to its service list.</p></article>
+      <article class="card"><div class="card-icon card-icon--blue"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div><h3>Fast and directly reachable</h3><p>A dedicated implementation team means work moves in days rather than sprint cycles. You talk to the people building your system, and you get an answer inside 24 hours on business days.</p></article>
+      <article class="card"><div class="card-icon card-icon--green"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div><h3>Documented, not black-boxed</h3><p>Every build ships with SOPs, data model documentation, and a permission matrix. If we stopped working together tomorrow, your team could still run the system, change it, and explain it to a new hire.</p></article>
     </div>
   </div>
 </section>
 
-<section class="stats n-stats" aria-label="PipelineSync verified figures">
+<section class="section section--line" aria-labelledby="industries-heading">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:820px;margin:0 auto 28px">
-      <div class="section-label" style="margin:0 auto 14px">Credentials</div>
-      <h2>What we can actually show you</h2>
-      <p class="lead" style="margin:0 auto">We are a HubSpot Solutions Partner. Our certifications cover Revenue Operations, Solutions Architecture Foundations, Sales Hub Software, Marketing Hub Software, Sales Enablement, Email Marketing, and Inbound. Before founding PipelineSync, our founder worked as a HubSpot subject-matter expert supporting HubSpot Partner agencies.</p>
-    </div>
-    <div class="stats-inner">
-      <div class="stat reveal">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Years hands-on HubSpot and CRM</div>
-        <div style="font-size:12px;color:var(--n-text-3);margin-top:6px">Active since 2019 across multi-hub portals</div>
-      </div>
-      <div class="stat reveal delay-1">
-        <div class="stat-number">30+</div>
-        <div class="stat-label">Businesses helped</div>
-        <div style="font-size:12px;color:var(--n-text-3);margin-top:6px">B2B SaaS, Professional Services & Energy</div>
-      </div>
-      <div class="stat reveal delay-2">
-        <div class="stat-number">10</div>
-        <div class="stat-label">Five-star client reviews</div>
-        <div style="font-size:12px;color:var(--n-text-3);margin-top:6px">100% verified on Upwork & HubSpot Directory</div>
-      </div>
-      <div class="stat reveal delay-3">
-        <div class="stat-number">12</div>
-        <div class="stat-label">HubSpot certifications</div>
-        <div style="font-size:12px;color:var(--n-text-3);margin-top:6px">RevOps, Architecture & Software accreditations</div>
-      </div>
-    </div>
-    <div class="credentials-badge-strip" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px">
-      <span style="display:inline-flex;align-items:center;gap:6px;font:600 12px/1 'IBM Plex Mono',monospace;color:var(--n-text-2);background:rgba(255,255,255,.05);border:1px solid var(--n-line-2);padding:6px 12px;border-radius:999px"><i class="fa-solid fa-check" style="color:var(--n-orange);font-size:11px"></i> Solutions Architecture Foundations</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;font:600 12px/1 'IBM Plex Mono',monospace;color:var(--n-text-2);background:rgba(255,255,255,.05);border:1px solid var(--n-line-2);padding:6px 12px;border-radius:999px"><i class="fa-solid fa-check" style="color:var(--n-orange);font-size:11px"></i> Revenue Operations</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;font:600 12px/1 'IBM Plex Mono',monospace;color:var(--n-text-2);background:rgba(255,255,255,.05);border:1px solid var(--n-line-2);padding:6px 12px;border-radius:999px"><i class="fa-solid fa-check" style="color:var(--n-orange);font-size:11px"></i> Sales Hub Enterprise</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;font:600 12px/1 'IBM Plex Mono',monospace;color:var(--n-text-2);background:rgba(255,255,255,.05);border:1px solid var(--n-line-2);padding:6px 12px;border-radius:999px"><i class="fa-solid fa-check" style="color:var(--n-orange);font-size:11px"></i> Marketing Hub Software</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;font:600 12px/1 'IBM Plex Mono',monospace;color:var(--n-text-2);background:rgba(255,255,255,.05);border:1px solid var(--n-line-2);padding:6px 12px;border-radius:999px"><i class="fa-solid fa-check" style="color:var(--n-orange);font-size:11px"></i> Sales Enablement</span>
-    </div>
-  </div>
-</section>
-
-<section class="section n-why">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Why us</div>
-      <h2>What you get that you would not get elsewhere</h2>
-      <p class="lead" style="margin-top:14px;color:var(--n-text-2);font-size:16px;line-height:1.6">Technical consultancy, not generalist retainers. We focus purely on HubSpot architecture, data integrity, and pipeline engineering.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px">
-        <span style="display:inline-flex;align-items:center;gap:6px;font:600 11.5px/1 'IBM Plex Mono',monospace;color:var(--n-orange);background:rgba(249,122,26,.1);border:1px solid rgba(249,122,26,.25);padding:5px 10px;border-radius:6px"><i class="fa-solid fa-check"></i> 100% In-House Delivery</span>
-        <span style="display:inline-flex;align-items:center;gap:6px;font:600 11.5px/1 'IBM Plex Mono',monospace;color:var(--n-blue);background:rgba(76,141,255,.1);border:1px solid rgba(76,141,255,.25);padding:5px 10px;border-radius:6px"><i class="fa-solid fa-check"></i> No Long Lock-in</span>
-      </div>
-    </div>
-    <div class="grid-3" style="margin-top:24px">
-      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-layer-group"></i></div><h4>HubSpot depth, not agency breadth</h4><p>We do not run ad accounts or design brand systems. We architect HubSpot. When your problem is a broken data model or a routing rule that silently drops leads, you want the team that has seen it thirty times, not the team adding CRM to its service list.</p></div>
-      <div class="card reveal delay-1"><div class="card-icon blue"><i class="fa-solid fa-bolt"></i></div><h4>Fast and directly reachable</h4><p>A dedicated implementation team means work moves in days rather than sprint cycles. You talk to the people building your system, and you get an answer inside 24 hours on business days.</p></div>
-      <div class="card reveal delay-2"><div class="card-icon orange"><i class="fa-solid fa-file-lines"></i></div><h4>Documented, not black-boxed</h4><p>Every build ships with SOPs, data model documentation, and a permission matrix. If we stopped working together tomorrow, your team could still run the system, change it, and explain it to a new hire.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section n-industries">
-  <div class="container">
-    <div class="reveal"><div class="section-label">Industries</div><h2>Where we work best</h2><p class="lead">Our work fits B2B companies with a real sales process, several systems that need to agree with each other, and reporting that someone has to defend in a leadership meeting.</p></div>
-    <div class="grid-3" style="margin-top:24px">
-      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-building-columns"></i></div><h4>Financial and professional services</h4><p>Structured pipelines, clear record ownership, and integrations with the finance stack.</p></div>
-      <div class="card reveal delay-1"><div class="card-icon blue"><i class="fa-solid fa-helmet-safety"></i></div><h4>Energy and construction</h4><p>Project-based deal tracking from quote to close, with field and office teams working from the same record.</p></div>
-      <div class="card reveal delay-2"><div class="card-icon orange"><i class="fa-solid fa-graduation-cap"></i></div><h4>Education and training</h4><p>Enrollment funnels, lifecycle automation, and reporting across programs and intakes.</p></div>
-      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-microchip"></i></div><h4>Technology and B2B services</h4><p>Multi-stage sales cycles, product-led signals, and attribution that connects marketing spend to closed revenue.</p></div>
-      <div class="card reveal delay-1"><div class="card-icon blue"><i class="fa-solid fa-briefcase"></i></div><h4>Agencies and consultancies</h4><p>Client pipelines, retainer tracking, and forecasting that reflects delivery capacity.</p></div>
-      <div class="card reveal delay-2"><div class="card-icon"><i class="fa-solid fa-plus"></i></div><h4>And other complex B2B</h4><p>If your sales process is genuinely complicated, that is the case for architecting HubSpot around it rather than working around HubSpot.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section process n-rail" id="process">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto"><div class="section-label" style="margin:0 auto 14px">How we work</div><h2>Audit, architect, build, hand over</h2><p class="lead" style="margin:0 auto">Every engagement runs the same four stages. You know what happens next, what you are approving, and when you get it.</p></div>
-    <div class="timeline">
-      <div class="timeline-step reveal"><h4>Audit</h4><p>We go through your portal, data model, integrations, and sales process. You get a written picture of what is working, what is broken, and what is costing you time.</p></div>
-      <div class="timeline-step reveal delay-1"><h4>Architecture</h4><p>We design the data model, pipelines, lifecycle stages, permissions, and integration map before touching anything, and walk you through it for approval.</p></div>
-      <div class="timeline-step reveal delay-2"><h4>Build</h4><p>We build and test in a sandbox first, then deploy. Workflows, custom code, integrations, dashboards, and safeguards.</p></div>
-      <div class="timeline-step reveal delay-3"><h4>Handover</h4><p>Live training and written SOPs so your team owns the system. Documentation covers the data model, automation logic, integration map, and permissions.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section n-faq" id="faq">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 24px">
-      <div class="section-label" style="margin:0 auto 12px">Questions</div>
-      <h2>Before you book a call</h2>
-      <p class="lead" style="margin-top:12px;color:var(--n-text-2);font-size:15px;line-height:1.6">Straight answers on architecture, engagement models, migrations, and how we collaborate with your team.</p>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item"><div class="accordion-header"><div><h4>What does a HubSpot Solutions Partner actually do?</h4><p>Technical implementation and architecture for other businesses</p></div><div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div></div><div class="accordion-body"><div class="accordion-inner">Solutions Partners are firms accredited by HubSpot to implement and architect the platform for other businesses. In practice it means we work inside HubSpot every day across many portals, so we have seen how most things break and what fixes them. We are a technical consultancy rather than a marketing agency: our work is architecture, data, automation, integrations, and reporting.</div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><div><h4>How long does an implementation take?</h4><p>Defined milestones from audit through handover</p></div><div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div></div><div class="accordion-body"><div class="accordion-inner">Audit and architecture typically take one to two weeks. The build runs from two to six weeks depending on data volume, number of integrations, and how many hubs are involved. Training and documentation happen alongside the final build stage. We work in defined milestones so you always know what is finished.</div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><div><h4>Where is your team based?</h4><p>Philippines office working US business hours</p></div><div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div></div><div class="accordion-body"><div class="accordion-inner">Our office is in the Philippines and we work US business hours. Our clients are mostly in the United States, Australia, Canada, and the United Kingdom. Everything is delivered by our own team. We do not subcontract client work.</div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><div><h4>Can you migrate our data from another CRM?</h4><p>Migration with mapping, deduplication, QA, and training</p></div><div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div></div><div class="accordion-body"><div class="accordion-inner">Yes, migration is one of our four core services. We handle Salesforce, Pipedrive, Zoho, and spreadsheet-based systems. The process is audit and field mapping, deduplication, sandbox import and QA, automation rebuild, then cutover with training.</div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><div><h4>What happens after go-live?</h4><p>Documentation and support that keep the system useful</p></div><div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div></div><div class="accordion-body"><div class="accordion-inner">You get SOPs, data model documentation, a permission matrix, and live training sessions. If you want ongoing help, we offer optimization sprints and ongoing HubSpot administration for teams without an internal CRM owner. If you do not, everything is documented well enough that you do not need us.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section contact n-cta" id="contact">
-  <div class="container">
-    <div class="contact-grid">
+    <div class="section-head section-head--split">
       <div class="reveal">
-        <div class="section-label">Get started</div><h2>Tell us what is broken</h2>
-        <p style="color:var(--grey);font-size:17px;line-height:1.6;margin:16px 0 24px">A free 30-minute call. Bring your portal, your reporting problem, or just the thing that keeps failing. You will get a straight answer on what is causing it and what fixing it involves, whether or not you hire us.</p>
-        <p style="color:var(--grey);font-size:14px;line-height:1.6"><strong style="color:var(--navy)">We reply within 24 hours on business days.</strong></p>
-        <div style="margin-top:24px;padding:14px;background:var(--white);border:1px solid var(--border);border-radius:12px"><div style="font-size:13px;font-weight:600;color:var(--navy)">PipelineSync, HubSpot Solutions Partner</div><p style="font-size:11px;color:var(--text-muted);font-family:'IBM Plex Mono',monospace;margin-top:6px"><a href="mailto:" data-contact-email>Contact email</a></p><a href="tel:+16467292936" style="font-size:12px;color:var(--blue);font-weight:600;display:block;margin-top:8px">+1 (646) 729-2936</a><a href="https://wa.me/639301228191" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:#25D366;font-weight:600;display:block;margin-top:5px"><i class="fa-brands fa-whatsapp"></i> +63 930 122 8191 (WhatsApp)</a></div>
+        <span class="eyebrow"><span class="eyebrow__dot"></span>Industries</span>
+        <h2 id="industries-heading">Where we work best</h2>
       </div>
-      <div class="reveal delay-1" style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow-sm)">
-        <div style="width:48px;height:48px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;margin-bottom:16px"><i class="fa-solid fa-comments"></i></div>
-        <h3 style="font-size:22px;margin-bottom:10px">Tell us what is broken</h3><p style="font-size:15px;color:var(--grey);line-height:1.6;margin-bottom:20px">Free 30-minute call. We reply within 24 hours on business days.</p>
-        <button class="btn btn-primary js-open-hs-form" style="width:100%;height:52px;font-size:16px">Book a free consultation</button>
-        <p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:10px;font-family:'IBM Plex Mono',monospace">No sales sequence. One reply from the person who will actually look at your setup.</p>
-      </div>
+      <p class="reveal" style="--d:1">Our work fits B2B companies with a real sales process, several systems that need to agree with each other, and reporting that someone has to defend in a leadership meeting.</p>
+    </div>
+    <div class="grid grid-3" data-stagger>
+      <article class="card industry"><div class="card-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div><div><h3>Financial and professional services</h3><p>Structured pipelines, clear record ownership, and integrations with the finance stack.</p></div></article>
+      <article class="card industry"><div class="card-icon card-icon--blue"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i></div><div><h3>Energy and construction</h3><p>Project-based deal tracking from quote to close, with field and office teams working from the same record.</p></div></article>
+      <article class="card industry"><div class="card-icon card-icon--cyan"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div><div><h3>Education and training</h3><p>Enrollment funnels, lifecycle automation, and reporting across programs and intakes.</p></div></article>
+      <article class="card industry"><div class="card-icon card-icon--green"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div><div><h3>Technology and B2B services</h3><p>Multi-stage sales cycles, product-led signals, and attribution that connects marketing spend to closed revenue.</p></div></article>
+      <article class="card industry"><div class="card-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div><div><h3>Agencies and consultancies</h3><p>Client pipelines, retainer tracking, and forecasting that reflects delivery capacity.</p></div></article>
+      <article class="card industry"><div class="card-icon card-icon--blue"><i class="fa-solid fa-plus" aria-hidden="true"></i></div><div><h3>And other complex B2B</h3><p>If your sales process is genuinely complicated, that is the case for architecting HubSpot around it rather than working around HubSpot.</p></div></article>
     </div>
   </div>
 </section>
+
+<section class="section" id="process" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>How we work</span>
+      <h2 id="process-heading">Audit, architect, build, hand over</h2>
+      <p>Every engagement runs the same four stages. You know what happens next, what you are approving, and when you get it.</p>
+    </div>
+    <ol class="timeline" role="list">
+      <li class="step reveal"><div class="step__num">01</div><h3>Audit</h3><p>We go through your portal, data model, integrations, and sales process. You get a written picture of what is working, what is broken, and what is costing you time.</p></li>
+      <li class="step reveal" style="--d:1"><div class="step__num">02</div><h3>Architecture</h3><p>We design the data model, pipelines, lifecycle stages, permissions, and integration map before touching anything, and walk you through it for approval.</p></li>
+      <li class="step reveal" style="--d:2"><div class="step__num">03</div><h3>Build</h3><p>We build and test in a sandbox first, then deploy. Workflows, custom code, integrations, dashboards, and safeguards.</p></li>
+      <li class="step reveal" style="--d:3"><div class="step__num">04</div><h3>Handover</h3><p>Live training and written SOPs so your team owns the system. Documentation covers the data model, automation logic, integration map, and permissions.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--line" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Questions</span>
+      <h2 id="faq-heading">Before you book a call</h2>
+      <p>Straight answers on architecture, engagement models, migrations, and how we collaborate with your team.</p>
+    </div>
+    {% include 'partials/faq.njk' %}
+  </div>
+</section>
+
+{% set ctaTitle = "Tell us what is broken" %}
+{% set ctaText = "A free 30-minute call. Bring your portal, your reporting problem, or just the thing that keeps failing. You will get a straight answer on what is causing it and what fixing it involves, whether or not you hire us." %}
+{% include 'partials/cta.njk' %}
+</main>

@@ -25,9 +25,9 @@ npm run check
 
 - `src/` contains page content, layouts, partials, metadata, `robots.txt`, and the favicon source.
 - `src/_includes/layouts/base.njk` is the shared HTML shell.
-- `src/_includes/partials/` contains the shared headers, footers, loading screens, and component markup.
-- `assets/css/` contains shared, shell-level, and page-scoped styles.
-- `assets/js/` contains shared and page-specific scripts.
+- `src/_includes/partials/` contains the shared header, footer, loading screen, consultation modal, FAQ, and CTA markup.
+- `assets/css/site.css` is the single design system (dark theme tokens, components, page shells, and motion). `hubspot-chat.css` positions the HubSpot chat launcher.
+- `assets/js/site.js` handles shared behavior (loader, header, mobile menu, scroll reveals, counters, tabs, card links, consultation modal, cursor). `roi-calculator.js` adds the ROI calculator; `assets/js/pages/` holds page-specific scripts.
 - `assets/img/` contains optimized PNG/JPEG assets and WebP siblings.
 - `_site/` is generated and should not be edited or committed.
 
@@ -39,11 +39,10 @@ npm run check
    src/resources/my-new-resource/index.njk
    ```
 
-2. Add front matter with the same fields used by an existing resource page. At minimum, set the title, description, canonical URL, layout type, CSS group, page CSS file, and sitemap metadata.
+2. Add front matter with the same fields used by an existing resource page. At minimum, set the title, description, canonical URL, and sitemap metadata.
 3. Put only the page-specific HTML content below the front matter. Reuse the existing guide classes and partials where appropriate.
-4. Add page-scoped CSS under `assets/css/pages/` only when the resource needs styles beyond `guides.css`.
-5. Add page-specific JavaScript under `assets/js/pages/` only when needed.
-6. Run `npm run check`. The new page will be included automatically in `sitemap.xml` through the Eleventy collection.
+4. Add page-specific JavaScript under `assets/js/pages/` only when needed, and reference it with `pageJs` in the front matter.
+5. Run `npm run check`. The new page will be included automatically in `sitemap.xml` through the Eleventy collection.
 
 ## Images
 

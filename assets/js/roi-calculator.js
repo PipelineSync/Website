@@ -39,7 +39,7 @@
     <div class="roi-shell">
       <div class="roi-top">
         <div>
-          <h1 id="siteRoiTitle">ROI calculator</h1>
+          <h2 id="siteRoiTitle">ROI calculator</h2>
           <p class="roi-sub">Estimate your monthly impact from CRM automation.</p>
         </div>
         <button class="roi-close" type="button" aria-label="Close ROI calculator">✕</button>

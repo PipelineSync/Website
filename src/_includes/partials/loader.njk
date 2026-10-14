@@ -1,0 +1,10 @@
+<div class="loader" id="pipelineLoadingScreen" role="status" aria-live="polite" aria-label="Getting your page ready">
+  <div class="loader__inner">
+    <div class="loader__mark" aria-hidden="true"><picture><source srcset="/assets/img/cropped-logo-only.webp" type="image/webp"><img src="/assets/img/cropped-logo-only.png" alt="" width="512" height="512" decoding="async"></picture></div>
+    <h2>Getting your page ready</h2>
+    <p class="loader__status" id="pipelineLoadingStatus">{{ loaderMessage or "Getting your page ready..." }}</p>
+    <div class="loader__track" aria-hidden="true"><div class="loader__bar" id="pipelineLoadingBar"></div></div>
+    <div class="loader__pct" id="pipelineLoadingPercent">0%</div>
+    <p class="loader__note">Thanks for visiting PipelineSync.</p>
+  </div>
+</div>
