@@ -1,0 +1,88 @@
+---
+layout: layouts/service.njk
+title: "HubSpot Migration Services | PipelineSync"
+description: "Move to HubSpot from Salesforce, Pipedrive, Zoho, or spreadsheets with fields mapped, duplicates resolved, automation rebuilt, and history preserved."
+canonical: "https://pipelinesync.net/solutions/hubspot-migration/"
+ogType: "website"
+breadcrumbName: "HubSpot Migration"
+serviceId: "migration"
+eyebrow: "HubSpot migration services"
+heading: "Move to HubSpot without <span class=\"gradient-text\">a data dump</span>"
+lead: "Move from Salesforce, Pipedrive, or a legacy system with fields mapped, duplicates resolved, automation rebuilt, and history preserved where it matters. Your team lands in a working CRM, not a data dump."
+facts:
+  - { label: "Typical timeline", value: "3–6 weeks" }
+  - { label: "Engagement", value: "Fixed-scope project" }
+  - { label: "Includes", value: "Field map, sandbox QA, cutover" }
+fitHeading: "Teams moving to HubSpot from another system"
+fit:
+  - "Migration is for companies moving to HubSpot from Salesforce, Pipedrive, Zoho, a legacy CRM, or spreadsheets. It is one of our four core services, and it usually runs together with an <a href=\"/solutions/hubspot-implementation/\">implementation</a> so the data lands in a structure designed for how you sell."
+  - "Migrations fail when data arrives without structure and everyone quietly goes back to the old system. That is the failure this process is engineered to prevent."
+problems:
+  - { icon: "fa-right-left", title: "Fields that look the same but mean different things", text: "Two systems can share a label and disagree on meaning, format, or ownership. Mapping by label alone moves the confusion into HubSpot." }
+  - { icon: "fa-database", title: "Duplicates imported, then multiplied", text: "Deduplicating after import is harder and riskier. We resolve duplicates before the data arrives." }
+  - { icon: "fa-diagram-project", title: "Automation that silently stops", text: "Rules, assignments, and alerts in the old system do not migrate themselves. They have to be rebuilt and tested in the new environment." }
+  - { icon: "fa-clock-rotate-left", title: "History that matters gets lost", text: "Activities, owners, and associations need a plan. We decide what history to keep, and how, before anything is imported." }
+involvesHeading: "Audit, map, clean, test, then cut over"
+involves: "We audit the source system, map every field to its HubSpot destination, resolve duplicates before import rather than after, rebuild automation and reporting in the new environment, and test the whole thing in a sandbox before cutover."
+deliverables:
+  - "Source system audit"
+  - "Field mapping sheet with transformation rules"
+  - "Deduplication and enrichment before import"
+  - "Association and history plan"
+  - "Sandbox import and QA with reconciliation"
+  - "Automation and reporting rebuild"
+  - "Cutover plan"
+  - "Team training"
+processHeading: "From source audit to cutover"
+processLead: "The process is the same whatever system you are coming from. Every step is documented so you can see exactly what moved and why."
+steps:
+  - { title: "Audit and field mapping", text: "We review the source system and map every field to its destination, including value transformations, ownership, and what is retired." }
+  - { title: "Deduplicate and prepare", text: "Duplicates, conflicts, and incomplete records are resolved before import, so HubSpot starts clean." }
+  - { title: "Sandbox import and QA", text: "We import into a sandbox, reconcile record counts and key values against the source, and rebuild automation and reporting." }
+  - { title: "Cutover and training", text: "A planned cutover moves production data, then live training gets your team working in HubSpot from day one." }
+outcomeHeading: "A CRM that works on day one"
+outcome: "Your team lands in a CRM that works on day one, with the history that matters intact and the automation already running. Nobody has to keep the old system open on the side to check what really happened."
+faqs:
+  - { q: "Which systems can you migrate from?", a: "Salesforce, Pipedrive, Zoho, other legacy CRMs, and spreadsheet-based systems. If the source can export its data or has an API, we can map it." }
+  - { q: "Do we keep our history?", a: "We preserve history where it matters. The audit decides which activities, notes, owners, and associations come across, and the mapping sheet records how." }
+  - { q: "How long does a migration take?", a: "Typically three to six weeks, depending on data volume, the number of objects and integrations, and how much automation needs rebuilding." }
+  - { q: "Can we keep both systems in sync instead of migrating?", a: "Sometimes that is the right answer, for example when another team must stay on the old system. See our <a href=\"/integrations/\">integration services</a>; we define which system owns each field so the two do not overwrite each other." }
+  - { q: "What happens to duplicates?", a: "They are resolved before import, using rules agreed with you, rather than imported and cleaned up afterwards." }
+  - { q: "Who does the work?", a: "Our own team of eight: our founder, five HubSpot implementation specialists, and two supporting social media and administrative staff. Everyone who touches client work is on our team. We do not subcontract builds, and you talk directly to the people building your system." }
+  - { q: "How is it priced?", a: "Every project is quoted after a free 30-minute consultation, because the honest answer depends on your data volume, integration count, and how many hubs are in play. Most implementations and migrations run as fixed-scope projects with an agreed deliverable list and timeline." }
+related:
+  - { kind: "Template", title: "Data Migration Mapping Sheet", text: "Field mapping, transformation rules, association handling, and a QA checklist for a clean migration.", url: "/resources/data-migration-mapping-sheet-pipelinesync/", link: "Open template" }
+  - { kind: "Article", title: "What Duplicate Data Actually Costs You", text: "Where duplicates do real damage: broken reporting, misrouted leads, and rep time spent reconciling records.", url: "/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/", link: "Read article" }
+  - { kind: "Service", title: "HubSpot integration services", text: "Connect HubSpot to the systems that stay, with clear field ownership, logging, and alerts.", url: "/integrations/", link: "See integrations" }
+---
+<section class="section section--line" aria-labelledby="sources-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>By source system</span>
+      <h2 id="sources-heading">What we look at for each source</h2>
+      <p>The process is the same; the details are not. These are the areas that need the most care for each system.</p>
+    </div>
+    <div class="detail-grid" data-stagger>
+      <article class="card detail" id="salesforce">
+        <h3>Salesforce to HubSpot migration</h3>
+        <p>Salesforce orgs usually carry years of custom objects, record types, validation rules, and automation. We map each object and record type to a HubSpot object and pipeline, decide which custom objects are still needed, and rebuild the logic in HubSpot workflows rather than copying it blindly.</p>
+        <ul><li>Leads, contacts, accounts, and opportunities mapped to HubSpot objects</li><li>Record types translated into pipelines or properties</li><li>Owners, activities, and associations carried across where they matter</li><li>Flows and assignment rules rebuilt and tested in a sandbox</li></ul>
+      </article>
+      <article class="card detail" id="pipedrive">
+        <h3>Pipedrive to HubSpot migration</h3>
+        <p>Pipedrive data is deal-centric, so the work is mostly about giving it a fuller structure in HubSpot: lifecycle stages, company records, and pipelines with clear exit criteria, instead of a straight copy of deal stages.</p>
+        <ul><li>Deals, persons, organizations, and activities mapped</li><li>Pipelines redesigned around how deals actually close</li><li>Custom fields consolidated into a governed property catalogue</li><li>Activities and notes kept with their deals and contacts</li></ul>
+      </article>
+      <article class="card detail" id="zoho">
+        <h3>Zoho to HubSpot migration</h3>
+        <p>Zoho CRM setups often combine modules, custom fields, and workflows built by different people over time. We audit what is actually used, map modules to HubSpot objects, and leave behind the fields nobody fills in.</p>
+        <ul><li>Modules mapped to HubSpot objects and associations</li><li>Picklist values standardized during transformation</li><li>Workflow rules rebuilt as HubSpot automation</li><li>Unused fields retired instead of migrated</li></ul>
+      </article>
+      <article class="card detail" id="spreadsheets">
+        <h3>Spreadsheets and legacy systems</h3>
+        <p>Spreadsheet-based processes have no enforced structure, so cleanup is most of the work. We define the data model first, standardize values and formats, deduplicate, and only then import, so HubSpot starts with rules the spreadsheet never had.</p>
+        <ul><li>Data model designed before import</li><li>Formats, owners, and statuses standardized</li><li>Duplicates and conflicting rows resolved</li><li>Validation rules added so the mess does not come back</li></ul>
+      </article>
+    </div>
+  </div>
+</section>

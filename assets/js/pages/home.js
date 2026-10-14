@@ -177,6 +177,7 @@
     lastTouch = Date.now();
     if (!everTouched) {
       everTouched = true;
+      document.dispatchEvent(new CustomEvent('ps:track', { detail: { name: 'pipeline_demo_interact', once: true } }));
       resetBtn.hidden = false;
       wrap.classList.add('is-user');
     }

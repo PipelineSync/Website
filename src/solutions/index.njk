@@ -1,73 +1,16 @@
 ---
 layout: layouts/base.njk
-title: "HubSpot Implementation, Migration & CRM Cleanup | PipelineSync"
-description: "HubSpot implementation, CRM migration, data cleanup, and RevOps infrastructure from a HubSpot Solutions Partner. Documented builds your team can run. Book a free consultation."
+title: "HubSpot Consulting Services | PipelineSync"
+description: "HubSpot consulting services from a Solutions Partner: implementation, CRM migration, data cleanup, RevOps, integrations, and audits. Scoped after a free call."
 robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 canonical: "https://pipelinesync.net/solutions/"
 ogType: "website"
-ogImage: "https://pipelinesync.net/pipelinesync_logo_transparent.png"
 lastmod: "2026-10-03"
 changefreq: "monthly"
 priority: "0.9"
-schema: |
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://pipelinesync.net/#organization",
-        "name": "PipelineSync",
-        "url": "https://pipelinesync.net/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://pipelinesync.net/pipelinesync_logo_transparent.png"
-        },
-        "telephone": "+1-646-729-2936",
-        "description": "PipelineSync is a HubSpot Solutions Partner founded in 2025, with a team of eight building CRM, migration, data quality, and RevOps systems for B2B companies."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://pipelinesync.net/#website",
-        "url": "https://pipelinesync.net/",
-        "name": "PipelineSync",
-        "publisher": {
-          "@id": "https://pipelinesync.net/#organization"
-        },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://pipelinesync.net/solutions#webpage",
-        "url": "https://pipelinesync.net/solutions",
-        "name": "HubSpot Implementation, Migration & CRM Cleanup | PipelineSync",
-        "description": "HubSpot implementation, CRM migration, data cleanup, and RevOps infrastructure from a HubSpot Solutions Partner. Documented builds your team can run. Book a free consultation.",
-        "isPartOf": {
-          "@id": "https://pipelinesync.net/#website"
-        },
-        "about": {
-          "@id": "https://pipelinesync.net/#organization"
-        },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "Service",
-        "@id": "https://pipelinesync.net/solutions#service",
-        "name": "HubSpot CRM and RevOps services",
-        "serviceType": "HubSpot CRM and RevOps architecture",
-        "provider": {
-          "@id": "https://pipelinesync.net/#organization"
-        },
-        "url": "https://pipelinesync.net/solutions",
-        "areaServed": [
-          "United States",
-          "Australia",
-          "Canada",
-          "United Kingdom"
-        ]
-      }
-    ]
-  }
 pageJs: "pages/solutions.js"
+pageType: "services"
+breadcrumbName: "Solutions"
 ---
 
 <main id="main-content" tabindex="-1">
@@ -75,7 +18,7 @@ pageJs: "pages/solutions.js"
   <div class="container hero__grid">
     <div>
       <span class="eyebrow reveal"><span class="eyebrow__dot"></span>Solutions</span>
-      <h1 class="hero__title" id="hero-title" data-split>HubSpot built around how your team <span class="gradient-text">actually works</span></h1>
+      <h1 class="hero__title" id="hero-title" data-split>HubSpot consulting services built around how your team <span class="gradient-text">actually works</span></h1>
       <p class="hero__lead reveal" style="--d:3">We do not force your process into HubSpot’s defaults. We start with how your business sells and services, design the CRM to match, and document it so your team can run it without us.</p>
       <div class="btn-row reveal" style="--d:4">
         <a href="#contact" class="btn btn-primary btn-lg js-open-hs-form">Book a free consultation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
@@ -111,7 +54,8 @@ pageJs: "pages/solutions.js"
           <div><dt>What changes</dt><dd>Your reps work in a CRM that matches how they actually sell, so they use it. Your marketing team can segment on data that is reliably there. Your leadership gets reporting that does not need a spreadsheet check first.</dd></div>
           <div><dt>Typically includes</dt><dd>Portal audit, data model design, pipeline and lifecycle architecture, permission structure, core automation, dashboard build, SOPs, and team training.</dd></div>
         </dl>
-      </article>
+                <a class="link-arrow" href="/solutions/hubspot-implementation/" style="margin-top:20px">HubSpot implementation services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
       <article class="card service" id="migration">
         <span class="service-index">02 / Migration</span>
         <div class="card-icon card-icon--blue"><i class="fa-solid fa-right-left" aria-hidden="true"></i></div>
@@ -122,7 +66,8 @@ pageJs: "pages/solutions.js"
           <div><dt>What changes</dt><dd>Your team lands in a CRM that works on day one, with the history that matters intact and the automation already running. Migrations fail when data arrives without structure and everyone quietly goes back to the old system. That is the failure we are engineered to prevent.</dd></div>
           <div><dt>Typically includes</dt><dd>Source audit, field mapping sheet, deduplication and enrichment, sandbox import and QA, automation and reporting rebuild, cutover plan, and training.</dd></div>
         </dl>
-      </article>
+                <a class="link-arrow" href="/solutions/hubspot-migration/" style="margin-top:20px">HubSpot migration services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
       <article class="card service" id="cleanup">
         <span class="service-index">03 / Data quality</span>
         <div class="card-icon card-icon--cyan"><i class="fa-solid fa-broom" aria-hidden="true"></i></div>
@@ -133,7 +78,8 @@ pageJs: "pages/solutions.js"
           <div><dt>What changes</dt><dd>Reporting becomes something you act on rather than something you verify. Automation stops misfiring on bad records. Reps stop finding three versions of the same account.</dd></div>
           <div><dt>Typically includes</dt><dd>Data quality audit, deduplication, field standardization, validation and governance rules, ongoing data hygiene workflows, and a governance SOP.</dd></div>
         </dl>
-      </article>
+                <a class="link-arrow" href="/solutions/hubspot-crm-cleanup/" style="margin-top:20px">HubSpot data cleanup <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
       <article class="card service" id="revops">
         <span class="service-index">04 / RevOps</span>
         <div class="card-icon card-icon--green"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
@@ -144,7 +90,8 @@ pageJs: "pages/solutions.js"
           <div><dt>What changes</dt><dd>Qualified leads reach the right rep in minutes instead of sitting unassigned. Leadership can see conversion at every stage and where deals stall. Marketing can tie spend to closed revenue rather than to form fills.</dd></div>
           <div><dt>Typically includes</dt><dd>Lifecycle architecture, lead scoring and routing, SLA and escalation design, sales and marketing automation, attribution setup, executive dashboards, and documentation.</dd></div>
         </dl>
-      </article>
+                <a class="link-arrow" href="/solutions/revops/" style="margin-top:20px">HubSpot RevOps consulting <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
     </div>
   </div>
 </section>
@@ -157,8 +104,8 @@ pageJs: "pages/solutions.js"
     </div>
     <div class="grid grid-4" data-stagger>
       <article class="card" id="custom-integrations"><div class="card-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div><h3>Custom API integrations</h3><p>Private apps, coded workflows, and webhooks to connect HubSpot with systems that have no native integration, built with logging and error handling.</p><a class="link-arrow" href="/integrations/" style="margin-top:16px">See all integrations <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
-      <article class="card" id="hubspot-audit"><div class="card-icon card-icon--blue"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></div><h3>HubSpot audit</h3><p>A structured review of your portal, data, automation, and reporting, delivered as a written findings document with prioritized recommendations.</p></article>
-      <article class="card" id="ongoing-administration"><div class="card-icon card-icon--cyan"><i class="fa-solid fa-rotate" aria-hidden="true"></i></div><h3>Ongoing administration and optimization</h3><p>Monthly support for teams without an internal CRM owner. Workflow changes, reporting updates, data hygiene, and user support.</p></article>
+      <article class="card" id="hubspot-audit"><div class="card-icon card-icon--blue"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></div><h3>HubSpot audit</h3><p>A structured review of your portal, data, automation, and reporting, delivered as a written findings document with prioritized recommendations.</p><a class="link-arrow" href="/solutions/hubspot-audit/" style="margin-top:20px">About the audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+      <article class="card" id="ongoing-administration"><div class="card-icon card-icon--cyan"><i class="fa-solid fa-rotate" aria-hidden="true"></i></div><h3>Ongoing administration and optimization</h3><p>Monthly support for teams without an internal CRM owner. Workflow changes, reporting updates, data hygiene, and user support.</p><a class="link-arrow" href="/solutions/hubspot-admin/" style="margin-top:20px">About HubSpot admin <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
       <article class="card" id="training-sops"><div class="card-icon card-icon--green"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div><h3>Training and SOPs</h3><p>Live sessions and written documentation for teams inheriting a system, onboarding new hires, or trying to lift adoption.</p></article>
     </div>
   </div>

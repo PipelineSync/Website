@@ -30,5 +30,5 @@
   <a href="{{ item.href }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a>
   {%- endfor %}
   <a href="#contact" class="btn btn-primary btn-lg js-open-hs-form">Book a free consultation</a>
-  <p class="mobile-menu__meta"><a href="mailto:" data-contact-email>Contact email</a><br><a href="tel:+16467292936">+1 (646) 729-2936</a></p>
+  <p class="mobile-menu__meta"><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="tel:+16467292936">+1 (646) 729-2936</a></p>
 </div>

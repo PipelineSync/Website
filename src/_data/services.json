@@ -1,0 +1,56 @@
+[
+  {
+    "id": "implementation",
+    "name": "HubSpot implementation and onboarding",
+    "serviceType": "HubSpot CRM implementation",
+    "description": "Design and build of the full HubSpot structure: objects and custom properties, deal pipelines, lifecycle stages, teams and permissions, forms, workflows, and dashboards, with SOPs and team training.",
+    "page": "/solutions/hubspot-implementation/"
+  },
+  {
+    "id": "migration",
+    "name": "CRM migration to HubSpot",
+    "serviceType": "CRM data migration",
+    "description": "Migration from Salesforce, Pipedrive, Zoho, a legacy CRM, or spreadsheets: source audit, field mapping, deduplication before import, sandbox QA, automation and reporting rebuild, cutover, and training.",
+    "page": "/solutions/hubspot-migration/"
+  },
+  {
+    "id": "cleanup",
+    "name": "CRM cleanup and data quality",
+    "serviceType": "CRM data cleanup and governance",
+    "description": "Audit of contact, company, and deal record quality, systematic deduplication, field standardization, and the validation rules, required properties, and naming conventions that keep HubSpot clean.",
+    "page": "/solutions/hubspot-crm-cleanup/"
+  },
+  {
+    "id": "revops",
+    "name": "RevOps infrastructure, lead to close",
+    "serviceType": "Revenue operations consulting",
+    "description": "Lifecycle stage definitions, lead scoring and routing with SLAs and fallback owners, sales and marketing automation, attribution reporting, and executive dashboards.",
+    "page": "/solutions/revops/"
+  },
+  {
+    "id": "custom-integrations",
+    "name": "Custom HubSpot API integrations",
+    "serviceType": "HubSpot integration development",
+    "description": "Private apps, coded workflows, and webhooks that connect HubSpot with systems that have no native integration, built with logging and error handling."
+  },
+  {
+    "id": "hubspot-audit",
+    "name": "HubSpot audit",
+    "serviceType": "HubSpot portal audit",
+    "description": "A structured review of your portal, data, automation, and reporting, delivered as a written findings document with prioritized recommendations.",
+    "page": "/solutions/hubspot-audit/"
+  },
+  {
+    "id": "ongoing-administration",
+    "name": "Ongoing HubSpot administration and optimization",
+    "serviceType": "HubSpot administration",
+    "description": "Monthly support for teams without an internal CRM owner: workflow changes, reporting updates, data hygiene, and user support.",
+    "page": "/solutions/hubspot-admin/"
+  },
+  {
+    "id": "training-sops",
+    "name": "HubSpot training and SOPs",
+    "serviceType": "HubSpot training",
+    "description": "Live sessions and written documentation for teams inheriting a system, onboarding new hires, or trying to lift adoption."
+  }
+]

@@ -1,94 +1,16 @@
 ---
 layout: layouts/base.njk
 title: "HubSpot Guides, Templates & RevOps Playbooks | PipelineSync"
-description: "Practical HubSpot guides, SOP templates, and RevOps playbooks. CRM architecture, data cleanup, lead routing, integration governance, and attribution."
+description: "Free HubSpot guides, SOP templates, and RevOps playbooks from client builds: CRM architecture, data cleanup, lead routing, integrations, and attribution."
 robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 canonical: "https://pipelinesync.net/resources/"
 ogType: "website"
-ogImage: "https://pipelinesync.net/pipelinesync_logo_transparent.png"
 lastmod: "2026-10-03"
 changefreq: "weekly"
 priority: "0.8"
-schema: |
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://pipelinesync.net/#organization",
-        "name": "PipelineSync",
-        "url": "https://pipelinesync.net/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://pipelinesync.net/pipelinesync_logo_transparent.png"
-        },
-        "telephone": "+1-646-729-2936",
-        "description": "PipelineSync is a HubSpot Solutions Partner founded in 2025, with a team of eight building CRM, migration, data quality, and RevOps systems for B2B companies."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://pipelinesync.net/#website",
-        "url": "https://pipelinesync.net/",
-        "name": "PipelineSync",
-        "publisher": {
-          "@id": "https://pipelinesync.net/#organization"
-        },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "CollectionPage",
-        "@id": "https://pipelinesync.net/resources#webpage",
-        "url": "https://pipelinesync.net/resources",
-        "name": "HubSpot Guides, Templates & RevOps Playbooks | PipelineSync",
-        "description": "Practical HubSpot guides, SOP templates, and RevOps playbooks. CRM architecture, data cleanup, lead routing, integration governance, and attribution.",
-        "isPartOf": {
-          "@id": "https://pipelinesync.net/#website"
-        },
-        "about": {
-          "@id": "https://pipelinesync.net/#organization"
-        },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://pipelinesync.net/resources#resource-list",
-        "name": "HubSpot guides, templates, and RevOps playbooks",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "HubSpot CRM Architecture Blueprint",
-            "url": "https://pipelinesync.net/resources/hubspot-crm-architecture-blueprint/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "CRM Cleanup and Deduplication System",
-            "url": "https://pipelinesync.net/resources/crm-cleanup-deduplication-system-pipelinesync/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Lead Routing and Lifecycle Automation",
-            "url": "https://pipelinesync.net/resources/lead-routing-lifecycle-automation-pipelinesync/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Integration Governance and Monitoring",
-            "url": "https://pipelinesync.net/resources/integration-governance-monitoring-pipelinesync/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "Full-Funnel Attribution Leadership Can Trust",
-            "url": "https://pipelinesync.net/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/"
-          }
-        ]
-      }
-    ]
-  }
 loaderMessage: "Getting your guides and resources ready..."
+pageType: "collection"
+breadcrumbName: "Resources"
 ---
 
 <main id="main-content" tabindex="-1">
@@ -125,7 +47,7 @@ loaderMessage: "Getting your guides and resources ready..."
       <div class="grid grid-3" data-stagger>
         {%- for r in [
           ["/resources/hubspot-crm-architecture-blueprint/", "fa-sitemap", "", "Guide • 12 min", "HubSpot CRM Architecture Blueprint", "How to structure objects, pipelines, lifecycle stages, and permissions so the portal still works when you have ten times the data.", "Read guide"],
-          ["/resources/crm-cleanup-deduplication-system-pipelinesync/", "fa-broom", "card-icon--cyan", "Playbook • 18 min", "CRM Cleanup and Deduplication System", "A step-by-step process to audit, merge, and enrich records, then the validation rules that stop duplicates coming back.", "Read playbook"],
+          ["/resources/crm-cleanup-deduplication-system-pipelinesync/", "fa-broom", "card-icon--cyan", "Playbook • 18 min", "HubSpot Cleanup and Deduplication System", "A step-by-step process to audit, merge, and enrich records, then the validation rules that stop duplicates coming back.", "Read playbook"],
           ["/resources/lead-routing-lifecycle-automation-pipelinesync/", "fa-bolt", "card-icon--green", "Automation • 15 min", "Lead Routing and Lifecycle Automation", "Building routing your sales team trusts: scoring, assignment, SLAs, fallback owners, and escalation.", "Read guide"],
           ["/resources/integration-governance-monitoring-pipelinesync/", "fa-plug", "card-icon--blue", "Integrations • 14 min", "Integration Governance and Monitoring", "Designing bidirectional syncs with clear field ownership, logging, alerting, and a rollback path.", "Read guide"],
           ["/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/", "fa-chart-column", "", "Attribution • 16 min", "Full-Funnel Attribution Leadership Can Trust", "Connecting first touch to closed won: campaign influence, multi-touch models, and revenue dashboards.", "Read guide"]
@@ -148,7 +70,7 @@ loaderMessage: "Getting your guides and resources ready..."
       <div class="grid grid-2">
         {%- for r in [
           ["/resources/why-your-hubspot-pipeline-doesnt-reflect-reality-pipelinesync/", "fa-database", "", "RevOps • 5 min", "Why Your HubSpot Pipeline Does Not Reflect Reality", "Stages reps skip, close dates nobody updates, and the three changes that fix a forecast."],
-          ["/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/", "fa-chart-line", "card-icon--blue", "Data • 7 min", "What Duplicate Data Actually Costs You", "Where duplicates do real damage: broken reporting, misrouted leads, and rep time spent reconciling records."],
+          ["/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/", "fa-chart-line", "card-icon--blue", "Data • 7 min", "What Duplicate Data in HubSpot Actually Costs You", "Where duplicates do real damage: broken reporting, misrouted leads, and rep time spent reconciling records."],
           ["/resources/automation-that-saves-10-hours-week-pipelinesync/", "fa-robot", "card-icon--cyan", "Automation • 6 min", "Automation That Saves Your Team Hours Every Week", "The workflows we build in almost every portal: lead routing, data hygiene, and follow-up."],
           ["/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/", "fa-users", "card-icon--green", "Teams • 4 min", "Why Teams Do Not Adopt HubSpot", "Adoption is usually an architecture problem, not a training problem."]
         ] %}

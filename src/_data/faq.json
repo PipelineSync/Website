@@ -1,0 +1,45 @@
+[
+  {
+    "q": "What does a HubSpot Solutions Partner actually do?",
+    "sub": "Technical implementation and architecture for other businesses",
+    "a": "Solutions Partners are firms accredited by HubSpot to implement and architect the platform for other businesses. In practice it means we work inside HubSpot every day across many portals, so we have seen how most things break and what fixes them. We are a technical consultancy rather than a marketing agency: our work is architecture, data, automation, integrations, and reporting.",
+    "extendedOnly": false
+  },
+  {
+    "q": "How long does an implementation take?",
+    "sub": "Defined milestones from audit through handover",
+    "a": "Audit and architecture typically take one to two weeks. The build runs from two to six weeks depending on data volume, number of integrations, and how many hubs are involved. Training and documentation happen alongside the final build stage. We work in defined milestones so you always know what is finished.",
+    "extendedOnly": false
+  },
+  {
+    "q": "Where is your team based?",
+    "sub": "Philippines office working US business hours",
+    "a": "Our office is in the Philippines and we work US business hours. Our clients are mostly in the United States, Australia, Canada, and the United Kingdom. Everything is delivered by our own team. We do not subcontract client work.",
+    "extendedOnly": false
+  },
+  {
+    "q": "Can you migrate our data from another CRM?",
+    "sub": "Migration with mapping, deduplication, QA, and training",
+    "a": "Yes, migration is one of our four core services. We handle Salesforce, Pipedrive, Zoho, and spreadsheet-based systems. The process is audit and field mapping, deduplication, sandbox import and QA, automation rebuild, then cutover with training.",
+    "extendedOnly": false,
+    "extendedSuffix": " We preserve history where it matters."
+  },
+  {
+    "q": "What happens after go-live?",
+    "sub": "Documentation and support that keep the system useful",
+    "a": "You get SOPs, data model documentation, a permission matrix, and live training sessions. If you want ongoing help, we offer optimization sprints and ongoing HubSpot administration for teams without an internal CRM owner. If you do not, everything is documented well enough that you do not need us.",
+    "extendedOnly": false
+  },
+  {
+    "q": "Do you work with companies outside the United States?",
+    "sub": "US hours from the Philippines for clients in four primary markets",
+    "a": "Yes. Most of our clients are in the United States, with others in Australia, Canada, and the United Kingdom. We work US business hours from our office in the Philippines and run projects asynchronously with recorded walkthroughs, plus live sessions scheduled in your timezone.",
+    "extendedOnly": true
+  },
+  {
+    "q": "What size company do you usually work with?",
+    "sub": "B2B companies from founder-led teams to 200 employees",
+    "a": "Most of our clients are B2B companies between roughly 10 and 200 employees, typically on HubSpot Professional or Enterprise. We also take on first-time implementations for smaller founder-led businesses that want the structure right from the start.",
+    "extendedOnly": true
+  }
+]

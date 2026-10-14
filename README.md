@@ -44,6 +44,13 @@ npm run check
 4. Add page-specific JavaScript under `assets/js/pages/` only when needed, and reference it with `pageJs` in the front matter.
 5. Run `npm run check`. The new page will be included automatically in `sitemap.xml` through the Eleventy collection.
 
+## SEO
+
+- Titles, descriptions and canonicals come from each page's front matter. `pageType` and `breadcrumbName` drive the generated JSON-LD (`buildGraph()` in `.eleventy.js`); business facts, profile links and analytics IDs live in `src/_data/site.json`, services in `src/_data/services.json`, FAQs in `src/_data/faq.json`.
+- Social share cards (1200×630) are committed in `assets/img/og/`. After changing a title, run `npm run build && npm run og-images` (needs Playwright with Chromium installed globally).
+- `npm run check` also enforces SEO basics: one H1, unique titles/descriptions, `og:image` present, JSON-LD parses with breadcrumbs and article fields, no double-encoded entities, ISO `lastmod` dates. Title/description lengths outside the target range are reported as warnings.
+- Plans, audit and owner checklists are in `docs/seo/`.
+
 ## Images
 
 `tools/images-to-download.txt` is the image manifest. Run:
@@ -52,7 +59,7 @@ npm run check
 npm run prepare-images
 ```
 
-The script downloads source images, writes optimized deploy copies to `assets/img/`, and creates WebP versions. Existing markup uses WebP `<source>` elements with optimized PNG/JPEG fallbacks and includes intrinsic dimensions where available.
+The script downloads source images, writes optimized deploy copies to `assets/img/`, and creates WebP versions. Then run `python3 tools/optimize-images.py` to resize logos and badges to their display size. Existing markup uses WebP `<source>` elements with optimized PNG/JPEG fallbacks and includes intrinsic dimensions where available.
 
 ## GitHub and Netlify deployment
 

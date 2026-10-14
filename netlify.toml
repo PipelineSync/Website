@@ -10,6 +10,21 @@
   for = "/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    X-Frame-Options = "SAMEORIGIN"
+    # Report-only first: watch the browser console on the deploy preview, then switch the key to
+    # Content-Security-Policy once nothing legitimate is reported. Hosts cover HubSpot (tracking,
+    # forms, chat, cookie banner), Google Fonts and GA4.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hs-scripts.com https://*.hsforms.net https://*.hsforms.com https://*.hs-analytics.net https://*.hs-banner.com https://*.hscollectedforms.net https://*.hubspot.com https://*.usemessages.com https://*.hsadspixel.net https://*.hubspotfeedback.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hsforms.net https://*.hubspot.com; font-src 'self' data: https://fonts.gstatic.com https://*.hubspot.com; img-src 'self' data: https: ; connect-src 'self' https://*.hubspot.com https://*.hubapi.com https://*.hsforms.com https://*.hsforms.net https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com wss://*.hubspot.com; frame-src 'self' https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.usemessages.com; form-action 'self' https://*.hsforms.com https://*.hubspot.com; base-uri 'self'; object-src 'none'"
+
+# The web manifest and icons change rarely but are not fingerprinted.
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "public, max-age=86400"
 
 # Fingerprinted or versioned assets can be cached for a long time.
 [[headers]]

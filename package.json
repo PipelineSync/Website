@@ -7,7 +7,8 @@
     "build": "eleventy",
     "start": "eleventy --serve",
     "check": "npm run build && node tools/check-site.mjs",
-    "prepare-images": "python3 tools/prepare_images.py"
+    "prepare-images": "python3 tools/prepare_images.py",
+    "og-images": "node tools/make-og-images.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
