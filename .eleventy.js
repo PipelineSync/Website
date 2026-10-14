@@ -57,6 +57,9 @@ function buildGraph(data) {
     image: { '@id': `${site.url}/#logo` },
     description: site.description,
     slogan: site.tagline,
+    award: `HubSpot ${site.partnerTier} Solutions Partner`,
+    // City-level only, as shown on the public HubSpot Solutions Directory listing.
+    address: { '@type': 'PostalAddress', ...site.address },
     foundingDate: site.foundingDate,
     founder: founderRef,
     numberOfEmployees: { '@type': 'QuantitativeValue', value: site.employees },

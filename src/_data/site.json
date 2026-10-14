@@ -2,7 +2,7 @@
   "url": "https://pipelinesync.net",
   "name": "PipelineSync",
   "tagline": "Build Revenue Systems That Stay in Sync.",
-  "description": "PipelineSync is a HubSpot Solutions Partner founded in 2025, with a team of eight building CRM, migration, data quality, and RevOps systems for B2B companies.",
+  "description": "PipelineSync is a HubSpot Gold Solutions Partner founded in 2025, with a team of eight building CRM, migration, data quality, and RevOps systems for B2B companies.",
   "foundingDate": "2025",
   "employees": 8,
   "telephone": "+1-646-729-2936",
@@ -89,5 +89,11 @@
       "GB",
       "CH"
     ]
+  },
+  "partnerTier": "Gold",
+  "address": {
+    "addressLocality": "Clark",
+    "addressRegion": "Pampanga",
+    "addressCountry": "PH"
   }
 }

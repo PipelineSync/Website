@@ -32,13 +32,13 @@ All JSON-LD is generated at build time by `buildGraph()` in `.eleventy.js` and o
 
 - **No Review / AggregateRating markup.** Google treats self-serving reviews of your own business as ineligible; the 10 five-star reviews stay as visible text linking to the source profiles.
 - **Author is the Organization** on articles until the owner confirms who wrote each piece. Once confirmed, change `author` in `buildGraph()` (or add `author` front matter) to the Person and add a visible byline.
-- **No address.** The Organization uses `areaServed` (US, AU, CA, GB) only. Add `address` to `site.json` and the graph only if the owner decides to publish the Philippines office.
+- **City-level address only.** `address` is Clark, Pampanga, PH, matching the public HubSpot directory listing; no street address. `areaServed` lists US, AU, CA, GB.
 - **FAQPage** is valid markup; Google currently shows FAQ rich results mainly for authoritative government/health sites, but other engines and AI answers use it.
 - **No SearchAction** (the site has no search).
 
 ## Owner inputs that improve the graph
 
-- Done: `hubspotDirectoryUrl` (public directory URL, confirm it opens logged out) and `founder.sameAs` (Allen's LinkedIn).
+- Done: `hubspotDirectoryUrl` (public directory URL, confirmed by the owner) and `founder.sameAs` (Allen's LinkedIn).
 - Still useful: any Clutch/G2 profile URLs (append to `sameAs`).
 
 ## Validation

@@ -2,12 +2,12 @@
 
 ## Setup
 
-> **Status:** GA4 measurement ID `G-ZYR7TRJ6T8` is set and the HubSpot cookie banner is configured for EU visitors (owner, Oct 2026). Search Console verification is pending.
+> **Status:** GA4 measurement ID `G-ZYR7TRJ6T8` is set and the HubSpot cookie banner is configured for the consent regions (EU/EEA, UK, Switzerland), confirmed by the owner in Oct 2026. Search Console verification is pending.
 
 - **IDs** live in `src/_data/site.json` under `analytics`: `ga4Id`, `googleSiteVerification`, `bingSiteVerification`. Empty = the tag is not output at all. Prefer DNS (TXT) verification for Search Console; the meta tag is a fallback.
 - **GA4** loads from `base.njk` only when `ga4Id` is set, with **Consent Mode v2** defaults:
   - Advertising storage, ad user data and ad personalization: `denied` everywhere (the site runs no ads).
-  - `analytics_storage`: `denied` by default for the regions in `analytics.consentRegions` (EU/EEA, UK, Switzerland) and `granted` elsewhere. **`TODO(owner)`: confirm this split with legal**, or deny everywhere until consent.
+  - `analytics_storage`: `denied` by default for the regions in `analytics.consentRegions` (EU/EEA, UK, Switzerland) and `granted` elsewhere. The owner confirmed the HubSpot cookie banner covers these regions.
   - Consent updates come from **HubSpot's cookie banner** via `_hsp.push(['addPrivacyConsentListener', …])` in `assets/js/analytics.js`. Enable the banner in HubSpot (Settings → Privacy & Consent → Cookies) for the consent regions. Do not add a second banner.
 - **Events** are sent by `assets/js/analytics.js` through `gtag('event', …)`. Without GA4 they only fill `window.dataLayer` (harmless), which also makes a later switch to Google Tag Manager straightforward.
 - **HubSpot** tracking (`hs-script-loader`) is unchanged and keeps attributing form submissions to original source/UTMs.

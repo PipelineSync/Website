@@ -34,7 +34,7 @@ const pages = walk(site).filter((f) => f.endsWith('.html')).map((file) => {
   if (!og || !og.includes('/assets/img/og/')) return null;
   const title = decode(html.match(/<title>([^<]*)<\/title>/)[1]).split(' | ')[0];
   const kind = html.match(/"articleSection":"([^"]+)"/)?.[1]
-    || ({ '/': 'HubSpot Solutions Partner', '/solutions/': 'Solutions', '/integrations/': 'Integrations', '/resources/': 'Resources', '/about/': 'About us' })[
+    || ({ '/': 'HubSpot Gold Solutions Partner', '/solutions/': 'Solutions', '/integrations/': 'Integrations', '/resources/': 'Resources', '/about/': 'About us' })[
       '/' + path.relative(site, path.dirname(file)).replace(/\\/g, '/') + (path.dirname(file) === site ? '' : '/')
     ] || (/[\\/]solutions[\\/]/.test(file) ? 'Solutions' : 'PipelineSync');
   return { title, kind, out: path.join(outDir, path.basename(og)) };
@@ -63,7 +63,7 @@ h1 span{background:linear-gradient(115deg,#ffc285 0%,#ff7a1a 38%,#7a9bff 78%,#5b
 </style></head><body><div class="orb a"></div><div class="orb b"></div><div class="grid"></div>
 <div class="wrap"><span class="kind"><i></i>${esc(kind)}</span>
 <h1>${esc(title).replace(/(\S+)$/, '<span>$1</span>')}</h1>
-<div class="foot"><div class="brand"><img src="${logo}" alt="">PipelineSync</div><div class="url">pipelinesync.net · HubSpot Solutions Partner</div></div></div>
+<div class="foot"><div class="brand"><img src="${logo}" alt="">PipelineSync</div><div class="url">pipelinesync.net · HubSpot Gold Solutions Partner</div></div></div>
 <div class="bar"></div></body></html>`;
 
 const { chromium } = loadPlaywright();
