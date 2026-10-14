@@ -1,4 +1,29 @@
+# PipelineSync crawler policy (see docs/seo/roadmap.md, section "AI search").
+# Search engines and AI assistants may crawl everything, including model-training
+# crawlers: being known to AI models helps buyers find PipelineSync.
+
 User-agent: *
+Allow: /
+
+# Search and answer engines
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Applebot
+User-agent: DuckDuckBot
+Allow: /
+
+# Model training (allowed by decision of the site owner, Oct 2026)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://pipelinesync.net/sitemap.xml

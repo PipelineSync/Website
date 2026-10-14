@@ -24,7 +24,7 @@ const walkSrc = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e
   const full = path.join(dir, entry.name);
   return entry.isDirectory() ? walkSrc(full) : [full];
 });
-const expected = walkSrc(path.join(root, 'src')).filter((f) => f.endsWith('.njk') && !/sitemap\.xml\.njk$|404\.njk$/.test(f)).length;
+const expected = walkSrc(path.join(root, 'src')).filter((f) => f.endsWith('.njk') && !/sitemap\.xml\.njk$|404\.njk$|llms\.txt\.njk$/.test(f)).length;
 const warnings = [];
 const warn = (message) => warnings.push(message);
 const seenTitles = new Map();
@@ -138,7 +138,7 @@ else {
   }
 }
 
-for (const required of ['robots.txt', '_redirects', 'assets/css/site.css', 'assets/js/roi-calculator.js', 'favicon.ico', 'apple-touch-icon.png', 'site.webmanifest', 'assets/vendor/fa/icons.css']) {
+for (const required of ['robots.txt', '_redirects', 'assets/css/site.css', 'assets/js/roi-calculator.js', 'favicon.ico', 'apple-touch-icon.png', 'site.webmanifest', 'assets/vendor/fa/icons.css', 'llms.txt']) {
   if (!fs.existsSync(path.join(site, required))) fail(`Missing published file ${required}`);
 }
 

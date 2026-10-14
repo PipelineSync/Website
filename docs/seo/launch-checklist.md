@@ -132,3 +132,11 @@ Test each URL in both tools: Rich Results Test (search.google.com/test/rich-resu
 | New content published vs calendar | `docs/seo/content-plan.md` | 2 | 4 | 6 |
 
 Keep a short log (date, what changed, result) so changes can be tied to movements in the data.
+
+## AI search endpoints (live after the roadmap PR)
+
+- [ ] `https://pipelinesync.net/robots.txt` shows the AI crawler policy.
+- [ ] `https://pipelinesync.net/llms.txt` loads and lists the services and guides.
+- [ ] `https://pipelinesync.net/676a63992c44e8f67c923e3c87a623b6.txt` returns the IndexNow key.
+- [ ] Netlify deploy log for the production deploy shows `IndexNow: submitted N URL(s), HTTP 200` (or 202).
+- [ ] In Bing Webmaster Tools → IndexNow, submitted URLs appear within a day.

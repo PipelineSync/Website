@@ -1,7 +1,10 @@
 # SEO documentation
 
+**Start with [roadmap.md](roadmap.md)**: the adopted plan and its status. Full plan: [PipelineSync-SEO-AI-Search-Plan.pdf](PipelineSync-SEO-AI-Search-Plan.pdf).
+
 | File | What it is | Status |
 |---|---|---|
+| [roadmap.md](roadmap.md) | 12-month SEO and AI search roadmap with status | Active |
 | [audit-baseline.md](audit-baseline.md) | Audit of the site after the redesign, prioritised findings, Lighthouse before/after | Done |
 | [keyword-map.md](keyword-map.md) | Primary/secondary keywords per URL, titles, descriptions and H1s | Applied |
 | [content-plan.md](content-plan.md) | Topic clusters, 24 article ideas, briefs, six service pages (built), calendar, refresh plan | Service pages built; articles pending |
