@@ -1,0 +1,130 @@
+---
+layout: layouts/base.njk
+pageType: service
+---
+{#- Service detail page. Content comes from front matter; the page body (if any) is inserted after "What it involves". -#}
+<main id="main-content" tabindex="-1">
+<section class="hero hero--page service-hero" aria-labelledby="hero-title">
+  <div class="container">
+    {% set parentName = "Solutions" %}{% set parentUrl = "/solutions/" %}
+    {% include "partials/breadcrumb.njk" %}
+    <span class="eyebrow reveal"><span class="eyebrow__dot"></span>{{ eyebrow }}</span>
+    <h1 class="hero__title" id="hero-title" data-split>{{ heading | safe }}</h1>
+    <p class="hero__lead reveal" style="--d:3">{{ lead }}</p>
+    <div class="btn-row reveal" style="--d:4">
+      <a href="#contact" class="btn btn-primary btn-lg js-open-hs-form">{{ ctaLabel or "Book a free consultation" }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="#how-it-works" class="btn btn-ghost btn-lg">How it works</a>
+    </div>
+    <ul class="service-facts reveal" style="--d:5" role="list">
+      {%- for fact in facts %}
+      <li><span>{{ fact.label }}</span><b>{{ fact.value }}</b></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--line" aria-labelledby="fit-heading">
+  <div class="container split">
+    <div class="split__sticky reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Who it is for</span>
+      <h2 id="fit-heading">{{ fitHeading }}</h2>
+      {%- for p in fit %}
+      <p>{{ p | safe }}</p>
+      {%- endfor %}
+    </div>
+    <div class="grid grid-2" data-stagger>
+      {%- for item in problems %}
+      <article class="card">
+        <div class="card-icon{% if loop.index0 % 4 == 1 %} card-icon--blue{% elif loop.index0 % 4 == 2 %} card-icon--cyan{% elif loop.index0 % 4 == 3 %} card-icon--green{% endif %}"><i class="fa-solid {{ item.icon }}" aria-hidden="true"></i></div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="involves-heading">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div class="reveal">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>What it involves</span>
+        <h2 id="involves-heading">{{ involvesHeading }}</h2>
+      </div>
+      <p class="reveal" style="--d:1">{{ involves }}</p>
+    </div>
+    <div class="deliverables reveal">
+      <h3>Typically includes</h3>
+      <ul role="list">
+        {%- for d in deliverables %}
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i>{{ d }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{{ content | safe }}
+
+<section class="section section--line" id="how-it-works" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>How it works</span>
+      <h2 id="process-heading">{{ processHeading }}</h2>
+      <p>{{ processLead }}</p>
+    </div>
+    <ol class="timeline{% if steps | length == 3 %} timeline--3{% endif %}" role="list">
+      {%- for step in steps %}
+      <li class="step reveal"{% if not loop.first %} style="--d:{{ loop.index0 }}"{% endif %}><div class="step__num">{{ "0" + loop.index }}</div><h3>{{ step.title }}</h3><p>{{ step.text }}</p></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="outcome-heading">
+  <div class="container">
+    <div class="outcome reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>What changes</span>
+      <h2 id="outcome-heading">{{ outcomeHeading }}</h2>
+      <p>{{ outcome }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" aria-labelledby="service-faq-heading">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Questions</span>
+      <h2 id="service-faq-heading">{{ faqHeading or "Common questions" }}</h2>
+    </div>
+    <div class="faq" data-stagger>
+      {%- for item in faqs %}
+      <details><summary><h3>{{ item.q }}</h3><span class="faq__icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></summary><div class="faq__body">{{ item.a | safe }}</div></details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Keep reading</span>
+      <h2 id="related-heading">Related resources and services</h2>
+    </div>
+    <div class="grid grid-3" data-stagger>
+      {%- for r in related %}
+      <article class="card card--link" data-card-url="{{ r.url }}">
+        <span class="tag {{ 'tag--blue' if r.kind == 'Service' else 'tag--brand' }}" style="margin-bottom:14px;width:fit-content">{{ r.kind }}</span>
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.text }}</p>
+        <a href="{{ r.url }}" class="link-arrow">{{ r.link or "Read more" }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% set ctaTitle = ctaTitle or "Tell us what is broken" %}
+{% set ctaText = ctaText or "A free 30-minute call. Bring your portal, your reporting problem, or just the thing that keeps failing. You will get a straight answer on what is causing it and what fixing it involves, whether or not you hire us." %}
+{% include 'partials/cta.njk' %}
+</main>

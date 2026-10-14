@@ -1,0 +1,85 @@
+---
+layout: layouts/service.njk
+title: "HubSpot Implementation Services & Onboarding | PipelineSync"
+description: "HubSpot implementation from a Solutions Partner: data model, pipelines, lifecycle stages, permissions, automation, and dashboards built around how you sell."
+canonical: "https://pipelinesync.net/solutions/hubspot-implementation/"
+ogType: "website"
+breadcrumbName: "HubSpot Implementation"
+serviceId: "implementation"
+eyebrow: "HubSpot implementation services"
+heading: "HubSpot implementation and <span class=\"gradient-text\">onboarding</span>"
+lead: "Set up the portal correctly the first time: objects, pipelines, lifecycle stages, permissions, automation, and reporting designed around your sales motion instead of HubSpot’s defaults."
+facts:
+  - { label: "Typical timeline", value: "2–4 weeks" }
+  - { label: "Engagement", value: "Fixed-scope project" }
+  - { label: "Includes", value: "Schema, permissions, training" }
+fitHeading: "New portals, and portals that were never architected"
+fit:
+  - "Implementation is for teams starting on HubSpot, and for teams whose portal was set up quickly, grew by accident, and never got a proper design. Most of our clients are B2B companies with roughly 10 to 200 people, usually on HubSpot Professional or Enterprise."
+  - "We also take on first-time implementations for smaller founder-led businesses that want the structure right from the start, before bad habits and duplicate fields set in."
+problems:
+  - { icon: "fa-diagram-project", title: "Reps skip stages", text: "The pipeline was copied from HubSpot’s defaults, so it does not match how deals actually close. Reps work around it and the forecast gets discounted." }
+  - { icon: "fa-table", title: "Data is half there", text: "Fields were created as people needed them. Nobody knows which property is the real one, so segmentation and reporting rely on guesswork." }
+  - { icon: "fa-layer-group", title: "Paying for features nobody uses", text: "Licenses for Professional or Enterprise, running at the level of a basic contact database." }
+  - { icon: "fa-chart-line", title: "Every report gets checked in a spreadsheet", text: "Leadership exports the numbers before believing them, because the structure underneath was never designed for reporting." }
+involvesHeading: "The full structure, designed before it is built"
+involves: "We design and build the full structure: objects and custom properties, deal pipelines and stages, lifecycle stages and lead statuses, teams and permissions, forms and lists, workflows and sequences, then the dashboards on top. Nothing is configured until you have approved the design."
+deliverables:
+  - "Portal audit"
+  - "Data model design: objects, associations, and a property catalogue"
+  - "Pipeline and lifecycle architecture with exit criteria per stage"
+  - "Permission structure by role"
+  - "Core automation: routing, task creation, data hygiene"
+  - "Dashboard build for sales, marketing, and leadership"
+  - "SOPs and data model documentation"
+  - "Live team training"
+processHeading: "Audit, architect, build, hand over"
+processLead: "Every implementation runs the same four stages, with defined milestones so you always know what is finished."
+steps:
+  - { title: "Audit", text: "We go through your current setup, data, integrations, and sales process, and write down what works, what is broken, and what is costing you time." }
+  - { title: "Architecture", text: "We design the data model, pipelines, lifecycle stages, permissions, and integration map before touching anything, and walk you through it for approval." }
+  - { title: "Build", text: "We build and test in a sandbox first, then deploy: workflows, custom code where needed, integrations, dashboards, and safeguards." }
+  - { title: "Handover", text: "Live training and written SOPs so your team owns the system. Documentation covers the data model, automation logic, integration map, and permissions." }
+outcomeHeading: "A CRM your team actually uses"
+outcome: "Your reps work in a CRM that matches how they actually sell, so they use it. Your marketing team can segment on data that is reliably there. Your leadership gets reporting that does not need a spreadsheet check first."
+faqs:
+  - { q: "How long does a HubSpot implementation take?", a: "Audit and architecture typically take one to two weeks. The build runs from two to six weeks depending on data volume, number of integrations, and how many hubs are involved. Training and documentation happen alongside the final build stage. A focused implementation is usually two to four weeks." }
+  - { q: "Do you work on existing portals or only new ones?", a: "Both. Many implementations are rebuilds of a portal that was set up quickly and never properly architected. In that case the audit stage decides what to keep, what to migrate into a new structure, and what to retire." }
+  - { q: "What do we get at handover?", a: "SOPs, data model documentation, a permission matrix, and live training sessions. Everything is documented well enough that your team can run, change, and explain the system without us." }
+  - { q: "Do you train the team?", a: "Yes. Live training is part of every implementation, and the written SOPs cover the daily workflows so new hires can be onboarded without us." }
+  - { q: "What happens after go-live?", a: "If you want ongoing help, we offer optimization sprints and <a href=\"/solutions/hubspot-admin/\">ongoing HubSpot administration</a> for teams without an internal CRM owner. If you do not, you will not need us." }
+related:
+  - { kind: "Guide", title: "HubSpot CRM Architecture Blueprint", text: "How to structure objects, pipelines, lifecycle stages, and permissions so the portal still works when you have ten times the data.", url: "/resources/hubspot-crm-architecture-blueprint/", link: "Read guide" }
+  - { kind: "Article", title: "Why Teams Do Not Adopt HubSpot", text: "Adoption is usually an architecture problem, not a training problem.", url: "/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/", link: "Read article" }
+  - { kind: "Service", title: "CRM migration to HubSpot", text: "Coming from Salesforce, Pipedrive, Zoho, or spreadsheets? Implementation and migration usually run together.", url: "/solutions/hubspot-migration/", link: "See migration" }
+---
+<section class="section section--line" aria-labelledby="design-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>How we design it</span>
+      <h2 id="design-heading">Three decisions that make or break an implementation</h2>
+    </div>
+    <div class="detail-grid" data-stagger>
+      <article class="card detail">
+        <h3>Start with the revenue motion</h3>
+        <p>Before creating properties, we map how a person moves from first touch to customer and expansion, and separate the business questions you need answered from the tools that answer them. That keeps the portal from becoming a mirror of every historical process.</p>
+        <ul><li>Lifecycle documented from first touch to customer</li><li>Objects defined for people, companies, deals, tickets, and custom entities</li><li>Written rules for what moves a record from one stage to the next</li></ul>
+      </article>
+      <article class="card detail">
+        <h3>Objects, pipelines, and stages together</h3>
+        <p>Objects describe what you manage, pipelines describe the process, and stages describe progress through it. We keep those layers distinct. A deal stage represents a verifiable buyer or delivery milestone, not an internal task such as “send proposal”.</p>
+        <ul><li>One source of truth for each business concept</li><li>Short, observable stage names tied to exit criteria</li><li>Separate pipelines only when process, ownership, or reporting genuinely differ</li></ul>
+      </article>
+      <article class="card detail">
+        <h3>Permissions and governance are part of the build</h3>
+        <p>A scalable portal makes the safe path the easy path. We create permission sets around roles, decide who can edit sensitive properties, and publish naming conventions before teams start creating their own fields and workflows.</p>
+        <ul><li>Property catalogue with owner, definition, and allowed values</li><li>Rules for required fields, sensitive data, and export access</li><li>A regular review of unused properties, workflows, and views</li></ul>
+      </article>
+      <article class="card detail">
+        <h3>Reporting is designed, not bolted on</h3>
+        <p>We start from the decisions leadership needs to make, then make sure the data needed for those dashboards is captured at the right moment by the right person. Dashboards come last because they depend on everything underneath them being trustworthy.</p>
+        <ul><li>Sales, marketing, and leadership dashboards</li><li>Required properties at each stage so reports are complete</li><li>Definitions written down so everyone reads numbers the same way</li></ul>
+      </article>
+    </div>
+  </div>
+</section>

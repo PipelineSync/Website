@@ -27,7 +27,8 @@ function gitDates(inputPath) {
 const isoDate = (value) => (value ? new Date(value).toISOString().slice(0, 10) : null);
 function pageDates(data) {
   const git = gitDates(data.page.inputPath);
-  const modified = data.dateModified || isoDate(git.last) || data.lastmod;
+  // New, uncommitted pages fall back to the build date.
+  const modified = data.dateModified || isoDate(git.last) || data.lastmod || isoDate(Date.now());
   const published = data.datePublished || isoDate(git.first) || modified;
   return { published, modified };
 }
@@ -106,6 +107,7 @@ function buildGraph(data) {
   if (data.page.url !== '/') {
     const crumbs = [{ name: 'Home', url: `${site.url}/` }];
     if (isResource) crumbs.push({ name: 'Resources', url: `${site.url}/resources/` });
+    if (type === 'service') crumbs.push({ name: 'Solutions', url: `${site.url}/solutions/` });
     if (data.page.url.startsWith('/about/privacy-policy/')) crumbs.push({ name: 'About', url: `${site.url}/about/` });
     crumbs.push({ name: data.breadcrumbName || plainTitle(data.title), url });
     graph.push({
@@ -122,10 +124,35 @@ function buildGraph(data) {
       name: s.name,
       serviceType: s.serviceType,
       description: s.description,
-      url: `${site.url}/solutions/#${s.id}`,
+      url: s.page ? abs(s.page) : `${site.url}/solutions/#${s.id}`,
       provider: org,
       areaServed: site.areaServed.map((c) => ({ '@type': 'Country', name: c.name }))
     }));
+  }
+  if (type === 'service') {
+    const s = services.find((x) => x.id === data.serviceId);
+    if (s) {
+      graph.push({
+        '@type': 'Service',
+        '@id': `${site.url}/solutions/#${s.id}`,
+        name: s.name,
+        serviceType: s.serviceType,
+        description: s.description,
+        url,
+        mainEntityOfPage: { '@id': `${url}#webpage` },
+        provider: org,
+        areaServed: site.areaServed.map((c) => ({ '@type': 'Country', name: c.name }))
+      });
+      webPage.about = { '@id': `${site.url}/solutions/#${s.id}` };
+    }
+    if (Array.isArray(data.faqs) && data.faqs.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        isPartOf: { '@id': `${url}#webpage` },
+        mainEntity: data.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') } }))
+      });
+    }
   }
   if (type === 'integrations') {
     graph.push({ '@type': 'Service', '@id': `${site.url}/solutions/#custom-integrations`, name: 'HubSpot integration services', serviceType: 'HubSpot integration development', description: data.description, url, provider: org, areaServed: site.areaServed.map((c) => ({ '@type': 'Country', name: c.name })) });

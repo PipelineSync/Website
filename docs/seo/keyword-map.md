@@ -1,6 +1,6 @@
 # Keyword map
 
-> **Status: proposal for owner approval.** Nothing in the "Proposed" columns is live yet. Approve, edit, or reject per row; the approved titles and descriptions then go into each page's front matter and the social cards are regenerated (`npm run og-images`).
+> **Status: approved and applied** (titles, descriptions, H1 changes, and the six service pages). The "Current" values below are the pre-SEO originals, kept for reference. Home H1: the slogan stays; because the owner asked for no tag above the hero headline, the keyword "HubSpot consultant" is in the opening sentence instead of an eyebrow. To change wording later, edit the page front matter and run `npm run build && npm run og-images`.
 
 Focus: HubSpot services for B2B buyers, US first, then Australia, Canada, UK (expressed through copy and `areaServed`, not per-country pages). Keyword priorities are qualitative; confirm volumes and difficulty in Google Search Console (after 4–6 weeks of data), Ahrefs, or Semrush before committing content budget.
 
@@ -215,7 +215,7 @@ Focus: HubSpot services for B2B buyers, US first, then Australia, Canada, UK (ex
 - **Current H1:** Lead Routing Decision Tree
 - **H1 proposal:** Keep
 
-## Proposed new pages (separate approval; see `content-plan.md` §4)
+## New service pages (live; briefs in `content-plan.md` §4)
 
 | URL | Primary keyword | Why |
 |---|---|---|

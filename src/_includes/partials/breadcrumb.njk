@@ -1,7 +1,7 @@
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
     <li><a href="/">Home</a></li>
-    <li><a href="/resources/">Resources</a></li>
+    <li><a href="{{ parentUrl or '/resources/' }}">{{ parentName or 'Resources' }}</a></li>
     <li><span aria-current="page">{{ breadcrumbName }}</span></li>
   </ol>
 </nav>

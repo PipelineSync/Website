@@ -551,6 +551,30 @@ body.is-dragging, body.is-dragging * { cursor: grabbing !important; }
 .service dd { color: var(--text-2); font-size: 15px; line-height: 1.7; }
 .service-index { display: inline-block; font: 500 13px/1 var(--mono); color: var(--text-3); margin-bottom: 18px; }
 
+/* ---------- Service detail pages ---------- */
+.service-hero .breadcrumb { margin-bottom: 26px; }
+.service-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; list-style: none; }
+.service-facts li { display: grid; gap: 4px; min-width: 150px; padding: 14px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); }
+.service-facts span { font: 500 11px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
+.service-facts b { font-size: 16px; font-weight: 600; color: var(--text); }
+.deliverables { padding: clamp(24px, 3vw, 36px); border-radius: var(--radius-lg); border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01)); }
+.deliverables h3 { font: 500 12px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--brand-2); margin-bottom: 18px; }
+.deliverables ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; list-style: none; }
+.deliverables li { display: flex; gap: 12px; align-items: flex-start; color: var(--text); font-size: 15.5px; line-height: 1.55; }
+.deliverables li i { flex: 0 0 22px; height: 22px; display: grid; place-items: center; margin-top: 1px; border-radius: 7px; background: rgba(52, 211, 153, .12); border: 1px solid rgba(52, 211, 153, .3); color: var(--green); font-size: 11px; }
+.detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.detail { padding: clamp(24px, 3vw, 34px); }
+.detail h3 { font-size: 21px; margin-bottom: 12px; }
+.detail p + p { margin-top: 12px; }
+.detail ul { margin: 14px 0 0 20px; color: var(--text-2); font-size: 15px; line-height: 1.7; }
+.detail li + li { margin-top: 6px; }
+.detail li::marker { color: var(--brand); }
+.outcome { max-width: 880px; margin: 0 auto; text-align: center; padding: clamp(32px, 5vw, 56px); border-radius: 28px; border: 1px solid var(--line-2); background: radial-gradient(ellipse 70% 120% at 50% 0%, rgba(91, 140, 255, .14), transparent 60%), var(--surface); }
+.outcome .eyebrow { margin: 0 auto; }
+.outcome h2 { font-size: clamp(28px, 3.6vw, 40px); margin: 18px 0 16px; }
+.outcome p { color: var(--text-2); font-size: 18px; line-height: 1.75; }
+@media (max-width: 760px) { .deliverables ul, .detail-grid { grid-template-columns: 1fr; } }
+
 /* ---------- CTA band ---------- */
 .cta-band { position: relative; isolation: isolate; overflow: hidden; padding: clamp(40px, 6vw, 72px); border-radius: 32px; border: 1px solid var(--line-2); background: radial-gradient(ellipse 80% 120% at 50% 120%, rgba(255, 122, 26, .28), transparent 60%), radial-gradient(ellipse 60% 80% at 100% 0%, rgba(91, 140, 255, .22), transparent 60%), var(--bg-elev); text-align: center; }
 .cta-band::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(to right, rgba(148, 163, 184, .07) 1px, transparent 1px), linear-gradient(to bottom, rgba(148, 163, 184, .07) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(ellipse at center, #000, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at center, #000, transparent 70%); }

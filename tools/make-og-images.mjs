@@ -36,7 +36,7 @@ const pages = walk(site).filter((f) => f.endsWith('.html')).map((file) => {
   const kind = html.match(/"articleSection":"([^"]+)"/)?.[1]
     || ({ '/': 'HubSpot Solutions Partner', '/solutions/': 'Solutions', '/integrations/': 'Integrations', '/resources/': 'Resources', '/about/': 'About us' })[
       '/' + path.relative(site, path.dirname(file)).replace(/\\/g, '/') + (path.dirname(file) === site ? '' : '/')
-    ] || 'PipelineSync';
+    ] || (/[\\/]solutions[\\/]/.test(file) ? 'Solutions' : 'PipelineSync');
   return { title, kind, out: path.join(outDir, path.basename(og)) };
 }).filter(Boolean);
 
