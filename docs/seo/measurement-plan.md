@@ -24,6 +24,7 @@
 | `click_whatsapp` | `wa.me` link clicked | `page_path` | Yes, secondary |
 | `click_email` | `mailto:` link clicked | `page_path` | Yes, secondary |
 | `resource_open` | Resource card or its link clicked on `/resources/` | `resource_url` | No |
+| `ai_referral` | Landing from an AI assistant (referrer chatgpt.com, perplexity.ai, copilot.microsoft.com, gemini.google.com, claude.ai, …, or a matching `utm_source`), once per page view | `ai_source`, `landing_page` | No (report) |
 | `pipeline_demo_interact` | First interaction with the home hero Revenue Pipeline (once per page view) | `page_path` | No |
 
 Register `cta_text`, `resource_url`, `method` as event-scoped custom dimensions in GA4 (Admin → Custom definitions) to report on them.
@@ -46,3 +47,9 @@ document.dispatchEvent(new CustomEvent('ps:track', { detail: { name: 'event_name
 
 - Open the site with `?gtm_debug=x` or GA4 DebugView: `page_view` on load, `open_consultation` on button click, `generate_lead` after a test submission (delete the test contact in HubSpot afterwards).
 - From a UK/EU location (or a VPN), confirm no `_ga` cookie is set before consent and that it appears after accepting analytics in the HubSpot banner.
+
+## AI assistant traffic
+
+1. **Channel group (GA4 Admin → Data display → Channel groups → Create new):** copy the default group and add a channel "AI assistants" **above** "Referral" with condition *Source matches regex* `chatgpt\.com|chat\.openai\.com|perplexity\.ai|copilot\.microsoft\.com|gemini\.google\.com|claude\.ai|you\.com|deepseek\.com`. Use it in Traffic acquisition reports.
+2. **`ai_referral` event:** sent by `assets/js/analytics.js` with `ai_source`; register `ai_source` as an event-scoped custom dimension.
+3. **Self-reported source:** in HubSpot (Marketing → Forms → the consultation form `925b2a78-…`), add a dropdown "How did you hear about us?" with options: Google search, AI assistant (ChatGPT, Perplexity, etc.), LinkedIn, HubSpot Solutions Directory, Upwork, Referral, Other. Many AI-influenced visits arrive later as direct or branded search, so this field captures what analytics cannot.

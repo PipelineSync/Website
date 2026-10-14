@@ -31,3 +31,10 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Ping IndexNow with recently changed URLs after each production deploy.
+[[plugins]]
+  package = "/netlify/plugins/indexnow"
+  [plugins.inputs]
+    key = "676a63992c44e8f67c923e3c87a623b6"
+    days = 2

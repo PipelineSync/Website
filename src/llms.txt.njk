@@ -1,0 +1,30 @@
+---
+permalink: llms.txt
+eleventyExcludeFromCollections: true
+sitemap: false
+---
+# {{ site.name }}
+
+> {{ site.description }} Based in {{ site.address.addressLocality }}, {{ site.address.addressRegion }}, Philippines, working US business hours for clients in {% for c in site.areaServed %}{{ c.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+
+Key facts:
+- Founded {{ site.foundingDate }}; team of {{ site.employees }}: founder {{ site.founder.name }} ({{ site.founder.jobTitle }}), five HubSpot implementation specialists, two support staff. No subcontracted builds.
+- 12 HubSpot certifications; 10 five-star client reviews across Upwork and the HubSpot Solutions Directory.
+- Replies within 24 hours on business days. Free 30-minute consultation; projects are quoted after the call.
+- Contact: {{ site.email }} · {{ site.telephone }} · {{ site.url }}/
+
+## Services
+
+{% for s in services %}- [{{ s.name | safe }}]({{ site.url }}{{ s.page or ('/solutions/#' + s.id) }}): {{ s.description | safe }}
+{% endfor %}- [HubSpot integration services]({{ site.url }}/integrations/): Native and custom API integrations with defined field ownership, error alerts, and rollback.
+
+## Guides and templates
+
+{% for p in collections.resource | sort(attribute='url') %}- [{{ p.data.title | plainTitle | safe }}]({{ site.url }}{{ p.url }}): {{ p.data.description | safe }}
+{% endfor %}
+## Company
+
+- [About PipelineSync]({{ site.url }}/about/): Team, story, credentials, coverage and hours.
+- [HubSpot Solutions Directory listing]({{ site.hubspotDirectoryUrl }})
+- [Founder on LinkedIn]({{ site.founder.sameAs[0] }})
+- [Company on LinkedIn](https://www.linkedin.com/company/pipelinesync)

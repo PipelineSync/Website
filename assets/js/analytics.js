@@ -41,6 +41,16 @@
   });
   window.addEventListener('hs-form-event:on-submission:success', function () { track('generate_lead', { method: 'hubspot_form' }); });
 
+  /* Visits that arrive from an AI assistant (complements the GA4 "AI assistants" channel group). */
+  var AI_SOURCES = { 'chatgpt.com': 'chatgpt', 'chat.openai.com': 'chatgpt', 'perplexity.ai': 'perplexity', 'www.perplexity.ai': 'perplexity',
+    'copilot.microsoft.com': 'copilot', 'gemini.google.com': 'gemini', 'claude.ai': 'claude', 'you.com': 'you', 'chat.deepseek.com': 'deepseek' };
+  try {
+    var refHost = document.referrer ? new URL(document.referrer).hostname : '';
+    var utm = new URLSearchParams(location.search).get('utm_source') || '';
+    var ai = AI_SOURCES[refHost] || (/chatgpt|openai|perplexity|copilot|gemini|claude/i.test(utm) ? utm.toLowerCase() : '');
+    if (ai) track('ai_referral', { ai_source: ai, landing_page: location.pathname }, true);
+  } catch (err) { /* ignore malformed referrers */ }
+
   /* Custom events raised by page scripts, e.g. the hero pipeline demo. */
   document.addEventListener('ps:track', function (e) { if (e.detail && e.detail.name) track(e.detail.name, e.detail.params, e.detail.once); });
 })();

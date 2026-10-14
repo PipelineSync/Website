@@ -12,7 +12,7 @@ CLIENT_LOGOS = ['ESA-1', 'BH-Labs-1', 'CW-Systems-1', 'Independent-Energy-1', 'I
                 'modern-engineering-1', 'private-tax-solutions-1', 'S8T-1', 'broker-capital-1', 'crypto-consulting-1', 'guitierrez-1']
 # name -> (max width, max height). Shown sizes: marquee logos 44px tall, partner badge 64px tall,
 # integration logos 24-30px. The founder photo is already sized for its ~420px slot.
-LIMITS = {**{n: (480, 132) for n in CLIENT_LOGOS}, 'HubSpot-Gold-Badge': (300, 200)}
+LIMITS = {**{n: (480, 132) for n in CLIENT_LOGOS}, 'HubSpot-Gold-Badge': (300, 240)}  # source trimmed to the badge (no side margins)
 LIMITS.update({p.stem: (128, 128) for p in root.glob('integration-logo-*.png')})
 
 for stem, (mw, mh) in LIMITS.items():

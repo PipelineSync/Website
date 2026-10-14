@@ -1,0 +1,7 @@
+name: indexnow
+inputs:
+  - name: key
+    description: IndexNow key; the file /<key>.txt must be published with the site.
+  - name: days
+    description: Submit URLs whose sitemap lastmod is within this many days.
+    default: 2
