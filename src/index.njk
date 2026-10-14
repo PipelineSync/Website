@@ -77,72 +77,7 @@ pageJs: "pages/home.js"
             <div class="console__url">Revenue Pipeline</div>
             <span class="console__live" id="boardMode">Live</span>
           </div>
-          <div class="console__grid">
-            <aside class="console__side" aria-hidden="true">
-              <div class="console__side-item"><i class="fa-solid fa-house"></i>Overview</div>
-              <div class="console__side-item is-active"><i class="fa-solid fa-table-columns"></i>Deal pipeline</div>
-              <div class="console__side-item"><i class="fa-solid fa-address-book"></i>Contacts</div>
-              <div class="console__side-item"><i class="fa-solid fa-diagram-project"></i>Workflows</div>
-              <div class="console__side-item"><i class="fa-solid fa-chart-pie"></i>Reports</div>
-              <div class="console__side-foot"><strong>Data health</strong>98% records complete<div class="meter" style="margin-top:10px"><span style="--w:98%"></span></div></div>
-            </aside>
-            <div class="console__main">
-              <div class="kpis" aria-hidden="true">
-                <div class="kpi"><div class="kpi__label">Won this quarter</div><div class="kpi__value" id="kpiWon">$486k</div><div class="kpi__delta">▲ 18.2%</div></div>
-                <div class="kpi"><div class="kpi__label">Win rate</div><div class="kpi__value">32.4%</div><div class="kpi__delta">▲ 6.1 pts</div></div>
-                <div class="kpi"><div class="kpi__label">Speed to lead</div><div class="kpi__value">4m 12s</div><div class="kpi__delta">▼ 71%</div></div>
-              </div>
-              <div class="chart" aria-hidden="true">
-                <span class="chart__label">Pipeline created · 12 weeks</span>
-                <svg viewBox="0 0 600 110" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="chartStroke" x1="0" x2="1"><stop offset="0" stop-color="#ffab5e"/><stop offset=".5" stop-color="#ff7a1a"/><stop offset="1" stop-color="#5b8cff"/></linearGradient>
-                    <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff7a1a" stop-opacity=".28"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></linearGradient>
-                  </defs>
-                  <path class="chart__area" d="M0 92 C40 88 60 80 100 82 S160 70 200 66 S260 74 300 58 S360 44 400 48 S460 30 500 28 S560 14 600 10 L600 110 L0 110Z"/>
-                  <path class="chart__line" d="M0 92 C40 88 60 80 100 82 S160 70 200 66 S260 74 300 58 S360 44 400 48 S460 30 500 28 S560 14 600 10"/>
-                </svg>
-              </div>
-              <div class="board__bar">
-                <p class="board__hint"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Drag deals between stages.<span class="board__kbd"> Keyboard: focus a deal, then use ← →.</span></p>
-                <button class="board__reset" type="button" id="resetBoard" hidden><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset</button>
-              </div>
-              <div class="board" id="heroBoard">
-                <div class="board__col" data-stage="0" role="group" aria-label="Qualified">
-                  <div class="board__head"><span>Qualified</span><b>2</b></div>
-                  <div class="board__sum">$120k</div>
-                  <div class="board__list">
-                    <div class="deal" data-value="48" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Northwind</div><div class="deal__meta"><span>$48k</span><span>AR</span></div></div>
-                    <div class="deal" data-value="72" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Vertex Mfg</div><div class="deal__meta"><span>$72k</span><span>JD</span></div></div>
-                    <button class="board__add" type="button" id="addDeal"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add deal</button>
-                  </div>
-                </div>
-                <div class="board__col" data-stage="1" role="group" aria-label="Proposal">
-                  <div class="board__head"><span>Proposal</span><b>2</b></div>
-                  <div class="board__sum">$160k</div>
-                  <div class="board__list">
-                    <div class="deal" data-value="96" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Halcyon</div><div class="deal__meta"><span>$96k</span><span>MK</span></div></div>
-                    <div class="deal" data-value="64" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Atlas Freight</div><div class="deal__meta"><span>$64k</span><span>AR</span></div></div>
-                  </div>
-                </div>
-                <div class="board__col" data-stage="2" role="group" aria-label="Negotiation">
-                  <div class="board__head"><span>Negotiation</span><b>1</b></div>
-                  <div class="board__sum">$120k</div>
-                  <div class="board__list">
-                    <div class="deal" data-value="120" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Blue Harbor</div><div class="deal__meta"><span>$120k</span><span>JD</span></div></div>
-                  </div>
-                </div>
-                <div class="board__col" data-stage="3" role="group" aria-label="Closed won">
-                  <div class="board__head"><span>Closed won</span><b>1</b></div>
-                  <div class="board__sum">$132k</div>
-                  <div class="board__list">
-                    <div class="deal is-won" data-value="132" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Ridgeline</div><div class="deal__meta"><span>$132k</span><span>JD</span></div></div>
-                  </div>
-                </div>
-              </div>
-              <p class="sr-only" id="boardStatus" role="status" aria-live="polite"></p>
-            </div>
-          </div>
+          {% include "partials/hero-console.njk" %}
         </div>
       </div>
     </div>
