@@ -38,7 +38,8 @@ All JSON-LD is generated at build time by `buildGraph()` in `.eleventy.js` and o
 
 ## Owner inputs that improve the graph
 
-- `site.json` → `hubspotDirectoryUrl` (adds to `sameAs`), `founder.sameAs` (Allen's LinkedIn), any Clutch/G2 profile URLs (append to `sameAs`).
+- Done: `hubspotDirectoryUrl` (public directory URL, confirm it opens logged out) and `founder.sameAs` (Allen's LinkedIn).
+- Still useful: any Clutch/G2 profile URLs (append to `sameAs`).
 
 ## Validation
 

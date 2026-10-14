@@ -9,29 +9,85 @@
   "email": "allentrinidad@pipelinesync.net",
   "logo": "/assets/img/brand/pipelinesync-logo-512.png",
   "areaServed": [
-    { "name": "United States", "code": "US" },
-    { "name": "Australia", "code": "AU" },
-    { "name": "Canada", "code": "CA" },
-    { "name": "United Kingdom", "code": "GB" }
+    {
+      "name": "United States",
+      "code": "US"
+    },
+    {
+      "name": "Australia",
+      "code": "AU"
+    },
+    {
+      "name": "Canada",
+      "code": "CA"
+    },
+    {
+      "name": "United Kingdom",
+      "code": "GB"
+    }
   ],
-  "knowsAbout": ["HubSpot", "HubSpot CRM implementation", "CRM migration", "CRM data quality", "Revenue operations", "Lead routing", "Marketing attribution", "HubSpot integrations"],
+  "knowsAbout": [
+    "HubSpot",
+    "HubSpot CRM implementation",
+    "CRM migration",
+    "CRM data quality",
+    "Revenue operations",
+    "Lead routing",
+    "Marketing attribution",
+    "HubSpot integrations"
+  ],
   "sameAs": [
     "https://www.linkedin.com/company/pipelinesync",
     "https://www.upwork.com/agencies/pipelinesync/",
     "https://www.instagram.com/pipelinesync",
     "https://www.facebook.com/share/19rqqHyX5A/"
   ],
-  "hubspotDirectoryUrl": "",
+  "hubspotDirectoryUrl": "https://ecosystem.hubspot.com/marketplace/solutions/pipelinesync",
   "founder": {
     "name": "Allen Trinidad",
     "jobTitle": "Founder, HubSpot Solutions Architect",
     "image": "/assets/img/allen-headshot.webp",
-    "sameAs": []
+    "sameAs": [
+      "https://www.linkedin.com/in/allen-joshua-trinidad-b46622259/"
+    ]
   },
   "analytics": {
-    "ga4Id": "",
+    "ga4Id": "G-ZYR7TRJ6T8",
     "googleSiteVerification": "",
     "bingSiteVerification": "",
-    "consentRegions": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
+    "consentRegions": [
+      "AT",
+      "BE",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "DE",
+      "GR",
+      "HU",
+      "IE",
+      "IT",
+      "LV",
+      "LT",
+      "LU",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "IS",
+      "LI",
+      "NO",
+      "GB",
+      "CH"
+    ]
   }
 }

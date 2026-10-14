@@ -8,7 +8,7 @@ Menu names in Google, Bing, HubSpot and Netlify change often. If a path below do
 
 | Key | Value | Where it comes from |
 |---|---|---|
-| `analytics.ga4Id` | `G-XXXXXXXXXX` `TODO(owner)` | GA4 → Admin → Data streams → web stream → Measurement ID |
+| `analytics.ga4Id` | `G-ZYR7TRJ6T8` (set) | GA4 → Admin → Data streams → web stream → Measurement ID |
 | `analytics.googleSiteVerification` | only if not using DNS `TODO(owner)` | GSC → URL-prefix property → HTML tag method (the `content` value only) |
 | `analytics.bingSiteVerification` | only if not importing from GSC `TODO(owner)` | Bing Webmaster Tools → meta tag method |
 

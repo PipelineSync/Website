@@ -52,13 +52,6 @@
   }
   window.PipelineSync = { onReady: onReady, reduceMotion: reduceMotion };
 
-  /* ---------- Contact email (assembled at runtime to deter scrapers) ---------- */
-  var email = ['allentrinidad', '@', 'pipelinesync', '.net'].join('');
-  $$('[data-contact-email]').forEach(function (link) {
-    link.href = 'mailto:' + email;
-    if (!link.children.length) link.textContent = email;
-  });
-
   /* ---------- Header: scrolled state + sliding nav pill ---------- */
   var header = $('#siteHeader');
   function onScroll() {

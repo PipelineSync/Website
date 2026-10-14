@@ -2,6 +2,8 @@
 
 ## Setup
 
+> **Status:** GA4 measurement ID `G-ZYR7TRJ6T8` is set and the HubSpot cookie banner is configured for EU visitors (owner, Oct 2026). Search Console verification is pending.
+
 - **IDs** live in `src/_data/site.json` under `analytics`: `ga4Id`, `googleSiteVerification`, `bingSiteVerification`. Empty = the tag is not output at all. Prefer DNS (TXT) verification for Search Console; the meta tag is a fallback.
 - **GA4** loads from `base.njk` only when `ga4Id` is set, with **Consent Mode v2** defaults:
   - Advertising storage, ad user data and ad personalization: `denied` everywhere (the site runs no ads).

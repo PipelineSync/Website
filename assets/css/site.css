@@ -149,6 +149,8 @@ em { font-style: italic; }
 .btn-block { width: 100%; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn-row--center { justify-content: center; }
+.text-link { color: var(--brand-2); text-decoration: underline; text-decoration-color: rgba(255, 171, 94, .4); text-underline-offset: 3px; transition: text-decoration-color .2s; }
+.text-link:hover { text-decoration-color: currentColor; }
 .link-arrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--brand-2); }
 .link-arrow i { font-size: 12px; transition: transform .3s var(--ease); }
 .link-arrow:hover i, .card:hover .link-arrow i { transform: translateX(4px); }
