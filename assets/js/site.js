@@ -209,17 +209,6 @@
     });
   }
 
-  /* ---------- Logo marquee pause control ---------- */
-  $$('[data-marquee-toggle]').forEach(function (btn) {
-    var target = doc.getElementById(btn.getAttribute('aria-controls'));
-    btn.addEventListener('click', function () {
-      var paused = target.classList.toggle('is-paused');
-      btn.setAttribute('aria-pressed', String(paused));
-      btn.querySelector('i').className = paused ? 'fa-solid fa-play' : 'fa-solid fa-pause';
-      btn.querySelector('span').textContent = paused ? 'Play logos' : 'Pause logos';
-    });
-  });
-
   /* ---------- Tabs (with ?tab= deep links) ---------- */
   $$('[role="tablist"]').forEach(function (list) {
     var tabs = $$('[role="tab"]', list);
@@ -316,7 +305,10 @@
   quick.innerHTML = '<button type="button" class="site-quick-top" aria-label="Back to top" title="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>';
   doc.body.appendChild(quick);
   var topBtn = $('.site-quick-top', quick);
-  var updateTop = function () { topBtn.classList.toggle('is-visible', window.scrollY > 400); };
+  var updateTop = function () {
+    topBtn.classList.toggle('is-visible', window.scrollY > 400);
+    quick.classList.toggle('is-compact', window.scrollY > 120);
+  };
   window.addEventListener('scroll', updateTop, { passive: true });
   updateTop();
   topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); });
@@ -350,7 +342,7 @@
       ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
       raf = (Math.abs(tx - rx) > 0.1 || Math.abs(ty - ry) > 0.1) ? requestAnimationFrame(render) : 0;
     };
-    var interactive = 'a,button,.card,[role="tab"],summary,input,label';
+    var interactive = 'a,button,.card,.deal,[role="tab"],summary,input,label';
     window.addEventListener('pointermove', function (e) {
       tx = e.clientX; ty = e.clientY;
       dot.style.transform = 'translate3d(' + tx + 'px,' + ty + 'px,0)';

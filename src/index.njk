@@ -57,7 +57,6 @@ pageJs: "pages/home.js"
 <main id="main-content" tabindex="-1">
 <section class="hero hero--center" aria-labelledby="hero-title">
   <div class="container">
-    <span class="eyebrow reveal"><span class="eyebrow__dot"></span>HubSpot Solutions Partner</span>
     <h1 class="hero__title" id="hero-title" data-split>Make the CRM<br>work like the <span class="gradient-text">business.</span></h1>
     <p class="hero__lead reveal" style="--d:3">You bought HubSpot. You still do not trust what it tells you. We rebuild it around how your business actually runs, so the data is clean, the work is automated, and the reporting holds up without a manual check.</p>
     <div class="btn-row reveal" style="--d:4">
@@ -71,18 +70,15 @@ pageJs: "pages/home.js"
     </div>
 
     <div class="console-wrap reveal reveal--scale" style="--d:6" id="heroConsole" data-inview>
-      <div class="float-chip float-chip--a" aria-hidden="true"><i class="fa-solid fa-route"></i><div>Lead routed to owner<small>SLA met in 42s</small></div></div>
-      <div class="float-chip float-chip--b" aria-hidden="true"><i class="fa-solid fa-code-merge"></i><div>1,284 duplicates merged<small>Golden record rules</small></div></div>
-      <div class="float-chip float-chip--c" aria-hidden="true"><i class="fa-solid fa-chart-line"></i><div>Forecast confidence<small>+31% vs last quarter</small></div></div>
-      <div class="console" role="img" aria-label="Illustration of a HubSpot deal pipeline dashboard with deals moving between stages">
-        <div class="console__body" aria-hidden="true">
+      <div class="console" role="region" aria-label="Interactive revenue pipeline demo">
+        <div class="console__body">
           <div class="console__bar">
             <div class="console__dots"><i></i><i></i><i></i></div>
-            <div class="console__url">app.hubspot.com / deals / revenue-pipeline</div>
-            <span class="console__live">Live</span>
+            <div class="console__url">Revenue Pipeline</div>
+            <span class="console__live" id="boardMode">Live</span>
           </div>
           <div class="console__grid">
-            <aside class="console__side">
+            <aside class="console__side" aria-hidden="true">
               <div class="console__side-item"><i class="fa-solid fa-house"></i>Overview</div>
               <div class="console__side-item is-active"><i class="fa-solid fa-table-columns"></i>Deal pipeline</div>
               <div class="console__side-item"><i class="fa-solid fa-address-book"></i>Contacts</div>
@@ -91,12 +87,12 @@ pageJs: "pages/home.js"
               <div class="console__side-foot"><strong>Data health</strong>98% records complete<div class="meter" style="margin-top:10px"><span style="--w:98%"></span></div></div>
             </aside>
             <div class="console__main">
-              <div class="kpis">
+              <div class="kpis" aria-hidden="true">
                 <div class="kpi"><div class="kpi__label">Won this quarter</div><div class="kpi__value" id="kpiWon">$486k</div><div class="kpi__delta">▲ 18.2%</div></div>
                 <div class="kpi"><div class="kpi__label">Win rate</div><div class="kpi__value">32.4%</div><div class="kpi__delta">▲ 6.1 pts</div></div>
                 <div class="kpi"><div class="kpi__label">Speed to lead</div><div class="kpi__value">4m 12s</div><div class="kpi__delta">▼ 71%</div></div>
               </div>
-              <div class="chart">
+              <div class="chart" aria-hidden="true">
                 <span class="chart__label">Pipeline created · 12 weeks</span>
                 <svg viewBox="0 0 600 110" preserveAspectRatio="none">
                   <defs>
@@ -107,22 +103,44 @@ pageJs: "pages/home.js"
                   <path class="chart__line" d="M0 92 C40 88 60 80 100 82 S160 70 200 66 S260 74 300 58 S360 44 400 48 S460 30 500 28 S560 14 600 10"/>
                 </svg>
               </div>
+              <div class="board__bar">
+                <p class="board__hint"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Drag deals between stages.<span class="board__kbd"> Keyboard: focus a deal, then use ← →.</span></p>
+                <button class="board__reset" type="button" id="resetBoard" hidden><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset</button>
+              </div>
               <div class="board" id="heroBoard">
-                <div class="board__col" data-stage="0"><div class="board__head">Qualified <b>3</b></div>
-                  <div class="deal"><div class="deal__name">Northwind</div><div class="deal__meta"><span>$48k</span><span>AR</span></div></div>
-                  <div class="deal"><div class="deal__name">Vertex Mfg</div><div class="deal__meta"><span>$72k</span><span>JD</span></div></div>
+                <div class="board__col" data-stage="0" role="group" aria-label="Qualified">
+                  <div class="board__head"><span>Qualified</span><b>2</b></div>
+                  <div class="board__sum">$120k</div>
+                  <div class="board__list">
+                    <div class="deal" data-value="48" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Northwind</div><div class="deal__meta"><span>$48k</span><span>AR</span></div></div>
+                    <div class="deal" data-value="72" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Vertex Mfg</div><div class="deal__meta"><span>$72k</span><span>JD</span></div></div>
+                    <button class="board__add" type="button" id="addDeal"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add deal</button>
+                  </div>
                 </div>
-                <div class="board__col" data-stage="1"><div class="board__head">Proposal <b>3</b></div>
-                  <div class="deal"><div class="deal__name">Halcyon</div><div class="deal__meta"><span>$96k</span><span>MK</span></div></div>
-                  <div class="deal"><div class="deal__name">Atlas Freight</div><div class="deal__meta"><span>$64k</span><span>AR</span></div></div>
+                <div class="board__col" data-stage="1" role="group" aria-label="Proposal">
+                  <div class="board__head"><span>Proposal</span><b>2</b></div>
+                  <div class="board__sum">$160k</div>
+                  <div class="board__list">
+                    <div class="deal" data-value="96" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Halcyon</div><div class="deal__meta"><span>$96k</span><span>MK</span></div></div>
+                    <div class="deal" data-value="64" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Atlas Freight</div><div class="deal__meta"><span>$64k</span><span>AR</span></div></div>
+                  </div>
                 </div>
-                <div class="board__col" data-stage="2"><div class="board__head">Negotiation <b>2</b></div>
-                  <div class="deal"><div class="deal__name">Blue Harbor</div><div class="deal__meta"><span>$120k</span><span>JD</span></div></div>
+                <div class="board__col" data-stage="2" role="group" aria-label="Negotiation">
+                  <div class="board__head"><span>Negotiation</span><b>1</b></div>
+                  <div class="board__sum">$120k</div>
+                  <div class="board__list">
+                    <div class="deal" data-value="120" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Blue Harbor</div><div class="deal__meta"><span>$120k</span><span>JD</span></div></div>
+                  </div>
                 </div>
-                <div class="board__col" data-stage="3"><div class="board__head">Closed won <b>2</b></div>
-                  <div class="deal is-won"><div class="deal__name">Ridgeline</div><div class="deal__meta"><span>$132k</span><span>JD</span></div></div>
+                <div class="board__col" data-stage="3" role="group" aria-label="Closed won">
+                  <div class="board__head"><span>Closed won</span><b>1</b></div>
+                  <div class="board__sum">$132k</div>
+                  <div class="board__list">
+                    <div class="deal is-won" data-value="132" tabindex="0" aria-roledescription="draggable deal"><div class="deal__name">Ridgeline</div><div class="deal__meta"><span>$132k</span><span>JD</span></div></div>
+                  </div>
                 </div>
               </div>
+              <p class="sr-only" id="boardStatus" role="status" aria-live="polite"></p>
             </div>
           </div>
         </div>
@@ -153,7 +171,6 @@ pageJs: "pages/home.js"
       {%- endfor %}{% endfor %}
     </div>
   </div>
-  <button class="marquee-toggle" type="button" data-marquee-toggle aria-controls="logoMarquee" aria-pressed="false"><i class="fa-solid fa-pause" aria-hidden="true"></i><span>Pause logos</span></button>
 </section>
 
 <section class="section section--line" aria-labelledby="pain-heading">
