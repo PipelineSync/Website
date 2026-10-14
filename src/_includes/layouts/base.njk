@@ -7,7 +7,7 @@
   <meta name="description" content="{{ description }}">
   <meta name="robots" content="{{ robots or 'index, follow' }}">
   <meta name="author" content="PipelineSync">
-  <meta name="theme-color" content="#040B16">
+  <meta name="theme-color" content="#05070C">
   <link rel="canonical" href="{{ canonical }}">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="{{ ogType or 'website' }}">
@@ -26,82 +26,31 @@
   <link rel="icon" href="/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="{{ "/assets/css/site.css" | v }}">
-  <link rel="stylesheet" href="{{ ("/assets/css/" + cssGroup + ".css") | v }}">
-  <link rel="stylesheet" href="{{ ("/assets/css/" + pageCss) | v }}">
-  <link rel="stylesheet" href="{{ "/assets/css/theme-neon.css" | v }}">
-  <link rel="stylesheet" href="{{ "/assets/css/layouts-neon.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/hubspot-chat.css" | v }}">
-  <link rel="stylesheet" href="{{ "/assets/css/page-motion.css" | v }}">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body data-anim="{{ anim | default('rise') }}">
+<body data-page="{{ page.url }}">
 <a class="skip-link" href="#main-content">Skip to content</a>
+<div class="bg-fx" aria-hidden="true"><div class="bg-fx__orb bg-fx__orb--a"></div><div class="bg-fx__orb bg-fx__orb--b"></div><div class="bg-fx__orb bg-fx__orb--c"></div><div class="bg-fx__grid"></div><div class="bg-fx__noise"></div></div>
 
-{% if loadingType == 'resources' %}{% include 'partials/loading-resources.njk' %}{% elif loadingType == 'pipeline' %}{% include 'partials/loading-pipeline.njk' %}{% endif %}
-
-{% if layoutType == 'modern' %}{% include 'partials/header-modern.njk' %}{% elif layoutType == 'guide' %}{% include 'partials/header-guide.njk' %}{% else %}{% include 'partials/header-privacy.njk' %}{% endif %}
+{% include 'partials/loader.njk' %}
+{% include 'partials/header.njk' %}
 
 {{ content | safe }}
 
-{% if layoutType == 'modern' %}{% include 'partials/footer-modern.njk' %}{% elif layoutType == 'guide' %}{% include 'partials/footer-guide.njk' %}{% else %}{% include 'partials/footer-privacy.njk' %}{% endif %}
+{% include 'partials/footer.njk' %}
+{% include 'partials/modal.njk' %}
 
-{% if layoutType == 'modern' %}{% include 'partials/modal-modern.njk' %}
-<script src="{{ "/assets/js/site-header.js" | v }}"></script>
-<script src="{{ "/assets/js/site-footer.js" | v }}"></script>
-<script src="{{ "/assets/js/modern-cursor.js" | v }}"></script>
-<script src="{{ "/assets/js/reveal.js" | v }}"></script>
-<script src="{{ "/assets/js/hubspot-form-modern.js" | v }}"></script>
-<script src="{{ "/assets/js/glassmorphism.js" | v }}"></script>
-<script src="{{ "/assets/js/contact-email.js" | v }}"></script>
-{% elif layoutType == 'guide' %}{% include 'partials/modal-guide.njk' %}
-<script src="{{ "/assets/js/guide-header.js" | v }}"></script>
-<script src="{{ "/assets/js/hubspot-form-guide.js" | v }}"></script>
-<script src="{{ "/assets/js/guide-cursor.js" | v }}"></script>
-{% else %}
-<script src="{{ "/assets/js/privacy-header.js" | v }}"></script>
-<script src="{{ "/assets/js/guide-cursor.js" | v }}"></script>
-{% endif %}
-{% if layoutType != 'privacy' %}<script src="https://js-na2.hsforms.net/forms/embed/247123252.js"></script>{% endif %}
+<script src="{{ "/assets/js/site.js" | v }}"></script>
+<script src="https://js-na2.hsforms.net/forms/embed/247123252.js" defer></script>
 {% if pageJs %}<script src="{{ ("/assets/js/" + pageJs) | v }}"></script>{% endif %}
-{% if loadingType == 'pipeline' %}<script src="{{ "/assets/js/loading-screen.js" | v }}"></script>{% endif %}
 <script src="{{ "/assets/js/roi-calculator.js" | v }}"></script>
-<script src="{{ "/assets/js/motion.js" | v }}"></script>
-<script src="{{ "/assets/js/page-motion.js" | v }}"></script>
 
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/247123252.js"></script>
 <!-- End of HubSpot Embed Code -->
-
-<!-- HubSpot chat widget positioning (see assets/css/hubspot-chat.css) -->
-<script>
-  (function () {
-    function positionHubSpotChat() {
-      var el = document.querySelector('#hubspot-messages-iframe-container');
-      if (!el) return false;
-
-      var mobile = window.matchMedia('(max-width: 768px)').matches;
-      el.style.setProperty('left', mobile ? '12px' : '18px', 'important');
-      el.style.setProperty('right', 'auto', 'important');
-      el.style.setProperty(
-        'bottom',
-        mobile ? 'calc(12px + env(safe-area-inset-bottom, 0px))' : '18px',
-        'important'
-      );
-      el.style.setProperty('transform-origin', 'bottom left', 'important');
-      el.style.setProperty('transform', mobile ? 'scale(0.75)' : 'none', 'important');
-      return true;
-    }
-
-    window.addEventListener('load', function () {
-      if (positionHubSpotChat()) return;
-      var check = setInterval(function () {
-        if (positionHubSpotChat()) clearInterval(check);
-      }, 300);
-    });
-    window.addEventListener('resize', positionHubSpotChat);
-  })();
-</script>
 </body>
 </html>
