@@ -1,0 +1,37 @@
+{
+  "url": "https://pipelinesync.net",
+  "name": "PipelineSync",
+  "tagline": "Build Revenue Systems That Stay in Sync.",
+  "description": "PipelineSync is a HubSpot Solutions Partner founded in 2025, with a team of eight building CRM, migration, data quality, and RevOps systems for B2B companies.",
+  "foundingDate": "2025",
+  "employees": 8,
+  "telephone": "+1-646-729-2936",
+  "email": "allentrinidad@pipelinesync.net",
+  "logo": "/assets/img/brand/pipelinesync-logo-512.png",
+  "areaServed": [
+    { "name": "United States", "code": "US" },
+    { "name": "Australia", "code": "AU" },
+    { "name": "Canada", "code": "CA" },
+    { "name": "United Kingdom", "code": "GB" }
+  ],
+  "knowsAbout": ["HubSpot", "HubSpot CRM implementation", "CRM migration", "CRM data quality", "Revenue operations", "Lead routing", "Marketing attribution", "HubSpot integrations"],
+  "sameAs": [
+    "https://www.linkedin.com/company/pipelinesync",
+    "https://www.upwork.com/agencies/pipelinesync/",
+    "https://www.instagram.com/pipelinesync",
+    "https://www.facebook.com/share/19rqqHyX5A/"
+  ],
+  "hubspotDirectoryUrl": "",
+  "founder": {
+    "name": "Allen Trinidad",
+    "jobTitle": "Founder, HubSpot Solutions Architect",
+    "image": "/assets/img/allen-headshot.webp",
+    "sameAs": []
+  },
+  "analytics": {
+    "ga4Id": "",
+    "googleSiteVerification": "",
+    "bingSiteVerification": "",
+    "consentRegions": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
+  }
+}

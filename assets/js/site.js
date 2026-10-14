@@ -36,11 +36,13 @@
         screen.classList.add('is-hidden');
         screen.setAttribute('aria-hidden', 'true');
         doc.dispatchEvent(new CustomEvent('ps:ready'));
-      }, Math.max(0, 600 - (Date.now() - started)));
+      }, Math.max(0, 450 - (Date.now() - started)));
     }
-    if (doc.readyState === 'complete') finish();
-    else window.addEventListener('load', finish, { once: true });
-    setTimeout(finish, 4500); // a slow third-party asset must never keep the page covered
+    // Lift the screen as soon as the HTML is parsed (not on window load) so images, fonts and
+    // third-party scripts never hold the page hidden; cap at 800 ms either way.
+    if (doc.readyState !== 'loading') finish();
+    else doc.addEventListener('DOMContentLoaded', finish, { once: true });
+    setTimeout(finish, 800);
   })();
 
   function onReady(fn) {
@@ -266,8 +268,21 @@
   if (modal) {
     var lastFocus = null;
     var closeBtn = $('.hs-modal-close', modal);
+    var formScriptLoaded = false;
+    var loadFormScript = function () {
+      if (formScriptLoaded) return;
+      formScriptLoaded = true;
+      var script = doc.createElement('script');
+      script.src = 'https://js-na2.hsforms.net/forms/embed/247123252.js';
+      script.defer = true;
+      doc.body.appendChild(script);
+    };
+    // Fetch the HubSpot form embed only when someone shows intent, keeping it off the critical path.
+    doc.addEventListener('pointerover', function (e) { if (e.target.closest && e.target.closest('.js-open-hs-form')) loadFormScript(); }, { passive: true });
+    doc.addEventListener('focusin', function (e) { if (e.target.closest && e.target.closest('.js-open-hs-form')) loadFormScript(); });
     var openModal = function (e) {
       if (e) e.preventDefault();
+      loadFormScript();
       lastFocus = doc.activeElement;
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');

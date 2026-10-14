@@ -9,28 +9,56 @@
   <meta name="author" content="PipelineSync">
   <meta name="theme-color" content="#05070C">
   <link rel="canonical" href="{{ canonical }}">
+  {%- set ogImg %}{% ogImage %}{% endset %}
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="PipelineSync">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:url" content="{{ canonical }}">
-  <meta property="og:site_name" content="PipelineSync">
-  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">
-  <meta property="og:image:alt" content="PipelineSync logo">
-  <meta property="og:image:type" content="image/png">{% endif %}
+  <meta property="og:image" content="{{ ogImg }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="{{ title | plainTitle }}, PipelineSync">
+  {%- if ogType == 'article' %}
+  <meta property="article:published_time" content="{% pageDate 'published' %}">
+  <meta property="article:modified_time" content="{% pageDate 'modified' %}">
+  <meta property="article:publisher" content="https://www.linkedin.com/company/pipelinesync">
+  {%- endif %}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
-  {% if ogImage %}<meta name="twitter:image" content="{{ ogImage }}">{% endif %}
-  {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
-  <link rel="icon" href="/icon.png">
+  <meta name="twitter:image" content="{{ ogImg }}">
+  <meta name="twitter:image:alt" content="{{ title | plainTitle }}, PipelineSync">
+  {%- if site.analytics.googleSiteVerification %}
+  <meta name="google-site-verification" content="{{ site.analytics.googleSiteVerification }}">{% endif %}
+  {%- if site.analytics.bingSiteVerification %}
+  <meta name="msvalidate.01" content="{{ site.analytics.bingSiteVerification }}">{% endif %}
+  {% jsonld %}
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preload" href="/assets/vendor/fa/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ "/assets/vendor/fa/icons.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/site.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/hubspot-chat.css" | v }}">
   <script>document.documentElement.classList.add('js');</script>
+  {%- if site.analytics.ga4Id %}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500, region: {{ site.analytics.consentRegions | dump | safe }} });
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.ga4Id }}');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4Id }}"></script>
+  {%- endif %}
 </head>
 <body data-page="{{ page.url }}">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -45,7 +73,7 @@
 {% include 'partials/modal.njk' %}
 
 <script src="{{ "/assets/js/site.js" | v }}"></script>
-<script src="https://js-na2.hsforms.net/forms/embed/247123252.js" defer></script>
+<script src="{{ "/assets/js/analytics.js" | v }}"></script>
 {% if pageJs %}<script src="{{ ("/assets/js/" + pageJs) | v }}"></script>{% endif %}
 <script src="{{ "/assets/js/roi-calculator.js" | v }}"></script>
 

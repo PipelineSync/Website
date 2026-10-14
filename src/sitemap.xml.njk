@@ -1,15 +1,17 @@
 ---
 permalink: sitemap.xml
 sitemap: false
+eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for item in collections.all | sort(attribute='url') %}{% if item.url != '/sitemap.xml' and item.url != '/404.html' and item.data.sitemap != false %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+{%- for item in collections.all | sort(attribute='url') %}
+{%- if item.data.sitemap != false and item.url != '/404.html' and not ('noindex' in (item.data.robots or '')) %}
+{%- set dates = item | sitemapDate %}
   <url>
     <loc>https://pipelinesync.net{{ item.url }}</loc>
-    <lastmod>{{ item.data.lastmod or '2026-10-03' }}</lastmod>
-    <changefreq>{{ item.data.changefreq or 'monthly' }}</changefreq>
-    <priority>{{ item.data.priority or '0.6' }}</priority>
+    <lastmod>{{ dates.modified }}</lastmod>
   </url>
-{% endif %}{% endfor %}
+{%- endif %}
+{%- endfor %}
 </urlset>

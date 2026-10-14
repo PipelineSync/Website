@@ -607,6 +607,13 @@ body.is-dragging, body.is-dragging * { cursor: grabbing !important; }
    ========================================================================== */
 .guide-hero, .policy-hero { position: relative; padding: calc(var(--header-h) + clamp(48px, 7vw, 88px)) 0 clamp(40px, 5vw, 64px); border-bottom: 1px solid var(--line); }
 .guide-hero-inner { max-width: 900px; }
+.breadcrumb { margin-bottom: 24px; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; list-style: none; font-size: 13.5px; color: var(--text-3); }
+.breadcrumb li { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.breadcrumb li + li::before { content: '/'; color: var(--line-2); }
+.breadcrumb a { color: var(--text-2); transition: color .2s; }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb [aria-current] { color: var(--text-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 46ch; }
 .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 26px; font-size: 14px; font-weight: 500; color: var(--text-2); transition: color .2s, transform .2s var(--ease); }
 .back-link:hover { color: var(--text); transform: translateX(-3px); }
 .guide-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 10px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, .03); font: 500 12px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); }
@@ -669,7 +676,7 @@ body.is-dragging, body.is-dragging * { cursor: grabbing !important; }
 .hs-form-frame { min-height: 420px; padding: 8px; border-radius: 16px; background: #fff; }
 .hs-modal-reassurance { margin-top: 14px; font: 12px/1.5 var(--mono); color: var(--text-3); text-align: center; }
 
-.loader { position: fixed; inset: 0; z-index: 10020; display: grid; place-items: center; padding: 24px; background: var(--bg); transition: opacity .6s var(--ease), visibility .6s; }
+.loader { position: fixed; inset: 0; z-index: 10020; display: grid; place-items: center; padding: 24px; background: var(--bg); transition: opacity .4s var(--ease), visibility .4s; }
 .loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 .loader__inner { width: min(360px, 100%); text-align: center; }
 .loader__mark { position: relative; width: 76px; height: 76px; margin: 0 auto 26px; display: grid; place-items: center; border-radius: 22px; border: 1px solid rgba(255, 122, 26, .35); background: radial-gradient(circle at 30% 20%, #2a1608, #0b0e16 70%); box-shadow: 0 0 60px rgba(255, 122, 26, .3); }
