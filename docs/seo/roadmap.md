@@ -14,13 +14,13 @@ Goals: be findable (technical), be the best answer (content), be recommended (au
 | Weeks 1–2 | `/llms.txt` generated from site data | Claude | Done |
 | Weeks 1–2 | IndexNow ping after each production deploy (`netlify/plugins/indexnow`) | Claude | Done |
 | Weeks 1–2 | `ai_referral` GA4 event for visits from AI assistants | Claude | Done |
-| Weeks 1–2 | Verify Google Search Console (DNS) and submit sitemap | Owner | Open |
+| Weeks 1–2 | Verify Google Search Console (DNS) and submit sitemap. **Blocking:** as of 15 Oct 2026 `site:pipelinesync.net` returns no results; Google has not indexed the site | Owner | Open (urgent) |
 | Weeks 1–2 | Verify Bing Webmaster Tools (import from GSC) | Owner | Open |
 | Weeks 1–2 | Mark `generate_lead` as GA4 key event; link GA4 ↔ GSC; create "AI assistants" channel group | Owner | Open |
 | Weeks 1–2 | Add "How did you hear about us?" field (with "AI assistant" option) to the HubSpot consultation form | Owner | Open |
 | Weeks 1–2 | Publish the three template files; confirm article authors | Owner | Open |
 | Weeks 1–2 | Align all profile descriptions (HubSpot directory, LinkedIn, Upwork); start review sequence; baseline AI prompt check | Owner | Open |
-| Month 1 (Nov 2026) | Articles: Salesforce to HubSpot migration checklist; HubSpot lifecycle stages explained. Refresh: mapping sheet, lead routing guide | Claude + team | Planned |
+| Month 1 (Nov 2026) | Articles: Salesforce to HubSpot migration checklist; HubSpot lifecycle stages explained. Refresh: mapping sheet, lead routing guide. Also: visible FAQs + FAQPage schema and "Updated" dates on resource pages | Claude + team | In review (pulled forward to Oct 2026; authors TODO) |
 | Month 1 | Clutch and G2 profiles; weekly HubSpot Community answers | Owner | Planned |
 | Month 2 (Dec 2026) | Articles: deduplication in HubSpot; lead routing best practices. Refresh: cleanup playbook, duplicate data | Claude + team | Planned |
 | Month 3 (Jan 2027) | Articles: implementation checklist; audit checklist. Refresh: architecture blueprint, governance checklist. First case study | Claude + team | Planned |

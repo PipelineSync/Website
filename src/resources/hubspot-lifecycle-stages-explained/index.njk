@@ -1,0 +1,143 @@
+---
+layout: layouts/base.njk
+title: "HubSpot Lifecycle Stages Explained | PipelineSync"
+description: "HubSpot lifecycle stages explained: what each default stage means, how they differ from lead status, entry and exit criteria, and automating changes safely."
+robots: "index, follow"
+canonical: "https://pipelinesync.net/resources/hubspot-lifecycle-stages-explained/"
+ogType: "article"
+lastmod: "2026-10-15"
+changefreq: "monthly"
+priority: "0.7"
+pageType: "article"
+breadcrumbName: "HubSpot Lifecycle Stages Explained"
+tags: resource
+faqs:
+  - q: "Can HubSpot lifecycle stages move backwards?"
+    a: "Not by default. HubSpot is designed to move lifecycle stages forward, so a workflow or import will not set an earlier stage on its own. To move a record back, for example a closed-lost opportunity returning to lead, clear the lifecycle stage property first and then set the earlier value, and document when that is allowed."
+  - q: "What is the difference between an MQL and an SQL?"
+    a: "A marketing qualified lead has shown enough fit and engagement for marketing to hand it over. A sales qualified lead has been reviewed by sales and accepted as worth active pursuit. The exact criteria are yours to define, and both teams should sign them off in writing."
+  - q: "Should every contact have a lifecycle stage?"
+    a: "Yes. A blank lifecycle stage makes funnel reports incomplete and routing unpredictable. Set a default on every entry point, such as forms, imports, and integrations, so new records always start in a known stage."
+  - q: "How do lifecycle stages relate to deal stages?"
+    a: "Lifecycle stage describes the contact or company relationship; deal stage describes one specific opportunity in a pipeline. A company can be a customer with a new deal open. Many teams move records to opportunity when a deal is created and to customer when a deal is closed won."
+relatedResources:
+  - { title: "Lead Routing and Lifecycle Automation", url: "/resources/lead-routing-lifecycle-automation-pipelinesync/", text: "Turn lifecycle definitions into routing rules, SLAs, and escalation." }
+  - { title: "Full-Funnel Attribution Leadership Can Trust", url: "/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/", text: "Funnel and attribution reporting only works once stages are trustworthy." }
+  - { title: "HubSpot CRM Architecture Blueprint", url: "/resources/hubspot-crm-architecture-blueprint/", text: "Where lifecycle stages fit alongside objects, pipelines, and permissions." }
+  - { title: "HubSpot RevOps consulting", url: "/solutions/revops/", text: "How we design lifecycle, routing, and reporting across marketing, sales, and service." }
+---
+{#- TODO(owner): confirm the author byline (proposed: Allen Trinidad, Founder). Until then the BlogPosting schema uses the organisation as author. -#}
+{#- Default stage names and forward-only behaviour checked against HubSpot's knowledge base on 2026-10-15. TODO(owner): re-verify whether custom lifecycle stages are available on each tier before promoting. -#}
+<section class="guide-hero" style="--accent:#15803D;--accent-soft:#DCFCE7;--accent-border:#BBF7D0;">
+    <div class="container guide-hero-inner">
+      {% include "partials/breadcrumb.njk" %}
+      <div class="guide-eyebrow"><span class="guide-eyebrow-dot"></span>REVOPS • 9 MIN</div>
+      <h1>HubSpot Lifecycle Stages Explained</h1>
+      <p class="guide-dek">What each stage means, how lifecycle stage differs from lead status, and how to define the criteria so marketing and sales report on the same funnel.</p>
+      {% include "partials/guide-meta.njk" %}
+    </div>
+  </section>
+
+  <main id="main-content" class="guide-main" style="--accent:#15803D;--accent-soft:#DCFCE7;--accent-border:#BBF7D0;">
+    <div class="container guide-layout">
+      <article class="guide-card">
+        <div class="guide-label">PipelineSync field notes</div>
+        <h2>What are HubSpot lifecycle stages?</h2>
+        <p class="guide-answer">HubSpot lifecycle stages describe where a contact or company is in its relationship with your business, from first sign-up to paying customer and advocate. They are a property on contacts and companies, they move forward by default, and they power funnel reporting. They work best when every stage has written entry and exit criteria.</p>
+        <p>Most portals we audit have lifecycle stages switched on but never defined. Marketing counts one thing as an MQL, sales counts another, and the funnel report becomes a debate. This article covers what the stages are, how they differ from lead status, and how to set them up so they hold.</p>
+
+        <section id="lifecycle-vs-lead-status">
+          <h2>What is the difference between lifecycle stage and lead status?</h2>
+          <p class="guide-answer">Lifecycle stage answers "what is our relationship with this person or company?" Lead status answers "what is sales doing with this lead right now?" Lifecycle stage changes rarely and drives funnel reporting. Lead status changes often and drives daily follow-up. Keeping them separate lets each team report on one journey without overwriting the other.</p>
+          <p>The most common mistake is using one property for both. When "Attempted to contact" lives in lifecycle stage, the funnel report fills with working states, and when "Customer" lives in lead status, sales queues fill with people who already bought. Two properties, two questions.</p>
+        </section>
+
+        <section id="default-stages">
+          <h2>What are HubSpot's default lifecycle stages?</h2>
+          <p class="guide-answer">HubSpot ships with eight default lifecycle stages: subscriber, lead, marketing qualified lead (MQL), sales qualified lead (SQL), opportunity, customer, evangelist, and other. The order matters because, by default, records only move forward through it.</p>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>Stage</th><th>What it usually means</th></tr></thead>
+            <tbody>
+              <tr><td>Subscriber</td><td>Opted in to hear from you, for example a newsletter or blog subscription. No buying signal yet.</td></tr>
+              <tr><td>Lead</td><td>Showed interest beyond subscribing, such as downloading a resource or filling in a form.</td></tr>
+              <tr><td>Marketing qualified lead</td><td>Meets the fit and engagement criteria marketing and sales agreed for handoff.</td></tr>
+              <tr><td>Sales qualified lead</td><td>Reviewed and accepted by sales as worth active pursuit.</td></tr>
+              <tr><td>Opportunity</td><td>Associated with an open deal.</td></tr>
+              <tr><td>Customer</td><td>Associated with at least one closed-won deal.</td></tr>
+              <tr><td>Evangelist</td><td>A customer who actively refers or advocates for you.</td></tr>
+              <tr><td>Other</td><td>Contacts who do not fit the funnel, such as partners, vendors, or job applicants.</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p>The meanings above are the common interpretation. Yours should be written to match how your company sells, which is the next step.</p>
+        </section>
+
+        <section id="entry-exit-criteria">
+          <h2>How do you define entry and exit criteria for each stage?</h2>
+          <p class="guide-answer">For each stage, write one sentence for how a record enters, one for how it leaves, and the property values that prove it. Criteria must be observable in HubSpot, such as a form submitted, a score threshold, or a deal created, so automation can apply them and reports can be checked.</p>
+          <ul>
+            <li><strong>Lead to MQL:</strong> name the fit fields (industry, company size, role) and the engagement signals (demo request, pricing page visits) that qualify.</li>
+            <li><strong>MQL to SQL:</strong> a sales rep reviews and accepts the lead within your agreed response time, and records the decision.</li>
+            <li><strong>SQL to opportunity:</strong> a deal is created and associated with the contact and company.</li>
+            <li><strong>Opportunity to customer:</strong> a deal is closed won.</li>
+          </ul>
+          <p>Get marketing, sales, and leadership to sign the definitions off together. That one meeting removes most of the arguments about lead quality later.</p>
+        </section>
+
+        <section id="ownership">
+          <h2>Who owns the record at each handoff?</h2>
+          <p class="guide-answer">Name one owner per stage. Marketing typically owns subscribers, leads, and MQLs. Sales owns SQLs and opportunities. Customer success or account management owns customers. The handoff happens when the stage changes, and the receiving team's response time starts from that moment.</p>
+          <p>Write the owner into your routing rules so the change of stage and the change of owner happen together. Our guide to <a href="/resources/lead-routing-lifecycle-automation-pipelinesync/">lead routing and lifecycle automation</a> covers the assignment and SLA side in detail.</p>
+        </section>
+
+        <section id="lead-status-values">
+          <h2>What lead status values should sales use?</h2>
+          <p class="guide-answer">Keep lead status short and tied to actions sales takes. A set we often recommend is new, working, connected, qualified, unqualified, and recycled. Each value should tell a rep or manager what happens next. HubSpot includes its own default values, which you can edit to match.</p>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>Lead status</th><th>Next action</th></tr></thead>
+            <tbody>
+              <tr><td>New</td><td>Assigned, not yet contacted. SLA timer running.</td></tr>
+              <tr><td>Working</td><td>Outreach in progress.</td></tr>
+              <tr><td>Connected</td><td>Two-way conversation started.</td></tr>
+              <tr><td>Qualified</td><td>Accepted by sales; lifecycle moves to SQL.</td></tr>
+              <tr><td>Unqualified</td><td>Not a fit; reason recorded.</td></tr>
+              <tr><td>Recycled</td><td>Not ready now; returned to nurture with a review date.</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+
+        <section id="automation">
+          <h2>How do you automate lifecycle stage changes safely?</h2>
+          <p class="guide-answer">Automate forward moves from clear triggers, such as form submissions, score thresholds, and deal creation, and keep backward moves deliberate. Set a default stage on every entry point, never let an import overwrite a later stage, and log when and why a stage changed so you can audit it.</p>
+          <ul>
+            <li>Set the stage on forms, imports, and integrations so no record arrives blank.</li>
+            <li>Use workflows for forward moves; HubSpot will not move a stage backwards unless the property is cleared first.</li>
+            <li>Allow backward moves only for documented cases, such as recycling a closed-lost opportunity to lead.</li>
+            <li>Stamp the date each stage was entered so funnel velocity can be measured.</li>
+          </ul>
+          <div class="guide-callout"><p><strong>Want definitions both teams sign off on?</strong> We run this as part of our <a href="/solutions/revops/">HubSpot RevOps work</a>. <button type="button" class="text-link js-open-hs-form">Book a free consultation</button></p></div>
+        </section>
+
+        <section id="reporting">
+          <h2>How do you report on the funnel once stages are trustworthy?</h2>
+          <p class="guide-answer">Once stages have agreed criteria and dates, report conversion rates between stages, time spent in each stage, and volume by source. Those three views show where leads stall and which channels produce customers rather than form fills. Build them only after the definitions hold, or the numbers will not be believed.</p>
+          <p>From there, attribution becomes possible: connecting first touch to closed revenue. We cover that in <a href="/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/">full-funnel attribution leadership can trust</a>.</p>
+        </section>
+
+        <section id="checklist">
+          <h2>Lifecycle stage setup checklist</h2>
+          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Lifecycle stage and lead status kept separate</div></div><div class="guide-check"><span>✓</span><div>Entry and exit criteria written per stage</div></div><div class="guide-check"><span>✓</span><div>Definitions signed off by marketing and sales</div></div><div class="guide-check"><span>✓</span><div>Owner named for each stage</div></div><div class="guide-check"><span>✓</span><div>Default stage set on every entry point</div></div><div class="guide-check"><span>✓</span><div>Backward moves documented</div></div><div class="guide-check"><span>✓</span><div>Stage entry dates captured</div></div><div class="guide-check"><span>✓</span><div>Funnel report built on agreed stages</div></div></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> Lifecycle stage is the relationship, lead status is the work. Define both in writing and the funnel report stops being an argument.</p></div>
+        {% include "partials/article-faq.njk" %}
+        <div class="guide-footer-cta"><h2>Want lifecycle definitions both teams trust?</h2><p>Book a free consultation. We will review your current stages and show you where the funnel is leaking.</p><button type="button" class="btn js-open-hs-form">Book a free consultation</button></div>
+      </article>
+      <aside class="guide-aside">
+        <div class="aside-card"><h3>In this article</h3><div class="aside-list"><div><span>01</span><div><a href="#lifecycle-vs-lead-status">Lifecycle stage vs lead status</a></div></div><div><span>02</span><div><a href="#default-stages">The default stages</a></div></div><div><span>03</span><div><a href="#entry-exit-criteria">Entry and exit criteria</a></div></div><div><span>04</span><div><a href="#lead-status-values">Lead status values</a></div></div><div><span>05</span><div><a href="#automation">Automating stage changes</a></div></div><div><span>06</span><div><a href="#reporting">Funnel reporting</a></div></div></div></div>
+        <div class="aside-card aside-cta"><h3>Funnel nobody trusts?</h3><p>We design lifecycle, routing, and reporting across marketing, sales, and service.</p><a class="btn" href="/solutions/revops/">See RevOps consulting</a></div>
+      </aside>
+    </div>
+  </main>
