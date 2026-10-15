@@ -148,14 +148,15 @@ function buildGraph(data) {
       });
       webPage.about = { '@id': `${site.url}/solutions/#${s.id}` };
     }
-    if (Array.isArray(data.faqs) && data.faqs.length) {
-      graph.push({
-        '@type': 'FAQPage',
-        '@id': `${url}#faq`,
-        isPartOf: { '@id': `${url}#webpage` },
-        mainEntity: data.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') } }))
-      });
-    }
+  }
+  // Page-level FAQs (service pages and articles) must also be rendered visibly from the same front matter.
+  if (Array.isArray(data.faqs) && data.faqs.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      isPartOf: { '@id': `${url}#webpage` },
+      mainEntity: data.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') } }))
+    });
   }
   if (type === 'integrations') {
     graph.push({ '@type': 'Service', '@id': `${site.url}/solutions/#custom-integrations`, name: 'HubSpot integration services', serviceType: 'HubSpot integration development', description: data.description, url, provider: org, areaServed: site.areaServed.map((c) => ({ '@type': 'Country', name: c.name })) });
@@ -238,6 +239,10 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addShortcode('ogImage', function () { return ogImageFor(this.ctx); });
   eleventyConfig.addShortcode('pageDate', function (which) { return pageDates(this.ctx)[which]; });
+  eleventyConfig.addShortcode('pageDateReadable', function (which) {
+    const iso = pageDates(this.ctx)[which];
+    return `<time datetime="${iso}">${new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time>`;
+  });
   eleventyConfig.addFilter('sitemapDate', function (item) { return pageDates(item.data); });
 
   return {

@@ -1,0 +1,21 @@
+{#- Visible FAQs for resource pages. Reads `faqs` from front matter; buildGraph() emits the matching FAQPage schema. -#}
+{%- if faqs and faqs.length %}
+<section class="guide-faq" aria-labelledby="article-faq-heading">
+  <h2 id="article-faq-heading">Frequently asked questions</h2>
+  <div class="faq">
+    {%- for item in faqs %}
+    <details><summary><h3>{{ item.q }}</h3><span class="faq__icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></summary><div class="faq__body"><p>{{ item.a | safe }}</p></div></details>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+{%- if relatedResources and relatedResources.length %}
+<section class="guide-related" aria-labelledby="article-related-heading">
+  <h2 id="article-related-heading">Related resources</h2>
+  <ul>
+    {%- for r in relatedResources %}
+    <li><a href="{{ r.url }}">{{ r.title }}</a><span>{{ r.text }}</span></li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}

@@ -42,7 +42,7 @@ breadcrumbName: "Resources"
     <div class="tab-panel mt-lg" id="tab-guides" role="tabpanel" aria-labelledby="tabbtn-guides">
       <div class="section-head section-head--center reveal">
         <h2>From messy portal to working system</h2>
-        <p>Five guides covering the problems we are hired to fix most often.</p>
+        <p>Six guides covering the problems we are hired to fix most often.</p>
       </div>
       <div class="grid grid-3" data-stagger>
         {%- for r in [
@@ -50,7 +50,8 @@ breadcrumbName: "Resources"
           ["/resources/crm-cleanup-deduplication-system-pipelinesync/", "fa-broom", "card-icon--cyan", "Playbook • 18 min", "HubSpot Cleanup and Deduplication System", "A step-by-step process to audit, merge, and enrich records, then the validation rules that stop duplicates coming back.", "Read playbook"],
           ["/resources/lead-routing-lifecycle-automation-pipelinesync/", "fa-bolt", "card-icon--green", "Automation • 15 min", "Lead Routing and Lifecycle Automation", "Building routing your sales team trusts: scoring, assignment, SLAs, fallback owners, and escalation.", "Read guide"],
           ["/resources/integration-governance-monitoring-pipelinesync/", "fa-plug", "card-icon--blue", "Integrations • 14 min", "Integration Governance and Monitoring", "Designing bidirectional syncs with clear field ownership, logging, alerting, and a rollback path.", "Read guide"],
-          ["/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/", "fa-chart-column", "", "Attribution • 16 min", "Full-Funnel Attribution Leadership Can Trust", "Connecting first touch to closed won: campaign influence, multi-touch models, and revenue dashboards.", "Read guide"]
+          ["/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/", "fa-chart-column", "", "Attribution • 16 min", "Full-Funnel Attribution Leadership Can Trust", "Connecting first touch to closed won: campaign influence, multi-touch models, and revenue dashboards.", "Read guide"],
+          ["/resources/salesforce-to-hubspot-migration-checklist/", "fa-right-left", "card-icon--cyan", "Migration • 12 min", "Salesforce to HubSpot Migration Checklist", "The seven steps we follow to retire a Salesforce org: audit, map, dedupe, test, rebuild, cut over, train.", "Read guide"]
         ] %}
         <article class="card card--link" data-card-url="{{ r[0] }}">
           <div class="card-icon {{ r[2] }}"><i class="fa-solid {{ r[1] }}" aria-hidden="true"></i></div>
@@ -72,7 +73,8 @@ breadcrumbName: "Resources"
           ["/resources/why-your-hubspot-pipeline-doesnt-reflect-reality-pipelinesync/", "fa-database", "", "RevOps • 5 min", "Why Your HubSpot Pipeline Does Not Reflect Reality", "Stages reps skip, close dates nobody updates, and the three changes that fix a forecast."],
           ["/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/", "fa-chart-line", "card-icon--blue", "Data • 7 min", "What Duplicate Data in HubSpot Actually Costs You", "Where duplicates do real damage: broken reporting, misrouted leads, and rep time spent reconciling records."],
           ["/resources/automation-that-saves-10-hours-week-pipelinesync/", "fa-robot", "card-icon--cyan", "Automation • 6 min", "Automation That Saves Your Team Hours Every Week", "The workflows we build in almost every portal: lead routing, data hygiene, and follow-up."],
-          ["/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/", "fa-users", "card-icon--green", "Teams • 4 min", "Why Teams Do Not Adopt HubSpot", "Adoption is usually an architecture problem, not a training problem."]
+          ["/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/", "fa-users", "card-icon--green", "Teams • 4 min", "Why Teams Do Not Adopt HubSpot", "Adoption is usually an architecture problem, not a training problem."],
+          ["/resources/hubspot-lifecycle-stages-explained/", "fa-route", "", "RevOps • 9 min", "HubSpot Lifecycle Stages Explained", "What each default stage means, how lifecycle stage differs from lead status, and how to define the criteria."]
         ] %}
         <article class="card card--link" data-card-url="{{ r[0] }}">
           <div class="card-icon {{ r[2] }}"><i class="fa-solid {{ r[1] }}" aria-hidden="true"></i></div>

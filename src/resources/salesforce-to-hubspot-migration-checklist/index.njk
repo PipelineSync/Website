@@ -1,0 +1,149 @@
+---
+layout: layouts/base.njk
+title: "Salesforce to HubSpot Migration Checklist | PipelineSync"
+description: "A step-by-step Salesforce to HubSpot migration checklist: source audit, field mapping, dedupe before import, sandbox QA, automation rebuild, cutover, training."
+robots: "index, follow"
+canonical: "https://pipelinesync.net/resources/salesforce-to-hubspot-migration-checklist/"
+ogType: "article"
+lastmod: "2026-10-15"
+changefreq: "monthly"
+priority: "0.7"
+pageType: "guide"
+breadcrumbName: "Salesforce to HubSpot Migration Checklist"
+tags: resource
+faqs:
+  - q: "How long does a Salesforce to HubSpot migration take?"
+    a: "Our migrations typically take three to six weeks. The range depends on data volume, how many objects and custom objects are in scope, the number of integrations, and how much Salesforce automation has to be rebuilt as HubSpot workflows."
+  - q: "Can we keep our activity history from Salesforce?"
+    a: "Yes, where it matters. The source audit decides which tasks, events, emails, and notes come across and which are archived outside HubSpot. The mapping sheet records how each activity type is imported and which records it is associated with."
+  - q: "Should we run Salesforce and HubSpot in parallel?"
+    a: "Keep the overlap as short as possible. A long parallel run means two sources of truth and data entered twice. We prefer a short freeze window: stop edits in Salesforce, run the final delta import, reconcile, then switch the team over with Salesforce kept read-only for reference."
+  - q: "Can HubSpot and Salesforce stay in sync instead of migrating?"
+    a: "Yes. If Salesforce stays for part of the business, a bi-directional sync with clear field ownership and deduplication may fit better than a full migration. See our <a href=\"/integrations/\">HubSpot integration services</a> for how we design that."
+relatedResources:
+  - { title: "Data Migration Mapping Sheet", url: "/resources/data-migration-mapping-sheet-pipelinesync/", text: "The column-by-column template behind step 2 of this checklist." }
+  - { title: "What Duplicate Data in HubSpot Actually Costs You", url: "/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/", text: "Why deduplicating before import is cheaper than cleaning up after." }
+  - { title: "HubSpot Lifecycle Stages Explained", url: "/resources/hubspot-lifecycle-stages-explained/", text: "Decide how Salesforce leads and contacts map to lifecycle stages and lead status." }
+  - { title: "HubSpot migration services", url: "/solutions/hubspot-migration/", text: "How we run Salesforce, Pipedrive, Zoho, and spreadsheet migrations end to end." }
+---
+{#- TODO(owner): confirm the author byline (proposed: Allen Trinidad, Founder). Until then the Article schema uses the organisation as author. -#}
+{#- Feature notes checked against general Salesforce and HubSpot documentation on 2026-10-15. TODO(owner): re-verify custom object tier availability before promoting. -#}
+<section class="guide-hero" style="--accent:#06245B;--accent-soft:#F1F5F9;--accent-border:#CBD5E1;">
+    <div class="container guide-hero-inner">
+      {% include "partials/breadcrumb.njk" %}
+      <div class="guide-eyebrow"><span class="guide-eyebrow-dot"></span>MIGRATION • 12 MIN</div>
+      <h1>Salesforce to HubSpot Migration Checklist</h1>
+      <p class="guide-dek">The order we work in when a team retires a Salesforce org: audit, map, deduplicate, test, rebuild, cut over, and train.</p>
+      {% include "partials/guide-meta.njk" %}
+    </div>
+  </section>
+
+  <main id="main-content" class="guide-main" style="--accent:#06245B;--accent-soft:#F1F5F9;--accent-border:#CBD5E1;">
+    <div class="container guide-layout">
+      <article class="guide-card">
+        <div class="guide-label">PipelineSync field guide</div>
+        <h2>What does a Salesforce to HubSpot migration involve?</h2>
+        <p class="guide-answer">A Salesforce to HubSpot migration moves your records, relationships, and the history that matters into a HubSpot structure designed for how you sell. Done well, it has seven steps: audit the source org, build a field mapping sheet, deduplicate before import, test in a sandbox, rebuild automation and reporting, cut over in a short freeze window, and train the team.</p>
+        <p>Signing the HubSpot contract is the easy part. This checklist is for the RevOps or sales ops lead who now has a Salesforce org to retire and a team that needs to keep selling while it happens. It follows the same order we use on <a href="/solutions/hubspot-migration/">our HubSpot migration projects</a>.</p>
+
+        <section id="why-migrations-fail">
+          <h2>Why do CRM migrations fail?</h2>
+          <p class="guide-answer">Most migrations fail for two reasons. The data arrives without structure, so HubSpot inherits years of Salesforce clutter. Then the team quietly goes back to the old system because the new one does not answer their questions. Both are planning problems, and both are decided before the first import.</p>
+          <p>A technically successful import can still be a failed migration. Records load, counts match, and yet reps cannot find the deal history they rely on, the dashboard leadership used every Monday no longer exists, and nobody knows which of three "Status" fields is the real one. The steps below are designed to prevent exactly that.</p>
+        </section>
+
+        <section id="before-you-export">
+          <h2>Step 1: What should you audit before exporting from Salesforce?</h2>
+          <p class="guide-answer">Audit four things: objects, fields, automation, and reports. List every standard and custom object in use, the fields on each that people actually fill in, the flows and validation rules that enforce your process, and the reports leadership relies on. That inventory decides scope.</p>
+          <h3>Objects, fields, automation, reports</h3>
+          <ul>
+            <li><strong>Objects:</strong> leads, contacts, accounts, opportunities, cases, activities, products, and any custom objects. Note record types, because they often become separate HubSpot pipelines.</li>
+            <li><strong>Fields:</strong> for each object, which fields are populated, which are formulas, and which nobody has touched in years.</li>
+            <li><strong>Automation:</strong> flows, validation rules, assignment rules, and approval processes. Each one encodes a business rule you will need to rebuild or retire.</li>
+            <li><strong>Reports and dashboards:</strong> the handful that drive real decisions. These become your acceptance tests later.</li>
+          </ul>
+          <h3>Decide what to migrate, archive, calculate, or exclude</h3>
+          <p>Every object and field gets one of four labels. <em>Migrate</em> means it comes across as data. <em>Archive</em> means it is exported and stored outside HubSpot for reference. <em>Calculate</em> means HubSpot will derive it (a rollup or calculated property) rather than import a stale value. <em>Exclude</em> means it is deliberately left behind. Writing this down is what stops a migration turning into a copy of every mistake in the old org.</p>
+        </section>
+
+        <section id="field-mapping">
+          <h2>Step 2: How do you map Salesforce fields to HubSpot?</h2>
+          <p class="guide-answer">Map each field by business meaning, not by label. For every field you migrate, record the source object and field, the HubSpot object and property, the data type, allowed values, and any transformation. Agree the matching key for each object and plan associations, owners, and activity history explicitly.</p>
+          <h3>Business meaning, data type, allowed values</h3>
+          <p>A Salesforce picklist called "Status" may mean something different from a HubSpot property with the same name. Capture what the field means to the business, then define how values translate. Dropdown values, dates, currencies, and multi-select fields need explicit rules. Our free <a href="/resources/data-migration-mapping-sheet-pipelinesync/">data migration mapping sheet</a> lists the columns we use.</p>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>Salesforce</th><th>Usual HubSpot destination</th><th>Decision to make</th></tr></thead>
+            <tbody>
+              <tr><td>Leads and contacts</td><td>Contacts</td><td>How lead vs contact maps to lifecycle stage and lead status</td></tr>
+              <tr><td>Accounts</td><td>Companies</td><td>Parent and child account structure; domain as a matching key</td></tr>
+              <tr><td>Opportunities</td><td>Deals</td><td>Stage mapping per pipeline; record types to separate pipelines</td></tr>
+              <tr><td>Cases</td><td>Tickets</td><td>Ticket pipeline and status mapping</td></tr>
+              <tr><td>Tasks and events</td><td>Activities (tasks, calls, meetings, notes)</td><td>How much history to bring, and what it associates to</td></tr>
+              <tr><td>Custom objects</td><td>Custom objects or properties</td><td>Whether the object is still needed, and whether your HubSpot tier supports custom objects</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <h3>Matching keys per object</h3>
+          <p>Decide how each record will be matched on import and on every later sync. Email address for contacts and company domain name for companies are the usual starting points. Store the Salesforce record ID in a dedicated HubSpot property on every object so you can reconcile, re-run imports, and trace any record back to its source.</p>
+          <h3>Associations, owners, activity history</h3>
+          <p>Contacts, companies, deals, tickets, and activities are connected. Import order matters: owners and companies first, then contacts, then deals and tickets, then activities, with associations set using the stored Salesforce IDs. Map Salesforce users to HubSpot users before anything loads, including people who have left, so ownership history is not lost.</p>
+        </section>
+
+        <section id="dedupe-before-import">
+          <h2>Step 3: Should you deduplicate before or after importing into HubSpot?</h2>
+          <p class="guide-answer">Before. Deduplicating in Salesforce or in the export files is cheaper and safer than merging in HubSpot afterwards, because every duplicate you import also brings its own activities, associations, and owner. Clean the source, agree a primary-record rule, and import one version of each person and company.</p>
+          <p>Agree what counts as a duplicate (same email, same domain, same external ID, or a normalised name match), and which record wins when two conflict. Protect consent, lifecycle, and ownership values during merges. We explain the knock-on costs in <a href="/resources/the-cost-of-duplicate-data-in-hubspot-pipelinesync/">what duplicate data in HubSpot actually costs you</a>.</p>
+        </section>
+
+        <section id="sandbox-import">
+          <h2>Step 4: How do you test a migration before going live?</h2>
+          <p class="guide-answer">Run a sample import into a HubSpot sandbox or test environment, then reconcile it against Salesforce. Compare record counts per object, check associations and owners on sample records, and rebuild the critical reports to see whether they return the same numbers. Fix the mapping, then repeat.</p>
+          <ul>
+            <li>Counts per object and per pipeline match the source, minus the records you chose to exclude.</li>
+            <li>Twenty or so sample records per object are checked field by field against Salesforce.</li>
+            <li>Associations are correct: contacts to companies, deals to contacts and companies, activities to the right records.</li>
+            <li>The reports leadership relies on return the same totals in both systems.</li>
+          </ul>
+          <div class="guide-callout"><p><strong>Planning a Salesforce migration?</strong> Bring your object list to a free 30-minute consultation and we will walk through scope with you. <button type="button" class="text-link js-open-hs-form">Book a free consultation</button></p></div>
+        </section>
+
+        <section id="rebuild-automation">
+          <h2>Step 5: How do you rebuild Salesforce automation in HubSpot?</h2>
+          <p class="guide-answer">Rebuild from the business rule, not from the old configuration. For each flow, validation rule, or assignment rule in your audit, write down what it is meant to achieve, decide whether it is still needed, then build the HubSpot equivalent with workflows, required properties, and pipeline rules. Test each one on sandbox data.</p>
+          <p>Salesforce orgs often carry automation nobody remembers adding. Copying it across one-for-one recreates the complexity you are trying to leave. Rebuild reporting the same way: start from the decisions leadership makes, then build the dashboards that answer them.</p>
+        </section>
+
+        <section id="cutover">
+          <h2>Step 6: What goes into a migration cutover plan?</h2>
+          <p class="guide-answer">A cutover plan sets a freeze window when nobody edits Salesforce, a final delta import of records changed since the last test, a reconciliation against the source, a rollback decision point, and a list of post-cutover checks. It names who does each step and when the team switches.</p>
+          <ul>
+            <li>Freeze window agreed with sales leadership and announced in advance.</li>
+            <li>Final delta import and reconciliation using the same checks as the sandbox run.</li>
+            <li>Rollback criteria written down before cutover, not decided on the day.</li>
+            <li>Integrations and forms repointed to HubSpot; Salesforce set to read-only for reference.</li>
+            <li>Post-cutover checks on day one and day five: routing, workflows, reports, and sync errors.</li>
+          </ul>
+        </section>
+
+        <section id="training">
+          <h2>Step 7: How do you make sure the team stays in HubSpot?</h2>
+          <p class="guide-answer">Train by role, on your own portal, with your own data, before cutover day. Show each team how to do the jobs they did in Salesforce, then hand over written SOPs. Adoption holds when HubSpot answers people's daily questions faster than the old system did.</p>
+          <p>Short, role-based sessions work better than one long demo. Record them, document the data model and automation logic, and keep a named owner for questions in the first weeks. More on this in <a href="/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/">why teams do not adopt HubSpot</a>.</p>
+        </section>
+
+        <section id="checklist">
+          <h2>The Salesforce to HubSpot migration checklist</h2>
+          <p>Use this as the sign-off list for each phase.</p>
+          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Objects, fields, automation, and reports audited</div></div><div class="guide-check"><span>✓</span><div>Migrate, archive, calculate, or exclude decided</div></div><div class="guide-check"><span>✓</span><div>Field mapping sheet signed off</div></div><div class="guide-check"><span>✓</span><div>Matching keys and Salesforce IDs stored</div></div><div class="guide-check"><span>✓</span><div>Users and owners mapped</div></div><div class="guide-check"><span>✓</span><div>Duplicates resolved before import</div></div><div class="guide-check"><span>✓</span><div>Sandbox import reconciled</div></div><div class="guide-check"><span>✓</span><div>Automation rebuilt and tested</div></div><div class="guide-check"><span>✓</span><div>Critical reports match the source</div></div><div class="guide-check"><span>✓</span><div>Cutover, freeze, and rollback planned</div></div><div class="guide-check"><span>✓</span><div>Role-based training delivered</div></div><div class="guide-check"><span>✓</span><div>SOPs and data model documented</div></div></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> Most of a migration's success is decided before the first import. Audit, map, and deduplicate first, and the import itself becomes the least risky step.</p></div>
+        {% include "partials/article-faq.njk" %}
+        <div class="guide-footer-cta"><h2>Planning a Salesforce migration?</h2><p>Book a free consultation and bring your object list. We will tell you what to migrate, what to leave behind, and how long it should take.</p><button type="button" class="btn js-open-hs-form">Book a free consultation</button></div>
+      </article>
+      <aside class="guide-aside">
+        <div class="aside-card"><h3>In this guide</h3><div class="aside-list"><div><span>01</span><div><a href="#before-you-export">Audit the source org</a></div></div><div><span>02</span><div><a href="#field-mapping">Build the field mapping</a></div></div><div><span>03</span><div><a href="#dedupe-before-import">Deduplicate before import</a></div></div><div><span>04</span><div><a href="#sandbox-import">Sandbox import and QA</a></div></div><div><span>05</span><div><a href="#rebuild-automation">Rebuild automation</a></div></div><div><span>06</span><div><a href="#cutover">Cutover plan</a></div></div><div><span>07</span><div><a href="#training">Training</a></div></div></div></div>
+        <div class="aside-card aside-cta"><h3>Moving off Salesforce?</h3><p>Senior HubSpot specialists, a documented mapping, and no black box.</p><a class="btn" href="/solutions/hubspot-migration/">See migration services</a></div>
+      </aside>
+    </div>
+  </main>
