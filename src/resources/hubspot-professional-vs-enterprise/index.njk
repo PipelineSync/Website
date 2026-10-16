@@ -1,0 +1,105 @@
+---
+layout: layouts/base.njk
+title: "HubSpot Professional vs Enterprise: The CRM View | PipelineSync"
+description: "HubSpot Professional vs Enterprise from an architecture angle: custom objects, sandboxes, permissions and scale, and how to decide which tier you need."
+robots: "index, follow"
+canonical: "https://pipelinesync.net/resources/hubspot-professional-vs-enterprise/"
+ogType: "article"
+lastmod: "2026-10-17"
+changefreq: "monthly"
+priority: "0.7"
+pageType: "article"
+breadcrumbName: "HubSpot Professional vs Enterprise"
+tags: resource
+faqs:
+  - q: "Do you need HubSpot Enterprise for custom objects?"
+    a: "Yes. HubSpot's own documentation lists custom objects as an Enterprise feature. If your business tracks something that is not a contact, company, deal or ticket, such as properties, subscriptions or projects, check first whether an existing object or a set of properties can model it before deciding you need Enterprise."
+  - q: "Is a HubSpot sandbox included in Professional?"
+    a: "No. HubSpot includes a sandbox account with Enterprise editions. On Professional, teams usually test changes on sample records or in a separate test portal, which works but needs more care before changes go live."
+  - q: "Can we start on Professional and upgrade later?"
+    a: "Yes, and many teams should. Design the data model, lifecycle stages and permissions as if you will grow, so upgrading adds capability on top of a clean structure instead of forcing a rebuild."
+  - q: "Which HubSpot tier do your clients usually use?"
+    a: "Most of the B2B companies we work with, typically between about 10 and 200 people, are on HubSpot Professional or Enterprise. The common problem is not the tier; it is paying for features the portal was never set up to use."
+relatedResources:
+  - { title: "HubSpot Implementation Checklist", url: "/resources/hubspot-implementation-checklist/", text: "Design the structure first, then pick the tier that runs it." }
+  - { title: "HubSpot CRM Architecture Blueprint", url: "/resources/hubspot-crm-architecture-blueprint/", text: "Objects, pipelines, lifecycle and permissions in practice." }
+  - { title: "Pipedrive vs HubSpot for B2B", url: "/resources/pipedrive-vs-hubspot/", text: "When moving to HubSpot is worth it in the first place." }
+  - { title: "HubSpot implementation services", url: "/solutions/hubspot-implementation/", text: "Have the portal designed around how you sell, on the tier you choose." }
+---
+{#- Tier facts checked against HubSpot's knowledge base (custom objects, property access) and sandbox product page on 2026-10-17. Re-check before each update: HubSpot changes tiers often. No prices on purpose. -#}
+<section class="guide-hero" style="--accent:#7C3AED;--accent-soft:#EDE9FE;--accent-border:#DDD6FE;">
+    <div class="container guide-hero-inner">
+      {% include "partials/breadcrumb.njk" %}
+      <div class="guide-eyebrow"><span class="guide-eyebrow-dot"></span>ARCHITECTURE • 8 MIN</div>
+      <h1>HubSpot Professional vs Enterprise</h1>
+      <p class="guide-dek">What actually changes for your CRM architecture between the two tiers, and how to decide which one your structure needs.</p>
+      {% include "partials/guide-meta.njk" %}
+    </div>
+  </section>
+
+  <main id="main-content" class="guide-main" style="--accent:#7C3AED;--accent-soft:#EDE9FE;--accent-border:#DDD6FE;">
+    <div class="container guide-layout">
+      <article class="guide-card">
+        <div class="guide-label">PipelineSync field notes</div>
+        <h2>What is the difference between HubSpot Professional and Enterprise?</h2>
+        <p class="guide-answer">For CRM architecture, Enterprise mainly adds structure and control: custom objects for data that does not fit contacts, companies, deals or tickets, a sandbox for testing changes safely, finer access controls, and higher limits for larger teams. Professional covers most B2B sales and marketing processes well when the portal is designed properly.</p>
+        <p>This is not a pricing page; HubSpot changes plans and prices often, so check the current details on <a href="https://www.hubspot.com/pricing" rel="noopener">HubSpot's pricing page</a>. It is the view from building portals on both tiers: which differences change how you design the CRM, and which you can safely ignore.</p>
+
+        <section id="objects">
+          <h2>Do you need custom objects?</h2>
+          <p class="guide-answer">Custom objects are an Enterprise feature. You need them when your business tracks something with its own records, properties and relationships, such as properties, vehicles, subscriptions or projects, that would otherwise be crammed into deals or contacts. If a few properties on an existing object model it cleanly, Professional is enough.</p>
+          <ul>
+            <li>Ask: does this thing have its own lifecycle and many records per customer?</li>
+            <li>If yes, a custom object keeps reporting clean.</li>
+            <li>If no, properties or an extra deal pipeline are usually the simpler choice.</li>
+          </ul>
+        </section>
+
+        <section id="sandbox">
+          <h2>How important is a sandbox?</h2>
+          <p class="guide-answer">HubSpot includes a sandbox account with Enterprise, so changes to workflows, properties and pipelines can be built and tested away from live data, then deployed. On Professional you can still test safely with sample records and careful staging, but the risk of a change hitting live records is higher.</p>
+          <p>The more automation and integrations a portal runs, the more a sandbox is worth. That is the same reason we build in a test environment first on <a href="/resources/hubspot-implementation-checklist/">every implementation</a>.</p>
+        </section>
+
+        <section id="permissions">
+          <h2>What changes for permissions and governance?</h2>
+          <p class="guide-answer">Both tiers support teams, permission sets and controls over who can view or edit specific properties. Enterprise adds finer control as organisations grow: more structured team hierarchies and stricter control over who can change what. If several departments or regions share one portal, those controls start to matter.</p>
+          <p>Whichever tier you are on, the basics in our <a href="/resources/hubspot-governance-checklist-pipelinesync/">HubSpot governance checklist</a> come first. Most permission problems we fix are design problems, not tier problems.</p>
+        </section>
+
+        <section id="scale">
+          <h2>When do limits and scale push you to Enterprise?</h2>
+          <p class="guide-answer">Enterprise raises limits on things like pipelines, workflows and custom reporting, which matters for larger teams running several sales motions, regions or brands in one portal. If you are hitting a limit on Professional, first check whether the design is the problem: duplicate workflows and unused pipelines use up limits quickly.</p>
+        </section>
+
+        <section id="decide">
+          <h2>How do you decide which tier you need?</h2>
+          <p class="guide-answer">Design the structure first, then choose the tier that runs it. Write down your objects, pipelines, lifecycle stages, permissions and the reports leadership needs. If that design needs custom objects, a sandbox or finer control, choose Enterprise; if not, Professional set up properly will serve you better than Enterprise set up badly.</p>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>If your design needs…</th><th>Usually points to</th></tr></thead>
+            <tbody>
+              <tr><td>Standard objects, one or two pipelines, one sales team</td><td>Professional</td></tr>
+              <tr><td>A business object that is not a contact, company, deal or ticket</td><td>Enterprise (custom objects)</td></tr>
+              <tr><td>Heavy automation and integrations changed often</td><td>Enterprise (sandbox)</td></tr>
+              <tr><td>Several departments, regions or brands in one portal</td><td>Enterprise (finer control, higher limits)</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="guide-callout"><p><strong>Not sure which tier your structure needs?</strong> We will design it first and tell you. <button type="button" class="text-link js-open-hs-form">Book a free consultation</button></p></div>
+        </section>
+
+        <section id="checklist">
+          <h2>Tier decision checklist</h2>
+          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Objects and relationships designed</div></div><div class="guide-check"><span>✓</span><div>Custom object need tested against properties</div></div><div class="guide-check"><span>✓</span><div>Pipelines and sales motions counted</div></div><div class="guide-check"><span>✓</span><div>Change and testing process decided</div></div><div class="guide-check"><span>✓</span><div>Permission model by role written</div></div><div class="guide-check"><span>✓</span><div>Current limits checked against the design</div></div></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> The tier rarely fixes a messy portal. Design the structure, then buy the tier the structure needs.</p></div>
+        {% include "partials/article-faq.njk" %}
+        <div class="guide-footer-cta"><h2>Choosing a HubSpot tier?</h2><p>Book a free consultation. We will map the structure you need and tell you which tier runs it.</p><button type="button" class="btn js-open-hs-form">Book a free consultation</button></div>
+      </article>
+      <aside class="guide-aside">
+        <div class="aside-card"><h3>In this article</h3><div class="aside-list"><div><span>01</span><div><a href="#objects">Custom objects</a></div></div><div><span>02</span><div><a href="#sandbox">Sandbox</a></div></div><div><span>03</span><div><a href="#permissions">Permissions</a></div></div><div><span>04</span><div><a href="#scale">Limits and scale</a></div></div><div><span>05</span><div><a href="#decide">How to decide</a></div></div></div></div>
+        <div class="aside-card aside-cta"><h3>Paying for features nobody uses?</h3><p>We set up the tier you have so it does what you pay for.</p><a class="btn" href="/solutions/hubspot-implementation/">See implementation services</a></div>
+      </aside>
+    </div>
+  </main>
