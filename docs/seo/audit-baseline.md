@@ -22,7 +22,7 @@ Scope: all 19 built pages on `main` after the redesign (merge of PR #14), crawle
 | 14 | P2 | HubSpot form embed script loaded on every page view. | Now loaded on first intent (hover/focus/click on a consultation button). |
 | 15 | P2 | Privacy policy is WordPress boilerplate (comments, Gravatar) and does not mention HubSpot tracking, analytics, or cookies. | Draft for legal review in `privacy-policy-draft.md`; live page unchanged. |
 | 16 | P2 | Resource pages are 350–450 words; template pages do not link to the actual template files. | Content refresh plan in `content-plan.md` §6; template files are `TODO(owner)`. |
-| 17 | P3 | No author bylines/dates on articles. | Dates now in schema and `article:*` meta; visible bylines wait for the owner to confirm authorship. |
+| 17 | P3 | No author bylines/dates on articles. | Dates now in schema and `article:*` meta; visible byline "By the PipelineSync team" plus Updated date on every resource page (Oct 2026). |
 
 ## Per-page snapshot (before)
 

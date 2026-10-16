@@ -31,7 +31,7 @@ All JSON-LD is generated at build time by `buildGraph()` in `.eleventy.js` and o
 ## Deliberate choices
 
 - **No Review / AggregateRating markup.** Google treats self-serving reviews of your own business as ineligible; the 10 five-star reviews stay as visible text linking to the source profiles.
-- **Author is the Organization** on articles until the owner confirms who wrote each piece. Once confirmed, change `author` in `buildGraph()` (or add `author` front matter) to the Person and add a visible byline.
+- **Author is the Organization** on articles: the owner confirmed (Oct 2026) that the PipelineSync team writes them, so no individual bylines. The visible byline reads "By the PipelineSync team" and links to `/about/`.
 - **City-level address only.** `address` is Clark, Pampanga, PH, matching the public HubSpot directory listing; no street address. `areaServed` lists US, AU, CA, GB.
 - **FAQPage** is valid markup; Google currently shows FAQ rich results mainly for authoritative government/health sites, but other engines and AI answers use it.
 - **No SearchAction** (the site has no search).

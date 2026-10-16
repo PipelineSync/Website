@@ -1,0 +1,108 @@
+---
+layout: layouts/base.njk
+title: "HubSpot Implementation Checklist | PipelineSync"
+description: "A HubSpot implementation checklist: audit what you have, design objects, pipelines, lifecycle and permissions, build in a sandbox, then train and document."
+robots: "index, follow"
+canonical: "https://pipelinesync.net/resources/hubspot-implementation-checklist/"
+ogType: "article"
+lastmod: "2026-10-17"
+changefreq: "monthly"
+priority: "0.7"
+pageType: "guide"
+breadcrumbName: "HubSpot Implementation Checklist"
+tags: resource
+faqs:
+  - q: "How long does a HubSpot implementation take?"
+    a: "On our projects, audit and architecture take one to two weeks, and the build typically takes two to four weeks. Portals with more data, more integrations or several hubs can take up to six weeks. Training and documentation run alongside the final build stage."
+  - q: "Do we need a partner, or can we implement HubSpot ourselves?"
+    a: "Small teams with a simple sales process can implement HubSpot themselves using a checklist like this one. A partner helps most when you are migrating data, connecting several systems, running more than one pipeline, or rebuilding a portal that grew without a design."
+  - q: "What should be documented at handover?"
+    a: "The data model (objects, associations and the property catalogue), pipeline stages with exit criteria, lifecycle and lead status definitions, a permission matrix, the automation logic, the integration map, and SOPs for daily work. Your team should be able to run and change the system without the people who built it."
+  - q: "Can we implement one hub first and add others later?"
+    a: "Yes, as long as the data model is designed for where you are going. Define shared objects, lifecycle stages and ownership rules up front, then add hubs onto that structure instead of bolting each one on separately."
+relatedResources:
+  - { title: "HubSpot CRM Architecture Blueprint", url: "/resources/hubspot-crm-architecture-blueprint/", text: "Objects, pipelines, lifecycle and permissions in more depth." }
+  - { title: "HubSpot Governance Checklist", url: "/resources/hubspot-governance-checklist-pipelinesync/", text: "Rules that keep the new portal clean after go-live." }
+  - { title: "Why Teams Do Not Adopt HubSpot", url: "/resources/why-teams-dont-adopt-hubspot-and-how-we-fix-it-pipelinesync/", text: "Why adoption is usually an architecture problem." }
+  - { title: "HubSpot implementation services", url: "/solutions/hubspot-implementation/", text: "Have the portal designed and built with you, start to finish." }
+---
+<section class="guide-hero" style="--accent:#1D4ED8;--accent-soft:#DBEAFE;--accent-border:#BFDBFE;">
+    <div class="container guide-hero-inner">
+      {% include "partials/breadcrumb.njk" %}
+      <div class="guide-eyebrow"><span class="guide-eyebrow-dot"></span>IMPLEMENTATION • 12 MIN</div>
+      <h1>HubSpot Implementation Checklist</h1>
+      <p class="guide-dek">What to decide before anything is built: audit, design, build in a sandbox, then train and document so the portal holds up.</p>
+      {% include "partials/guide-meta.njk" %}
+    </div>
+  </section>
+
+  <main id="main-content" class="guide-main" style="--accent:#1D4ED8;--accent-soft:#DBEAFE;--accent-border:#BFDBFE;">
+    <div class="container guide-layout">
+      <article class="guide-card">
+        <div class="guide-label">PipelineSync field guide</div>
+        <h2>What does a HubSpot implementation involve?</h2>
+        <p class="guide-answer">A HubSpot implementation designs and builds the portal around how your business sells: objects and properties, deal pipelines with exit criteria, lifecycle stages, permissions, forms, workflows and dashboards. It works in four stages: audit what you have, design the structure, build and test in a sandbox, then train the team and document everything.</p>
+        <p>This checklist is for the ops lead or founder at a B2B company starting HubSpot, or restarting it after a quick setup that never held. It follows the four stages we use on <a href="/solutions/hubspot-implementation/">our HubSpot implementations</a>.</p>
+
+        <section id="why">
+          <h2>Why do HubSpot implementations go wrong?</h2>
+          <p class="guide-answer">Most go wrong the same way: the portal is configured quickly, never architected, and never documented. Defaults are left in place, fields are added as people ask for them, and nobody writes down how anything works. Within a year the data is unreliable and the team works around the CRM instead of in it.</p>
+          <p>The fix is to make the design decisions before the build, and to write them down. Every item below is a decision, not a click.</p>
+        </section>
+
+        <section id="audit">
+          <h2>Stage 1: What should you audit before building?</h2>
+          <p class="guide-answer">Audit four things: the current portal or system, the data, the integrations, and the sales process itself. Write down what works, what is broken, and what is costing time. That document becomes the brief for the design, and it stops the new build from repeating old mistakes.</p>
+          <ul>
+            <li><strong>Portal or current CRM:</strong> objects, properties, pipelines, workflows and users in use today.</li>
+            <li><strong>Data:</strong> volume, duplicates, missing fields, and what has to migrate.</li>
+            <li><strong>Integrations:</strong> every system that will read from or write to HubSpot.</li>
+            <li><strong>Process:</strong> how a lead becomes a customer in practice, step by step, including the exceptions.</li>
+          </ul>
+        </section>
+
+        <section id="design">
+          <h2>Stage 2: What should you design before you build?</h2>
+          <p class="guide-answer">Design the data model, pipelines, lifecycle stages and permissions on paper first, then get them approved. Changing a design costs minutes; changing a live portal with data in it costs days. The design should answer what each object holds, how records move, and who can do what.</p>
+          <h3>Objects and custom properties</h3>
+          <p>Decide which standard objects you will use (contacts, companies, deals, tickets) and whether you need custom objects. Build a property catalogue: name, type, allowed values, owner and purpose for every custom property. Reuse before creating.</p>
+          <h3>Deal pipelines and stages with exit criteria</h3>
+          <p>One pipeline per genuinely different sales motion, not per team. Each stage gets an exit criterion that can be checked in HubSpot, such as "proposal sent" or "budget confirmed", so stages reflect reality.</p>
+          <h3>Lifecycle stages and lead statuses</h3>
+          <p>Write entry and exit criteria for each lifecycle stage and keep lead status for day-to-day sales work. See <a href="/resources/hubspot-lifecycle-stages-explained/">HubSpot lifecycle stages explained</a>.</p>
+          <h3>Teams and permissions</h3>
+          <p>Define teams and a permission set per role. Limit super admins, exports and deletion rights from day one; it is far harder to take access away later.</p>
+        </section>
+
+        <section id="build">
+          <h2>Stage 3: How should you build and test?</h2>
+          <p class="guide-answer">Build in a sandbox or test environment first, in dependency order: properties, then pipelines, then forms and lists, then workflows and sequences, then dashboards. Test each piece with realistic sample records before deploying. Dashboards come last because they depend on everything underneath them.</p>
+          <ul>
+            <li>Forms map to the right properties and set a lifecycle stage.</li>
+            <li>Routing and task workflows tested with sample records, including exceptions.</li>
+            <li>Imports and integrations tested on a small batch first.</li>
+            <li>Dashboards checked against known numbers before anyone relies on them.</li>
+          </ul>
+          <div class="guide-callout"><p><strong>Want the architecture designed before anything is built?</strong> <button type="button" class="text-link js-open-hs-form">Book a free consultation</button></p></div>
+        </section>
+
+        <section id="handover">
+          <h2>Stage 4: What should training and documentation cover?</h2>
+          <p class="guide-answer">Train each role on its daily work in your own portal, then hand over written documentation: SOPs, the data model, automation logic, the integration map and a permission matrix. The test of a good handover is that your team can run, change and explain the system without the people who built it.</p>
+        </section>
+
+        <section id="checklist">
+          <h2>The HubSpot implementation checklist</h2>
+          <p>These expand the six checkpoints in our <a href="/resources/hubspot-crm-architecture-blueprint/">CRM architecture blueprint</a>.</p>
+          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Current portal, data and integrations audited</div></div><div class="guide-check"><span>✓</span><div>Sales process written down step by step</div></div><div class="guide-check"><span>✓</span><div>Objects and property catalogue designed</div></div><div class="guide-check"><span>✓</span><div>Pipelines with exit criteria approved</div></div><div class="guide-check"><span>✓</span><div>Lifecycle and lead status defined</div></div><div class="guide-check"><span>✓</span><div>Teams and permission sets set</div></div><div class="guide-check"><span>✓</span><div>Built and tested in a sandbox</div></div><div class="guide-check"><span>✓</span><div>Imports and integrations tested on a batch</div></div><div class="guide-check"><span>✓</span><div>Dashboards checked against known numbers</div></div><div class="guide-check"><span>✓</span><div>Role-based training delivered</div></div><div class="guide-check"><span>✓</span><div>SOPs and data model documented</div></div><div class="guide-check"><span>✓</span><div>Permission matrix and integration map handed over</div></div></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> Implementation quality is decided in the design stage. Make the decisions, write them down, and build to the document.</p></div>
+        {% include "partials/article-faq.njk" %}
+        <div class="guide-footer-cta"><h2>Want the architecture designed first?</h2><p>Book a free consultation. We will walk through your process and tell you what the portal should look like before anything is built.</p><button type="button" class="btn js-open-hs-form">Book a free consultation</button></div>
+      </article>
+      <aside class="guide-aside">
+        <div class="aside-card"><h3>In this guide</h3><div class="aside-list"><div><span>01</span><div><a href="#audit">Audit what you have</a></div></div><div><span>02</span><div><a href="#design">Design before you build</a></div></div><div><span>03</span><div><a href="#build">Build and test</a></div></div><div><span>04</span><div><a href="#handover">Train and document</a></div></div><div><span>05</span><div><a href="#checklist">Checklist</a></div></div></div></div>
+        <div class="aside-card aside-cta"><h3>Starting or restarting HubSpot?</h3><p>Designed around how you sell, documented, and handed over.</p><a class="btn" href="/solutions/hubspot-implementation/">See implementation services</a></div>
+      </aside>
+    </div>
+  </main>

@@ -21,7 +21,7 @@ Focus: HubSpot services for B2B buyers, US first, then Australia, Canada, UK (ex
 | `/about/` | PipelineSync | Navigational | HubSpot Solutions Partner team; HubSpot certified consultants; HubSpot partner Philippines US hours |
 | `/about/privacy-policy/` | — | Navigational | — |
 | `/resources/hubspot-crm-architecture-blueprint/` | HubSpot CRM architecture | Informational | HubSpot data model; HubSpot objects and pipelines; HubSpot permissions (lifecycle stages moved to the C2 article) |
-| `/resources/crm-cleanup-deduplication-system-pipelinesync/` | HubSpot deduplication | Informational | HubSpot data cleanup; merge duplicates HubSpot; CRM data quality process |
+| `/resources/crm-cleanup-deduplication-system-pipelinesync/` | HubSpot deduplication | Informational | how to deduplicate HubSpot; merge duplicate contacts HubSpot; HubSpot duplicate companies; CRM data quality process (absorbs planned article B6) |
 | `/resources/lead-routing-lifecycle-automation-pipelinesync/` | HubSpot lead routing | Informational | HubSpot lead assignment; lifecycle stage automation; lead SLA HubSpot; round robin HubSpot |
 | `/resources/integration-governance-monitoring-pipelinesync/` | HubSpot integration governance | Informational | HubSpot sync errors; bidirectional sync HubSpot; integration monitoring |
 | `/resources/full-funnel-attribution-that-ceos-trust-pipelinesync/` | HubSpot attribution reporting | Informational | multi-touch attribution HubSpot; HubSpot revenue attribution; campaign influence HubSpot |
@@ -33,6 +33,8 @@ Focus: HubSpot services for B2B buyers, US first, then Australia, Canada, UK (ex
 | `/resources/data-migration-mapping-sheet-pipelinesync/` | CRM data migration template | Informational | HubSpot migration field mapping; data mapping template CRM; migration QA checklist |
 | `/resources/salesforce-to-hubspot-migration-checklist/` | salesforce to hubspot migration | Commercial / Informational | salesforce to hubspot migration checklist; migrate salesforce to hubspot; crm data migration |
 | `/resources/hubspot-lifecycle-stages-explained/` | hubspot lifecycle stages | Informational | hubspot lead status; lifecycle stage vs lead status; mql sql hubspot |
+| `/resources/hubspot-implementation-checklist/` | hubspot implementation checklist | Informational | hubspot implementation plan; hubspot onboarding checklist; hubspot setup checklist |
+| `/resources/hubspot-audit-checklist/` | hubspot audit checklist | Informational | hubspot portal audit; hubspot health check; crm audit checklist |
 | `/resources/lead-routing-decision-tree-pipelinesync/` | lead routing decision tree | Informational | lead assignment flowchart; HubSpot lead routing template; lead scoring thresholds |
 
 ## Titles, descriptions and H1 per page
