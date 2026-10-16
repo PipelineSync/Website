@@ -88,7 +88,8 @@ export function heroScroll(mm) {
     const tl = gsap.timeline({
       scrollTrigger: { trigger: hero, start: 'top top', end: ctx.conditions.mobile ? '+=90%' : '+=140%', pin: true, scrub: 1, invalidateOnRefresh: true }
     });
-    tl.to(copy, { opacity: 0, y: -120, ease: 'power1.in', duration: 0.5 }, 0)
+    // autoAlpha (not just opacity) so the faded copy stops catching clicks meant for the dashboard.
+    tl.to(copy, { autoAlpha: 0, y: -120, ease: 'power1.in', duration: 0.5 }, 0)
       .to(visual, { rotationX: 0, scale: fit, y: lift, transformOrigin: '50% 0%', ease: 'power2.inOut', duration: 1 }, 0)
       .to({}, { duration: 0.35 }); // hold the flat dashboard before unpinning
   });

@@ -51,31 +51,6 @@ motionPage: true
   </div>
 </section>
 
-{#- Client logos (kept from the original home page) -#}
-<section class="logos" aria-labelledby="trusted-heading">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <h2 id="trusted-heading" class="logos__label">The teams we build for</h2>
-      <p>We work with B2B companies in financial services, energy, education, technology, and professional services, where clean data and a process people follow are not optional.</p>
-    </div>
-  </div>
-  <div class="marquee reveal" id="logoMarquee">
-    <div class="marquee__track" role="list" aria-label="PipelineSync client logos">
-      {%- set clientLogos = [
-        ["ESA-1", "ESA", 855, 240], ["BH-Labs-1", "BH Labs", 240, 240], ["CW-Systems-1", "CW Systems", 663, 240],
-        ["Independent-Energy-1", "Independent Energy", 717, 240], ["Interview-Coach-1", "Interview Coach AI", 653, 240],
-        ["Jayo-1", "Jayo Designs", 211, 240], ["modern-engineering-1", "Modern Engineering Solutions", 703, 240],
-        ["private-tax-solutions-1", "Private Tax Solutions", 900, 239], ["S8T-1", "S8T Training", 669, 240],
-        ["broker-capital-1", "Broker Capital", 480, 240], ["crypto-consulting-1", "Crypto Consulting Institute", 549, 240],
-        ["guitierrez-1", "Guitierrez", 260, 240]
-      ] -%}
-      {%- for pass in [0, 1] %}{% for logo in clientLogos %}
-      <div class="marquee__item" {% if pass == 1 %}aria-hidden="true"{% else %}role="listitem"{% endif %}><picture><source srcset="/assets/img/{{ logo[0] }}.webp" type="image/webp"><img src="/assets/img/{{ logo[0] }}.png" alt="{% if pass == 0 %}{{ logo[1] }} logo{% endif %}" width="{{ logo[2] }}" height="{{ logo[3] }}" loading="lazy" decoding="async"></picture></div>
-      {%- endfor %}{% endfor %}
-    </div>
-  </div>
-</section>
-
 {#- 3. Founder intro -#}
 <section class="mx-section mx-founder" aria-labelledby="mxFounderName">
   <div class="mx-container mx-founder__grid">
