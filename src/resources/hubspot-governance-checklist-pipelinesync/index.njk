@@ -5,12 +5,24 @@ description: "A free 47-point HubSpot governance checklist covering permissions,
 robots: "index, follow"
 canonical: "https://pipelinesync.net/resources/hubspot-governance-checklist-pipelinesync/"
 ogType: "article"
-lastmod: "2026-10-03"
+lastmod: "2026-10-17"
 changefreq: "monthly"
 priority: "0.6"
 pageType: "template"
 breadcrumbName: "HubSpot Governance Checklist"
 tags: resource
+faqs:
+  - q: "What is HubSpot governance?"
+    a: "HubSpot governance is the set of rules that keeps a portal understandable and safe as it grows: who can access and change what, how properties and assets are named and owned, how data is validated, and how automation, integrations and reports are reviewed."
+  - q: "How often should you review HubSpot governance?"
+    a: "Run the full checklist every quarter, after a migration, and before any major rebuild. Weekly, check the fast-moving items: duplicates, workflow errors and sync errors."
+  - q: "Who should own HubSpot governance?"
+    a: "One named portal owner, usually in operations or RevOps, with property and workflow owners named for each area. If nobody owns the portal, governance decays within months; that is the gap ongoing HubSpot administration fills."
+relatedResources:
+  - { title: "HubSpot Audit Checklist", url: "/resources/hubspot-audit-checklist/", text: "Find out where the portal stands before applying the rules." }
+  - { title: "HubSpot CRM Architecture Blueprint", url: "/resources/hubspot-crm-architecture-blueprint/", text: "The structure this checklist keeps intact." }
+  - { title: "HubSpot Cleanup and Deduplication System", url: "/resources/crm-cleanup-deduplication-system-pipelinesync/", text: "Fix the data before enforcing the validation rules." }
+  - { title: "HubSpot administration services", url: "/solutions/hubspot-admin/", text: "Ongoing governance for teams without an internal CRM owner." }
 ---
 
 <section class="guide-hero" style="--accent:#15803D;--accent-soft:#DCFCE7;--accent-border:#BBF7D0;">
@@ -27,19 +39,51 @@ tags: resource
     <div class="container guide-layout">
       <article class="guide-card">
         <div class="guide-label">PipelineSync resource</div>
-        <h2>Use it to make the next step clearer</h2>
-        <p class="intro">Governance keeps a HubSpot portal understandable, safe, and ready to change. Use this checklist before a new build, after a migration, or during a quarterly portal review to make sure the system is still supporting the business it serves.</p>
-        <section><h3>Access and permissions</h3><p>Start with who can see, edit, export, and delete information. Permission design should match responsibilities without creating unnecessary barriers for the people doing the work.</p><ul><li>Review teams, permission sets, and super-admin access.</li><li>Confirm sensitive properties and export permissions are restricted.</li><li>Test access using representative user roles, not only an administrator account.</li></ul></section><section><h3>Data model and validation</h3><p>A clean data model makes the correct action easier. Check that objects, properties, associations, and required values have a clear purpose and consistent definition.</p><ul><li>Remove duplicate or unused properties.</li><li>Document property owners, definitions, formats, and allowed values.</li><li>Confirm validation rules protect reporting without blocking legitimate work.</li></ul></section><section><h3>Naming and audit trails</h3><p>Consistent naming lets teams find the right asset quickly and makes troubleshooting possible. Every important change should have enough context for another administrator to understand it later.</p><ul><li>Apply naming conventions to properties, workflows, lists, views, and dashboards.</li><li>Record the owner, purpose, and last review date for critical assets.</li><li>Review change history, inactive assets, and unowned workflows.</li></ul></section>
-        <section>
-          <h3>Resource checklist</h3>
-          <p>Use these checkpoints to turn the template into a working process.</p>
-          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Permission sets reviewed</div></div><div class="guide-check"><span>✓</span><div>Super-admin access justified</div></div><div class="guide-check"><span>✓</span><div>Property catalogue current</div></div><div class="guide-check"><span>✓</span><div>Validation rules tested</div></div><div class="guide-check"><span>✓</span><div>Naming conventions applied</div></div><div class="guide-check"><span>✓</span><div>Audit trail owners assigned</div></div></div>
+        <h2>What should a HubSpot governance checklist cover?</h2>
+        <p class="guide-answer">A HubSpot governance checklist covers seven areas: access and permissions, the data model and properties, data quality and validation, naming conventions, automation, integrations, and reporting. Each item has an owner and a review rhythm, so the portal stays understandable and safe as more people and processes depend on it.</p>
+        {#- TODO(owner): the resources page calls this a "Notion template". Publish the Notion copy and add the link in the paragraph below. -#}
+        <p class="intro">Use this checklist before a new build, after a migration, or in a quarterly portal review. All 47 points are listed below, free and without a form.</p>
+
+        <section id="access">
+          <h3>Access and permissions (8)</h3>
+          <ol class="gov-list" start="1"><li>Super admins limited to the people who own the portal</li><li>Permission sets defined per role</li><li>Teams match the real reporting structure</li><li>Export rights limited by role</li><li>Bulk delete rights limited by role</li><li>Departed users deactivated within a day</li><li>Records of departed users reassigned</li><li>Access tested with a normal user account, not an admin</li></ol>
         </section>
-        <div class="guide-callout"><p><strong>Key takeaway:</strong> Governance is not a pile of restrictions. It is the shared system that keeps a portal usable, explainable, and safe as more people and processes depend on it.</p></div>
+        <section id="data">
+          <h3>Data model and properties (10)</h3>
+          <ol class="gov-list" start="9"><li>Every custom property is in the property catalogue</li><li>Each property has an owner and a one-line definition</li><li>No duplicate properties for the same concept</li><li>Unused properties archived</li><li>Dropdowns used instead of free text where values repeat</li><li>Required properties set on forms and imports</li><li>Associations between objects documented</li><li>Record ID of source systems stored for imported data</li><li>Sensitive properties restricted to the roles that need them</li><li>Lifecycle stage and lead status definitions written down</li></ol>
+        </section>
+        <section id="validation">
+          <h3>Data quality and validation (6)</h3>
+          <ol class="gov-list" start="19"><li>Email, phone and country formats standardised</li><li>Company domains normalised</li><li>Duplicate review runs every week</li><li>Imports require a matching key</li><li>Only trained users can import</li><li>Data quality exceptions have a named owner</li></ol>
+        </section>
+        <section id="naming">
+          <h3>Naming conventions (6)</h3>
+          <ol class="gov-list" start="25"><li>Naming convention published for properties</li><li>Naming convention published for workflows</li><li>Naming convention published for lists and views</li><li>Naming convention published for reports and dashboards</li><li>Test and temporary assets clearly labelled</li><li>Old assets archived, not left active</li></ol>
+        </section>
+        <section id="automation">
+          <h3>Automation (7)</h3>
+          <ol class="gov-list" start="31"><li>Every workflow has a named owner</li><li>Every workflow has a one-line purpose</li><li>No two workflows set the same property in conflict</li><li>Workflow errors reviewed each week</li><li>Changes to live workflows tested on sample records first</li><li>Sequences and automated emails reviewed each quarter</li><li>A change log records what changed, when and why</li></ol>
+        </section>
+        <section id="integrations">
+          <h3>Integrations (5)</h3>
+          <ol class="gov-list" start="38"><li>Every connected app listed with its owner</li><li>Field ownership defined for each shared field</li><li>Sync errors alert a named person</li><li>Integrations update on a stable external ID</li><li>Unused apps disconnected</li></ol>
+        </section>
+        <section id="reporting">
+          <h3>Reporting and review (5)</h3>
+          <ol class="gov-list" start="43"><li>Dashboards leadership relies on are listed</li><li>Each key report has an owner who checks it</li><li>Report definitions match lifecycle and pipeline definitions</li><li>Unused dashboards archived</li><li>Full governance review held every quarter</li></ol>
+        </section>
+
+        <section id="use">
+          <h2>How should you use this checklist?</h2>
+          <p class="guide-answer">Assign each section to a named owner, mark every item as done, partly done or not done, and fix the not-done items in priority order: access first, then data, then automation. Re-run it every quarter and keep the results, so you can see whether the portal is getting healthier or drifting.</p>
+          <div class="guide-callout"><p><strong>No internal CRM owner?</strong> Ongoing <a href="/solutions/hubspot-admin/">HubSpot administration</a> keeps governance running. <button type="button" class="text-link js-open-hs-form">Book a free consultation</button></p></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> Governance is not a pile of restrictions. It is the shared system that keeps a portal usable, explainable and safe as it grows.</p></div>
+        {% include "partials/article-faq.njk" %}
         <div class="guide-footer-cta"><h2>Want this built in HubSpot?</h2><p>PipelineSync architects the CRM, integrations, automation, and documentation your team needs to operate with confidence.</p><button type="button" class="btn js-open-hs-form">Book a free consultation</button></div>
       </article>
       <aside class="guide-aside">
-        <div class="aside-card"><h3>In this article</h3><div class="aside-list"><div><span>01</span><div>Framework and principles</div></div><div><span>02</span><div>Practical implementation steps</div></div><div><span>03</span><div>Governance checklist</div></div></div></div>
+        <div class="aside-card"><h3>The 47 points</h3><div class="aside-list"><div><span>08</span><div><a href="#access">Access and permissions</a></div></div><div><span>10</span><div><a href="#data">Data model and properties</a></div></div><div><span>06</span><div><a href="#validation">Data quality and validation</a></div></div><div><span>06</span><div><a href="#naming">Naming conventions</a></div></div><div><span>07</span><div><a href="#automation">Automation</a></div></div><div><span>05</span><div><a href="#integrations">Integrations</a></div></div><div><span>05</span><div><a href="#reporting">Reporting and review</a></div></div></div></div>
         <div class="aside-card aside-cta"><h3>Make your CRM work harder.</h3><p>Get direct access to senior HubSpot specialists, no layers, no black box.</p><a class="btn" href="/solutions/hubspot-admin/">See HubSpot admin services</a></div>
       </aside>
     </div>

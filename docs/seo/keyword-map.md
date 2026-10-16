@@ -35,6 +35,8 @@ Focus: HubSpot services for B2B buyers, US first, then Australia, Canada, UK (ex
 | `/resources/hubspot-lifecycle-stages-explained/` | hubspot lifecycle stages | Informational | hubspot lead status; lifecycle stage vs lead status; mql sql hubspot |
 | `/resources/hubspot-implementation-checklist/` | hubspot implementation checklist | Informational | hubspot implementation plan; hubspot onboarding checklist; hubspot setup checklist |
 | `/resources/hubspot-audit-checklist/` | hubspot audit checklist | Informational | hubspot portal audit; hubspot health check; crm audit checklist |
+| `/resources/pipedrive-vs-hubspot/` | pipedrive vs hubspot | Comparison | hubspot vs pipedrive for b2b; pipedrive or hubspot; switch from pipedrive to hubspot |
+| `/resources/hubspot-professional-vs-enterprise/` | hubspot professional vs enterprise | Comparison | hubspot enterprise features; sales hub professional vs enterprise; hubspot custom objects enterprise |
 | `/resources/lead-routing-decision-tree-pipelinesync/` | lead routing decision tree | Informational | lead assignment flowchart; HubSpot lead routing template; lead scoring thresholds |
 
 ## Titles, descriptions and H1 per page

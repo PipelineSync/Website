@@ -903,3 +903,4 @@ button.text-link { background: none; border: 0; padding: 0; font: inherit; font-
 .guide-card section h2 { margin-bottom: 14px; }
 .guide-card section > * + h3 { margin-top: 28px; }
 .guide-card .guide-answer + p, .guide-card .guide-answer + ul { margin-top: 16px; }
+.guide-card section > h3:first-child { margin-top: 0; }
