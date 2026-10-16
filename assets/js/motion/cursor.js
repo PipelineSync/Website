@@ -1,5 +1,5 @@
 /* Glow cursor (fine pointers only).
- * Everywhere on the page the cursor is just a soft orange glow that follows the pointer with a
+ * Everywhere on the page the cursor is just a soft, diffuse orange glow (no dot, no ring) that follows the pointer with a
  * short lag (quickTo). Over anything clickable (nav menu, links, buttons, tabs, cards, pipeline
  * deals) the glow fades out and the normal system pointer takes over, so it is always clear what
  * can be clicked; text fields keep the normal text cursor. */
@@ -9,7 +9,9 @@ const NATIVE = 'a, button, [role="tab"], [role="button"], summary, label, select
 
 export function initCursor() {
   if (!finePointer) return;
-  document.body.classList.remove('cursor-enabled', 'cursor-visible', 'cursor-hover'); // site.js cursor off
+  // Switch off site.js's dot + ring cursor completely on this page.
+  document.body.classList.remove('cursor-enabled', 'cursor-visible', 'cursor-hover');
+  document.querySelectorAll('.cursor-dot, .cursor-ring').forEach((n) => n.remove());
   if (reduced) return; // reduced motion: normal system cursor everywhere
 
   const glow = document.createElement('div');
