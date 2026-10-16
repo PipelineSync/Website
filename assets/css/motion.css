@@ -228,16 +228,20 @@ html.lenis, html.lenis body { height: auto; }
   .mx-board__card i { display: none; }
 }
 
-/* ---------- "Pipeline node" cursor: orange node + fading trail (replaces the site-wide cursor here) ---------- */
+/* ---------- Glow cursor: a soft orange glow; the system pointer returns over clickables ---------- */
 .mx .cursor-dot, .mx .cursor-ring { display: none !important; }
-.mx-node-on, .mx-node-on * { cursor: none !important; }
-.mx-node-on.mx-node-native, .mx-node-on.mx-node-native * { cursor: auto !important; }
-.mx-node-native .mx-node { opacity: 0 !important; }
-.mx-trail { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 10039; pointer-events: none; }
-.mx-node { position: fixed; left: 0; top: 0; z-index: 10040; width: 0; height: 0; pointer-events: none; opacity: 0; transition: opacity .2s; will-change: transform; }
-.mx-node-visible .mx-node { opacity: 1; }
-.mx-node::before { content: ""; position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 3px; background: #ff7a1a; border: 1.5px solid #ff7a1a; box-shadow: 0 0 14px rgba(255,122,26,.75); transition: left .3s var(--ease), top .3s var(--ease), width .3s var(--ease), height .3s var(--ease), border-radius .3s var(--ease), background-color .25s, transform .2s var(--ease); }
-.mx-node.is-open::before { left: -17px; top: -17px; width: 34px; height: 34px; border-radius: 10px; background: rgba(255,122,26,.10); box-shadow: 0 0 22px -4px rgba(255,122,26,.6); }
-.mx-node.is-down::before { transform: scale(.78); }
-@media (hover: none), (pointer: coarse) { .mx-trail, .mx-node { display: none; } }
+.mx-glow-on, .mx-glow-on * { cursor: none; }
+.mx-glow-on.mx-glow-native a, .mx-glow-on.mx-glow-native button, .mx-glow-on.mx-glow-native [role="tab"], .mx-glow-on.mx-glow-native [role="button"],
+.mx-glow-on.mx-glow-native summary, .mx-glow-on.mx-glow-native label, .mx-glow-on.mx-glow-native .card--link, .mx-glow-on.mx-glow-native .mx-card,
+.mx-glow-on.mx-glow-native .mx-list__row, .mx-glow-on.mx-glow-native .mx-card * , .mx-glow-on.mx-glow-native .mx-list__row *, .mx-glow-on.mx-glow-native a *, .mx-glow-on.mx-glow-native button * { cursor: pointer; }
+.mx-glow-on.mx-glow-native .deal, .mx-glow-on.mx-glow-native .deal * { cursor: grab; }
+.mx-glow-on input, .mx-glow-on textarea { cursor: text; }
+.mx-glow-on select, .mx-glow-on .hs-modal, .mx-glow-on .hs-modal * { cursor: auto; }
+.mx-glow { position: fixed; left: 0; top: 0; z-index: 10040; width: 0; height: 0; pointer-events: none; opacity: 0; transition: opacity .25s; will-change: transform; }
+.mx-glow::before { content: ""; position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle, rgba(255,214,170,.95) 0%, rgba(255,150,60,.75) 16%, rgba(255,122,26,.32) 42%, rgba(255,122,26,0) 70%); filter: blur(1px); transition: transform .3s var(--ease); }
+.mx-glow::after { content: ""; position: absolute; left: -90px; top: -90px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(255,122,26,.14) 0%, rgba(255,122,26,0) 65%); }
+.mx-glow-visible .mx-glow { opacity: 1; }
+.mx-glow-native .mx-glow { opacity: 0 !important; }
+.mx-glow.is-down::before { transform: scale(.7); }
+@media (hover: none), (pointer: coarse) { .mx-glow { display: none; } }
 .mx-building .deal, .mx-building .board__col, .mx-building .board__add, .mx-building .kpi, .mx-building .console__side-item { transition: none !important; }
