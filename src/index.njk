@@ -11,24 +11,32 @@ priority: "1.0"
 pageJs: "pages/home.js"
 pageType: "home"
 breadcrumbName: "Home"
+motionPage: true
 ---
 
-<main id="main-content" tabindex="-1">
-<section class="hero hero--center" aria-labelledby="hero-title">
-  <div class="container">
-    <h1 class="hero__title" id="hero-title" data-split>Make the CRM<br>work like the <span class="gradient-text">business.</span></h1>
-    <p class="hero__lead reveal" style="--d:3">You bought HubSpot. You still do not trust what it tells you. As your HubSpot consultant, we rebuild it around how your business actually runs, so the data is clean, the work is automated, and the reporting holds up without a manual check.</p>
-    <div class="btn-row reveal" style="--d:4">
-      <a href="#contact" class="btn btn-primary btn-lg js-open-hs-form">Book a free consultation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      <a href="/solutions/" class="btn btn-ghost btn-lg">See our solutions</a>
+{#- 1. No preloader: the hero builds itself in (see sections/hero.js) -#}
+<div class="mx-wipe" id="mxWipe" aria-hidden="true"></div>
+
+<main id="main-content" tabindex="-1" class="mx-main">
+
+{#- 2. Hero: the interactive Revenue Pipeline is the hero visual -#}
+<section class="mx-hero" id="mxHero" aria-labelledby="mxHeroTitle">
+  <div class="mx-hero__copy">
+    <p class="mx-kicker" data-mx-hero-in>HubSpot Gold Solutions Partner</p>
+    <h1 class="mx-display" id="mxHeroTitle">Make the CRM<br>work like the business.</h1>
+    <p class="mx-hero__lead" data-mx-hero-in>You bought HubSpot. You still do not trust what it tells you. As your HubSpot consultant, we rebuild it around how your business actually runs, so the data is clean, the work is automated, and the reporting holds up without a manual check.</p>
+    <div class="mx-hero__actions" data-mx-hero-in>
+      <button type="button" class="mx-btn mx-btn--primary js-open-hs-form" data-mx-hover><span data-roll-label>Book a free consultation</span></button>
+      <a href="/solutions/" class="mx-btn" data-mx-hover><span data-roll-label>See our solutions</span></a>
     </div>
-    <div class="hero-proof reveal" style="--d:5" aria-label="PipelineSync credentials">
+    <div class="hero-proof mx-hero__proof" data-mx-hero-in aria-label="PipelineSync credentials">
       <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>HubSpot Gold Solutions Partner</span>
       <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>12 HubSpot certifications</span>
       <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>10 five-star client reviews</span>
     </div>
-
-    <div class="console-wrap reveal reveal--scale" style="--d:6" id="heroConsole" data-inview>
+  </div>
+  <div class="mx-hero__visual">
+    <div class="console-wrap" id="heroConsole" data-inview>
       <div class="console" role="region" aria-label="Interactive revenue pipeline demo">
         <div class="console__body">
           <div class="console__bar">
@@ -43,6 +51,7 @@ breadcrumbName: "Home"
   </div>
 </section>
 
+{#- Client logos (kept from the original home page) -#}
 <section class="logos" aria-labelledby="trusted-heading">
   <div class="container">
     <div class="section-head section-head--center reveal">
@@ -67,6 +76,33 @@ breadcrumbName: "Home"
   </div>
 </section>
 
+{#- 3. Founder intro -#}
+<section class="mx-section mx-founder" aria-labelledby="mxFounderName">
+  <div class="mx-container mx-founder__grid">
+    <div class="mx-founder__id" data-mx-reveal>
+      <picture><source srcset="/assets/img/allen-headshot.webp" type="image/webp"><img src="/assets/img/allen-headshot.png" alt="Allen Trinidad, founder of PipelineSync" width="900" height="1273" loading="lazy" decoding="async"></picture>
+      <div><h2 id="mxFounderName">Allen Trinidad</h2><p>Founder, HubSpot Solutions Architect</p></div>
+    </div>
+    <p class="mx-founder__text" data-mx-words>Before PipelineSync, I spent years as a HubSpot subject-matter expert supporting HubSpot Partner agencies. The same three sentences came up on almost every project: we are still working in spreadsheets, I do not trust the forecast, and we cannot tell which campaigns produced revenue. None of those are HubSpot problems. They are what happens when a CRM gets configured quickly, never architected, and never documented. PipelineSync exists to fix exactly that.</p>
+  </div>
+</section>
+
+{#- 4. Pull quote -#}
+<section class="mx-section mx-quote" aria-label="Founder quote">
+  <div class="mx-container">
+    <blockquote class="mx-quote__text">
+      <p data-mx-roll>We work directly with you,</p>
+      <p data-mx-roll>not through layers, to build a CRM</p>
+      <p data-mx-roll>your team trusts and uses every day.</p>
+    </blockquote>
+    <div class="mx-quote__foot" data-mx-reveal>
+      <cite>Allen Trinidad, Founder</cite>
+      <a href="/about/" class="mx-btn" data-mx-hover><span data-roll-label>Read our story</span></a>
+    </div>
+  </div>
+</section>
+
+{#- Common pain (kept) -#}
 <section class="section section--line" aria-labelledby="pain-heading">
   <div class="container">
     <div class="section-head section-head--split">
@@ -105,48 +141,88 @@ breadcrumbName: "Home"
   </div>
 </section>
 
-<section class="section" id="what-we-do" aria-labelledby="what-heading">
-  <div class="container split">
-    <div class="split__sticky reveal">
-      <span class="eyebrow"><span class="eyebrow__dot"></span>What we do</span>
-      <h2 id="what-heading">Four things, done properly</h2>
-      <p>We work on one platform. HubSpot architecture is the entire business, not a service line next to advertising and brand work. That focus is why we go deeper than a generalist agency will, and it is the reason clients bring us in after someone else has already had a go.</p>
-      <p>We also build custom API integrations, run HubSpot audits, and provide ongoing administration and optimization for teams without an internal CRM owner.</p>
-      <a href="/solutions/" class="btn btn-ghost">Explore our solutions <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+{#- 5. Before / after: a messy spreadsheet breaks apart and its records land in a clean pipeline -#}
+<section class="mx-shift" id="mxShift" aria-labelledby="mxShiftTitle">
+  <div class="mx-shift__stage">
+    <div class="mx-container mx-shift__head">
+      <h2 class="sr-only" id="mxShiftTitle">From spreadsheets to one pipeline</h2>
+      <div class="mx-shift__labels">
+        <p data-shift-label="a"><span class="mx-kicker">Before</span>Spreadsheets that agree on nothing</p>
+        <p data-shift-label="b"><span class="mx-kicker">After</span>One pipeline everyone trusts</p>
+      </div>
     </div>
-    <div class="grid grid-2" data-stagger>
-      <article class="card">
-        <div class="card-icon"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
-        <h3>HubSpot implementation and onboarding</h3>
-        <p>Set up the portal correctly the first time: objects, pipelines, lifecycle stages, permissions, automation, and reporting designed around your sales motion instead of HubSpot’s defaults.</p>
-        <div class="card-meta"><span><b>Build</b> 2–4 wks</span><span><b class="is-blue">Includes</b> Schema + Permissions + Training</span></div>
-        <a class="link-arrow" href="/solutions/hubspot-implementation/" style="margin-top:20px">Explore implementation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-      <article class="card">
-        <div class="card-icon card-icon--blue"><i class="fa-solid fa-right-left" aria-hidden="true"></i></div>
-        <h3>CRM migration</h3>
-        <p>Move from Salesforce, Pipedrive, or a legacy system with fields mapped, duplicates resolved, automation rebuilt, and history preserved where it matters. Your team lands in a working CRM, not a data dump.</p>
-        <div class="card-meta"><span><b>Timeline</b> 3–6 wks</span><span><b class="is-blue">Includes</b> Field Map + Sandbox QA + Cutover</span></div>
-        <a class="link-arrow" href="/solutions/hubspot-migration/" style="margin-top:20px">Explore migration <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-      <article class="card">
-        <div class="card-icon card-icon--cyan"><i class="fa-solid fa-broom" aria-hidden="true"></i></div>
-        <h3>CRM cleanup and data quality</h3>
-        <p>Remove duplicate, incomplete, and conflicting records, then put validation rules and governance in place so the mess does not come back. Reporting and automation only work when the data underneath them is trustworthy.</p>
-        <div class="card-meta"><span><b>Timeline</b> 1–2 wks</span><span><b class="is-blue">Includes</b> Audit + Deduplication + SOPs</span></div>
-        <a class="link-arrow" href="/solutions/hubspot-crm-cleanup/" style="margin-top:20px">Explore data cleanup <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-      <article class="card">
-        <div class="card-icon card-icon--green"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
-        <h3>RevOps infrastructure, lead to close</h3>
-        <p>Connect the whole path: lifecycle stages, lead routing and SLAs, sales and marketing automation, attribution, and dashboards. Leadership sees the funnel, and qualified leads stop sitting unassigned.</p>
-        <div class="card-meta"><span><b>Timeline</b> 2–4 wks</span><span><b class="is-blue">Includes</b> Full-Funnel KPIs + SLAs + Dashboards</span></div>
-        <a class="link-arrow" href="/solutions/revops/" style="margin-top:20px">Explore RevOps <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
+    <div class="mx-shift__canvas mx-container" aria-hidden="true">
+      <div class="mx-sheet">
+        <div class="mx-sheet__row mx-sheet__row--head"><span class="mx-sheet__cell">Company</span><span class="mx-sheet__cell">Contact</span><span class="mx-sheet__cell">Stage</span><span class="mx-sheet__cell">Amount</span><span class="mx-sheet__cell">Close date</span><span class="mx-sheet__cell">Owner</span></div>
+        <div class="mx-sheet__row"><span class="mx-sheet__cell">Northwind</span><span class="mx-sheet__cell">maya@northwind.co</span><span class="mx-sheet__cell">qualified</span><span class="mx-sheet__cell">48000</span><span class="mx-sheet__cell">03/11</span><span class="mx-sheet__cell">AR</span></div>
+        <div class="mx-sheet__row is-dup"><span class="mx-sheet__cell">northwind inc.</span><span class="mx-sheet__cell">Maya Chen</span><span class="mx-sheet__cell">Qualified??</span><span class="mx-sheet__cell">$48k</span><span class="mx-sheet__cell">Nov 3</span><span class="mx-sheet__cell is-blank">&nbsp;</span></div>
+        <div class="mx-sheet__row"><span class="mx-sheet__cell">Vertex Mfg</span><span class="mx-sheet__cell is-blank">&nbsp;</span><span class="mx-sheet__cell">SQL</span><span class="mx-sheet__cell">72,000</span><span class="mx-sheet__cell">2026-11-20</span><span class="mx-sheet__cell">jd</span></div>
+        <div class="mx-sheet__row"><span class="mx-sheet__cell">Halcyon</span><span class="mx-sheet__cell">priya@halcyon.io</span><span class="mx-sheet__cell">proposal</span><span class="mx-sheet__cell is-blank">&nbsp;</span><span class="mx-sheet__cell">TBD</span><span class="mx-sheet__cell">MK</span></div>
+        <div class="mx-sheet__row"><span class="mx-sheet__cell">Atlas Freight</span><span class="mx-sheet__cell">tom becker</span><span class="mx-sheet__cell">Prop.</span><span class="mx-sheet__cell">$64k</span><span class="mx-sheet__cell">11/30/26</span><span class="mx-sheet__cell">ar</span></div>
+        <div class="mx-sheet__row"><span class="mx-sheet__cell">Blue Harbor</span><span class="mx-sheet__cell">Sofia A.</span><span class="mx-sheet__cell">negotiating</span><span class="mx-sheet__cell">120k</span><span class="mx-sheet__cell">???</span><span class="mx-sheet__cell">JD</span></div>
+        <div class="mx-sheet__row"><span class="mx-sheet__cell">Ridgeline</span><span class="mx-sheet__cell">liam@ridgeline</span><span class="mx-sheet__cell">WON</span><span class="mx-sheet__cell">$132,000</span><span class="mx-sheet__cell">10/14</span><span class="mx-sheet__cell">JD</span></div>
+        <div class="mx-sheet__row is-dup"><span class="mx-sheet__cell">ATLAS FREIGHT</span><span class="mx-sheet__cell">tom@atlasfreight</span><span class="mx-sheet__cell">proposal</span><span class="mx-sheet__cell">64000</span><span class="mx-sheet__cell is-blank">&nbsp;</span><span class="mx-sheet__cell is-blank">&nbsp;</span></div>
+      </div>
+      <div class="mx-board">
+        <div class="mx-board__col"><div class="mx-board__head"><span>Qualified</span><b>$120k</b></div><div class="mx-board__card"><strong>Northwind</strong><span>$48k</span><i>AR</i></div><div class="mx-board__card"><strong>Vertex Mfg</strong><span>$72k</span><i>JD</i></div></div>
+        <div class="mx-board__col"><div class="mx-board__head"><span>Proposal</span><b>$160k</b></div><div class="mx-board__card"><strong>Halcyon</strong><span>$96k</span><i>MK</i></div><div class="mx-board__card"><strong>Atlas Freight</strong><span>$64k</span><i>AR</i></div></div>
+        <div class="mx-board__col"><div class="mx-board__head"><span>Negotiation</span><b>$120k</b></div><div class="mx-board__card"><strong>Blue Harbor</strong><span>$120k</span><i>JD</i></div></div>
+        <div class="mx-board__col is-won"><div class="mx-board__head"><span>Closed won</span><b>$132k</b></div><div class="mx-board__card"><strong>Ridgeline</strong><span>$132k</span><i>JD</i></div></div>
+      </div>
     </div>
   </div>
 </section>
 
+{#- 6. Process steps -#}
+<section class="mx-process" id="mxProcess" aria-labelledby="mxProcessTitle">
+  <div class="mx-container mx-process__inner">
+    <div class="mx-process__left">
+      <p class="mx-kicker">How we work</p>
+      <h2 id="mxProcessTitle" class="mx-process__title">Audit, architect, build, hand over</h2>
+      <div class="mx-roller" aria-hidden="true"><div class="mx-roller__list"><span>01 — Audit</span><span>02 — Architecture</span><span>03 — Build</span><span>04 — Handover</span></div></div>
+      <div class="mx-process__bar" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mx-process__right">
+      <article class="mx-step"><span class="mx-step__num">01</span><h3>Audit</h3><p>We go through your portal, data model, integrations, and sales process. You get a written picture of what is working, what is broken, and what is costing you time.</p></article>
+      <article class="mx-step"><span class="mx-step__num">02</span><h3>Architecture</h3><p>We design the data model, pipelines, lifecycle stages, permissions, and integration map before touching anything, and walk you through it for approval.</p></article>
+      <article class="mx-step"><span class="mx-step__num">03</span><h3>Build</h3><p>We build and test in a sandbox first, then deploy. Workflows, custom code, integrations, dashboards, and safeguards.</p></article>
+      <article class="mx-step"><span class="mx-step__num">04</span><h3>Handover</h3><p>Live training and written SOPs so your team owns the system. Documentation covers the data model, automation logic, integration map, and permissions.</p></article>
+    </div>
+  </div>
+</section>
+
+{#- 7. Services track -#}
+<section class="mx-work" id="mxWork" aria-labelledby="mxWorkTitle">
+  <div class="mx-work__pin">
+    <div class="mx-container mx-work__head">
+      <p class="mx-kicker">What we do</p>
+      <h2 class="mx-display-2" id="mxWorkTitle" data-mx-roll>Four things, done properly</h2>
+    </div>
+    <div class="mx-work__track">
+      {%- set work = [
+        ["/solutions/hubspot-implementation/", "Implementation / 2–4 weeks", "HubSpot implementation and onboarding", "Objects, pipelines, lifecycle stages, permissions, automation, and reporting designed around your sales motion.", "fa-cubes", "1"],
+        ["/solutions/hubspot-migration/", "Migration / 3–6 weeks", "CRM migration", "From Salesforce, Pipedrive, or a legacy system, with fields mapped, duplicates resolved, and history preserved where it matters.", "fa-right-left", "2"],
+        ["/solutions/hubspot-crm-cleanup/", "Data quality / 1–2 weeks", "CRM cleanup and data quality", "Duplicate, incomplete, and conflicting records removed, then validation and governance so the mess does not come back.", "fa-broom", "3"],
+        ["/solutions/revops/", "RevOps / 2–4 weeks", "RevOps infrastructure, lead to close", "Lifecycle stages, routing and SLAs, automation, attribution, and dashboards leadership can defend.", "fa-chart-line", "4"]
+      ] -%}
+      {%- for w in work %}
+      <a class="mx-card" href="{{ w[0] }}">
+        <div class="mx-card__media"><div class="mx-card__img mx-art mx-art--{{ w[5] }}" aria-hidden="true"><i class="fa-solid {{ w[4] }}"></i></div></div>
+        <p class="mx-card__tag">{{ w[1] }}</p>
+        <h3>{{ w[2] }}</h3>
+        <p>{{ w[3] }}</p>
+      </a>
+      {%- endfor %}
+      <div class="mx-work__more">
+        <p class="mx-display-2">And many more</p>
+        <p>Custom API integrations, HubSpot audits, ongoing administration, training and SOPs.</p>
+        <a href="/solutions/" class="mx-btn" data-mx-hover><span data-roll-label>All solutions</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- Credentials (kept) -#}
 <section class="section section--line" aria-labelledby="creds-heading">
   <div class="container">
     <div class="section-head section-head--center reveal">
@@ -170,6 +246,7 @@ breadcrumbName: "Home"
   </div>
 </section>
 
+{#- Why us (kept) -#}
 <section class="section" aria-labelledby="why-heading">
   <div class="container">
     <div class="section-head section-head--split">
@@ -190,6 +267,49 @@ breadcrumbName: "Home"
   </div>
 </section>
 
+{#- 8. Marquee -#}
+<section class="mx-marquee" aria-label="Audit, architect, build, hand over. HubSpot Gold Solutions Partner.">
+  <div class="mx-marquee__row" data-dir="1" aria-hidden="true"><div class="mx-marquee__inner"><span>Audit · Architect · Build · Hand over ·&nbsp;</span><span>Audit · Architect · Build · Hand over ·&nbsp;</span></div></div>
+  <div class="mx-marquee__row mx-marquee__row--outline" data-dir="-1" aria-hidden="true"><div class="mx-marquee__inner"><span>HubSpot Gold Solutions Partner ·&nbsp;</span><span>HubSpot Gold Solutions Partner ·&nbsp;</span></div></div>
+</section>
+
+{#- 9. Systems list -#}
+<section class="mx-section mx-list" id="mxList" aria-labelledby="mxListTitle">
+  <div class="mx-container">
+    <div class="mx-list__head">
+      <h2 class="mx-display-2" id="mxListTitle" data-mx-roll>Systems we connect</h2>
+      <span class="mx-list__count">(24)</span>
+    </div>
+    {%- set systems = [
+      ["Custom API", "Salesforce", "CRM and sales", "Bi-directional sync with dedupe and field mapping", "salesforce"],
+      ["Native", "Pipedrive", "CRM and sales", "Migrate and sync deals, activities, contacts", "pipedrive-1"],
+      ["Custom API", "QuickBooks", "Finance", "Invoices, payments, revenue recognition", "quickbooks"],
+      ["Custom API", "Xero", "Finance", "Accounting sync and deal-to-cash flow", "xero"],
+      ["Native", "Stripe", "Finance", "Subscriptions, invoices, payment links", "stripe"],
+      ["Native", "Slack", "Communication", "Deal alerts, ticket routing, approvals", "slack"],
+      ["Native", "Aircall", "Communication", "Call logging, recordings, power dialer", "aircall"],
+      ["Native", "Google Ads", "Marketing", "Offline conversions and audience sync", "googleads"],
+      ["Custom API", "Looker Studio", "Data", "Custom dashboards and blended data sources", "looker"],
+      ["Custom API", "REST API", "Custom", "Any system with an API, we build it", "rest-api"]
+    ] -%}
+    <div class="mx-list__table" role="table" aria-label="Integrations">
+      <div class="mx-list__row mx-list__row--head" role="row"><span role="columnheader">Type</span><span role="columnheader">System</span><span role="columnheader">Category</span><span role="columnheader">What we build</span></div>
+      {%- for s in systems %}
+      <a class="mx-list__row" role="row" href="/integrations/" data-img="/assets/img/integration-logo-{{ s[4] }}.webp">
+        <span class="mx-list__line" aria-hidden="true"></span>
+        <span class="mx-list__cell" role="cell"><span>{{ s[0] }}</span></span>
+        <span class="mx-list__cell mx-list__cell--name" role="cell"><span>{{ s[1] }}</span></span>
+        <span class="mx-list__cell" role="cell"><span>{{ s[2] }}</span></span>
+        <span class="mx-list__cell" role="cell"><span>{{ s[3] }}</span></span>
+      </a>
+      {%- endfor %}
+    </div>
+    <a href="/integrations/" class="mx-btn mx-list__all" data-mx-hover data-mx-reveal><span data-roll-label>See all 24 integrations</span></a>
+  </div>
+  <div class="mx-preview" aria-hidden="true"><img src="/assets/img/integration-logo-hubspot.webp" alt="" width="128" height="128"></div>
+</section>
+
+{#- Industries (kept) -#}
 <section class="section section--line" aria-labelledby="industries-heading">
   <div class="container">
     <div class="section-head section-head--split">
@@ -210,22 +330,21 @@ breadcrumbName: "Home"
   </div>
 </section>
 
-<section class="section" id="process" aria-labelledby="process-heading">
-  <div class="container">
-    <div class="section-head section-head--center reveal">
-      <span class="eyebrow"><span class="eyebrow__dot"></span>How we work</span>
-      <h2 id="process-heading">Audit, architect, build, hand over</h2>
-      <p>Every engagement runs the same four stages. You know what happens next, what you are approving, and when you get it.</p>
+{#- 10. Award block -#}
+<section class="mx-section mx-award" aria-labelledby="mxAwardTitle">
+  <div class="mx-container mx-award__grid">
+    <div>
+      <h2 class="mx-display-2" id="mxAwardTitle"><span class="mx-line" data-mx-roll>HubSpot Gold</span><span class="mx-line" data-mx-roll>Solutions Partner.</span></h2>
+      <p class="mx-award__label" data-mx-reveal>Partner tier · 12 HubSpot certifications · 10 five-star reviews</p>
+      <a href="{{ site.hubspotDirectoryUrl }}" class="mx-btn" target="_blank" rel="noopener noreferrer" data-mx-hover data-mx-reveal><span data-roll-label>View our directory listing</span></a>
     </div>
-    <ol class="timeline" role="list">
-      <li class="step reveal"><div class="step__num">01</div><h3>Audit</h3><p>We go through your portal, data model, integrations, and sales process. You get a written picture of what is working, what is broken, and what is costing you time.</p></li>
-      <li class="step reveal" style="--d:1"><div class="step__num">02</div><h3>Architecture</h3><p>We design the data model, pipelines, lifecycle stages, permissions, and integration map before touching anything, and walk you through it for approval.</p></li>
-      <li class="step reveal" style="--d:2"><div class="step__num">03</div><h3>Build</h3><p>We build and test in a sandbox first, then deploy. Workflows, custom code, integrations, dashboards, and safeguards.</p></li>
-      <li class="step reveal" style="--d:3"><div class="step__num">04</div><h3>Handover</h3><p>Live training and written SOPs so your team owns the system. Documentation covers the data model, automation logic, integration map, and permissions.</p></li>
-    </ol>
+    <div class="mx-award__media">
+      <div class="mx-award__img mx-art mx-art--award"><picture><source srcset="/assets/img/HubSpot-Gold-Badge.webp" type="image/webp"><img src="/assets/img/HubSpot-Gold-Badge.png" alt="HubSpot Gold Solutions Partner badge" width="263" height="240" loading="lazy" decoding="async"></picture></div>
+    </div>
   </div>
 </section>
 
+{#- FAQ (kept; matches the FAQPage schema built from faq.json) -#}
 <section class="section section--line" id="faq" aria-labelledby="faq-heading">
   <div class="container">
     <div class="section-head section-head--center reveal">
@@ -237,7 +356,13 @@ breadcrumbName: "Home"
   </div>
 </section>
 
-{% set ctaTitle = "Tell us what is broken" %}
-{% set ctaText = "A free 30-minute call. Bring your portal, your reporting problem, or just the thing that keeps failing. You will get a straight answer on what is causing it and what fixing it involves, whether or not you hire us." %}
-{% include 'partials/cta.njk' %}
+{#- 11. Closing CTA -#}
+<section class="mx-cta" id="mxCta" aria-labelledby="mxCtaTitle">
+  <div class="mx-cta__bg" aria-hidden="true"><div class="mx-cta__img mx-art mx-art--cta"></div></div>
+  <div class="mx-container mx-cta__content">
+    <h2 class="mx-display" id="mxCtaTitle"><span class="mx-line" data-mx-roll>Tell us what</span><span class="mx-line" data-mx-roll>is broken.</span></h2>
+    <p data-mx-reveal>A free 30-minute call. Bring your portal, your reporting problem, or just the thing that keeps failing. You will get a straight answer on what is causing it and what fixing it involves, whether or not you hire us.</p>
+    <button type="button" class="mx-btn mx-btn--primary mx-btn--lg js-open-hs-form" data-mx-hover data-mx-reveal><span data-roll-label>Book a free consultation</span></button>
+  </div>
+</section>
 </main>

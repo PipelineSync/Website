@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="{{ "/assets/vendor/fa/icons.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/site.css" | v }}">
   <link rel="stylesheet" href="{{ "/assets/css/hubspot-chat.css" | v }}">
+  {%- if motionPage %}
+  <link rel="stylesheet" href="{{ "/assets/css/motion.css" | v }}">
+  {%- endif %}
   <script>document.documentElement.classList.add('js');</script>
   {%- if site.analytics.ga4Id %}
   <script>
@@ -60,11 +63,11 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4Id }}"></script>
   {%- endif %}
 </head>
-<body data-page="{{ page.url }}">
+<body data-page="{{ page.url }}"{% if motionPage %} class="mx"{% endif %}>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <div class="bg-fx" aria-hidden="true"><div class="bg-fx__orb bg-fx__orb--a"></div><div class="bg-fx__orb bg-fx__orb--b"></div><div class="bg-fx__orb bg-fx__orb--c"></div><div class="bg-fx__grid"></div><div class="bg-fx__noise"></div></div>
 
-{% include 'partials/loader.njk' %}
+{% if not motionPage %}{% include 'partials/loader.njk' %}{% endif %}
 {% include 'partials/header.njk' %}
 
 {{ content | safe }}
@@ -76,6 +79,13 @@
 <script src="{{ "/assets/js/analytics.js" | v }}"></script>
 {% if pageJs %}<script src="{{ ("/assets/js/" + pageJs) | v }}"></script>{% endif %}
 <script src="{{ "/assets/js/roi-calculator.js" | v }}"></script>
+{%- if motionPage %}
+{#- Motion preview only: GSAP + ScrollTrigger + Lenis (self-hosted), then the ES module entry. -#}
+<script src="/assets/vendor/motion/gsap.min.js"></script>
+<script src="/assets/vendor/motion/ScrollTrigger.min.js"></script>
+<script src="/assets/vendor/motion/lenis.min.js"></script>
+<script type="module" src="/assets/js/motion/main.js"></script>
+{%- endif %}
 
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/247123252.js"></script>
