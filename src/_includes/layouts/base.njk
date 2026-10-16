@@ -51,6 +51,11 @@
   <link rel="stylesheet" href="{{ "/assets/css/motion.css" | v }}">
   {%- endif %}
   <script>document.documentElement.classList.add('js');</script>
+  {%- if motionPage %}
+  {#- Hide the hero from the first paint so the intro is the first thing visitors see. hero.js removes
+      the class once the intro timeline has taken over; the timeout is a safety net if scripts fail. -#}
+  <script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('mx-intro'); setTimeout(function () { document.documentElement.classList.remove('mx-intro'); }, 5000); }</script>
+  {%- endif %}
   {%- if site.analytics.ga4Id %}
   <script>
     window.dataLayer = window.dataLayer || [];

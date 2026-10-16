@@ -232,3 +232,7 @@ html.lenis, html.lenis body { height: auto; }
 .mx-award__img picture { display: grid; place-items: center; width: 100%; height: 100%; }
 .mx-award__img img { display: block; }
 .mx-award__img source { display: none; } /* a visible <source> took a grid row and pushed the badge down */
+
+/* First paint on the home page: hide the hero and header until the intro timeline starts (see base.njk). */
+.mx-intro .site-header { transform: translateY(-100%); }
+.mx-intro #mxHeroTitle, .mx-intro [data-mx-hero-in], .mx-intro .mx-hero__visual { opacity: 0; }

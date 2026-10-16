@@ -80,6 +80,23 @@
     window.addEventListener('resize', function () { place(current); });
   }
 
+  /* ---------- Nav menu letter-roll on hover (every page) ----------
+   * Each character is rendered twice in a one-line, overflow-hidden box; on hover or keyboard focus
+   * both copies slide up (CSS transition, staggered 15ms per character) so the top copy rolls out
+   * and the duplicate rolls in. Screen readers get the plain label from a visually hidden copy. */
+  if (!reduceMotion) {
+    $$('.nav a').forEach(function (a) {
+      var text = a.textContent.trim();
+      if (!text || a.querySelector('.roll')) return;
+      var html = '';
+      Array.prototype.forEach.call(text, function (c, i) {
+        var ch = c === ' ' ? '&nbsp;' : c.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+        html += '<span class="roll__ch" style="--i:' + i + '"><span>' + ch + '</span><span>' + ch + '</span></span>';
+      });
+      a.innerHTML = '<span class="roll" aria-hidden="true">' + html + '</span><span class="sr-only">' + text.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>';
+    });
+  }
+
   /* ---------- Mobile menu ---------- */
   var toggle = $('#menuToggle');
   var menu = $('#mobileMenu');
