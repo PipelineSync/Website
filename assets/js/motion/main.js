@@ -6,7 +6,6 @@ import { gsap, ScrollTrigger, reduced } from './env.js';
 import { initSmooth } from './smooth.js';
 import { initReveals, initScrollRolls } from './split.js';
 import { initTransitions } from './transitions.js';
-import { initCursor } from './cursor.js';
 import { prepareHero, heroIntro, heroScroll } from './sections/hero.js';
 import { initFounder } from './sections/founder.js';
 import { initQuote } from './sections/quote.js';
@@ -25,7 +24,6 @@ if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
 const { arrived } = initTransitions();
-initCursor();
 const lenis = initSmooth();
 window.mxLenis = lenis; // handy for debugging in the console
 prepareHero();

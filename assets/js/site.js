@@ -1,4 +1,4 @@
-/* PipelineSync shared site behavior: loader, header, menu, reveal, motion, modal, tabs, cursor. */
+/* PipelineSync shared site behavior: loader, header, menu, reveal, motion, modal, tabs, glow cursor. */
 (function () {
   'use strict';
 
@@ -337,27 +337,29 @@
     updateBar();
   }
 
-  /* ---------- Custom cursor (fine pointers only) ---------- */
+  /* ---------- Glow cursor (fine pointers only) ----------
+   * A soft orange glow follows the pointer with a short lerp. Over anything clickable it fades out
+   * and the normal system pointer shows instead (styles in site.css, "Glow cursor"). */
   if (finePointer && !reduceMotion) {
-    var dot = doc.createElement('div'), ring = doc.createElement('div');
-    dot.className = 'cursor-dot'; ring.className = 'cursor-ring';
-    dot.setAttribute('aria-hidden', 'true'); ring.setAttribute('aria-hidden', 'true');
-    doc.body.appendChild(dot); doc.body.appendChild(ring);
+    var glow = doc.createElement('div');
+    glow.className = 'cursor-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    doc.body.appendChild(glow);
     doc.body.classList.add('cursor-enabled');
-    var tx = -100, ty = -100, rx = -100, ry = -100, raf = 0;
+    var tx = -200, ty = -200, gx = -200, gy = -200, raf = 0;
     var render = function () {
-      rx += (tx - rx) * 0.2; ry += (ty - ry) * 0.2;
-      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
-      raf = (Math.abs(tx - rx) > 0.1 || Math.abs(ty - ry) > 0.1) ? requestAnimationFrame(render) : 0;
+      gx += (tx - gx) * 0.28; gy += (ty - gy) * 0.28;
+      glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)';
+      raf = (Math.abs(tx - gx) > 0.1 || Math.abs(ty - gy) > 0.1) ? requestAnimationFrame(render) : 0;
     };
-    var interactive = 'a,button,.card,.deal,[role="tab"],summary,input,label';
+    var clickable = 'a,button,[role="tab"],[role="button"],summary,label,select,input,textarea,.deal,.card--link,.hs-modal,.roi-modal';
     window.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
       tx = e.clientX; ty = e.clientY;
-      dot.style.transform = 'translate3d(' + tx + 'px,' + ty + 'px,0)';
-      doc.body.classList.add('cursor-visible');
+      if (!doc.body.classList.contains('cursor-visible')) { gx = tx; gy = ty; doc.body.classList.add('cursor-visible'); }
       if (!raf) raf = requestAnimationFrame(render);
     }, { passive: true });
-    doc.addEventListener('pointerover', function (e) { doc.body.classList.toggle('cursor-hover', !!(e.target.closest && e.target.closest(interactive))); });
+    doc.addEventListener('pointerover', function (e) { doc.body.classList.toggle('cursor-native', !!(e.target.closest && e.target.closest(clickable))); });
     doc.addEventListener('pointerleave', function () { doc.body.classList.remove('cursor-visible'); });
     window.addEventListener('pointerdown', function () { doc.body.classList.add('cursor-pressed'); });
     window.addEventListener('pointerup', function () { doc.body.classList.remove('cursor-pressed'); });
