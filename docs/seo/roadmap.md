@@ -18,11 +18,11 @@ Goals: be findable (technical), be the best answer (content), be recommended (au
 | Weeks 1–2 | Verify Bing Webmaster Tools (import from GSC) | Owner | Open |
 | Weeks 1–2 | Mark `generate_lead` as GA4 key event; link GA4 ↔ GSC; create "AI assistants" channel group | Owner | Open |
 | Weeks 1–2 | Add "How did you hear about us?" field (with "AI assistant" option) to the HubSpot consultation form | Owner | Open |
-| Weeks 1–2 | Publish the three template files; confirm article authors | Owner | Open |
+| Weeks 1–2 | Publish the three template files (authors confirmed: "PipelineSync team", Oct 2026) | Owner | Open |
 | Weeks 1–2 | Align all profile descriptions (HubSpot directory, LinkedIn, Upwork); start review sequence; baseline AI prompt check | Owner | Open |
-| Month 1 (Nov 2026) | Articles: Salesforce to HubSpot migration checklist; HubSpot lifecycle stages explained. Refresh: mapping sheet, lead routing guide. Also: visible FAQs + FAQPage schema and "Updated" dates on resource pages | Claude + team | Done (PR #17, Oct 2026; authors TODO) |
+| Month 1 (Nov 2026) | Articles: Salesforce to HubSpot migration checklist; HubSpot lifecycle stages explained. Refresh: mapping sheet, lead routing guide. Also: visible FAQs + FAQPage schema and "Updated" dates on resource pages | Claude + team | Done (PR #17, Oct 2026) |
 | Month 1 | Clutch and G2 profiles; weekly HubSpot Community answers | Owner | Planned |
-| Month 2 (Dec 2026) | Articles: HubSpot implementation checklist (A1); HubSpot audit checklist (A7). Refresh: cleanup and deduplication playbook (now also covers the planned B6 how-to), cost of duplicate data. B6 and C1 dropped as separate pages: they targeted the same keywords as the cleanup playbook and the lead routing guide | Claude + team | In review (pulled forward to Oct 2026; authors TODO) |
+| Month 2 (Dec 2026) | Articles: HubSpot implementation checklist (A1); HubSpot audit checklist (A7). Refresh: cleanup and deduplication playbook (now also covers the planned B6 how-to), cost of duplicate data. B6 and C1 dropped as separate pages: they targeted the same keywords as the cleanup playbook and the lead routing guide | Claude + team | In review (pulled forward to Oct 2026) |
 | Month 3 (Jan 2027) | Articles: B2 Pipedrive vs HubSpot; A6 Professional vs Enterprise (A1 and A7 moved to Month 2). Refresh: architecture blueprint, governance checklist. First case study | Claude + team | Planned |
 | Months 2–3 | Core Web Vitals field data review; guest article pitches; "best HubSpot partner" list outreach | Claude / Owner | Planned |
 | Month 4 (Feb 2027) | Articles: Pipedrive vs HubSpot; Professional vs Enterprise. Refresh: decision tree, pipeline article | Claude + team | Planned |

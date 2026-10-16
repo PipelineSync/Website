@@ -13,7 +13,7 @@ breadcrumbName: "HubSpot Cleanup and Deduplication System"
 tags: resource
 faqs:
   - q: "Does HubSpot deduplicate records automatically?"
-    a: "Partly. HubSpot uses email address to match contacts, so a form submission or import with an existing email updates that contact instead of creating a new one. It can also match companies on domain. Records with different emails or no domain still create duplicates, and paid tiers add a tool that suggests likely duplicates for review."
+    a: "Partly. HubSpot uses email address to match contacts, so a form submission or import with an existing email updates that contact instead of creating a new one. It can also match companies on domain. Records with different emails or no domain still create duplicates. On Professional and Enterprise plans, the duplicates tool suggests likely pairs to review; bulk review and custom matching rules need Data Hub Professional or Enterprise."
   - q: "Can a HubSpot merge be undone?"
     a: "No. A merge in HubSpot cannot be reversed, so choose the primary record carefully, protect consent and ownership values first, and test the rules on a small batch before merging at scale."
   - q: "How long does a HubSpot data cleanup take?"
@@ -43,7 +43,7 @@ relatedResources:
         <div class="guide-label">PipelineSync field guide</div>
         <h2>How do you deduplicate HubSpot?</h2>
         <p class="guide-answer">Deduplicating HubSpot works in five steps: agree what counts as a duplicate, find the patterns that create them, choose the primary record by rule, merge in tested batches while protecting consent and ownership, then fix the sources so duplicates stop coming back. Merging alone is a one-off; prevention makes it last.</p>
-        {#- Feature behaviour checked against general HubSpot documentation on 2026-10-17. TODO(owner): re-verify which tiers include duplicate management before promoting. -#}
+        {#- Tier details checked against HubSpot's knowledge base article "Manage duplicate records" (updated 2026-09-16) on 2026-10-17. -#}
         <p class="intro">Data cleanup should not be a one-time spring clean. This is the system we use on <a href="/solutions/hubspot-crm-cleanup/">our HubSpot cleanup projects</a>: a clear definition of a duplicate, a safe merge process, and prevention rules that stop the same problems returning.</p>
 
         <section id="define">
@@ -91,7 +91,7 @@ relatedResources:
             <li>Set a system-of-record priority by object and field.</li>
             <li>Protect marketing consent and subscription status above everything else.</li>
             <li>Test the rules on a small batch, check the results, then scale.</li>
-            <li>Use HubSpot's duplicate suggestions where your tier includes them, and review each pair rather than bulk-accepting.</li>
+            <li>On Professional and Enterprise plans, work through HubSpot's duplicate suggestions pair by pair. Bulk review and custom matching rules need Data Hub Professional or Enterprise.</li>
           </ul>
           <div class="guide-callout"><p><strong>If duplicates keep coming back, the system creating them needs fixing.</strong> <button type="button" class="text-link js-open-hs-form">Book a free consultation</button></p></div>
         </section>

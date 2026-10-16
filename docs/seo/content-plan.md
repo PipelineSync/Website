@@ -100,7 +100,7 @@ Market notes for writers: write for US buyers by default (US spelling in article
 
 Common to every brief:
 
-- Byline and dates only once the owner confirms authorship: `TODO(owner): confirm author for each piece`.
+- Byline: "By the PipelineSync team" (owner decision, Oct 2026; no individual author names), plus the Updated date.
 - Links: pillar service page (once live; until then `/solutions/#<anchor>`), `/resources/`, and at least two related resources. Use descriptive anchors ("our HubSpot migration service"), never "click here".
 - CTA: the existing consultation modal ("Book a free consultation", free 30-minute call). One mid-article soft CTA, one end CTA.
 - Length: 1,200–1,800 words. Short paragraphs, real headings, a checklist block (the site's existing `guide-checklist` component).
@@ -394,7 +394,7 @@ Each refresh: update the visible "Updated" date and `lastmod`, keep the URL, fix
 
 ### E-E-A-T
 
-- Bylines and author boxes only after the owner confirms who wrote each piece: `TODO(owner)`. Default proposal: "By Allen Trinidad, Founder, HubSpot Solutions Architect", linking to `/about/`, if he wrote or reviewed it. If a specialist wrote it, use their name and add "Reviewed by Allen Trinidad".
+- Bylines: articles are credited to the PipelineSync team (owner decision, Oct 2026). Do not add individual author names or author boxes. E-E-A-T comes from method, the About page and partner credentials.
 - Show published and updated dates; change "updated" only when content changes materially.
 - Show experience through method, not claims: checklists, decision rules and steps that are clearly from real builds.
 - Link credentials to proof (HubSpot Solutions Directory listing `TODO(owner): URL`, Upwork agency profile).

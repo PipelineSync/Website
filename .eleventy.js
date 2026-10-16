@@ -196,7 +196,7 @@ function buildGraph(data) {
       image: { '@type': 'ImageObject', url: ogImage, width: 1200, height: 630 },
       datePublished: published,
       dateModified: modified,
-      // Byline stays organisational until the owner confirms individual authorship.
+      // Articles are written by the PipelineSync team, so the author is the Organization (owner decision, Oct 2026).
       author: org,
       publisher: org,
       mainEntityOfPage: { '@id': `${url}#webpage` },
