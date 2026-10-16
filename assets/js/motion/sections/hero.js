@@ -33,6 +33,7 @@ export function heroIntro() {
   const header = $('#siteHeader');
 
   if (reduced) {
+    document.documentElement.classList.remove('mx-intro');
     gsap.to([visual, title, ...rest], { opacity: 1, duration: 0.6, stagger: 0.05 });
     return;
   }
@@ -51,6 +52,7 @@ export function heroIntro() {
   // site.css gives deals/tiles their own CSS transitions; switch them off while GSAP drives them.
   hero.classList.add('mx-building');
   const tl = gsap.timeline({ onComplete: () => { gsap.set(inner, { clearProps: 'transform,opacity' }); hero.classList.remove('mx-building'); } });
+  gsap.set(title, { opacity: 0 });
   if (header) tl.fromTo(header, { y: 0, yPercent: -100 }, { yPercent: 0, duration: 0.9, ease: EASE.roll, clearProps: 'transform' }, 0);
   // Build position: top of the board just under the header, scaled so the whole board fits.
   const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
@@ -71,6 +73,8 @@ export function heroIntro() {
     .set(title, { opacity: 1 }, 2.0)
     .add(rollIn(title, { stagger: 0.018 }), 2.0)
     .fromTo(rest, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: EASE.reveal, stagger: 0.08 }, 2.35);
+  // The timeline has now set every starting state inline, so the first-paint hiding can go.
+  document.documentElement.classList.remove('mx-intro');
 }
 
 export function heroScroll(mm) {
