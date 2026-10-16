@@ -340,13 +340,13 @@ Assumes the six service pages ship first or in parallel (they are the link targe
 | Month | Article 1 | Article 2 | Refresh work the same month |
 |---|---|---|---|
 | Month 1 (Nov 2026) | B1 Salesforce to HubSpot migration checklist | C2 HubSpot lifecycle stages explained | Expand: data migration mapping sheet; lead routing and lifecycle guide |
-| Month 2 (Dec 2026) | B6 How to deduplicate in HubSpot | C1 HubSpot lead routing best practices | Expand: cleanup and deduplication playbook; cost of duplicate data |
-| Month 3 (Jan 2027) | A1 HubSpot implementation checklist | A7 HubSpot audit checklist | Expand: architecture blueprint; governance checklist |
-| Month 4 (Feb 2027) | B2 Pipedrive vs HubSpot for B2B | A6 HubSpot Professional vs Enterprise | Expand: lead routing decision tree; pipeline article |
-| Month 5 (Mar 2027) | C4 HubSpot attribution reporting | B3 Pipedrive to HubSpot migration | Expand: attribution guide; integration governance guide |
-| Month 6 (Apr 2027) | C6 What does a HubSpot RevOps consultant do? | A8 Outsourced HubSpot admin vs in-house | Expand: automation article; adoption article. Review GSC and re-rank the remaining 12 ideas. |
+| Month 2 (Dec 2026) | A1 HubSpot implementation checklist | A7 HubSpot audit checklist | Expand: cleanup and deduplication playbook (absorbs B6); cost of duplicate data |
+| Month 3 (Jan 2027) | B2 Pipedrive vs HubSpot for B2B | A6 HubSpot Professional vs Enterprise | Expand: architecture blueprint; governance checklist |
+| Month 4 (Feb 2027) | C4 HubSpot attribution reporting | B3 Pipedrive to HubSpot migration | Expand: lead routing decision tree; pipeline article |
+| Month 5 (Mar 2027) | C6 What does a HubSpot RevOps consultant do? | A8 Outsourced HubSpot admin vs in-house | Expand: attribution guide; integration governance guide |
+| Month 6 (Apr 2027) | Two from the re-ranked backlog | (chosen with GSC data) | Expand: automation article; adoption article. Review GSC and re-rank the remaining 12 ideas. |
 
-Remaining backlog after month 6 (order to be re-ranked with real data): A2, A3, A4, A5, B4, B5, B7, B8, C3, C5, C7, C8.
+Calendar revised Oct 2026: B6 merged into the cleanup playbook and C1 dropped (both duplicated an existing page's primary keyword). Remaining backlog after month 6 (order to be re-ranked with real data): A2, A3, A4, A5, B4, B5, B7, B8, C3, C5, C7, C8.
 
 ---
 

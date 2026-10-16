@@ -1,0 +1,139 @@
+---
+layout: layouts/base.njk
+title: "HubSpot Audit Checklist: Health-Check Your Portal | PipelineSync"
+description: "A HubSpot audit checklist for portals you inherited or no longer trust: access, data quality, pipelines, automation, integrations, reporting, and a fix plan."
+robots: "index, follow"
+canonical: "https://pipelinesync.net/resources/hubspot-audit-checklist/"
+ogType: "article"
+lastmod: "2026-10-17"
+changefreq: "monthly"
+priority: "0.7"
+pageType: "guide"
+breadcrumbName: "HubSpot Audit Checklist"
+tags: resource
+faqs:
+  - q: "How long does a HubSpot audit take?"
+    a: "It depends on the size of the portal, the number of hubs and integrations, and how much automation has built up. On our projects, audit and architecture together typically take one to two weeks. A focused audit of a single area, such as data quality, can be shorter."
+  - q: "What do I get at the end of a HubSpot audit?"
+    a: "A written findings document: what is working, what is broken, and what each problem is costing in time or trust, with recommendations ordered by priority. A good audit ends with a plan you can act on yourself or hand to a partner."
+  - q: "Does audit work carry into a rebuild?"
+    a: "It should. The audit is the discovery stage of a rebuild, so the findings become the brief for the architecture. When we run an audit and the client goes ahead with the build, the audit work carries into it rather than being repeated."
+  - q: "How often should a HubSpot portal be audited?"
+    a: "Run a full audit when you inherit a portal, before a migration or rebuild, and when reports start to disagree. Between those, a short quarterly review of duplicates, unused properties, failing workflows and sync errors catches most problems before they grow."
+relatedResources:
+  - { title: "HubSpot Governance Checklist", url: "/resources/hubspot-governance-checklist-pipelinesync/", text: "The rules that keep a portal clean after the audit." }
+  - { title: "HubSpot Cleanup and Deduplication System", url: "/resources/crm-cleanup-deduplication-system-pipelinesync/", text: "What to do with the duplicates and bad records the audit finds." }
+  - { title: "Integration Governance and Monitoring", url: "/resources/integration-governance-monitoring-pipelinesync/", text: "Field ownership, logging and alerts for the syncs you review in step 6." }
+  - { title: "HubSpot audit service", url: "/solutions/hubspot-audit/", text: "Have us run the audit and deliver the written findings and plan." }
+---
+{#- TODO(owner): confirm the author byline (proposed: Allen Trinidad, Founder). Organisation is the author in schema until then. -#}
+<section class="guide-hero" style="--accent:#B45309;--accent-soft:#FEF3C7;--accent-border:#FDE68A;">
+    <div class="container guide-hero-inner">
+      {% include "partials/breadcrumb.njk" %}
+      <div class="guide-eyebrow"><span class="guide-eyebrow-dot"></span>AUDIT • 11 MIN</div>
+      <h1>HubSpot Audit Checklist</h1>
+      <p class="guide-dek">How to health-check a portal you inherited or stopped trusting, section by section, and turn what you find into a plan.</p>
+      {% include "partials/guide-meta.njk" %}
+    </div>
+  </section>
+
+  <main id="main-content" class="guide-main" style="--accent:#B45309;--accent-soft:#FEF3C7;--accent-border:#FDE68A;">
+    <div class="container guide-layout">
+      <article class="guide-card">
+        <div class="guide-label">PipelineSync field guide</div>
+        <h2>What is a HubSpot audit?</h2>
+        <p class="guide-answer">A HubSpot audit is a structured review of a portal's access, data, pipelines, automation, integrations and reporting, checked against how the team actually sells and services. It ends with written findings: what works, what is broken, what each problem costs, and a prioritised list of fixes.</p>
+        <p>This checklist is for whoever inherited a portal and does not trust it yet. It follows the order we use on <a href="/solutions/hubspot-audit/">our HubSpot audits</a>: start with access, because everything else depends on who can change what, and finish with a plan rather than a list of complaints.</p>
+
+        <section id="signs">
+          <h2>When does a HubSpot portal need an audit?</h2>
+          <p class="guide-answer">Audit when the numbers stop being believed. Typical signs are reports exported to a spreadsheet before anyone acts on them, reps skipping pipeline stages, dashboards that disagree, automation nobody can explain, and Professional or Enterprise licences being used like a basic contact database.</p>
+          <ul>
+            <li>You inherited the portal from someone who has left.</li>
+            <li>Two reports show different numbers for the same thing.</li>
+            <li>A migration, rebuild or new hub is coming and you need to know what to keep.</li>
+            <li>Reps keep their own spreadsheets alongside HubSpot.</li>
+          </ul>
+        </section>
+
+        <section id="access">
+          <h2>Step 1: Who has access, and what can they change?</h2>
+          <p class="guide-answer">Start with users and permissions. List every user, their seat type, their permission set and when they last logged in. Check who is a super admin, who can export data, who can delete records, and who can edit properties and workflows. Over-broad access is how most portals drift.</p>
+          <ul>
+            <li>Super admins limited to the people who genuinely own the portal.</li>
+            <li>Export and bulk-delete rights reviewed by role.</li>
+            <li>Departed users deactivated and their records reassigned.</li>
+            <li>Sensitive properties (revenue, personal data) restricted where your tier allows.</li>
+          </ul>
+        </section>
+
+        <section id="data">
+          <h2>Step 2: How good is the data?</h2>
+          <p class="guide-answer">Measure data quality by object. For contacts, companies and deals, check duplicates, blank required fields, inconsistent values and stale records. Then review properties: which are used, which duplicate each other, and which nobody has filled in for a long time. Record counts, not impressions, so you can show progress later.</p>
+          <h3>Duplicates and incomplete records</h3>
+          <p>Look for the same person or company stored more than once, records missing the fields routing and reporting depend on, and values entered in several formats (country names, phone numbers, job titles). Our <a href="/resources/crm-cleanup-deduplication-system-pipelinesync/">cleanup and deduplication system</a> covers what to do with them.</p>
+          <h3>Unused and duplicate properties</h3>
+          <p>Export the property list for each object with its fill rate. Properties that are empty, abandoned, or duplicates of another property ("Lead Source", "Lead source 2", "Original source (old)") are the first candidates for consolidation.</p>
+        </section>
+
+        <section id="pipelines">
+          <h2>Step 3: Do pipelines and lifecycle stages match how you sell?</h2>
+          <p class="guide-answer">Compare each deal pipeline with how deals really close. Check that every stage has clear exit criteria, that close dates and amounts are kept up to date, and that lifecycle stages and lead statuses are defined and used consistently. Stages reps skip are a design problem, not a discipline problem.</p>
+          <ul>
+            <li>Stage-to-stage conversion and time in stage reviewed for each pipeline.</li>
+            <li>Deals with past close dates or no amount counted.</li>
+            <li>Lifecycle stage and lead status used for different jobs. See <a href="/resources/hubspot-lifecycle-stages-explained/">HubSpot lifecycle stages explained</a>.</li>
+          </ul>
+        </section>
+
+        <section id="automation">
+          <h2>Step 4: What is the automation actually doing?</h2>
+          <p class="guide-answer">List every active workflow, sequence and automated email with its owner, trigger and purpose. Flag workflows with no owner, workflows that conflict (two rules setting the same property), and workflows with high error or enrolment rates on bad records. Anything nobody can explain gets switched off in a controlled way, not deleted.</p>
+          <ul>
+            <li>Every workflow has a named owner and a one-line purpose.</li>
+            <li>Conflicting property updates identified.</li>
+            <li>Workflow errors and failed actions reviewed.</li>
+          </ul>
+        </section>
+
+        <section id="integrations">
+          <h2>Step 5: Which integrations write to HubSpot?</h2>
+          <p class="guide-answer">List every connected app and sync, what it reads and writes, and which system owns each shared field. Most "random" data changes come from two systems overwriting the same property. Check sync error logs and whether anyone is alerted when a sync fails.</p>
+          <p>Our guide to <a href="/resources/integration-governance-monitoring-pipelinesync/">integration governance and monitoring</a> sets out field ownership and alerting.</p>
+          <div class="guide-callout"><p><strong>Not sure what is wrong yet?</strong> Start with a paid audit and get the findings in writing. <button type="button" class="text-link js-open-hs-form">Book a free consultation to scope it</button></p></div>
+        </section>
+
+        <section id="reporting">
+          <h2>Step 6: Which reports does leadership trust?</h2>
+          <p class="guide-answer">Find the handful of dashboards that drive real decisions and check each one against the data underneath it. A report that needs a spreadsheet check is pointing at a data or definition problem upstream. Note which reports nobody opens; they can usually go.</p>
+        </section>
+
+        <section id="plan">
+          <h2>Step 7: How do you turn audit findings into a plan?</h2>
+          <p class="guide-answer">Score each finding by impact and effort, then group them: quick wins your team can do this week, structural fixes that need design first, and things to stop doing. Write each one as a problem, its cost, and the recommended fix, so the plan can be acted on without the person who wrote it.</p>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>Group</th><th>Typical examples</th></tr></thead>
+            <tbody>
+              <tr><td>Quick wins</td><td>Deactivate departed users, archive empty properties, fix a broken form mapping</td></tr>
+              <tr><td>Structural fixes</td><td>Redesign a pipeline, consolidate duplicate properties, define lifecycle criteria</td></tr>
+              <tr><td>Stop doing</td><td>Unowned workflows, duplicate imports, manual list building</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+
+        <section id="checklist">
+          <h2>The HubSpot audit checklist</h2>
+          <div class="guide-checklist"><div class="guide-check"><span>✓</span><div>Users, seats and permissions reviewed</div></div><div class="guide-check"><span>✓</span><div>Super admins and export rights limited</div></div><div class="guide-check"><span>✓</span><div>Duplicates counted by object</div></div><div class="guide-check"><span>✓</span><div>Property fill rates exported</div></div><div class="guide-check"><span>✓</span><div>Pipelines checked against real deals</div></div><div class="guide-check"><span>✓</span><div>Lifecycle and lead status definitions checked</div></div><div class="guide-check"><span>✓</span><div>Every workflow has an owner</div></div><div class="guide-check"><span>✓</span><div>Conflicting automation flagged</div></div><div class="guide-check"><span>✓</span><div>Integrations and field ownership mapped</div></div><div class="guide-check"><span>✓</span><div>Sync errors and alerts reviewed</div></div><div class="guide-check"><span>✓</span><div>Trusted dashboards verified</div></div><div class="guide-check"><span>✓</span><div>Findings prioritised into a written plan</div></div></div>
+        </section>
+        <div class="guide-callout"><p><strong>Key takeaway:</strong> An audit is only finished when it produces a plan someone can act on. Count the problems, write down what each one costs, and fix them in priority order.</p></div>
+        {% include "partials/article-faq.njk" %}
+        <div class="guide-footer-cta"><h2>Not sure what is wrong yet?</h2><p>Start with a paid audit. Book a free consultation to scope it, and get a written findings document with a prioritised plan.</p><button type="button" class="btn js-open-hs-form">Book a free consultation</button></div>
+      </article>
+      <aside class="guide-aside">
+        <div class="aside-card"><h3>In this guide</h3><div class="aside-list"><div><span>01</span><div><a href="#access">Access and permissions</a></div></div><div><span>02</span><div><a href="#data">Data quality</a></div></div><div><span>03</span><div><a href="#pipelines">Pipelines and lifecycle</a></div></div><div><span>04</span><div><a href="#automation">Automation</a></div></div><div><span>05</span><div><a href="#integrations">Integrations</a></div></div><div><span>06</span><div><a href="#reporting">Reporting</a></div></div><div><span>07</span><div><a href="#plan">The plan</a></div></div></div></div>
+        <div class="aside-card aside-cta"><h3>Want it done for you?</h3><p>A written findings document with priorities, from senior HubSpot specialists.</p><a class="btn" href="/solutions/hubspot-audit/">See the HubSpot audit</a></div>
+      </aside>
+    </div>
+  </main>
