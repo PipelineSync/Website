@@ -26,4 +26,5 @@ The owner adopted a 12-month SEO and AI search plan in October 2026. **Every web
 - `npm run check` must pass with 0 failures (it builds the site and enforces SEO, link, image and JSON-LD rules).
 - After changing a page title, run `npm run build && npm run og-images` and commit the updated `assets/img/og/*.png`.
 - New icons: rerun `tools/build-icon-subset.py` (see its header). New images: `tools/optimize-images.py`.
-- Keep features working: loading screen, custom cursor, ROI calculator, HubSpot consultation modal (portal 247123252, form 925b2a78-2998-4846-a6e8-a7514007fb93), interactive Revenue Pipeline hero, resource tabs and card links, integrations filter, reduced-motion support.
+- Home page motion: `motionPage: true` loads GSAP + ScrollTrigger + Lenis (`assets/vendor/motion/`), `assets/css/motion.css` and `assets/js/motion/` (one module per section). The home page has a "pipeline build" intro instead of the loading screen; other pages keep the loader.
+- Keep features working: loading screen (non-home pages), home intro and scroll scenes, glow cursor, ROI calculator, HubSpot consultation modal (portal 247123252, form 925b2a78-2998-4846-a6e8-a7514007fb93), interactive Revenue Pipeline hero, resource tabs and card links, integrations filter, reduced-motion support.
